@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OKfly Studio · Páginas web que venden</title>
+<meta property="og:title" content="OKfly Studio · Páginas web que venden">
+<meta property="og:description" content="Diseñamos, escribimos y lanzamos la web de tu negocio en días. Riviera Maya, México.">
+<meta name="description" content="OKfly Studio diseña, escribe y lanza páginas web que venden para negocios de México y EE. UU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: one 12-col grid, tight equal margins; the hero is a live 3D stack of the visitor's own website. */
+:root{
+  --bg:#0E0E0E;
+  --surface:#181817;
+  --surface-2:#232321;
+  --ink:#F4F3EF;
+  --ink-2:#BDBBB4;
+  --paper:#F4F3EF;
+  --paper-ink:#0E0E0E;
+  --paper-ink-2:#4A4945;
+  --font:'Outfit', 'Helvetica Neue', Arial, sans-serif;
+  --mono:ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ease-out:cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out:cubic-bezier(0.77, 0, 0.175, 1);
+  --max:1360px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+main,footer{overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--bg)}
+html{scrollbar-color:#3a3a38 var(--bg)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#3a3a38;border-radius:10px}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:0.95;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Buttons: fully round, flat, one fill */
+.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out), background-color 200ms ease}
+.btn:active{transform:scale(0.97)}
+.btn svg{transition:transform 200ms var(--ease-out)}
+.btn--ghost{background:var(--surface-2);color:var(--ink)}
+.btn--dark{background:var(--paper-ink);color:var(--paper)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover svg{transform:translateX(4px)}
+  .btn--ghost:hover{background:#2e2e2b}
+  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#ffffff}
+}
+
+/* Nav: plain bar */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
+.brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:16px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+@media (hover:hover){.nav ul a:hover{color:var(--ink)}}
+.nav .btn{height:46px;padding:0 22px;font-size:15px}
+@media (max-width:860px){.nav ul{display:none}}
+.nav-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);letter-spacing:0.02em;cursor:pointer;transition:background-color 180ms ease, color 180ms ease, transform 140ms var(--ease-out)}
+.lang-btn:active{transform:scale(0.95)}
+.lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.lang-btn[aria-pressed="false"]:hover{color:var(--ink)}}
+@media (max-width:420px){.nav-cta{display:none}}
+
+
+/* Hero */
+.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding-block:40px 64px}
+.hero-copy{grid-column:1 / span 6;display:flex;flex-direction:column;gap:32px;position:relative;z-index:2;min-width:0}
+.hero h1{font-size:clamp(52px, 6.5vw, 104px);font-weight:900}
+.hero-sub{font-size:clamp(19px, 1.5vw, 22px);color:var(--ink-2);max-width:31em;margin-top:-4px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-stage{grid-column:7 / span 6;position:relative;height:min(640px, 58vw);min-height:420px}
+#scene{position:absolute;inset:-40px -80px -40px -40px}
+#scene canvas{display:block;width:100%;height:100%}
+#scene .fallback{position:absolute;inset:40px 80px 40px 40px;display:flex;align-items:center;justify-content:center}
+#scene .fallback canvas{width:100%;height:auto;border-radius:14px;transform:rotate(-3deg)}
+
+/* Live thing */
+.live{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:22px;background:var(--surface);max-width:560px}
+.live label{font-size:16px;font-weight:600}
+.live input{width:100%;height:56px;padding:0 20px;border-radius:14px;border:0;background:var(--surface-2);color:var(--ink);font:500 20px var(--font);caret-color:var(--ink)}
+.live input::placeholder{color:#8c8a84}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:40px;padding:0 16px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink-2);font:500 15px var(--font);cursor:pointer;transition:transform 140ms var(--ease-out), background-color 180ms ease, color 180ms ease}
+.chip:active{transform:scale(0.96)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.chip[aria-pressed="false"]:hover{color:var(--ink);background:#2e2e2b}}
+
+@media (max-width:980px){
+  .hero-copy,.hero-stage{grid-column:1 / -1}
+  .hero-stage{height:420px;min-height:0;order:2}
+  #scene{inset:-20px -24px}
+}
+@media (max-width:520px){.hero-stage{height:330px}}
+
+/* Proof band */
+.band{background:var(--surface)}
+.band-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;padding-block:28px}
+.band strong{font-size:clamp(28px, 3vw, 40px);font-weight:800;letter-spacing:-0.03em}
+.band p{color:var(--ink-2);font-size:17px}
+.band-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+
+/* Marquee */
+.marquee{overflow:hidden;padding-block:48px 8px;white-space:nowrap;-webkit-mask-image:none}
+.marquee-track{display:inline-flex;gap:56px;animation:marquee 38s linear infinite;font-size:clamp(40px, 6vw, 88px);font-weight:300;letter-spacing:-0.03em;color:#4b4a46}
+.marquee-track span b{color:var(--ink);font-weight:800}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Sections */
+section{padding-block:clamp(96px, 12vw, 180px)}
+.h2{font-size:clamp(42px, 5.6vw, 84px)}
+.lede{font-size:clamp(19px, 1.5vw, 22px);color:var(--ink-2);max-width:34em}
+
+/* Why: statement + search fragment */
+.why{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.why-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:28px;min-width:0}
+.why-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:19px}
+.why-list li{display:flex;gap:14px;align-items:flex-start}
+.why-list svg{flex-shrink:0;margin-top:5px}
+.serp{grid-column:7 / span 6;background:#FFFFFF;color:#1d1d1f;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:22px;transform:rotate(1.5deg);box-shadow:0 40px 80px rgba(0,0,0,0.45);font-family:Arial, Helvetica, sans-serif;min-width:0}
+.serp-q{display:flex;align-items:center;gap:12px;height:52px;padding:0 20px;border-radius:999px;background:#F1F3F4;font-size:17px;color:#202124}
+.serp-r{display:flex;flex-direction:column;gap:4px}
+.serp-r small{font-size:13px;color:#4d5156}
+.serp-r b{font-size:20px;font-weight:400;color:#1a0dab}
+.serp-r p{font-size:15px;color:#4d5156;line-height:1.45}
+.serp-r.you{background:#F6F8FF;margin:-12px;padding:12px;border-radius:12px}
+.serp-r.you b{font-weight:700}
+.serp-tag{align-self:flex-start;margin-top:6px;padding:6px 12px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:13px;font-family:var(--font);font-weight:600}
+.serp-r.dim{opacity:0.55}
+@media (max-width:980px){.why-copy,.serp{grid-column:1 / -1}.serp{transform:none;margin-top:24px}}
+
+/* Process: CSS 3D exploding layers */
+.process{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.process-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:36px;min-width:0}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.step{padding:22px 24px;border-radius:20px;background:transparent;transition:background-color 300ms ease, color 300ms ease;color:var(--ink-2)}
+.step h3{font-size:30px;letter-spacing:-0.03em;color:inherit;margin-bottom:8px;line-height:1.05}
+.step p{font-size:17px}
+.step.on{background:var(--surface);color:var(--ink)}
+.stack-stage{grid-column:6 / span 7;height:620px;perspective:1600px;display:flex;align-items:center;justify-content:center;min-width:0}
+.stack{position:relative;width:440px;height:300px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-34deg)}
+.layer{position:absolute;inset:0;border-radius:18px;transform-style:preserve-3d;will-change:transform;overflow:hidden}
+.layer-wire{background:#161615;box-shadow:inset 0 0 0 2px #4a4945}
+.layer-copy{background:#262624}
+.layer-live{background:#F6EFE6;color:#1E1410}
+.lw{position:absolute;border-radius:6px;box-shadow:inset 0 0 0 2px #5a5955}
+.lc{position:absolute;color:var(--ink);font-weight:700;letter-spacing:-0.02em;line-height:1}
+.layer-tag{position:absolute;right:14px;bottom:12px;font-size:13px;font-weight:600;color:#9a988f}
+@media (max-width:980px){
+  .process-copy,.stack-stage{grid-column:1 / -1}
+  .stack-stage{height:420px;order:-1}
+  .stack{width:300px;height:205px}
+}
+
+/* Examples: 3D tilt cards */
+.examples-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px}
+.examples{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:24px;perspective:1400px}
+.ex{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ex-card{border-radius:18px;overflow:hidden;transform-style:preserve-3d;will-change:transform;transition:box-shadow 300ms ease}
+.ex figcaption{display:flex;justify-content:space-between;gap:12px;font-size:16px}
+.ex figcaption span{color:var(--ink-2)}
+.ex figure{margin:0}
+.mock{aspect-ratio:4 / 5;max-width:100%;display:flex;flex-direction:column;font-family:var(--font)}
+.mock-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:rgba(0,0,0,0.08)}
+.mock-bar i{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,0.25)}
+.mock-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:13px;font-weight:600}
+.mock-nav em{font-style:normal;opacity:0.7;display:flex;gap:12px}
+.mock-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:20px 22px 24px}
+.mock-body h4{margin:0;font-size:clamp(28px, 3vw, 44px);font-weight:800;letter-spacing:-0.04em;line-height:0.95}
+.mock-body p{font-size:14px;opacity:0.8;max-width:22em}
+.mock-cta{align-self:flex-start;margin-top:6px;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700}
+.m-rest{background:#8E2F22;color:#F6EFE6}
+.m-rest .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#B5452F;position:relative;overflow:hidden}
+.m-rest .mock-cta{background:#F6EFE6;color:#8E2F22}
+.m-inmo{background:#E7EFEC;color:#0F1F1E}
+.m-inmo .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#1F5F5B;position:relative;overflow:hidden}
+.m-inmo .mock-cta{background:#0F1F1E;color:#E7EFEC}
+.m-clin{background:#F1F4F9;color:#111A2B}
+.m-clin .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#2D4E86;position:relative;overflow:hidden}
+.m-clin .mock-cta{background:#2D4E86;color:#fff}
+@media (max-width:980px){.examples{grid-template-columns:1fr 1fr}.ex:first-child{grid-column:1 / -1}.ex:first-child .mock{aspect-ratio:16 / 11}}
+@media (max-width:560px){.examples{grid-template-columns:1fr}.ex .mock{aspect-ratio:4 / 4.4}}
+
+/* Plans: rows */
+.plans{display:flex;flex-direction:column;gap:12px;margin-top:56px}
+.plan{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,2fr) auto;gap:24px 40px;align-items:center;padding:32px 36px;border-radius:24px;background:var(--surface);transition:background-color 220ms ease}
+@media (hover:hover){.plan:hover{background:#1e1e1d}}
+.plan h3{font-size:clamp(32px, 3vw, 44px)}
+.plan .desc{color:var(--ink-2);font-size:17px}
+.plan .price{display:flex;flex-direction:column;gap:2px}
+.plan .price b{font-size:30px;font-weight:800;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.plan .price span{font-size:15px;color:var(--ink-2)}
+.plan.featured{background:var(--ink);color:var(--bg)}
+.plan.featured .desc,.plan.featured .price span{color:#45443f}
+.plan.featured .btn{background:var(--bg);color:var(--ink)}
+@media (max-width:980px){.plan{grid-template-columns:1fr 1fr}.plan h3,.plan .desc{grid-column:1 / -1}}
+@media (max-width:520px){.plan{grid-template-columns:1fr;padding:28px 24px}.plan .btn{justify-content:center}}
+.includes{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;margin-top:96px;align-items:start}
+.includes h3{font-size:clamp(30px, 3vw, 44px)}
+.inc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:19px}
+.inc-list li{display:flex;gap:12px;align-items:flex-start}
+.inc-list svg{flex-shrink:0;margin-top:5px}
+@media (max-width:860px){.includes{grid-template-columns:1fr}}
+@media (max-width:520px){.inc-list{grid-template-columns:1fr}}
+
+/* Community: paper field */
+.community{background:var(--paper);color:var(--paper-ink)}
+.community-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.community-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:28px;min-width:0}
+.community .lede{color:var(--paper-ink-2)}
+.community-mark{grid-column:9 / span 4;display:flex;justify-content:center}
+.lab-badge{width:min(320px, 70vw);aspect-ratio:1;border-radius:72px;background:var(--paper-ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transform:rotate(-6deg);transition:transform 600ms var(--ease-out)}
+.lab-badge b{font-size:clamp(56px, 6vw, 84px);font-weight:900;letter-spacing:-0.05em;line-height:0.9}
+.lab-badge span{font-size:clamp(28px, 3vw, 40px);font-weight:400;letter-spacing:-0.02em}
+@media (hover:hover){.community-mark:hover .lab-badge{transform:rotate(3deg) scale(1.03)}}
+@media (max-width:860px){.community-copy,.community-mark{grid-column:1 / -1}.community-mark{justify-content:flex-start}}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border-radius:20px;padding:0 28px;transition:background-color 200ms ease}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;font-size:21px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex-shrink:0;transition:transform 240ms var(--ease-out)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{padding-bottom:26px;color:var(--ink-2);max-width:40em}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+
+/* Footer */
+footer{padding-block:96px 40px;overflow:hidden}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px}
+.foot-top h2{font-size:clamp(40px, 5vw, 72px)}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:17px}
+.foot-links a{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-links a:hover{color:var(--ink)}}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:80px}
+.wordmark b{font-size:clamp(110px, 25vw, 380px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px, 1.6vw, 22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:40px;font-size:14px;color:#8c8a84}
+@media (max-width:640px){.wordmark{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* Reveal: content is visible at rest; JS only hides what is below the fold, then reveals it */
+.pre{opacity:0;transform:translateY(24px)}
+.rv{transition:opacity 700ms var(--ease-out), transform 700ms var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .pre{transform:none}
+  .rv{transition:opacity 300ms ease}
+  .lab-badge{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#top" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+    <ul>
+      <li><a href="#proceso" data-i18n="nav1">Proceso</a></li>
+      <li><a href="#ejemplos" data-i18n="nav2">Ejemplos</a></li>
+      <li><a href="#planes" data-i18n="nav3">Planes</a></li>
+      <li><a href="#preguntas" data-i18n="nav4">Preguntas</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn js-wa nav-cta" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="navCta">Cotizar</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <h1 data-i18n="h1">Páginas web<br>que venden.</h1>
+      <p class="hero-sub" data-i18n="heroSub">Diseñamos, escribimos y lanzamos la web de tu negocio en días. Lista para aparecer en Google y recibir clientes por WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn js-wa" href="https://wa.me/" target="_blank" rel="noopener"><span data-i18n="heroCta">Cotizar mi página</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#planes" data-i18n="heroCta2">Ver planes</a>
+      </div>
+      <form class="live" id="live" autocomplete="off">
+        <label for="bizName" data-i18n="liveLabel">Escribe el nombre de tu negocio y mírala armarse</label>
+        <input id="bizName" name="bizName" type="text" maxlength="28" placeholder="Ej. Café Bahía" value="Café Bahía">
+        <div class="chips" role="group" aria-label="Giro del negocio" id="chips">
+          <button type="button" class="chip" data-type="restaurante" aria-pressed="true" data-i18n="chip1">Restaurante</button>
+          <button type="button" class="chip" data-type="inmobiliaria" aria-pressed="false" data-i18n="chip2">Inmobiliaria</button>
+          <button type="button" class="chip" data-type="clinica" aria-pressed="false" data-i18n="chip3">Clínica</button>
+          <button type="button" class="chip" data-type="gimnasio" aria-pressed="false" data-i18n="chip4">Gimnasio</button>
+        </div>
+      </form>
+    </div>
+    <div class="hero-stage">
+      <div id="scene" role="img" aria-label="Vista previa en 3D de la página web de tu negocio"></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap band-in">
+      <div class="band-row"><strong data-i18n="bandNum">+175 mil</strong><p data-i18n="bandTxt">personas siguen OKfly en Facebook</p></div>
+      <p data-i18n="bandLoc">Desde la Riviera Maya para negocios de México y EE. UU.</p>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span data-i18n="marq"><b>Restaurantes</b> · Inmobiliarias · <b>Clínicas</b> · Hoteles · <b>Gimnasios</b> · Tours · <b>Despachos</b> · Tiendas ·</span>
+      <span data-i18n="marq"><b>Restaurantes</b> · Inmobiliarias · <b>Clínicas</b> · Hoteles · <b>Gimnasios</b> · Tours · <b>Despachos</b> · Tiendas ·</span>
+    </div>
+  </div>
+
+  <section aria-labelledby="why-h">
+    <div class="wrap why">
+      <div class="why-copy">
+        <h2 class="h2" id="why-h" data-rv data-i18n="whyH">Si no te encuentran, le compran a otro.</h2>
+        <p class="lede" data-rv data-i18n="whyLede">Hoy tu cliente busca en Google antes de llamar. Una página bien hecha trabaja por ti las 24 horas:</p>
+        <ul class="why-list" data-rv>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why1">Te encuentran cuando buscan lo que vendes en tu zona.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why2">Ven tus precios, fotos y horarios sin preguntarte.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why3">Te escriben por WhatsApp con un solo toque.</span></li>
+        </ul>
+      </div>
+      <div class="serp" data-ui data-rv>
+        <div class="serp-q">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <span class="js-q">café cerca de mí</span>
+        </div>
+        <div class="serp-r you">
+          <small class="js-url">cafebahia.com</small>
+          <b class="js-title">Café Bahía · Menú y reservas</b>
+          <p data-i18n="serpYou">Menú, horarios, cómo llegar y pedidos por WhatsApp.</p>
+          <span class="serp-tag" data-i18n="serpTag">Tu página con OKfly</span>
+        </div>
+        <div class="serp-r dim">
+          <small data-i18n="serpD1u">directorio-local.com</small>
+          <b data-i18n="serpD1t">Los 10 mejores lugares cerca de ti</b>
+          <p data-i18n="serpD1p">Listado con reseñas de varios negocios de la zona.</p>
+        </div>
+        <div class="serp-r dim">
+          <small data-i18n="serpD2u">redsocial.com</small>
+          <b data-i18n="serpD2t">Perfil sin actualizar desde 2023</b>
+          <p data-i18n="serpD2p">Sin horarios ni datos de contacto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso" aria-labelledby="proc-h" style="padding-top:0">
+    <div class="wrap process">
+      <div class="process-copy">
+        <h2 class="h2" id="proc-h" data-rv data-i18n="procH">De la idea a tu web en línea.</h2>
+        <ol class="steps">
+          <li class="step on"><h3 data-i18n="s1h">Platicamos</h3><p data-i18n="s1p">Una llamada corta: qué vendes, a quién y qué quieres que haga la gente al entrar.</p></li>
+          <li class="step"><h3 data-i18n="s2h">Diseñamos y escribimos</h3><p data-i18n="s2p">Armamos tu página con textos que venden, tus fotos y tu marca. La revisas y ajustamos.</p></li>
+          <li class="step"><h3 data-i18n="s3h">Lanzamos</h3><p data-i18n="s3p">La conectamos a tu dominio, a Google y a tu WhatsApp. Lista para recibir clientes.</p></li>
+        </ol>
+      </div>
+      <div class="stack-stage" aria-hidden="true">
+        <div class="stack" id="stack">
+          <div class="layer layer-wire">
+            <div class="lw" style="left:20px;top:18px;width:90px;height:14px"></div>
+            <div class="lw" style="right:20px;top:18px;width:150px;height:14px"></div>
+            <div class="lw" style="left:20px;top:58px;width:220px;height:70px"></div>
+            <div class="lw" style="left:20px;top:142px;width:160px;height:16px"></div>
+            <div class="lw" style="left:20px;top:176px;width:110px;height:34px;border-radius:20px"></div>
+            <div class="lw" style="right:20px;top:58px;width:160px;height:200px"></div>
+            <span class="layer-tag" data-i18n="tagWire">Estructura</span>
+          </div>
+          <div class="layer layer-copy">
+            <div class="lc" style="left:20px;top:20px;font-size:14px">Café Bahía</div>
+            <div class="lc" style="right:20px;top:20px;font-size:12px;font-weight:500;opacity:.7" data-i18n="stNav">Menú · Horarios · Contacto</div>
+            <div class="lc" style="left:20px;top:58px;font-size:34px;width:230px" data-i18n="stH">Café de especialidad frente al mar.</div>
+            <div class="lc" style="left:20px;top:172px;font-size:13px;font-weight:500;opacity:.75;width:200px;line-height:1.3" data-i18n="stHours">Abierto todos los días de 7:00 a 20:00.</div>
+            <span class="layer-tag" data-i18n="tagCopy">Textos</span>
+          </div>
+          <div class="layer layer-live">
+            <div style="position:absolute;left:20px;top:18px;font-size:14px;font-weight:800">Café Bahía</div>
+            <div style="position:absolute;right:20px;top:18px;font-size:12px;font-weight:600;opacity:.7" data-i18n="stNav">Menú · Horarios · Contacto</div>
+            <div style="position:absolute;left:20px;top:56px;width:220px;font-size:34px;font-weight:800;letter-spacing:-0.04em;line-height:.95" data-i18n="stH">Café de especialidad frente al mar.</div>
+            <div style="position:absolute;left:20px;top:182px;padding:9px 16px;border-radius:20px;background:#8E2F22;color:#F6EFE6;font-size:13px;font-weight:700" data-i18n="stCta">Pedir por WhatsApp</div>
+            <div style="position:absolute;right:20px;top:56px;width:160px;height:200px;border-radius:12px;background:#B5452F;overflow:hidden">
+              <div style="position:absolute;left:30px;top:34px;width:56px;height:56px;border-radius:50%;background:#F2C27B"></div>
+              <div style="position:absolute;left:0;right:0;bottom:0;height:80px;background:#6E2318"></div>
+            </div>
+            <div style="position:absolute;left:20px;bottom:14px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#2F9E5B"></span><span data-i18n="stLive">En línea</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejemplos" aria-labelledby="ex-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="examples-head">
+        <h2 class="h2" id="ex-h" data-rv data-i18n="exH">Un diseño para cada giro.</h2>
+        <p class="lede" data-rv data-i18n="exLede">Cada página se diseña desde tu negocio: tus colores, tu zona y lo que tu cliente necesita ver primero.</p>
+      </div>
+      <div class="examples">
+        <figure class="ex" data-rv>
+          <div class="ex-card" data-tilt>
+            <div class="mock m-rest" data-ui>
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-nav"><span>La Marea</span><em><span data-i18n="m1n1">Menú</span><span data-i18n="m1n2">Reservas</span></em></div>
+              <div class="mock-art"><div style="position:absolute;left:14%;top:18%;width:22%;aspect-ratio:1;border-radius:50%;background:#F2C27B"></div><div style="position:absolute;left:0;right:0;bottom:0;height:38%;background:#6E2318"></div></div>
+              <div class="mock-body"><h4 data-i18n="m1h">Mariscos del día, frente al mar.</h4><p data-i18n="m1p">Pesca local, cocina abierta y mesas en la arena.</p><span class="mock-cta" data-i18n="m1c">Reservar mesa</span></div>
+            </div>
+          </div>
+          <figcaption><b data-i18n="chip1">Restaurante</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
+        </figure>
+        <figure class="ex" data-rv>
+          <div class="ex-card" data-tilt>
+            <div class="mock m-inmo" data-ui>
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-nav"><span>Costa Viva</span><em><span data-i18n="m2n1">Propiedades</span></em></div>
+              <div class="mock-art"><div style="position:absolute;left:18%;bottom:0;width:26%;height:62%;background:#E7EFEC"></div><div style="position:absolute;left:50%;bottom:0;width:32%;height:84%;background:#CFE0DA"></div><div style="position:absolute;left:0;right:0;bottom:0;height:16%;background:#164744"></div></div>
+              <div class="mock-body"><h4 data-i18n="m2h">Vive a 5 min del Caribe.</h4><p data-i18n="m2p">Departamentos listos para habitar o rentar.</p><span class="mock-cta" data-i18n="m2c">Ver propiedades</span></div>
+            </div>
+          </div>
+          <figcaption><b data-i18n="chip2">Inmobiliaria</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
+        </figure>
+        <figure class="ex" data-rv>
+          <div class="ex-card" data-tilt>
+            <div class="mock m-clin" data-ui>
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-nav"><span>Dental Sol</span><em><span data-i18n="m3n1">Citas</span></em></div>
+              <div class="mock-art"><div style="position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;border-radius:50%;background:#F1F4F9;transform:translate(-50%,-50%)"></div><div style="position:absolute;left:50%;top:50%;width:22%;aspect-ratio:1;border-radius:50%;background:#2D4E86;transform:translate(-50%,-50%)"></div></div>
+              <div class="mock-body"><h4 data-i18n="m3h">Agenda tu cita hoy.</h4><p data-i18n="m3p">Limpieza, ortodoncia y urgencias.</p><span class="mock-cta" data-i18n="m3c">Agendar cita</span></div>
+            </div>
+          </div>
+          <figcaption><b data-i18n="chip3">Clínica</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="planes" aria-labelledby="plan-h" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2" id="plan-h" data-rv data-i18n="planH">Elige cómo quieres tu página.</h2>
+      <div class="plans">
+        <article class="plan" data-rv>
+          <h3 data-i18n="p1n">Express</h3>
+          <p class="desc" data-i18n="p1d">Una página clara y rápida para empezar a recibir clientes. Ideal si aún no tienes web.</p>
+          <div class="price"><b data-i18n="p1p">$7,900 MXN</b><span data-i18n="once">pago único</span></div>
+          <a class="btn btn--ghost js-wa" data-plan="p1n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="want">Quiero esta</a>
+        </article>
+        <article class="plan featured" data-rv>
+          <h3 data-i18n="p2n">Editable</h3>
+          <p class="desc" data-i18n="p2d">Varias secciones con un panel sencillo para que tú cambies textos, fotos y precios cuando quieras.</p>
+          <div class="price"><b data-i18n="p2p">$13,900 MXN</b><span data-i18n="once">pago único</span></div>
+          <a class="btn js-wa" data-plan="p2n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="want">Quiero esta</a>
+        </article>
+        <article class="plan" data-rv>
+          <h3 data-i18n="p3n">A medida</h3>
+          <p class="desc" data-i18n="p3d">Diseño y funciones hechos para tu negocio: reservas, catálogo, varios idiomas o tienda.</p>
+          <div class="price"><b data-i18n="p3p">Desde $24,900</b><span data-i18n="p3s">según el proyecto</span></div>
+          <a class="btn btn--ghost js-wa" data-plan="p3n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="talk">Platiquemos</a>
+        </article>
+      </div>
+      <div class="includes">
+        <h3 data-rv data-i18n="incH">Todas incluyen</h3>
+        <ul class="inc-list" data-rv>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i1">Diseño pensado primero para celular</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i2">Textos escritos para vender</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i3">Botón directo a tu WhatsApp</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i4">Mapa, horarios y cómo llegar</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i5">SEO básico para aparecer en Google</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i6">Hosting rápido y seguro</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i7">Conexión a tu dominio</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i8">Formulario de contacto</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="community" aria-labelledby="lab-h">
+    <div class="wrap community-in">
+      <div class="community-copy">
+        <h2 class="h2" id="lab-h" data-rv data-i18n="labH">¿Prefieres aprender a hacerlo tú?</h2>
+        <p class="lede" data-rv data-i18n="labLede">En Legendary Lab te enseñamos a crear y vender páginas web con IA, paso a paso, con la misma forma en que trabajamos en OKfly. Prueba la comunidad 7 días gratis.</p>
+        <div data-rv><a class="btn btn--dark" href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener"><span data-i18n="labCta">Entrar a Legendary Lab</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <div class="community-mark" aria-hidden="true">
+        <div class="lab-badge"><b>Lab</b><span data-i18n="labBadge">7 días gratis</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <h2 class="h2" id="faq-h" data-rv data-i18n="faqH">Preguntas frecuentes</h2>
+      <div class="faq-list" data-rv>
+        <details>
+          <summary><span data-i18n="q1">¿Cuánto tarda mi página?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="a1">Depende del plan y de qué tan rápido tengamos tu información. Una página Express suele estar lista en pocos días; los proyectos a medida se calendarizan contigo desde la primera llamada.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="q2">¿Necesito tener textos y fotos?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="a2">No. Nosotros escribimos los textos a partir de una llamada contigo. Si tienes fotos de tu negocio, las usamos; si no, te decimos cómo tomarlas o qué imágenes funcionan.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="q3">¿Puedo cambiar cosas después?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="a3">Sí. Con el plan Editable tú mismo cambias textos, fotos y precios desde un panel. En los otros planes nos escribes y lo actualizamos.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="q4">¿Qué pasa con el dominio y el hosting?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="a4">Te ayudamos a elegir y conectar tu dominio (tunegocio.com) y dejamos tu página publicada en un hosting rápido y seguro. El dominio queda a tu nombre.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="q5">¿Trabajan con negocios fuera de la Riviera Maya?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="a5">Sí. Todo el proceso es en línea, así que trabajamos con negocios de todo México y de Estados Unidos, en español o en inglés.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <h2 data-rv data-i18n="footH">¿Listo para que te encuentren?</h2>
+      <a class="btn js-wa" href="https://wa.me/" target="_blank" rel="noopener"><span data-i18n="footCta">Cotizar por WhatsApp</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
+    <div class="legal">
+      <div class="foot-links">
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener">Legendary Lab</a>
+        <a class="js-wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <span data-i18n="legal">© 2026 OKfly Studio · Riviera Maya, México</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  /* ===== Config: pon aquí tu número de WhatsApp con lada, solo dígitos (ej. 529841234567) ===== */
+  var WHATSAPP = '523349814667';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Translations (Spanish is read from the page itself) ---------- */
+  var EN = {
+    nav1:'Process', nav2:'Work', nav3:'Pricing', nav4:'FAQ', navCta:'Get a quote',
+    h1:'Websites<br>that sell.',
+    heroSub:'We design, write and launch your business website in days. Ready to show up on Google and bring you customers on WhatsApp.',
+    heroCta:'Get my quote', heroCta2:'See pricing',
+    liveLabel:'Type your business name and watch it come together',
+    chip1:'Restaurant', chip2:'Real estate', chip3:'Clinic', chip4:'Gym',
+    bandNum:'175K+', bandTxt:'people follow OKfly on Facebook', bandLoc:'From the Riviera Maya, for businesses in Mexico and the US.',
+    marq:'<b>Restaurants</b> · Real estate · <b>Clinics</b> · Hotels · <b>Gyms</b> · Tours · <b>Law firms</b> · Shops ·',
+    whyH:'If they can’t find you, they buy elsewhere.',
+    whyLede:'Your customers search Google before they call. A well-made website works for you around the clock:',
+    why1:'They find you when they search for what you sell nearby.', why2:'They see your prices, photos and hours without asking.', why3:'They message you on WhatsApp in one tap.',
+    serpYou:'Menu, hours, directions and WhatsApp orders.', serpTag:'Your OKfly website',
+    serpD1u:'local-directory.com', serpD1t:'Top 10 places near you', serpD1p:'A list with reviews of several local businesses.',
+    serpD2u:'socialnetwork.com', serpD2t:'Profile not updated since 2023', serpD2p:'No hours or contact details.',
+    procH:'From idea to live website.',
+    s1h:'We talk', s1p:'A short call: what you sell, who you sell to, and what people should do when they land.',
+    s2h:'We design and write', s2p:'We build your page with copy that sells, your photos and your brand. You review it and we fine-tune.',
+    s3h:'We launch', s3p:'We connect it to your domain, Google and WhatsApp. Ready for customers.',
+    tagWire:'Structure', tagCopy:'Copy', stNav:'Menu · Hours · Contact', stH:'Specialty coffee by the sea.', stHours:'Open daily, 7 am to 8 pm.', stCta:'Order on WhatsApp', stLive:'Live',
+    exH:'A design for every business.', exLede:'Every site is designed around your business: your colors, your area and what your customers need to see first.',
+    m1n1:'Menu', m1n2:'Book', m1h:'Today’s catch, right on the beach.', m1p:'Local fish, open kitchen, tables in the sand.', m1c:'Book a table',
+    m2n1:'Listings', m2h:'Live 5 minutes from the Caribbean.', m2p:'Condos ready to move in or rent out.', m2c:'View listings',
+    m3n1:'Book', m3h:'Book your visit today.', m3p:'Cleanings, braces and emergencies.', m3c:'Book now',
+    exCap:'Design example',
+    planH:'Choose your website.',
+    p1n:'Express', p1d:'A clear, fast page to start getting customers. Ideal if you don’t have a website yet.', p1p:'$690 USD',
+    p2n:'Editable', p2d:'Several sections plus a simple panel so you can change text, photos and prices anytime.', p2p:'$1,190 USD',
+    p3n:'Custom', p3d:'Design and features built for your business: bookings, a catalog, multiple languages or a store.', p3p:'From $1,900', p3s:'depending on scope',
+    once:'one-time payment', want:'I want this', talk:'Let’s talk',
+    incH:'Every plan includes', i1:'Mobile-first design', i2:'Copy written to sell', i3:'Direct WhatsApp button', i4:'Map, hours and directions', i5:'Basic SEO to show up on Google', i6:'Fast, secure hosting', i7:'Domain connection', i8:'Contact form',
+    labH:'Want to learn to do it yourself?',
+    labLede:'In Legendary Lab we teach you to build and sell websites with AI, step by step, the same way we work at OKfly. The course is taught in Spanish. Try the community free for 7 days.',
+    labCta:'Join Legendary Lab', labBadge:'7 days free',
+    faqH:'Questions',
+    q1:'How long does it take?', a1:'It depends on the plan and how quickly we get your information. An Express site is usually ready in a few days; custom projects are scheduled with you on the first call.',
+    q2:'Do I need my own copy and photos?', a2:'No. We write the copy after a call with you. If you have photos of your business we use them; if not, we tell you how to take them or which images work.',
+    q3:'Can I change things later?', a3:'Yes. With the Editable plan you change text, photos and prices yourself from a panel. On the other plans, just message us and we update it.',
+    q4:'What about the domain and hosting?', a4:'We help you choose and connect your domain (yourbusiness.com) and publish your site on fast, secure hosting. The domain stays in your name.',
+    q5:'Do you work outside the Riviera Maya?', a5:'Yes. The whole process is online, so we work with businesses across Mexico and the United States, in English or Spanish.',
+    footH:'Ready to be found?', footCta:'Get a quote on WhatsApp', legal:'© 2026 OKfly Studio · Riviera Maya, Mexico'
+  };
+  var ES = {};
+  var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+  i18nEls.forEach(function(el){ var k = el.dataset.i18n; if (!(k in ES)) ES[k] = el.innerHTML; });
+  var UI = {
+    es:{placeholder:'Ej. Café Bahía', chipsLabel:'Giro del negocio', scene:'Vista previa en 3D de la página web de tu negocio', nav:'Principal', title:'OKfly Studio · Páginas web que venden'},
+    en:{placeholder:'e.g. Bahia Coffee', chipsLabel:'Type of business', scene:'3D preview of your business website', nav:'Main', title:'OKfly Studio · Websites that sell'}
+  };
+
+  /* ---------- Business templates for the live preview ---------- */
+  var BASE = {
+    restaurante:{bg:'#F6EFE6',ink:'#1E1410',tint:'#8E2F22',art:'#B5452F',art2:'#6E2318',sun:'#F2C27B'},
+    inmobiliaria:{bg:'#E7EFEC',ink:'#0F1F1E',tint:'#1F5F5B',art:'#1F5F5B',art2:'#164744',sun:'#CFE0DA'},
+    clinica:{bg:'#F1F4F9',ink:'#111A2B',tint:'#2D4E86',art:'#2D4E86',art2:'#1E3762',sun:'#DCE5F3'},
+    gimnasio:{bg:'#151515',ink:'#F4F3EF',tint:'#E2622B',art:'#2A2A28',art2:'#E2622B',sun:'#F4F3EF'}
+  };
+  var COPY = {
+    es:{
+      restaurante:{sub:'Cocina de temporada a dos calles del mar.',cta:'Reservar mesa',nav:['Menú','Reservas','Contacto'],chips:['Abierto hoy','Cómo llegar','WhatsApp'],q:'restaurante cerca de mí',qCafe:'café cerca de mí',tail:'Menú y reservas'},
+      inmobiliaria:{sub:'Departamentos frente al Caribe, listos para invertir.',cta:'Ver propiedades',nav:['Propiedades','Zonas','Asesoría'],chips:['Preventa','Financiamiento','WhatsApp'],q:'departamentos en venta cerca de mí',tail:'Propiedades en venta'},
+      clinica:{sub:'Tu salud en manos de especialistas.',cta:'Agendar cita',nav:['Tratamientos','Equipo','Citas'],chips:['Citas hoy','Ubicación','WhatsApp'],q:'clínica cerca de mí',tail:'Agenda tu cita'},
+      gimnasio:{sub:'Entrena con coaches que sí te siguen.',cta:'Clase gratis',nav:['Clases','Horarios','Planes'],chips:['Abierto 6–23 h','Planes','WhatsApp'],q:'gimnasio cerca de mí',tail:'Clases y horarios'}
+    },
+    en:{
+      restaurante:{sub:'Seasonal cooking two blocks from the sea.',cta:'Book a table',nav:['Menu','Book','Contact'],chips:['Open today','Directions','WhatsApp'],q:'restaurant near me',qCafe:'coffee near me',tail:'Menu and bookings'},
+      inmobiliaria:{sub:'Caribbean-view condos, ready to invest.',cta:'View listings',nav:['Listings','Areas','Advice'],chips:['Pre-sale','Financing','WhatsApp'],q:'condos for sale near me',tail:'Homes for sale'},
+      clinica:{sub:'Your health in expert hands.',cta:'Book a visit',nav:['Treatments','Team','Book'],chips:['Same-day visits','Location','WhatsApp'],q:'clinic near me',tail:'Book your visit'},
+      gimnasio:{sub:'Train with coaches who actually follow up.',cta:'Free class',nav:['Classes','Schedule','Plans'],chips:['Open 6 am–11 pm','Plans','WhatsApp'],q:'gym near me',tail:'Classes and schedule'}
+    }
+  };
+  var state = {name:'Café Bahía', type:'restaurante', lang:'es'};
+  function tpl(){ var b = BASE[state.type], c = COPY[state.lang][state.type], o = {}; for (var k in b) o[k]=b[k]; for (var j in c) o[j]=c[j]; return o; }
+
+  function slug(s){
+    var t = (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'');
+    return (t || (state.lang==='en'?'yourbusiness':'tunegocio')) + '.com';
+  }
+  function fallbackName(){ return state.lang==='en' ? 'Your business' : 'Tu negocio'; }
+  function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+  function wrapLines(ctx,text,maxW){
+    var words = text.split(' '), lines = [], cur = '';
+    for (var i=0;i<words.length;i++){var test = cur ? cur+' '+words[i] : words[i]; if (ctx.measureText(test).width > maxW && cur){lines.push(cur);cur = words[i];} else cur = test;}
+    if (cur) lines.push(cur); return lines;
+  }
+  var F = "'Outfit', 'Helvetica Neue', Arial, sans-serif";
+  var W = 1200, H = 800;
+
+  /* Front panel: the finished website */
+  function drawSite(ctx){
+    var t = tpl(), name = state.name.trim() || fallbackName(), dark = state.type==='gimnasio';
+    ctx.clearRect(0,0,W,H);
+    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
+    ctx.fillStyle = t.bg; ctx.fillRect(0,0,W,H);
+    ctx.fillStyle = 'rgba(0,0,0,0.07)'; ctx.fillRect(0,0,W,64);
+    ['#FF5F57','#FEBC2E','#28C840'].forEach(function(c,i){ctx.fillStyle=c;ctx.beginPath();ctx.arc(40+i*28,32,9,0,Math.PI*2);ctx.fill();});
+    ctx.fillStyle = dark ? '#2a2a28' : '#FFFFFF'; rr(ctx,150,14,380,36,18); ctx.fill();
+    ctx.fillStyle = dark ? '#bdbbb4' : '#5b5b5b'; ctx.font = '500 20px '+F; ctx.textBaseline='middle'; ctx.fillText(slug(state.name),172,33);
+    ctx.fillStyle = t.ink; ctx.font = '800 30px '+F; ctx.fillText(name.length>22?name.slice(0,21)+'…':name,56,118);
+    ctx.font = '500 22px '+F; ctx.globalAlpha = 0.72; var nx = W-56;
+    for (var i=t.nav.length-1;i>=0;i--){var w=ctx.measureText(t.nav[i]).width; nx -= w; ctx.fillText(t.nav[i],nx,118); nx -= 36;}
+    ctx.globalAlpha = 1;
+    ctx.font = '900 92px '+F; ctx.textBaseline = 'alphabetic';
+    var size = 92, lines = wrapLines(ctx,name,560);
+    while ((lines.length>3 || lines.some(function(l){return ctx.measureText(l).width>580;})) && size>48){size-=6;ctx.font='900 '+size+'px '+F;lines=wrapLines(ctx,name,560);}
+    var y = 250; ctx.fillStyle = t.ink;
+    lines.slice(0,3).forEach(function(l){ctx.fillText(l,56,y); y += size*0.92;});
+    ctx.font = '400 26px '+F; ctx.globalAlpha = 0.78;
+    wrapLines(ctx,t.sub,520).slice(0,2).forEach(function(l){ctx.fillText(l,56,y+18); y+=36;});
+    ctx.globalAlpha = 1; y += 52;
+    ctx.font = '700 24px '+F; var cw = ctx.measureText(t.cta).width + 64;
+    ctx.fillStyle = t.tint; rr(ctx,56,y,cw,64,32); ctx.fill();
+    ctx.fillStyle = dark ? '#151515' : '#FFFFFF'; ctx.textBaseline='middle'; ctx.fillText(t.cta,88,y+33);
+    var ax=680, ay=170, aw=464, ah=540;
+    ctx.save(); rr(ctx,ax,ay,aw,ah,26); ctx.clip();
+    ctx.fillStyle = t.art; ctx.fillRect(ax,ay,aw,ah);
+    ctx.fillStyle = t.sun; ctx.beginPath(); ctx.arc(ax+140,ay+150,70,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle = t.art2; ctx.fillRect(ax,ay+ah-190,aw,190);
+    ctx.globalAlpha = 0.35; ctx.fillStyle = t.sun; ctx.fillRect(ax,ay+ah-190,aw,10); ctx.globalAlpha = 1;
+    ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.font = '900 150px '+F; ctx.textBaseline='alphabetic';
+    var ini = (name.trim()[0]||'O').toUpperCase(); ctx.fillText(ini, ax+aw-ctx.measureText(ini).width-36, ay+ah-40);
+    ctx.restore();
+    ctx.font = '600 20px '+F; ctx.textBaseline='middle'; var cx = 56, cy = H-70;
+    t.chips.forEach(function(c){var w=ctx.measureText(c).width+40; ctx.fillStyle = dark ? '#2a2a28' : 'rgba(0,0,0,0.07)'; rr(ctx,cx,cy-22,w,44,22); ctx.fill(); ctx.fillStyle=t.ink; ctx.fillText(c,cx+20,cy+1); cx += w+12;});
+    ctx.restore();
+  }
+  /* Middle panel: wireframe */
+  function drawWire(ctx){
+    ctx.clearRect(0,0,W,H);
+    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
+    ctx.fillStyle = 'rgba(24,24,23,0.92)'; ctx.fillRect(0,0,W,H); ctx.restore();
+    ctx.strokeStyle = 'rgba(244,243,239,0.55)'; ctx.lineWidth = 4;
+    rr(ctx,2,2,W-4,H-4,34); ctx.stroke();
+    [[56,96,200,40,10],[760,96,384,40,10],[56,190,560,250,16],[56,470,520,40,10],[56,560,260,64,32],[680,170,464,540,26],[56,710,400,44,22]].forEach(function(b){rr(ctx,b[0],b[1],b[2],b[3],b[4]);ctx.stroke();});
+    ctx.setLineDash([12,12]); ctx.beginPath(); ctx.moveTo(680,170); ctx.lineTo(1144,710); ctx.moveTo(1144,170); ctx.lineTo(680,710); ctx.stroke(); ctx.setLineDash([]);
+  }
+  /* Back panel: the code */
+  function drawCode(ctx){
+    var name = state.name.trim() || fallbackName(), t = tpl();
+    ctx.clearRect(0,0,W,H);
+    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
+    ctx.fillStyle = '#121211'; ctx.fillRect(0,0,W,H); ctx.restore();
+    ctx.font = '500 30px ui-monospace, Menlo, Consolas, monospace'; ctx.textBaseline = 'alphabetic';
+    var lines = [
+      ['#8c8a84','<!-- ' + slug(state.name) + ' -->'],
+      ['#F4F3EF','<html lang="' + state.lang + '">'],
+      ['#BDBBB4','  <a href="/">' + name + '</a>'],
+      ['#F4F3EF','<main>'],
+      ['#F4F3EF','  <h1>' + name + '</h1>'],
+      ['#BDBBB4','  <p>' + t.sub.slice(0,30) + '…</p>'],
+      ['#F4F3EF','  <a class="cta" href="wa.me/…">'],
+      ['#BDBBB4','    ' + t.cta],
+      ['#F4F3EF','  </a>'],
+      ['#F4F3EF','</main>']
+    ];
+    lines.forEach(function(l,i){ctx.fillStyle=l[0]; ctx.fillText(l[1].length>40?l[1].slice(0,39)+'…':l[1],60,90+i*60);});
+  }
+
+  function makeCanvas(){var c=document.createElement('canvas');c.width=W;c.height=H;return c;}
+  var cSite = makeCanvas(), cWire = makeCanvas(), cCode = makeCanvas();
+  function redraw(){drawSite(cSite.getContext('2d'));drawWire(cWire.getContext('2d'));drawCode(cCode.getContext('2d'));if(texSite){texSite.needsUpdate=true;texCode.needsUpdate=true;}syncCopy();}
+
+  /* ---------- Three.js scene ---------- */
+  var host = document.getElementById('scene');
+  var texSite=null, texCode=null, renderer, scene, camera, group, panels=[], running=false, visible=true;
+  var target={x:0,y:0}, cur={x:0,y:0}, scrollP=0, curP=0, clock0=performance.now();
+
+  function hasGL(){try{var c=document.createElement('canvas');return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));}catch(e){return false;}}
+
+  function initGL(){
+    renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+    camera.position.set(0, 0, 11);
+    group = new THREE.Group(); scene.add(group);
+    function tex(c){var t=new THREE.CanvasTexture(c); t.anisotropy = renderer.capabilities.getMaxAnisotropy(); if (THREE.sRGBEncoding) t.encoding = THREE.sRGBEncoding; return t;}
+    texSite = tex(cSite); texCode = tex(cCode); var texWire = tex(cWire);
+    if (THREE.sRGBEncoding) renderer.outputEncoding = THREE.sRGBEncoding;
+    var geo = new THREE.PlaneGeometry(4.5, 3);
+    [{t:texCode, x:0.9, y:0.75, z:-1.6},{t:texWire, x:0.45, y:0.38, z:-0.8},{t:texSite, x:0, y:0, z:0}].forEach(function(d){
+      var m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({map:d.t, transparent:true, side:THREE.DoubleSide, depthWrite:false}));
+      m.userData = d; m.position.set(d.x,d.y,d.z); group.add(m); panels.push(m);
+    });
+    var sc = document.createElement('canvas'); sc.width=256; sc.height=256; var sx=sc.getContext('2d');
+    var g = sx.createRadialGradient(128,128,10,128,128,128); g.addColorStop(0,'rgba(0,0,0,0.55)'); g.addColorStop(1,'rgba(0,0,0,0)'); sx.fillStyle=g; sx.fillRect(0,0,256,256);
+    var shadow = new THREE.Mesh(new THREE.PlaneGeometry(7,2.2), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc), transparent:true, depthWrite:false}));
+    shadow.position.set(0.3,-2.35,-0.6); shadow.rotation.x = -Math.PI/2.3; scene.add(shadow);
+    group.rotation.set(0.12,-0.42,0.04);
+    host.appendChild(renderer.domElement);
+    resize();
+    new ResizeObserver(resize).observe(host);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(e){visible = e[0].isIntersecting; if (visible) start();},{threshold:0}).observe(host);
+    start();
+  }
+  function resize(){
+    if(!renderer) return; var r = host.getBoundingClientRect(); var w=Math.max(1,r.width), h=Math.max(1,r.height);
+    renderer.setSize(w,h,false); camera.aspect = w/h;
+    camera.position.z = w/h < 1.05 ? 13.5 : 11;
+    camera.updateProjectionMatrix(); if (reduce) render();
+  }
+  function start(){ if (running || reduce) { if (reduce) render(); return; } running = true; requestAnimationFrame(loop); }
+  function loop(now){
+    if (!visible){running=false;return;}
+    var t = (now - clock0)/1000;
+    cur.x += (target.x - cur.x)*0.06; cur.y += (target.y - cur.y)*0.06;
+    curP += (scrollP - curP)*0.1;
+    group.rotation.y = -0.42 + cur.x*0.35 + curP*0.55;
+    group.rotation.x = 0.12 + cur.y*0.18 + curP*0.2;
+    group.position.y = Math.sin(t*0.7)*0.08 + curP*0.6;
+    var spread = 1 + curP*1.8 + Math.sin(t*0.9)*0.04;
+    panels.forEach(function(m,i){var d=m.userData; if (i===2 && kicking) { m.position.x=d.x*spread; m.position.y=d.y*spread; return; } m.position.set(d.x*spread, d.y*spread, d.z*spread);});
+    render(); requestAnimationFrame(loop);
+  }
+  function render(){ if (renderer) renderer.render(scene,camera); }
+
+  /* ---------- Live input ---------- */
+  var input = document.getElementById('bizName');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  document.getElementById('live').addEventListener('submit', function(e){e.preventDefault();});
+  input.addEventListener('input', function(){ state.name = input.value; redraw(); kick(); });
+  chips.forEach(function(c){c.addEventListener('click', function(){
+    state.type = c.dataset.type; chips.forEach(function(o){o.setAttribute('aria-pressed', o===c ? 'true':'false');}); redraw(); kick();
+  });});
+  var kicking = false;
+  function kick(){ if (reduce || !panels.length) { render(); return; } var f = panels[2]; var s=performance.now(); kicking = true;
+    (function step(n){var p=Math.min(1,(n-s)/520); var e = Math.sin(p*Math.PI)*(1-p)*0.9; f.position.z = e; f.rotation.y = e*0.15; if(p<1) requestAnimationFrame(step); else {f.rotation.y=0; kicking=false;}})(s);
+  }
+
+  function syncCopy(){
+    var name = state.name.trim() || fallbackName(), t = tpl();
+    document.querySelectorAll('.js-url').forEach(function(el){el.textContent = slug(state.name);});
+    document.querySelectorAll('.js-title').forEach(function(el){el.textContent = name + ' · ' + t.tail;});
+    document.querySelectorAll('.js-q').forEach(function(el){el.textContent = (t.qCafe && /caf|coffee/i.test(name)) ? t.qCafe : t.q;});
+    setWA();
+  }
+
+  /* ---------- WhatsApp links ---------- */
+  function setWA(){
+    var name = state.name.trim(), dict = state.lang==='en' ? EN : ES;
+    document.querySelectorAll('.js-wa').forEach(function(a){
+      var plan = a.dataset.plan ? dict[a.dataset.plan] : '';
+      var msg = state.lang==='en'
+        ? 'Hi OKfly, I’d like a quote for a website' + (plan ? ' (' + plan + ' plan)' : '') + (name ? ' for my business ' + name : '') + '.'
+        : 'Hola OKfly, quiero cotizar una página web' + (plan ? ' (plan ' + plan + ')' : '') + (name ? ' para mi negocio ' + name : '') + '.';
+      a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+    });
+  }
+
+  /* ---------- Language switch ---------- */
+  var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+  function setLang(lang, save){
+    state.lang = lang;
+    var dict = lang==='en' ? EN : ES;
+    i18nEls.forEach(function(el){ var v = dict[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
+    document.documentElement.lang = lang;
+    document.title = UI[lang].title;
+    input.placeholder = UI[lang].placeholder;
+    if (input.value === 'Café Bahía' || input.value === 'Bahia Coffee') { input.value = lang==='en' ? 'Bahia Coffee' : 'Café Bahía'; state.name = input.value; }
+    document.getElementById('chips').setAttribute('aria-label', UI[lang].chipsLabel);
+    host.setAttribute('aria-label', UI[lang].scene);
+    langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true' : 'false'); });
+    redraw(); kick();
+    if (save) { try { localStorage.setItem('okfly-lang', lang); } catch(e){} }
+  }
+  langBtns.forEach(function(b){ b.addEventListener('click', function(){ if (b.dataset.lang !== state.lang) setLang(b.dataset.lang, true); }); });
+
+  /* ---------- Pointer for hero ---------- */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    window.addEventListener('pointermove', function(e){ target.x = (e.clientX/window.innerWidth - 0.5)*2; target.y = (e.clientY/window.innerHeight - 0.5)*2; }, {passive:true});
+  }
+
+  /* ---------- Process: scroll-linked 3D layer explosion ---------- */
+  var stack = document.getElementById('stack');
+  var layers = stack ? Array.prototype.slice.call(stack.querySelectorAll('.layer')) : [];
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var procSec = document.getElementById('proceso');
+  var heroEl = document.querySelector('.hero');
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      ticking = false;
+      var vh = window.innerHeight;
+      var hr = heroEl.getBoundingClientRect();
+      scrollP = Math.max(0, Math.min(1, -hr.top / Math.max(1, hr.height)));
+      var r = procSec.getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (vh*0.85 - r.top) / (r.height*0.9)));
+      var gap = reduce ? 70 : 14 + p*120;
+      layers.forEach(function(l,i){ l.style.transform = 'translateZ(' + (i*gap) + 'px)'; });
+      var idx = p < 0.34 ? 0 : (p < 0.67 ? 1 : 2);
+      steps.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+
+  /* ---------- Example cards: pointer tilt with eased follow ---------- */
+  if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.querySelectorAll('[data-tilt]').forEach(function(card){
+      var tx=0, ty=0, cx=0, cy=0, raf=null, hovering=false;
+      function tick(){ cx += (tx-cx)*0.12; cy += (ty-cy)*0.12;
+        card.style.transform = 'rotateX(' + cy.toFixed(2) + 'deg) rotateY(' + cx.toFixed(2) + 'deg) translateZ(' + (hovering?12:0) + 'px)';
+        card.style.boxShadow = hovering ? '0 30px 60px rgba(0,0,0,0.45)' : 'none';
+        if (Math.abs(tx-cx)>0.01 || Math.abs(ty-cy)>0.01 || hovering) raf = requestAnimationFrame(tick); else raf = null; }
+      card.addEventListener('pointermove', function(e){ var r=card.getBoundingClientRect(); tx = ((e.clientX-r.left)/r.width - 0.5)*14; ty = -((e.clientY-r.top)/r.height - 0.5)*14; hovering = true; if(!raf) raf=requestAnimationFrame(tick); });
+      card.addEventListener('pointerleave', function(){ tx=0; ty=0; hovering=false; if(!raf) raf=requestAnimationFrame(tick); });
+    });
+  }
+
+  /* ---------- Staggered reveal (only for content below the first screen) ---------- */
+  if ('IntersectionObserver' in window){
+    var vh0 = window.innerHeight;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]')).filter(function(el){ return el.getBoundingClientRect().top > vh0*0.95; });
+    els.forEach(function(el){ el.classList.add('pre'); });
+    requestAnimationFrame(function(){ els.forEach(function(el){ el.classList.add('rv'); }); });
+    var io = new IntersectionObserver(function(entries){
+      var batch = entries.filter(function(e){return e.isIntersecting;});
+      batch.forEach(function(e,i){ setTimeout(function(){ e.target.classList.remove('pre'); }, i*80); io.unobserve(e.target); });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- Boot ---------- */
+  var startLang = 'es';
+  try { var saved = localStorage.getItem('okfly-lang'); if (saved === 'en' || saved === 'es') startLang = saved; else if (/^en/i.test(navigator.language||'')) startLang = 'en'; } catch(e){ if (/^en/i.test(navigator.language||'')) startLang = 'en'; }
+  if (location.hash === '#en') startLang = 'en'; else if (location.hash === '#es') startLang = 'es';
+  var glOK = typeof THREE !== 'undefined' && hasGL();
+  if (glOK) { try { initGL(); } catch(e){ glOK = false; if (renderer && renderer.domElement.parentNode) renderer.domElement.remove(); renderer = null; } }
+  if (!glOK) { var fb=document.createElement('div'); fb.className='fallback'; fb.appendChild(cSite); host.appendChild(fb); }
+  if (startLang === 'en') setLang('en', false); else redraw();
+  onScroll();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ redraw(); render(); });
+})();
+</script>
+
+</body>
+</html>
