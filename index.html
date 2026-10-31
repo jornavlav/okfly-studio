@@ -3,261 +3,416 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OKfly Studio · Páginas web que venden</title>
-<meta property="og:title" content="OKfly Studio · Páginas web que venden">
-<meta property="og:description" content="Diseñamos, escribimos y lanzamos la web de tu negocio en días. Riviera Maya, México.">
-<meta name="description" content="OKfly Studio diseña, escribe y lanza páginas web que venden para negocios de México y EE. UU.">
+<title>OKfly Studio Membresía</title>
+<meta property="og:title" content="OKfly Studio · Tu página web desde $499 al mes">
+<meta property="og:description" content="La diseñamos, publicamos y mantenemos. Ve tu página antes de pagar. Todo por WhatsApp.">
+<meta name="description" content="Tu página web profesional por suscripción desde $499 MXN al mes. La diseñamos, publicamos y mantenemos. Todo por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
 <style>
-/* Layout: one 12-col grid, tight equal margins; the hero is a live 3D stack of the visitor's own website. */
+/* Layout: one 12-col grid with tight equal margins. The page is a WhatsApp chat that turns into the finished website. */
 :root{
-  --bg:#0E0E0E;
-  --surface:#181817;
-  --surface-2:#232321;
+  --bg:#050505;
+  --surface:#111110;
+  --surface-2:#1B1B19;
+  --surface-3:#262623;
   --ink:#F4F3EF;
-  --ink-2:#BDBBB4;
+  --ink-2:#B9B7B0;
   --paper:#F4F3EF;
-  --paper-ink:#0E0E0E;
-  --paper-ink-2:#4A4945;
-  --font:'Outfit', 'Helvetica Neue', Arial, sans-serif;
-  --mono:ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-  --ease-out:cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out:cubic-bezier(0.77, 0, 0.175, 1);
+  --paper-ink:#050505;
+  --paper-ink-2:#44433F;
+  --wa-bg:#0B141A;
+  --wa-head:#1F2C34;
+  --wa-in:#1F2C34;
+  --wa-out:#005C4B;
+  --wa-text:#E9EDEF;
+  --wa-meta:#8696A0;
+  --wa-green:#25D366;
+  --wa-tick:#53BDEB;
+  --font:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --ease-in-out:cubic-bezier(0.77,0,0.175,1);
   --max:1360px;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:clip}
-main,footer{overflow-x:clip}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip;scrollbar-color:#34332f var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
 ::selection{background:var(--ink);color:var(--bg)}
-html{scrollbar-color:#3a3a38 var(--bg)}
-::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#3a3a38;border-radius:10px}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#34332f;border-radius:10px}
 a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
-h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:0.95;text-wrap:balance}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:0.96;text-wrap:balance}
 p{margin:0}
-.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.h2{font-size:clamp(40px,5.4vw,80px)}
+.lede{font-size:clamp(18px,1.45vw,21px);color:var(--ink-2);max-width:34em}
+section{padding-block:clamp(96px,11vw,170px)}
 
-/* Buttons: fully round, flat, one fill */
-.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out), background-color 200ms ease}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out),background-color 200ms ease}
 .btn:active{transform:scale(0.97)}
-.btn svg{transition:transform 200ms var(--ease-out)}
+.btn svg{flex-shrink:0;transition:transform 200ms var(--ease-out)}
 .btn--ghost{background:var(--surface-2);color:var(--ink)}
 .btn--dark{background:var(--paper-ink);color:var(--paper)}
 @media (hover:hover) and (pointer:fine){
   .btn:hover svg{transform:translateX(4px)}
-  .btn--ghost:hover{background:#2e2e2b}
-  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#ffffff}
+  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#fff}
+  .btn--ghost:hover{background:var(--surface-3)}
 }
 
-/* Nav: plain bar */
+/* Nav */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
 .brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
-.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:16px;font-weight:500}
+.nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
 .nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
 @media (hover:hover){.nav ul a:hover{color:var(--ink)}}
-.nav .btn{height:46px;padding:0 22px;font-size:15px}
-@media (max-width:860px){.nav ul{display:none}}
+.nav .btn{min-height:46px;padding:0 22px;font-size:15px}
+@media (max-width:900px){.nav ul{display:none}}
+.nav .btn{white-space:nowrap}
 .nav-end{display:flex;align-items:center;gap:10px}
 .lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
-.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);letter-spacing:0.02em;cursor:pointer;transition:background-color 180ms ease, color 180ms ease, transform 140ms var(--ease-out)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
 .lang-btn:active{transform:scale(0.95)}
 .lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 @media (hover:hover) and (pointer:fine){.lang-btn[aria-pressed="false"]:hover{color:var(--ink)}}
-@media (max-width:420px){.nav-cta{display:none}}
-
+@media (max-width:540px){.nav-cta{display:none}}
+@media (max-width:420px){.nav .btn{min-height:44px;padding:0 16px;font-size:14px}.brand span{letter-spacing:0.22em}}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding-block:40px 64px}
-.hero-copy{grid-column:1 / span 6;display:flex;flex-direction:column;gap:32px;position:relative;z-index:2;min-width:0}
-.hero h1{font-size:clamp(52px, 6.5vw, 104px);font-weight:900}
-.hero-sub{font-size:clamp(19px, 1.5vw, 22px);color:var(--ink-2);max-width:31em;margin-top:-4px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.hero-stage{grid-column:7 / span 6;position:relative;height:min(640px, 58vw);min-height:420px}
-#scene{position:absolute;inset:-40px -80px -40px -40px}
-#scene canvas{display:block;width:100%;height:100%}
-#scene .fallback{position:absolute;inset:40px 80px 40px 40px;display:flex;align-items:center;justify-content:center}
-#scene .fallback canvas{width:100%;height:auto;border-radius:14px;transform:rotate(-3deg)}
+.hero{padding-block:clamp(40px,6vw,80px) 0;text-align:center}
+.hero-copy{display:flex;flex-direction:column;align-items:center;gap:28px}
+.hero h1{font-size:clamp(42px,6vw,92px);font-weight:900;max-width:15em}
+.hero-sub{font-size:clamp(18px,1.55vw,22px);color:var(--ink-2);max-width:32em}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hero-price{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:16px;color:var(--ink-2)}
+.hero-price b{color:var(--ink);font-weight:700}
+.hero-price span{display:inline-flex;align-items:center;gap:8px}
+.hero-price i{width:7px;height:7px;border-radius:50%;background:var(--wa-green);display:inline-block}
+.rise{animation:rise 900ms var(--ease-out) both}
+.d1{animation-delay:80ms}.d2{animation-delay:160ms}.d3{animation-delay:240ms}.d4{animation-delay:320ms}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
 
-/* Live thing */
-.live{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:22px;background:var(--surface);max-width:560px}
-.live label{font-size:16px;font-weight:600}
-.live input{width:100%;height:56px;padding:0 20px;border-radius:14px;border:0;background:var(--surface-2);color:var(--ink);font:500 20px var(--font);caret-color:var(--ink)}
-.live input::placeholder{color:#8c8a84}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{height:40px;padding:0 16px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink-2);font:500 15px var(--font);cursor:pointer;transition:transform 140ms var(--ease-out), background-color 180ms ease, color 180ms ease}
-.chip:active{transform:scale(0.96)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-@media (hover:hover) and (pointer:fine){.chip[aria-pressed="false"]:hover{color:var(--ink);background:#2e2e2b}}
+.hero-stage{position:relative;margin-top:clamp(48px,6vw,88px);height:clamp(330px,52vw,700px);perspective:1800px;perspective-origin:50% 20%}
+.hero-stage-in{position:absolute;inset:0;transform-style:preserve-3d;animation:stageIn 1400ms 300ms var(--ease-out) both}
+@keyframes stageIn{from{opacity:0;transform:translateY(90px) rotateX(28deg) scale(0.94)}}
+.hero-rig{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.hero-light{position:absolute;left:50%;top:58%;width:90%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(244,243,239,0.10),rgba(244,243,239,0));pointer-events:none}
+.hero-browser{position:absolute;left:50%;top:0;width:min(1000px,86%);transform:translateX(-50%) translateZ(0)}
+.hero-phone{position:absolute;left:max(2%,calc(50% - 600px));top:20%;width:clamp(120px,19%,250px);transform:translateZ(140px) rotateY(10deg)}
+.hero-mphone{position:absolute;right:max(2%,calc(50% - 600px));top:30%;width:clamp(100px,15%,200px);transform:translateZ(110px) rotateY(-12deg)}
+.float-a{animation:floatA 7s ease-in-out infinite}
+.float-b{animation:floatB 8s ease-in-out infinite}
+@keyframes floatA{50%{translate:0 -12px}}
+@keyframes floatB{50%{translate:0 10px}}
 
-@media (max-width:980px){
-  .hero-copy,.hero-stage{grid-column:1 / -1}
-  .hero-stage{height:420px;min-height:0;order:2}
-  #scene{inset:-20px -24px}
-}
-@media (max-width:520px){.hero-stage{height:330px}}
+/* Browser frame (drawn interface) */
+.bw{container-type:inline-size;border-radius:16px;overflow:hidden;background:#1A1A18;box-shadow:0 50px 100px -30px rgba(0,0,0,0.8),0 30px 60px -40px rgba(0,0,0,0.7)}
+.bw-bar{display:flex;align-items:center;gap:0.8cqw;height:4cqw;min-height:22px;padding:0 1.6cqw;background:#232321}
+.bw-bar i{width:1.05cqw;height:1.05cqw;min-width:7px;min-height:7px;border-radius:50%;background:#4a4945}
+.bw-bar i:nth-child(1){background:#FF5F57}.bw-bar i:nth-child(2){background:#FEBC2E}.bw-bar i:nth-child(3){background:#28C840}
+.bw-url{display:flex;align-items:center;gap:0.6cqw;margin-left:2cqw;height:62%;padding:0 1.6cqw;border-radius:99px;background:#2F2F2C;color:#C9C7C0;font-size:max(9px,1.35cqw);font-weight:500;white-space:nowrap}
+.bw-url svg{width:1.3cqw;min-width:8px;height:auto}
+.bw-scr{position:relative;aspect-ratio:16/9.4;overflow:hidden}
 
-/* Proof band */
-.band{background:var(--surface)}
-.band-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;padding-block:28px}
-.band strong{font-size:clamp(28px, 3vw, 40px);font-weight:800;letter-spacing:-0.03em}
-.band p{color:var(--ink-2);font-size:17px}
-.band-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+/* Phone frame (its parent is the size container, so radius and padding scale with the phone) */
+.float-a,.float-b,.story-phone,.demo-mob{container-type:inline-size}
+.phone{container-type:inline-size;position:relative;aspect-ratio:9/19;border-radius:15cqw;padding:3.2cqw;background:#1C1C1A;box-shadow:inset 0 0 0 1.2cqw #2B2B28,0 40px 80px -20px rgba(0,0,0,0.85)}
+.phone-scr{position:relative;width:100%;height:100%;border-radius:12cqw;overflow:hidden;background:var(--wa-bg)}
+.phone-notch{position:absolute;left:50%;top:2.6cqw;width:28cqw;height:7cqw;border-radius:99px;background:#000;transform:translateX(-50%);z-index:5}
 
-/* Marquee */
-.marquee{overflow:hidden;padding-block:48px 8px;white-space:nowrap;-webkit-mask-image:none}
-.marquee-track{display:inline-flex;gap:56px;animation:marquee 38s linear infinite;font-size:clamp(40px, 6vw, 88px);font-weight:300;letter-spacing:-0.03em;color:#4b4a46}
-.marquee-track span b{color:var(--ink);font-weight:800}
+/* WhatsApp UI (drawn) */
+.wa{position:absolute;inset:0;display:flex;flex-direction:column;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--wa-text)}
+.wa-head{display:flex;align-items:center;gap:3cqw;padding:13cqw 4cqw 3.4cqw;background:var(--wa-head);flex-shrink:0}
+.wa-av{width:10cqw;height:10cqw;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font);line-height:0.8;flex-shrink:0}
+.wa-av b{font-size:3.6cqw;font-weight:900;letter-spacing:-0.06em}
+.wa-av span{font-size:2.8cqw;font-weight:500}
+.wa-who{display:flex;flex-direction:column;min-width:0}
+.wa-who b{font-size:4.4cqw;font-weight:600;display:flex;align-items:center;gap:1.4cqw}
+.wa-who b svg{width:3.6cqw;height:auto}
+.wa-who span{font-size:3.2cqw;color:var(--wa-meta)}
+.wa-body{position:relative;flex:1;overflow:hidden;background:var(--wa-bg)}
+.wa-feed{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:2cqw;padding:4cqw 3.6cqw 6cqw;transition:transform 520ms var(--ease-out)}
+.msg{max-width:84%;padding:2.2cqw 3cqw 1.6cqw;border-radius:3.2cqw;font-size:4.05cqw;line-height:1.36;position:relative;transform-origin:0 100%;transition:opacity 260ms var(--ease-out),transform 360ms var(--ease-out)}
+.msg.in{align-self:flex-start;background:var(--wa-in);border-top-left-radius:0.8cqw}
+.msg.out{align-self:flex-end;background:var(--wa-out);border-top-right-radius:0.8cqw;transform-origin:100% 100%}
+.msg time{display:flex;justify-content:flex-end;align-items:center;gap:1cqw;margin-top:0.6cqw;font-size:2.9cqw;color:rgba(233,237,239,0.62);font-style:normal}
+.msg time svg{width:4cqw;height:auto}
+.typing{align-self:flex-start;display:flex;gap:1.4cqw;padding:3cqw 3.6cqw;border-radius:3.2cqw;border-top-left-radius:0.8cqw;background:var(--wa-in)}
+.typing i{width:1.8cqw;height:1.8cqw;border-radius:50%;background:var(--wa-meta);animation:dot 1.1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-1cqw)}}
+.wa-day{align-self:center;padding:1.4cqw 3.4cqw;border-radius:2cqw;background:#182229;color:var(--wa-meta);font-size:3.1cqw}
+.att{display:flex;flex-direction:column;gap:1.6cqw}
+.att-file{display:flex;align-items:center;gap:2cqw;padding:2cqw;border-radius:2cqw;background:rgba(0,0,0,0.18);font-size:3.4cqw}
+.att-file span:first-child{width:8cqw;height:8cqw;border-radius:1.6cqw;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:900;font-size:3cqw}
+.att-pics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1cqw}
+.att-pics span{aspect-ratio:1;border-radius:1.4cqw;position:relative;overflow:hidden}
+.att-link{font-size:3.5cqw;color:#8ED0F7;text-decoration:underline;text-underline-offset:0.6cqw}
+.pv{margin:-0.6cqw -1.4cqw 1.6cqw;border-radius:2.4cqw;overflow:hidden;background:rgba(0,0,0,0.25)}
+.pv-shot{container-type:inline-size;position:relative;aspect-ratio:16/10;overflow:hidden}
+.pv-meta{display:flex;flex-direction:column;gap:0.4cqw;padding:2cqw 2.6cqw}
+.pv-meta b{font-size:3.7cqw}
+.pv-meta span{font-size:3cqw;color:var(--wa-meta)}
+.wa-input{display:flex;align-items:center;gap:2cqw;padding:2.4cqw 3cqw 6cqw;background:var(--wa-bg);flex-shrink:0}
+.wa-input span{flex:1;height:10cqw;border-radius:99px;background:var(--wa-head);color:var(--wa-meta);font-size:3.6cqw;display:flex;align-items:center;padding:0 4cqw}
+.wa-input i{width:10cqw;height:10cqw;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center}
+.wa-input i svg{width:4.6cqw;height:auto}
+
+/* Generated website (drawn in code, scales with its frame) */
+.site{position:absolute;inset:0;background:var(--sbg);color:var(--sink);font-family:var(--font);display:flex;flex-direction:column;overflow:hidden}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 4cqw}
+.site-nav b{font-size:2.3cqw;font-weight:800;letter-spacing:-0.03em}
+.site-nav span{display:flex;gap:2.6cqw;font-size:1.45cqw;font-weight:500;opacity:0.75}
+.site-nav svg{display:none}
+.site-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:3.4cqw;align-items:center;padding:1.5cqw 4cqw 2.6cqw}
+.site-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.8cqw;min-width:0}
+.site-copy h5{margin:0;font-size:5.5cqw;font-weight:900;letter-spacing:-0.045em;line-height:0.93}
+.site-copy p{font-size:1.7cqw;line-height:1.4;opacity:0.8;max-width:26em}
+.site-cta{display:inline-flex;align-items:center;gap:1cqw;padding:1.3cqw 2.4cqw;border-radius:99px;background:var(--stint);color:var(--sbtn);font-size:1.55cqw;font-weight:700}
+.site-chips{display:flex;gap:1cqw;flex-wrap:wrap}
+.site-chips span{padding:0.8cqw 1.6cqw;border-radius:99px;background:var(--schip);font-size:1.25cqw;font-weight:600}
+.site-art{position:relative;height:28cqw;border-radius:1.8cqw;overflow:hidden;background:var(--a1)}
+.site-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6cqw;padding:0 4cqw 3cqw}
+.site-items span{display:flex;justify-content:space-between;gap:1cqw;padding:1.6cqw 1.8cqw;border-radius:1.2cqw;background:var(--schip);font-size:1.4cqw;font-weight:600}
+.site-items em{font-style:normal;opacity:0.7;font-weight:500}
+.site.m .site-nav{padding:5cqw 6cqw}
+.site.m .site-nav b{font-size:6.4cqw}
+.site.m .site-nav span{display:none}
+.site.m .site-nav svg{display:block;width:6.4cqw;height:auto}
+.site.m .site-hero{grid-template-columns:1fr;gap:5cqw;padding:2cqw 6cqw 5cqw}
+.site.m .site-copy{gap:4cqw}
+.site.m .site-copy h5{font-size:12.5cqw}
+.site.m .site-copy p{font-size:4.4cqw}
+.site.m .site-cta{font-size:4.2cqw;padding:3.4cqw 6cqw}
+.site.m .site-chips{display:none}
+.site.m .site-art{height:52cqw;border-radius:4cqw;order:-1}
+.site.m .site-items{grid-template-columns:1fr;gap:3cqw;padding:0 6cqw 6cqw}
+.site.m .site-items span{font-size:4cqw;padding:4cqw;border-radius:3cqw}
+.art{position:absolute;display:block}
+
+/* Tech marquee */
+.tech{padding-block:72px 40px}
+.tech p{text-align:center;color:var(--ink-2);font-size:17px;margin-bottom:28px}
+.marquee{overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;align-items:center;gap:64px;padding-right:64px;animation:marquee 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.tech-item{display:inline-flex;align-items:center;gap:14px;font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-0.03em;color:#8C8A84;transition:color 200ms ease}
+.tech-item svg{width:clamp(26px,2.4vw,34px);height:auto}
+@media (hover:hover){.tech-item:hover{color:var(--ink)}}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
-/* Sections */
-section{padding-block:clamp(96px, 12vw, 180px)}
-.h2{font-size:clamp(42px, 5.6vw, 84px)}
-.lede{font-size:clamp(19px, 1.5vw, 22px);color:var(--ink-2);max-width:34em}
-
-/* Why: statement + search fragment */
-.why{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
-.why-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:28px;min-width:0}
-.why-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:19px}
-.why-list li{display:flex;gap:14px;align-items:flex-start}
-.why-list svg{flex-shrink:0;margin-top:5px}
-.serp{grid-column:7 / span 6;background:#FFFFFF;color:#1d1d1f;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:22px;transform:rotate(1.5deg);box-shadow:0 40px 80px rgba(0,0,0,0.45);font-family:Arial, Helvetica, sans-serif;min-width:0}
-.serp-q{display:flex;align-items:center;gap:12px;height:52px;padding:0 20px;border-radius:999px;background:#F1F3F4;font-size:17px;color:#202124}
-.serp-r{display:flex;flex-direction:column;gap:4px}
-.serp-r small{font-size:13px;color:#4d5156}
-.serp-r b{font-size:20px;font-weight:400;color:#1a0dab}
-.serp-r p{font-size:15px;color:#4d5156;line-height:1.45}
-.serp-r.you{background:#F6F8FF;margin:-12px;padding:12px;border-radius:12px}
-.serp-r.you b{font-weight:700}
-.serp-tag{align-self:flex-start;margin-top:6px;padding:6px 12px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:13px;font-family:var(--font);font-weight:600}
-.serp-r.dim{opacity:0.55}
-@media (max-width:980px){.why-copy,.serp{grid-column:1 / -1}.serp{transform:none;margin-top:24px}}
-
-/* Process: CSS 3D exploding layers */
-.process{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
-.process-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:36px;min-width:0}
-.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.step{padding:22px 24px;border-radius:20px;background:transparent;transition:background-color 300ms ease, color 300ms ease;color:var(--ink-2)}
-.step h3{font-size:30px;letter-spacing:-0.03em;color:inherit;margin-bottom:8px;line-height:1.05}
-.step p{font-size:17px}
-.step.on{background:var(--surface);color:var(--ink)}
-.stack-stage{grid-column:6 / span 7;height:620px;perspective:1600px;display:flex;align-items:center;justify-content:center;min-width:0}
-.stack{position:relative;width:440px;height:300px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-34deg)}
-.layer{position:absolute;inset:0;border-radius:18px;transform-style:preserve-3d;will-change:transform;overflow:hidden}
-.layer-wire{background:#161615;box-shadow:inset 0 0 0 2px #4a4945}
-.layer-copy{background:#262624}
-.layer-live{background:#F6EFE6;color:#1E1410}
-.lw{position:absolute;border-radius:6px;box-shadow:inset 0 0 0 2px #5a5955}
-.lc{position:absolute;color:var(--ink);font-weight:700;letter-spacing:-0.02em;line-height:1}
-.layer-tag{position:absolute;right:14px;bottom:12px;font-size:13px;font-weight:600;color:#9a988f}
-@media (max-width:980px){
-  .process-copy,.stack-stage{grid-column:1 / -1}
-  .stack-stage{height:420px;order:-1}
-  .stack{width:300px;height:205px}
+/* Story: WhatsApp to website */
+.story{position:relative;padding-block:clamp(96px,11vw,170px) 0}
+.story-pin{position:relative}
+.story-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.story-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:36px;min-width:0;position:relative;z-index:4}
+.phases{display:flex;flex-direction:column;gap:8px}
+.phase{padding:18px 22px;border-radius:20px;color:var(--ink-2);transition:background-color 320ms ease,color 320ms ease}
+.phase h3{font-size:26px;letter-spacing:-0.025em;line-height:1.1;color:inherit;margin-bottom:6px}
+.phase p{font-size:16.5px}
+.phase.on{background:var(--surface);color:var(--ink)}
+.story-stage{grid-column:6 / span 7;position:relative;display:flex;justify-content:center;perspective:1700px;min-width:0}
+.story-rig{position:relative;transform-style:preserve-3d}
+.story-phone{width:min(330px,72vw);will-change:transform,opacity}
+.story-browser{position:relative;width:min(1100px,100%);margin:72px auto 0;will-change:transform,opacity}
+.story-done{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:16px;font-weight:600;color:var(--ink-2)}
+.story-done i{width:8px;height:8px;border-radius:50%;background:var(--wa-green)}
+/* live (scroll-driven) mode */
+.story.is-live .story-pin{height:560vh}
+.story.is-live .story-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
+.story.is-live .story-sticky > .wrap{width:100%}
+.story.is-live .story-phone{width:auto;height:min(76vh,680px);aspect-ratio:9/19}
+.story.is-live .story-browser{position:absolute;left:50%;top:50%;width:min(1120px,88vw,132vh);margin:0;z-index:6;opacity:0;pointer-events:none}
+.story.is-live .story-done{position:absolute;left:0;right:0;bottom:4vh;margin:0;opacity:0;z-index:7;transition:opacity 300ms ease}
+.story.is-live .msg.pending{opacity:0;transform:translateY(3cqw) scale(0.96)}
+.story .typing,.story .t-hide{display:none}
+.story.is-live .typing.on{display:flex}
+@media (max-width:900px){
+  .story-copy,.story-stage{grid-column:1 / -1}
+  .story.is-live .story-grid{grid-template-rows:auto 1fr;height:100svh;padding-block:20px 16px;align-items:stretch}
+  .story.is-live .story-copy{gap:12px}
+  .story.is-live .story-copy .h2{font-size:30px}
+  .story.is-live .phase{display:none;padding:0;background:transparent}
+  .story.is-live .phase.on{display:block}
+  .story.is-live .phase h3{font-size:20px}
+  .story.is-live .phase p{font-size:15px}
+  .story.is-live .story-stage{align-items:center}
+  .story.is-live .story-phone{height:min(60svh,560px)}
+  .story.is-live .story-browser{width:92vw}
 }
 
-/* Examples: 3D tilt cards */
-.examples-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px}
-.examples{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:24px;perspective:1400px}
-.ex{display:flex;flex-direction:column;gap:16px;min-width:0}
-.ex-card{border-radius:18px;overflow:hidden;transform-style:preserve-3d;will-change:transform;transition:box-shadow 300ms ease}
-.ex figcaption{display:flex;justify-content:space-between;gap:12px;font-size:16px}
-.ex figcaption span{color:var(--ink-2)}
-.ex figure{margin:0}
-.mock{aspect-ratio:4 / 5;max-width:100%;display:flex;flex-direction:column;font-family:var(--font)}
-.mock-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:rgba(0,0,0,0.08)}
-.mock-bar i{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,0.25)}
-.mock-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:13px;font-weight:600}
-.mock-nav em{font-style:normal;opacity:0.7;display:flex;gap:12px}
-.mock-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:20px 22px 24px}
-.mock-body h4{margin:0;font-size:clamp(28px, 3vw, 44px);font-weight:800;letter-spacing:-0.04em;line-height:0.95}
-.mock-body p{font-size:14px;opacity:0.8;max-width:22em}
-.mock-cta{align-self:flex-start;margin-top:6px;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700}
-.m-rest{background:#8E2F22;color:#F6EFE6}
-.m-rest .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#B5452F;position:relative;overflow:hidden}
-.m-rest .mock-cta{background:#F6EFE6;color:#8E2F22}
-.m-inmo{background:#E7EFEC;color:#0F1F1E}
-.m-inmo .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#1F5F5B;position:relative;overflow:hidden}
-.m-inmo .mock-cta{background:#0F1F1E;color:#E7EFEC}
-.m-clin{background:#F1F4F9;color:#111A2B}
-.m-clin .mock-art{height:46%;margin:0 20px;border-radius:12px;background:#2D4E86;position:relative;overflow:hidden}
-.m-clin .mock-cta{background:#2D4E86;color:#fff}
-@media (max-width:980px){.examples{grid-template-columns:1fr 1fr}.ex:first-child{grid-column:1 / -1}.ex:first-child .mock{aspect-ratio:16 / 11}}
-@media (max-width:560px){.examples{grid-template-columns:1fr}.ex .mock{aspect-ratio:4 / 4.4}}
+/* Demo switcher */
+.demo-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.demo-head h2{grid-column:1 / span 7}
+.demo-head .lede{grid-column:8 / span 5}
+.demo-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px}
+.demo-name{display:flex;flex-direction:column;gap:8px;min-width:min(320px,100%);flex:1 1 280px;max-width:380px}
+.demo-name label{font-size:15px;font-weight:600;color:var(--ink-2)}
+.demo-name input{height:54px;padding:0 20px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:500 18px var(--font);caret-color:var(--ink)}
+.demo-name input::placeholder{color:#8C8A84}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-end}
+.tab{min-height:46px;padding:0 18px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink-2);font:500 16px var(--font);cursor:pointer;transition:transform 140ms var(--ease-out),background-color 180ms ease,color 180ms ease}
+.tab:active{transform:scale(0.96)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.tab[aria-pressed="false"]:hover{color:var(--ink);background:var(--surface-3)}}
+.demo-stage{position:relative;margin-top:56px;perspective:1800px}
+.demo-rig{position:relative;max-width:1180px;margin:0 auto;transform-style:preserve-3d;will-change:transform;padding-right:12%}
+.demo-desk{position:relative}
+.demo-mob{position:absolute;right:0;bottom:-8%;width:20%;transform:translateZ(90px)}
+.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;margin-top:64px}
+.demo-foot p{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.demo-head h2,.demo-head .lede{grid-column:1 / -1}.demo-rig{padding-right:16%}.demo-mob{width:28%}}
 
-/* Plans: rows */
-.plans{display:flex;flex-direction:column;gap:12px;margin-top:56px}
-.plan{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,2fr) auto;gap:24px 40px;align-items:center;padding:32px 36px;border-radius:24px;background:var(--surface);transition:background-color 220ms ease}
-@media (hover:hover){.plan:hover{background:#1e1e1d}}
-.plan h3{font-size:clamp(32px, 3vw, 44px)}
-.plan .desc{color:var(--ink-2);font-size:17px}
-.plan .price{display:flex;flex-direction:column;gap:2px}
-.plan .price b{font-size:30px;font-weight:800;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
-.plan .price span{font-size:15px;color:var(--ink-2)}
-.plan.featured{background:var(--ink);color:var(--bg)}
-.plan.featured .desc,.plan.featured .price span{color:#45443f}
+/* Gallery strip */
+.gallery{padding-block:0 clamp(40px,6vw,80px);overflow:hidden}
+.gallery-track{display:inline-flex;gap:28px;padding:40px 0;animation:marquee 60s linear infinite;perspective:1400px}
+.gallery:hover .gallery-track{animation-play-state:paused}
+.g-card{width:clamp(260px,26vw,380px);flex-shrink:0;display:flex;flex-direction:column;gap:14px;transform:rotateY(-8deg);transition:transform 400ms var(--ease-out)}
+.g-card figcaption{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2)}
+.g-card figcaption b{color:var(--ink);font-weight:600}
+@media (hover:hover){.g-card:hover{transform:rotateY(0deg) translateY(-6px)}}
+.g-card{margin:0}
+
+/* Included: bento of real fragments */
+.inc-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;margin-bottom:56px}
+.inc-head h2{grid-column:1 / span 7}
+.inc-head .lede{grid-column:8 / span 5}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{position:relative;border-radius:28px;background:var(--surface);padding:30px;display:flex;flex-direction:column;gap:12px;overflow:hidden;min-width:0}
+.tile h3{font-size:28px;letter-spacing:-0.03em;line-height:1.05}
+.tile p{color:var(--ink-2);font-size:16.5px;max-width:30em}
+.t-design{grid-column:span 7;grid-row:span 2}
+.t-domain{grid-column:span 5}
+.t-secure{grid-column:span 5}
+.t-changes{grid-column:span 4;grid-row:span 2}
+.t-maint{grid-column:span 4;grid-row:span 2}
+.t-preview{grid-column:span 4;grid-row:span 2;background:var(--ink);color:var(--bg)}
+.t-preview p{color:var(--paper-ink-2)}
+.t-frag{margin-top:auto}
+.t-design .t-frag{position:relative;height:300px;perspective:1200px}
+.t-design .bw{position:absolute;width:74%;transform-origin:50% 100%}
+.t-design .bw:nth-child(1){left:0;top:30px;transform:rotateY(14deg) rotateX(4deg);opacity:0.7}
+.t-design .bw:nth-child(2){right:0;top:0;transform:rotateY(-10deg) rotateX(4deg)}
+.urlbar{display:flex;align-items:center;gap:12px;height:62px;padding:0 22px;border-radius:999px;background:var(--surface-2);font-size:clamp(17px,1.6vw,22px);font-weight:600;overflow:hidden}
+.urlbar svg{flex-shrink:0}
+.urlbar .dom{display:inline-block;transition:clip-path 600ms var(--ease-in-out);clip-path:inset(0 0 0 0)}
+.urlbar .dom.hide{clip-path:inset(0 100% 0 0)}
+.urlbar .caret{width:2px;height:24px;background:var(--ink);animation:blink 1s steps(1) infinite;margin-left:-8px}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--surface-2);font-size:15px;font-weight:600}
+.mini-chat{container-type:inline-size;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:22px;background:var(--wa-bg)}
+.mini-chat .msg{font-size:15px;max-width:90%;padding:10px 14px 6px;border-radius:14px}
+.mini-chat .msg time{font-size:11px}
+.mini-chat .msg time svg{width:16px}
+.checks{display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:var(--surface-2);font-size:16px;font-weight:500}
+.checks li span{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pv-big{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.pv-big .bw{transform:rotate(-3deg)}
+@media (max-width:1000px){
+  .inc-head h2,.inc-head .lede{grid-column:1 / -1}
+  .t-design,.t-domain,.t-secure,.t-changes,.t-maint,.t-preview{grid-column:1 / -1;grid-row:auto}
+}
+
+/* Pricing */
+.price-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch;perspective:1600px}
+.plan{position:relative;display:flex;flex-direction:column;gap:22px;padding:34px 30px;border-radius:30px;background:var(--surface);transform-style:preserve-3d;transition:background-color 220ms ease}
+.plan h3{font-size:34px}
+.plan .pdesc{color:var(--ink-2);font-size:16.5px;min-height:3em}
+.plan .amount{display:flex;align-items:baseline;gap:8px}
+.plan .amount b{font-size:clamp(46px,4.2vw,64px);font-weight:900;letter-spacing:-0.045em;line-height:1;font-variant-numeric:tabular-nums}
+.plan .amount span{font-size:17px;color:var(--ink-2)}
+.plan ul{display:flex;flex-direction:column;gap:12px;font-size:16.5px}
+.plan li{display:flex;gap:12px;align-items:flex-start}
+.plan li svg{flex-shrink:0;margin-top:4px}
+.plan .btn{margin-top:auto}
+.plan-tag{position:absolute;top:22px;right:22px;padding:8px 14px;border-radius:999px;background:var(--bg);color:var(--ink);font-size:14px;font-weight:600}
+.plan.featured{background:var(--ink);color:var(--bg);transform:translateY(-12px)}
+.plan.featured .pdesc,.plan.featured .amount span{color:var(--paper-ink-2)}
 .plan.featured .btn{background:var(--bg);color:var(--ink)}
-@media (max-width:980px){.plan{grid-template-columns:1fr 1fr}.plan h3,.plan .desc{grid-column:1 / -1}}
-@media (max-width:520px){.plan{grid-template-columns:1fr;padding:28px 24px}.plan .btn{justify-content:center}}
-.includes{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;margin-top:96px;align-items:start}
-.includes h3{font-size:clamp(30px, 3vw, 44px)}
-.inc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:19px}
-.inc-list li{display:flex;gap:12px;align-items:flex-start}
-.inc-list svg{flex-shrink:0;margin-top:5px}
-@media (max-width:860px){.includes{grid-template-columns:1fr}}
-@media (max-width:520px){.inc-list{grid-template-columns:1fr}}
+@media (hover:hover){.plan:not(.featured):hover{background:#171716}}
+.price-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:40px;font-size:16px;color:var(--ink-2)}
+.price-note b{color:var(--ink)}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none;order:-1}}
 
-/* Community: paper field */
-.community{background:var(--paper);color:var(--paper-ink)}
-.community-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
-.community-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:28px;min-width:0}
-.community .lede{color:var(--paper-ink-2)}
-.community-mark{grid-column:9 / span 4;display:flex;justify-content:center}
-.lab-badge{width:min(320px, 70vw);aspect-ratio:1;border-radius:72px;background:var(--paper-ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transform:rotate(-6deg);transition:transform 600ms var(--ease-out)}
-.lab-badge b{font-size:clamp(56px, 6vw, 84px);font-weight:900;letter-spacing:-0.05em;line-height:0.9}
-.lab-badge span{font-size:clamp(28px, 3vw, 40px);font-weight:400;letter-spacing:-0.02em}
-@media (hover:hover){.community-mark:hover .lab-badge{transform:rotate(3deg) scale(1.03)}}
-@media (max-width:860px){.community-copy,.community-mark{grid-column:1 / -1}.community-mark{justify-content:flex-start}}
+/* Custom projects */
+.custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding:clamp(36px,5vw,64px);border-radius:36px;background:var(--surface)}
+.custom-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:20px;min-width:0}
+.custom-copy h2{font-size:clamp(34px,3.8vw,56px)}
+.custom-side{grid-column:9 / span 4;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.custom-side b{font-size:clamp(40px,3.6vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.custom-side span{color:var(--ink-2)}
+@media (max-width:900px){.custom-copy,.custom-side{grid-column:1 / -1}}
+
+/* Webmasters band */
+.academy{background:var(--paper);color:var(--paper-ink)}
+.academy-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.academy-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:26px;min-width:0}
+.academy .lede{color:var(--paper-ink-2)}
+.academy-mark{grid-column:9 / span 4;display:flex;justify-content:center;perspective:900px}
+.badge{width:min(300px,64vw);aspect-ratio:1;border-radius:68px;background:var(--paper-ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transform:rotateY(-18deg) rotateX(8deg) rotate(-4deg);transition:transform 700ms var(--ease-out)}
+.badge b{font-size:clamp(34px,3.4vw,48px);font-weight:900;letter-spacing:-0.045em;line-height:0.9}
+.badge span{font-size:16px;font-weight:500;letter-spacing:0.28em}
+@media (hover:hover){.academy-mark:hover .badge{transform:rotateY(8deg) rotateX(-4deg) rotate(2deg)}}
+@media (max-width:900px){.academy-copy,.academy-mark{grid-column:1 / -1}.academy-mark{justify-content:flex-start}}
 
 /* FAQ */
 .faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
 .faq-list{display:flex;flex-direction:column;gap:10px}
-.faq details{background:var(--surface);border-radius:20px;padding:0 28px;transition:background-color 200ms ease}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;font-size:21px;font-weight:600}
+.faq details{background:var(--surface);border-radius:22px;padding:0 28px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;font-size:20px;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary svg{flex-shrink:0;transition:transform 240ms var(--ease-out)}
 .faq details[open] summary svg{transform:rotate(45deg)}
 .faq details p{padding-bottom:26px;color:var(--ink-2);max-width:40em}
-@media (max-width:860px){.faq{grid-template-columns:1fr}}
+@media (max-width:900px){.faq{grid-template-columns:1fr}}
 
-/* Footer */
-footer{padding-block:96px 40px;overflow:hidden}
-.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px}
-.foot-top h2{font-size:clamp(40px, 5vw, 72px)}
-.foot-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:17px}
-.foot-links a{color:var(--ink-2);text-decoration:none}
-@media (hover:hover){.foot-links a:hover{color:var(--ink)}}
-.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:80px}
-.wordmark b{font-size:clamp(110px, 25vw, 380px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
-.wordmark span{font-size:clamp(14px, 1.6vw, 22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:40px;font-size:14px;color:#8c8a84}
+/* Final CTA + footer */
+.final{text-align:center}
+.final-in{display:flex;flex-direction:column;align-items:center;gap:28px}
+.final h2{font-size:clamp(44px,6vw,96px);max-width:12em}
+.final .lede{text-align:center}
+footer{padding-block:40px 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px 24px;padding-top:56px}
+.foot-col{grid-column:span 3;display:flex;flex-direction:column;gap:12px;font-size:16px;min-width:0}
+.foot-col h4{font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+.foot-col a,.foot-col span{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-col a:hover{color:var(--ink)}}
+.foot-intro{grid-column:span 6}
+.foot-intro p{color:var(--ink-2);max-width:28em}
+.copy-num{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:600 16px var(--font);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform 140ms var(--ease-out),background-color 180ms ease}
+.copy-num:active{transform:scale(0.97)}
+@media (hover:hover){.copy-num:hover{background:var(--surface-3)}}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:72px}
+.wordmark b{font-size:clamp(100px,24vw,370px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px,1.6vw,22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;font-size:14px;color:#8C8A84}
+@media (max-width:900px){.foot-col{grid-column:span 6}.foot-intro{grid-column:1 / -1}}
 @media (max-width:640px){.wordmark{flex-direction:column;align-items:flex-start;gap:12px}}
 
-/* Reveal: content is visible at rest; JS only hides what is below the fold, then reveals it */
-.pre{opacity:0;transform:translateY(24px)}
-.rv{transition:opacity 700ms var(--ease-out), transform 700ms var(--ease-out)}
+/* Floating mobile CTA */
+.fab{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;display:none;box-shadow:0 18px 40px -12px rgba(0,0,0,0.8);transform:translateY(140%);transition:transform 380ms var(--ease-out)}
+.fab.show{transform:translateY(0)}
+@media (max-width:760px){.fab{display:flex}}
+
+/* Reveal: visible at rest; JS hides only what is below the fold, then reveals it */
+.pre{opacity:0;transform:translateY(26px)}
+.rv{transition:opacity 760ms var(--ease-out),transform 760ms var(--ease-out)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .marquee-track{animation:none}
+  .rise,.hero-stage-in,.float-a,.float-b{animation:none}
+  .marquee-track,.gallery-track{animation:none}
   .pre{transform:none}
   .rv{transition:opacity 300ms ease}
-  .lab-badge{transition:none}
+  .typing i{animation:none}
+  .badge{transition:none}
 }
 </style>
 </head>
@@ -265,630 +420,772 @@ footer{padding-block:96px 40px;overflow:hidden}
 
 <header class="wrap">
   <nav class="nav" aria-label="Principal">
-    <a class="brand" href="#top" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+    <a class="brand" href="#top" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
     <ul>
-      <li><a href="#proceso" data-i18n="nav1">Proceso</a></li>
-      <li><a href="#ejemplos" data-i18n="nav2">Ejemplos</a></li>
-      <li><a href="#planes" data-i18n="nav3">Planes</a></li>
-      <li><a href="#preguntas" data-i18n="nav4">Preguntas</a></li>
+      <li><a href="#como-funciona"><span data-t>Cómo funciona</span></a></li>
+      <li><a href="#disenos"><span data-t>Diseños</span></a></li>
+      <li><a href="#planes"><span data-t>Planes</span></a></li>
+      <li><a href="#preguntas"><span data-t>Preguntas</span></a></li>
     </ul>
     <div class="nav-end">
       <div class="lang" role="group" aria-label="Idioma / Language">
-        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true"><span data-t>ES</span></button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false"><span data-t>EN</span></button>
       </div>
-      <a class="btn js-wa nav-cta" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="navCta">Cotizar</a>
+      <a class="btn js-wa nav-cta" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Inicia mi página</span></a>
     </div>
   </nav>
 </header>
 
 <main id="top">
-  <div class="wrap hero">
-    <div class="hero-copy">
-      <h1 data-i18n="h1">Páginas web<br>que venden.</h1>
-      <p class="hero-sub" data-i18n="heroSub">Diseñamos, escribimos y lanzamos la web de tu negocio en días. Lista para aparecer en Google y recibir clientes por WhatsApp.</p>
-      <div class="hero-actions">
-        <a class="btn js-wa" href="https://wa.me/" target="_blank" rel="noopener"><span data-i18n="heroCta">Cotizar mi página</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn--ghost" href="#planes" data-i18n="heroCta2">Ver planes</a>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-copy">
+      <h1 class="rise"><span data-t>Tu negocio merece una página web extraordinaria.</span></h1>
+      <p class="hero-sub rise d1"><span data-t>Nosotros la diseñamos, publicamos y mantenemos. Tú solo dinos qué necesita tu negocio por WhatsApp.</span></p>
+      <div class="hero-actions rise d2">
+        <a class="btn js-wa" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Inicia mi página web</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#como-funciona"><span data-t>Descubre cómo funciona</span></a>
       </div>
-      <form class="live" id="live" autocomplete="off">
-        <label for="bizName" data-i18n="liveLabel">Escribe el nombre de tu negocio y mírala armarse</label>
-        <input id="bizName" name="bizName" type="text" maxlength="28" placeholder="Ej. Café Bahía" value="Café Bahía">
-        <div class="chips" role="group" aria-label="Giro del negocio" id="chips">
-          <button type="button" class="chip" data-type="restaurante" aria-pressed="true" data-i18n="chip1">Restaurante</button>
-          <button type="button" class="chip" data-type="inmobiliaria" aria-pressed="false" data-i18n="chip2">Inmobiliaria</button>
-          <button type="button" class="chip" data-type="clinica" aria-pressed="false" data-i18n="chip3">Clínica</button>
-          <button type="button" class="chip" data-type="gimnasio" aria-pressed="false" data-i18n="chip4">Gimnasio</button>
-        </div>
-      </form>
+      <p class="hero-price rise d3"><span data-t="heroPrice">Desde <b>$499 MXN al mes</b></span><span><i></i><span data-t>Ve tu página antes de pagar</span></span><span><span data-t>Sin costo inicial</span></span></p>
     </div>
-    <div class="hero-stage">
-      <div id="scene" role="img" aria-label="Vista previa en 3D de la página web de tu negocio"></div>
-    </div>
-  </div>
-
-  <div class="band">
-    <div class="wrap band-in">
-      <div class="band-row"><strong data-i18n="bandNum">+175 mil</strong><p data-i18n="bandTxt">personas siguen OKfly en Facebook</p></div>
-      <p data-i18n="bandLoc">Desde la Riviera Maya para negocios de México y EE. UU.</p>
-    </div>
-  </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span data-i18n="marq"><b>Restaurantes</b> · Inmobiliarias · <b>Clínicas</b> · Hoteles · <b>Gimnasios</b> · Tours · <b>Despachos</b> · Tiendas ·</span>
-      <span data-i18n="marq"><b>Restaurantes</b> · Inmobiliarias · <b>Clínicas</b> · Hoteles · <b>Gimnasios</b> · Tours · <b>Despachos</b> · Tiendas ·</span>
-    </div>
-  </div>
-
-  <section aria-labelledby="why-h">
-    <div class="wrap why">
-      <div class="why-copy">
-        <h2 class="h2" id="why-h" data-rv data-i18n="whyH">Si no te encuentran, le compran a otro.</h2>
-        <p class="lede" data-rv data-i18n="whyLede">Hoy tu cliente busca en Google antes de llamar. Una página bien hecha trabaja por ti las 24 horas:</p>
-        <ul class="why-list" data-rv>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why1">Te encuentran cuando buscan lo que vendes en tu zona.</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why2">Ven tus precios, fotos y horarios sin preguntarte.</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why3">Te escriben por WhatsApp con un solo toque.</span></li>
-        </ul>
-      </div>
-      <div class="serp" data-ui data-rv>
-        <div class="serp-q">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-          <span class="js-q">café cerca de mí</span>
-        </div>
-        <div class="serp-r you">
-          <small class="js-url">cafebahia.com</small>
-          <b class="js-title">Café Bahía · Menú y reservas</b>
-          <p data-i18n="serpYou">Menú, horarios, cómo llegar y pedidos por WhatsApp.</p>
-          <span class="serp-tag" data-i18n="serpTag">Tu página con OKfly</span>
-        </div>
-        <div class="serp-r dim">
-          <small data-i18n="serpD1u">directorio-local.com</small>
-          <b data-i18n="serpD1t">Los 10 mejores lugares cerca de ti</b>
-          <p data-i18n="serpD1p">Listado con reseñas de varios negocios de la zona.</p>
-        </div>
-        <div class="serp-r dim">
-          <small data-i18n="serpD2u">redsocial.com</small>
-          <b data-i18n="serpD2t">Perfil sin actualizar desde 2023</b>
-          <p data-i18n="serpD2p">Sin horarios ni datos de contacto.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="proceso" aria-labelledby="proc-h" style="padding-top:0">
-    <div class="wrap process">
-      <div class="process-copy">
-        <h2 class="h2" id="proc-h" data-rv data-i18n="procH">De la idea a tu web en línea.</h2>
-        <ol class="steps">
-          <li class="step on"><h3 data-i18n="s1h">Platicamos</h3><p data-i18n="s1p">Una llamada corta: qué vendes, a quién y qué quieres que haga la gente al entrar.</p></li>
-          <li class="step"><h3 data-i18n="s2h">Diseñamos y escribimos</h3><p data-i18n="s2p">Armamos tu página con textos que venden, tus fotos y tu marca. La revisas y ajustamos.</p></li>
-          <li class="step"><h3 data-i18n="s3h">Lanzamos</h3><p data-i18n="s3p">La conectamos a tu dominio, a Google y a tu WhatsApp. Lista para recibir clientes.</p></li>
-        </ol>
-      </div>
-      <div class="stack-stage" aria-hidden="true">
-        <div class="stack" id="stack">
-          <div class="layer layer-wire">
-            <div class="lw" style="left:20px;top:18px;width:90px;height:14px"></div>
-            <div class="lw" style="right:20px;top:18px;width:150px;height:14px"></div>
-            <div class="lw" style="left:20px;top:58px;width:220px;height:70px"></div>
-            <div class="lw" style="left:20px;top:142px;width:160px;height:16px"></div>
-            <div class="lw" style="left:20px;top:176px;width:110px;height:34px;border-radius:20px"></div>
-            <div class="lw" style="right:20px;top:58px;width:160px;height:200px"></div>
-            <span class="layer-tag" data-i18n="tagWire">Estructura</span>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-light"></div>
+      <div class="hero-stage-in">
+        <div class="hero-rig" id="heroRig">
+          <div class="hero-browser">
+            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>brasaymar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
           </div>
-          <div class="layer layer-copy">
-            <div class="lc" style="left:20px;top:20px;font-size:14px">Café Bahía</div>
-            <div class="lc" style="right:20px;top:20px;font-size:12px;font-weight:500;opacity:.7" data-i18n="stNav">Menú · Horarios · Contacto</div>
-            <div class="lc" style="left:20px;top:58px;font-size:34px;width:230px" data-i18n="stH">Café de especialidad frente al mar.</div>
-            <div class="lc" style="left:20px;top:172px;font-size:13px;font-weight:500;opacity:.75;width:200px;line-height:1.3" data-i18n="stHours">Abierto todos los días de 7:00 a 20:00.</div>
-            <span class="layer-tag" data-i18n="tagCopy">Textos</span>
+          <div class="hero-phone"><div class="float-a">
+            <div class="phone"><div class="phone-notch"></div><div class="phone-scr">
+              <div class="wa">
+                <div class="wa-head"><div class="wa-av"><b>OK</b><span>fly</span></div><div class="wa-who"><b>OKfly Studio <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#25D366"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#0B141A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><span data-t>Cuenta de empresa · En línea</span></span></div></div>
+                <div class="wa-body"><div class="wa-feed" style="justify-content:flex-end;bottom:0;top:auto">
+                  <div class="msg in"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Brasa &amp; Mar</span></b><span><span data-t>Adaptada a celular</span></span></div></div><span data-t>¡Tu página web está lista! 🎉</span><time>09:15</time></div>
+                  <div class="msg out"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                  <div class="msg in"><span data-t>¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
+                </div></div>
+              </div>
+            </div></div>
+          </div></div>
+          <div class="hero-mphone"><div class="float-b">
+            <div class="phone"><div class="phone-notch"></div><div class="phone-scr" data-site="restaurante" data-mobile="1"></div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="tech">
+    <p><span data-t>Construimos con las mismas herramientas que usan las grandes marcas</span></p>
+    <div class="marquee" aria-label="Tecnologías: WordPress, Stripe, WhatsApp, Google, Cloudflare, Elementor e inteligencia artificial">
+      <div class="marquee-track" id="techTrack" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="como-funciona" aria-labelledby="story-h">
+    <div class="story-pin">
+      <div class="story-sticky">
+        <div class="wrap story-grid">
+          <div class="story-copy" id="storyCopy">
+            <h2 class="h2" id="story-h"><span data-t>Así de fácil es tener tu página web.</span></h2>
+            <ol class="phases">
+              <li class="phase on"><h3><span data-t>Nos escribes por WhatsApp</span></h3><p><span data-t>Cuéntanos de tu negocio y mándanos tu logo, fotos y redes. Sin formularios ni juntas.</span></p></li>
+              <li class="phase"><h3><span data-t>Diseñamos tu página</span></h3><p><span data-t>Armamos tu sitio con tu marca, textos que venden y versión para celular.</span></p></li>
+              <li class="phase"><h3><span data-t>La ves antes de pagar</span></h3><p><span data-t>Te mandamos una vista previa gratuita. Si te gusta, la publicamos con tu dominio.</span></p></li>
+              <li class="phase"><h3><span data-t>Eliges tu plan y listo</span></h3><p><span data-t>Desde $499 al mes. Nosotros nos encargamos del resto.</span></p></li>
+            </ol>
           </div>
-          <div class="layer layer-live">
-            <div style="position:absolute;left:20px;top:18px;font-size:14px;font-weight:800">Café Bahía</div>
-            <div style="position:absolute;right:20px;top:18px;font-size:12px;font-weight:600;opacity:.7" data-i18n="stNav">Menú · Horarios · Contacto</div>
-            <div style="position:absolute;left:20px;top:56px;width:220px;font-size:34px;font-weight:800;letter-spacing:-0.04em;line-height:.95" data-i18n="stH">Café de especialidad frente al mar.</div>
-            <div style="position:absolute;left:20px;top:182px;padding:9px 16px;border-radius:20px;background:#8E2F22;color:#F6EFE6;font-size:13px;font-weight:700" data-i18n="stCta">Pedir por WhatsApp</div>
-            <div style="position:absolute;right:20px;top:56px;width:160px;height:200px;border-radius:12px;background:#B5452F;overflow:hidden">
-              <div style="position:absolute;left:30px;top:34px;width:56px;height:56px;border-radius:50%;background:#F2C27B"></div>
-              <div style="position:absolute;left:0;right:0;bottom:0;height:80px;background:#6E2318"></div>
+          <div class="story-stage">
+            <div class="story-rig">
+              <div class="story-phone" id="storyPhone">
+                <div class="phone" style="height:100%"><div class="phone-notch"></div><div class="phone-scr">
+                  <div class="wa">
+                    <div class="wa-head"><div class="wa-av"><b>OK</b><span>fly</span></div><div class="wa-who"><b>OKfly Studio <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#25D366"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#0B141A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><span data-t>Cuenta de empresa · En línea</span></span></div></div>
+                    <div class="wa-body" id="waBody"><div class="wa-feed" id="waFeed">
+                      <div class="msg out" data-at=".02"><span data-t>Hola, tengo un restaurante y quiero tener mi propia página web. ¿Cuánto cuesta?</span><time>10:32 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".06" data-until=".11"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".11"><span data-t>¡Hola! 👋 ¡Claro que sí! En OKfly podemos crear tu página web profesional desde $499 al mes.</span><time>10:32</time></div>
+                      <div class="msg out" data-at=".16"><span data-t>¿Y qué necesitan para hacerla?</span><time>10:33 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".19" data-until=".23"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".23"><span data-t>¡Es muy fácil! Solo necesitamos tu logo, algunas fotos y el enlace de tu Facebook o Instagram. Nosotros hacemos todo. 🚀</span><time>10:33</time></div>
+                      <div class="msg out" data-at=".29"><div class="att"><div class="att-file"><span>B&amp;M</span><span>logo-brasaymar.png</span></div><div class="att-pics"><span style="background:#D9885A"><i class="art" style="left:20%;top:18%;width:34%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i></span><span style="background:#3C2A22"><i class="art" style="left:22%;top:30%;width:56%;aspect-ratio:1;border-radius:50%;background:#E8D8C3"></i><i class="art" style="left:36%;top:44%;width:28%;aspect-ratio:1;border-radius:50%;background:#C2552F"></i></span><span style="background:#2E5E73"><i class="art" style="left:0;right:0;bottom:0;height:45%;background:#E9D9B8"></i><i class="art" style="left:58%;bottom:45%;width:8%;height:40%;background:#24402F"></i></span></div><span class="att-link">instagram.com/brasaymar</span></div><span data-t>¡Perfecto! Te mando mi información.</span><time>10:34 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".32" data-until=".35"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".35"><span data-t>¡Excelente! Nuestro equipo comienza a trabajar en tu diseño. Primero te mostraremos una vista previa gratuita. Si te gusta, la publicamos con tu propio dominio. ✨</span><time>10:34</time></div>
+                      <div class="wa-day msg" data-at=".41" style="max-width:none;background:#182229"><span data-t>24 horas después</span></div>
+                      <div class="typing" data-at=".44" data-until=".48"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".48" id="previewMsg"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Brasa &amp; Mar</span></b><span><span data-t>Diseño personalizado · Adaptado a móviles</span></span></div></div><span data-t>¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.</span><time>09:15</time></div>
+                      <div class="msg out" data-at=".88"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".91" data-until=".94"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".94"><span data-t>¡Bienvenido a OKfly! 🚀 Solo elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
+                    </div></div>
+                    <div class="wa-input"><span><span data-t>Mensaje</span></span><i><svg viewBox="0 0 24 24" fill="#0B141A"><path d="M3 20.5l18-8.5L3 3.5v6.6l12 1.9-12 1.9z"/></svg></i></div>
+                  </div>
+                </div></div>
+              </div>
             </div>
-            <div style="position:absolute;left:20px;bottom:14px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#2F9E5B"></span><span data-i18n="stLive">En línea</span></div>
           </div>
         </div>
+        <div class="story-browser" id="storyBrowser" aria-hidden="true">
+          <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>brasaymar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
+        </div>
+        <p class="story-done" id="storyDone"><i></i><span data-t>Vista previa · Página lista para publicar</span></p>
       </div>
     </div>
   </section>
 
-  <section id="ejemplos" aria-labelledby="ex-h" style="padding-top:0">
+  <!-- DEMO -->
+  <section id="disenos" aria-labelledby="demo-h">
     <div class="wrap">
-      <div class="examples-head">
-        <h2 class="h2" id="ex-h" data-rv data-i18n="exH">Un diseño para cada giro.</h2>
-        <p class="lede" data-rv data-i18n="exLede">Cada página se diseña desde tu negocio: tus colores, tu zona y lo que tu cliente necesita ver primero.</p>
+      <div class="demo-head">
+        <h2 class="h2" id="demo-h" data-rv><span data-t>Tu negocio podría verse así.</span></h2>
+        <p class="lede" data-rv><span data-t>Elige tu giro, escribe el nombre de tu negocio y mira cómo cambia tu página en tiempo real. Cada diseño se adapta a computadora y celular.</span></p>
       </div>
-      <div class="examples">
-        <figure class="ex" data-rv>
-          <div class="ex-card" data-tilt>
-            <div class="mock m-rest" data-ui>
-              <div class="mock-bar"><i></i><i></i><i></i></div>
-              <div class="mock-nav"><span>La Marea</span><em><span data-i18n="m1n1">Menú</span><span data-i18n="m1n2">Reservas</span></em></div>
-              <div class="mock-art"><div style="position:absolute;left:14%;top:18%;width:22%;aspect-ratio:1;border-radius:50%;background:#F2C27B"></div><div style="position:absolute;left:0;right:0;bottom:0;height:38%;background:#6E2318"></div></div>
-              <div class="mock-body"><h4 data-i18n="m1h">Mariscos del día, frente al mar.</h4><p data-i18n="m1p">Pesca local, cocina abierta y mesas en la arena.</p><span class="mock-cta" data-i18n="m1c">Reservar mesa</span></div>
-            </div>
-          </div>
-          <figcaption><b data-i18n="chip1">Restaurante</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
-        </figure>
-        <figure class="ex" data-rv>
-          <div class="ex-card" data-tilt>
-            <div class="mock m-inmo" data-ui>
-              <div class="mock-bar"><i></i><i></i><i></i></div>
-              <div class="mock-nav"><span>Costa Viva</span><em><span data-i18n="m2n1">Propiedades</span></em></div>
-              <div class="mock-art"><div style="position:absolute;left:18%;bottom:0;width:26%;height:62%;background:#E7EFEC"></div><div style="position:absolute;left:50%;bottom:0;width:32%;height:84%;background:#CFE0DA"></div><div style="position:absolute;left:0;right:0;bottom:0;height:16%;background:#164744"></div></div>
-              <div class="mock-body"><h4 data-i18n="m2h">Vive a 5 min del Caribe.</h4><p data-i18n="m2p">Departamentos listos para habitar o rentar.</p><span class="mock-cta" data-i18n="m2c">Ver propiedades</span></div>
-            </div>
-          </div>
-          <figcaption><b data-i18n="chip2">Inmobiliaria</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
-        </figure>
-        <figure class="ex" data-rv>
-          <div class="ex-card" data-tilt>
-            <div class="mock m-clin" data-ui>
-              <div class="mock-bar"><i></i><i></i><i></i></div>
-              <div class="mock-nav"><span>Dental Sol</span><em><span data-i18n="m3n1">Citas</span></em></div>
-              <div class="mock-art"><div style="position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;border-radius:50%;background:#F1F4F9;transform:translate(-50%,-50%)"></div><div style="position:absolute;left:50%;top:50%;width:22%;aspect-ratio:1;border-radius:50%;background:#2D4E86;transform:translate(-50%,-50%)"></div></div>
-              <div class="mock-body"><h4 data-i18n="m3h">Agenda tu cita hoy.</h4><p data-i18n="m3p">Limpieza, ortodoncia y urgencias.</p><span class="mock-cta" data-i18n="m3c">Agendar cita</span></div>
-            </div>
-          </div>
-          <figcaption><b data-i18n="chip3">Clínica</b><span data-i18n="exCap">Ejemplo de diseño</span></figcaption>
-        </figure>
+      <form class="demo-controls" id="demoForm" autocomplete="off" data-rv>
+        <div class="demo-name">
+          <label for="demoName"><span data-t>Nombre de tu negocio</span></label>
+          <input id="demoName" name="demoName" type="text" maxlength="26" placeholder="Ej. Brasa &amp; Mar" value="">
+        </div>
+        <div class="tabs" role="group" aria-label="Giro del negocio" id="tabs"></div>
+      </form>
+      <div class="demo-stage" data-rv>
+        <div class="demo-rig" id="demoRig">
+          <div class="demo-desk"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="demoUrl">brasaymar.com</span></span></div><div class="bw-scr" id="demoDesk"></div></div></div>
+          <div class="demo-mob"><div class="phone"><div class="phone-notch"></div><div class="phone-scr" id="demoMob"></div></div></div>
+        </div>
+      </div>
+      <div class="demo-foot">
+        <p><span data-t>Ejemplo conceptual de diseño, no un sitio publicado. Tu página se diseña con tu marca, tus fotos y tus textos.</span></p>
+        <a class="btn js-wa" id="demoCta" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Quiero una así</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
 
+  <div class="gallery" aria-label="Ejemplos de diseño por giro">
+    <div class="gallery-track" id="galleryTrack"></div>
+  </div>
+
+  <!-- INCLUDED -->
+  <section aria-labelledby="inc-h">
+    <div class="wrap">
+      <div class="inc-head">
+        <h2 class="h2" id="inc-h" data-rv><span data-t>Todo incluido. Tú no tocas nada técnico.</span></h2>
+        <p class="lede" data-rv><span data-t>Una sola mensualidad cubre lo que normalmente pagarías por separado a un diseñador, un hosting y un programador.</span></p>
+      </div>
+      <div class="bento">
+        <article class="tile t-design" data-rv>
+          <h3><span data-t>Diseño profesional</span></h3>
+          <p><span data-t>Hecho a la medida de tu negocio, con tus colores, tus fotos y textos que convierten visitas en clientes.</span></p>
+          <div class="t-frag" aria-hidden="true">
+            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="dentista"></div></div>
+            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="tours"></div></div>
+          </div>
+        </article>
+        <article class="tile t-domain" data-rv>
+          <h3><span data-t>Tu propio dominio</span></h3>
+          <p><span data-t>Tu negocio con su propia dirección en internet.</span></p>
+          <div class="t-frag urlbar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="dom" id="domText">brasaymar.com</span><span class="caret"></span></div>
+        </article>
+        <article class="tile t-secure" data-rv>
+          <h3><span data-t>Hosting y seguridad</span></h3>
+          <p><span data-t>Tu página rápida, protegida y siempre en línea.</span></p>
+          <div class="t-frag chips"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-t>Conexión segura HTTPS</span></span><span><span data-t>Hosting incluido</span></span><span><span data-t>Respaldos</span></span></div>
+        </article>
+        <article class="tile t-changes" data-rv>
+          <h3><span data-t>Cambios por WhatsApp</span></h3>
+          <p><span data-t>¿Nuevo horario, precio o promoción? Nos escribes y lo actualizamos, según tu plan.</span></p>
+          <div class="t-frag mini-chat" aria-hidden="true">
+            <div class="msg out"><span data-t>¿Pueden cambiar el horario del domingo a 9 a 18 h?</span><time>12:04 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+            <div class="msg in"><span data-t>Listo, ya está actualizado en tu página.</span><time>12:20</time></div>
+          </div>
+        </article>
+        <article class="tile t-maint" data-rv>
+          <h3><span data-t>Mantenimiento</span></h3>
+          <p><span data-t>Nos encargamos de que todo siga funcionando, sin que tengas que pensarlo.</span></p>
+          <ul class="t-frag checks">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Actualizaciones</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Revisión de seguridad</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Versión para celular</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Atención por WhatsApp</span></li>
+          </ul>
+        </article>
+        <article class="tile t-preview" data-rv>
+          <h3><span data-t>Vista previa gratis</span></h3>
+          <p><span data-t>Primero ves tu página terminada. Si te gusta, empezamos. Si no, no pagas nada.</span></p>
+          <div class="pv-big" aria-hidden="true"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="barberia"></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
   <section id="planes" aria-labelledby="plan-h" style="padding-top:0">
     <div class="wrap">
-      <h2 class="h2" id="plan-h" data-rv data-i18n="planH">Elige cómo quieres tu página.</h2>
-      <div class="plans">
-        <article class="plan" data-rv>
-          <h3 data-i18n="p1n">Express</h3>
-          <p class="desc" data-i18n="p1d">Una página clara y rápida para empezar a recibir clientes. Ideal si aún no tienes web.</p>
-          <div class="price"><b data-i18n="p1p">$7,900 MXN</b><span data-i18n="once">pago único</span></div>
-          <a class="btn btn--ghost js-wa" data-plan="p1n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="want">Quiero esta</a>
-        </article>
-        <article class="plan featured" data-rv>
-          <h3 data-i18n="p2n">Editable</h3>
-          <p class="desc" data-i18n="p2d">Varias secciones con un panel sencillo para que tú cambies textos, fotos y precios cuando quieras.</p>
-          <div class="price"><b data-i18n="p2p">$13,900 MXN</b><span data-i18n="once">pago único</span></div>
-          <a class="btn js-wa" data-plan="p2n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="want">Quiero esta</a>
-        </article>
-        <article class="plan" data-rv>
-          <h3 data-i18n="p3n">A medida</h3>
-          <p class="desc" data-i18n="p3d">Diseño y funciones hechos para tu negocio: reservas, catálogo, varios idiomas o tienda.</p>
-          <div class="price"><b data-i18n="p3p">Desde $24,900</b><span data-i18n="p3s">según el proyecto</span></div>
-          <a class="btn btn--ghost js-wa" data-plan="p3n" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="talk">Platiquemos</a>
-        </article>
+      <div class="price-head">
+        <h2 class="h2" id="plan-h" data-rv><span data-t>Un plan para cada negocio.</span></h2>
+        <p class="lede" data-rv><span data-t>Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.</span></p>
       </div>
-      <div class="includes">
-        <h3 data-rv data-i18n="incH">Todas incluyen</h3>
-        <ul class="inc-list" data-rv>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i1">Diseño pensado primero para celular</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i2">Textos escritos para vender</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i3">Botón directo a tu WhatsApp</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i4">Mapa, horarios y cómo llegar</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i5">SEO básico para aparecer en Google</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i6">Hosting rápido y seguro</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i7">Conexión a tu dominio</span></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="i8">Formulario de contacto</span></li>
-        </ul>
+      <div class="plans" id="plans"></div>
+      <div class="price-note" data-rv>
+        <p><span data-t>Precios en pesos mexicanos. Pago mensual con tarjeta.</span></p>
+        <p data-t="annual">¿Prefieres pagar un año por adelantado por <b>transferencia u OXXO</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/523349814667" target="_blank" rel="noopener">Escríbenos</a>.</p>
       </div>
     </div>
   </section>
 
-  <section class="community" aria-labelledby="lab-h">
-    <div class="wrap community-in">
-      <div class="community-copy">
-        <h2 class="h2" id="lab-h" data-rv data-i18n="labH">¿Prefieres aprender a hacerlo tú?</h2>
-        <p class="lede" data-rv data-i18n="labLede">En Legendary Lab te enseñamos a crear y vender páginas web con IA, paso a paso, con la misma forma en que trabajamos en OKfly. Prueba la comunidad 7 días gratis.</p>
-        <div data-rv><a class="btn btn--dark" href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener"><span data-i18n="labCta">Entrar a Legendary Lab</span>
+  <!-- CUSTOM -->
+  <section aria-labelledby="custom-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="custom" data-rv>
+        <div class="custom-copy">
+          <h2 id="custom-h"><span data-t>¿Necesitas algo hecho a la medida?</span></h2>
+          <p class="lede"><span data-t>Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.</span></p>
+        </div>
+        <div class="custom-side">
+          <span><span data-t>Proyectos personalizados</span></span>
+          <b><span data-t>Desde $5,000 MXN</span></b>
+          <a class="btn btn--ghost js-wa" data-msg="custom" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Cotizar mi proyecto</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBMASTERS -->
+  <section class="academy" aria-labelledby="acad-h">
+    <div class="wrap academy-in">
+      <div class="academy-copy">
+        <h2 class="h2" id="acad-h" data-rv><span data-t>¿Quieres aprender a hacerlas tú?</span></h2>
+        <p class="lede" data-rv><span data-t>En Webmasters by OKfly Studio te enseñamos a crear y vender páginas web con IA, con el mismo proceso que usamos con nuestros clientes. Prueba la comunidad 7 días gratis.</span></p>
+        <div data-rv><a class="btn btn--dark" href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener"><span data-t>Conocer Webmasters</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
       </div>
-      <div class="community-mark" aria-hidden="true">
-        <div class="lab-badge"><b>Lab</b><span data-i18n="labBadge">7 días gratis</span></div>
+      <div class="academy-mark" aria-hidden="true"><div class="badge"><b>Webmasters</b><span>BY OKFLY</span></div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="preguntas" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <h2 class="h2" id="faq-h" data-rv><span data-t>Preguntas frecuentes</span></h2>
+      <div class="faq-list" data-rv>
+        <details><summary><span data-t>¿Qué pasa si no me gusta la vista previa?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>No pagas nada. Primero te enseñamos tu página terminada; solo si te gusta eliges tu plan y la publicamos con tu dominio.</span></p></details>
+        <details><summary><span data-t>¿Qué necesito enviarles?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Tu logo, algunas fotos de tu negocio y el enlace de tu Facebook o Instagram. Con eso armamos tu página; si te falta algo, te ayudamos.</span></p></details>
+        <details><summary><span data-t>¿Necesito saber de tecnología?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>No. Todo se hace por WhatsApp: nosotros nos encargamos del diseño, el dominio, el hosting y el mantenimiento.</span></p></details>
+        <details><summary><span data-t>¿Cuánto tarda mi vista previa?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Normalmente te la enviamos en unas 24 horas después de recibir tu información. Los proyectos personalizados se calendarizan contigo.</span></p></details>
+        <details><summary><span data-t>¿Puedo pedir cambios después?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Sí. Nos escribes por WhatsApp y actualizamos textos, fotos, precios u horarios según lo que incluya tu plan.</span></p></details>
+        <details><summary><span data-t>¿Cómo se paga?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Con tarjeta, como una suscripción mensual. Si prefieres pagar el año completo, también aceptamos transferencia u OXXO.</span></p></details>
+        <details><summary><span data-t>¿Trabajan fuera de México?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Sí. Todo el proceso es en línea, así que trabajamos con negocios de toda Latinoamérica y Estados Unidos. Si estás fuera de México, te cotizamos en dólares.</span></p></details>
       </div>
     </div>
   </section>
 
-  <section id="preguntas" aria-labelledby="faq-h">
-    <div class="wrap faq">
-      <h2 class="h2" id="faq-h" data-rv data-i18n="faqH">Preguntas frecuentes</h2>
-      <div class="faq-list" data-rv>
-        <details>
-          <summary><span data-i18n="q1">¿Cuánto tarda mi página?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="a1">Depende del plan y de qué tan rápido tengamos tu información. Una página Express suele estar lista en pocos días; los proyectos a medida se calendarizan contigo desde la primera llamada.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="q2">¿Necesito tener textos y fotos?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="a2">No. Nosotros escribimos los textos a partir de una llamada contigo. Si tienes fotos de tu negocio, las usamos; si no, te decimos cómo tomarlas o qué imágenes funcionan.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="q3">¿Puedo cambiar cosas después?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="a3">Sí. Con el plan Editable tú mismo cambias textos, fotos y precios desde un panel. En los otros planes nos escribes y lo actualizamos.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="q4">¿Qué pasa con el dominio y el hosting?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="a4">Te ayudamos a elegir y conectar tu dominio (tunegocio.com) y dejamos tu página publicada en un hosting rápido y seguro. El dominio queda a tu nombre.</p>
-        </details>
-        <details>
-          <summary><span data-i18n="q5">¿Trabajan con negocios fuera de la Riviera Maya?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-          <p data-i18n="a5">Sí. Todo el proceso es en línea, así que trabajamos con negocios de todo México y de Estados Unidos, en español o en inglés.</p>
-        </details>
-      </div>
+  <!-- FINAL CTA -->
+  <section class="final" aria-labelledby="final-h" style="padding-top:0">
+    <div class="wrap final-in">
+      <h2 id="final-h" data-rv><span data-t>Mañana tu negocio puede verse así.</span></h2>
+      <p class="lede" data-rv><span data-t>Escríbenos hoy y recibe tu vista previa gratis. Sin compromiso.</span></p>
+      <div data-rv><a class="btn js-wa" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Inicia mi página web</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="foot-top">
-      <h2 data-rv data-i18n="footH">¿Listo para que te encuentren?</h2>
-      <a class="btn js-wa" href="https://wa.me/" target="_blank" rel="noopener"><span data-i18n="footCta">Cotizar por WhatsApp</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    <div class="foot-grid">
+      <div class="foot-col foot-intro">
+        <a class="brand" href="#top" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+        <p><span data-t>Páginas web por suscripción para negocios de México, Latinoamérica y Estados Unidos. Diseño, dominio, hosting y mantenimiento en una sola mensualidad.</span></p>
+        <button type="button" class="copy-num" id="copyNum" aria-label="Copiar número de WhatsApp">+52 33 4981 4667<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+      </div>
+      <div class="foot-col">
+        <h4>OKfly Studio</h4>
+        <a href="#como-funciona"><span data-t>Cómo funciona</span></a>
+        <a href="#disenos"><span data-t>Diseños</span></a>
+        <a href="#planes"><span data-t>Planes</span></a>
+        <a href="#preguntas"><span data-t>Preguntas</span></a>
+      </div>
+      <div class="foot-col">
+        <h4><span data-t>Contacto</span></h4>
+        <a class="js-wa" href="https://wa.me/523349814667" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener">Webmasters</a>
+        <span><span data-t>Riviera Maya, México</span></span>
+      </div>
     </div>
     <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
-    <div class="legal">
-      <div class="foot-links">
-        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener">Legendary Lab</a>
-        <a class="js-wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-      <span data-i18n="legal">© 2026 OKfly Studio · Riviera Maya, México</span>
-    </div>
+    <div class="legal"><span>© 2026 OKfly Studio · okflystudio.com</span><span><span data-t>Los diseños mostrados son ejemplos conceptuales.</span></span></div>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<a class="btn fab js-wa" id="fab" href="https://wa.me/523349814667" target="_blank" rel="noopener">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+  <span data-t>Inicia mi página web</span>
+</a>
+
 <script>
 (function(){
-  /* ===== Config: pon aquí tu número de WhatsApp con lada, solo dígitos (ej. 529841234567) ===== */
+  /* ===== Configuración: edita aquí número, mensajes y planes ===== */
   var WHATSAPP = '523349814667';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- Translations (Spanish is read from the page itself) ---------- */
-  var EN = {
-    nav1:'Process', nav2:'Work', nav3:'Pricing', nav4:'FAQ', navCta:'Get a quote',
-    h1:'Websites<br>that sell.',
-    heroSub:'We design, write and launch your business website in days. Ready to show up on Google and bring you customers on WhatsApp.',
-    heroCta:'Get my quote', heroCta2:'See pricing',
-    liveLabel:'Type your business name and watch it come together',
-    chip1:'Restaurant', chip2:'Real estate', chip3:'Clinic', chip4:'Gym',
-    bandNum:'175K+', bandTxt:'people follow OKfly on Facebook', bandLoc:'From the Riviera Maya, for businesses in Mexico and the US.',
-    marq:'<b>Restaurants</b> · Real estate · <b>Clinics</b> · Hotels · <b>Gyms</b> · Tours · <b>Law firms</b> · Shops ·',
-    whyH:'If they can’t find you, they buy elsewhere.',
-    whyLede:'Your customers search Google before they call. A well-made website works for you around the clock:',
-    why1:'They find you when they search for what you sell nearby.', why2:'They see your prices, photos and hours without asking.', why3:'They message you on WhatsApp in one tap.',
-    serpYou:'Menu, hours, directions and WhatsApp orders.', serpTag:'Your OKfly website',
-    serpD1u:'local-directory.com', serpD1t:'Top 10 places near you', serpD1p:'A list with reviews of several local businesses.',
-    serpD2u:'socialnetwork.com', serpD2t:'Profile not updated since 2023', serpD2p:'No hours or contact details.',
-    procH:'From idea to live website.',
-    s1h:'We talk', s1p:'A short call: what you sell, who you sell to, and what people should do when they land.',
-    s2h:'We design and write', s2p:'We build your page with copy that sells, your photos and your brand. You review it and we fine-tune.',
-    s3h:'We launch', s3p:'We connect it to your domain, Google and WhatsApp. Ready for customers.',
-    tagWire:'Structure', tagCopy:'Copy', stNav:'Menu · Hours · Contact', stH:'Specialty coffee by the sea.', stHours:'Open daily, 7 am to 8 pm.', stCta:'Order on WhatsApp', stLive:'Live',
-    exH:'A design for every business.', exLede:'Every site is designed around your business: your colors, your area and what your customers need to see first.',
-    m1n1:'Menu', m1n2:'Book', m1h:'Today’s catch, right on the beach.', m1p:'Local fish, open kitchen, tables in the sand.', m1c:'Book a table',
-    m2n1:'Listings', m2h:'Live 5 minutes from the Caribbean.', m2p:'Condos ready to move in or rent out.', m2c:'View listings',
-    m3n1:'Book', m3h:'Book your visit today.', m3p:'Cleanings, braces and emergencies.', m3c:'Book now',
-    exCap:'Design example',
-    planH:'Choose your website.',
-    p1n:'Express', p1d:'A clear, fast page to start getting customers. Ideal if you don’t have a website yet.', p1p:'$690 USD',
-    p2n:'Editable', p2d:'Several sections plus a simple panel so you can change text, photos and prices anytime.', p2p:'$1,190 USD',
-    p3n:'Custom', p3d:'Design and features built for your business: bookings, a catalog, multiple languages or a store.', p3p:'From $1,900', p3s:'depending on scope',
-    once:'one-time payment', want:'I want this', talk:'Let’s talk',
-    incH:'Every plan includes', i1:'Mobile-first design', i2:'Copy written to sell', i3:'Direct WhatsApp button', i4:'Map, hours and directions', i5:'Basic SEO to show up on Google', i6:'Fast, secure hosting', i7:'Domain connection', i8:'Contact form',
-    labH:'Want to learn to do it yourself?',
-    labLede:'In Legendary Lab we teach you to build and sell websites with AI, step by step, the same way we work at OKfly. The course is taught in Spanish. Try the community free for 7 days.',
-    labCta:'Join Legendary Lab', labBadge:'7 days free',
-    faqH:'Questions',
-    q1:'How long does it take?', a1:'It depends on the plan and how quickly we get your information. An Express site is usually ready in a few days; custom projects are scheduled with you on the first call.',
-    q2:'Do I need my own copy and photos?', a2:'No. We write the copy after a call with you. If you have photos of your business we use them; if not, we tell you how to take them or which images work.',
-    q3:'Can I change things later?', a3:'Yes. With the Editable plan you change text, photos and prices yourself from a panel. On the other plans, just message us and we update it.',
-    q4:'What about the domain and hosting?', a4:'We help you choose and connect your domain (yourbusiness.com) and publish your site on fast, secure hosting. The domain stays in your name.',
-    q5:'Do you work outside the Riviera Maya?', a5:'Yes. The whole process is online, so we work with businesses across Mexico and the United States, in English or Spanish.',
-    footH:'Ready to be found?', footCta:'Get a quote on WhatsApp', legal:'© 2026 OKfly Studio · Riviera Maya, Mexico'
-  };
-  var ES = {};
-  var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
-  i18nEls.forEach(function(el){ var k = el.dataset.i18n; if (!(k in ES)) ES[k] = el.innerHTML; });
-  var UI = {
-    es:{placeholder:'Ej. Café Bahía', chipsLabel:'Giro del negocio', scene:'Vista previa en 3D de la página web de tu negocio', nav:'Principal', title:'OKfly Studio · Páginas web que venden'},
-    en:{placeholder:'e.g. Bahia Coffee', chipsLabel:'Type of business', scene:'3D preview of your business website', nav:'Main', title:'OKfly Studio · Websites that sell'}
-  };
-
-  /* ---------- Business templates for the live preview ---------- */
-  var BASE = {
-    restaurante:{bg:'#F6EFE6',ink:'#1E1410',tint:'#8E2F22',art:'#B5452F',art2:'#6E2318',sun:'#F2C27B'},
-    inmobiliaria:{bg:'#E7EFEC',ink:'#0F1F1E',tint:'#1F5F5B',art:'#1F5F5B',art2:'#164744',sun:'#CFE0DA'},
-    clinica:{bg:'#F1F4F9',ink:'#111A2B',tint:'#2D4E86',art:'#2D4E86',art2:'#1E3762',sun:'#DCE5F3'},
-    gimnasio:{bg:'#151515',ink:'#F4F3EF',tint:'#E2622B',art:'#2A2A28',art2:'#E2622B',sun:'#F4F3EF'}
-  };
-  var COPY = {
-    es:{
-      restaurante:{sub:'Cocina de temporada a dos calles del mar.',cta:'Reservar mesa',nav:['Menú','Reservas','Contacto'],chips:['Abierto hoy','Cómo llegar','WhatsApp'],q:'restaurante cerca de mí',qCafe:'café cerca de mí',tail:'Menú y reservas'},
-      inmobiliaria:{sub:'Departamentos frente al Caribe, listos para invertir.',cta:'Ver propiedades',nav:['Propiedades','Zonas','Asesoría'],chips:['Preventa','Financiamiento','WhatsApp'],q:'departamentos en venta cerca de mí',tail:'Propiedades en venta'},
-      clinica:{sub:'Tu salud en manos de especialistas.',cta:'Agendar cita',nav:['Tratamientos','Equipo','Citas'],chips:['Citas hoy','Ubicación','WhatsApp'],q:'clínica cerca de mí',tail:'Agenda tu cita'},
-      gimnasio:{sub:'Entrena con coaches que sí te siguen.',cta:'Clase gratis',nav:['Clases','Horarios','Planes'],chips:['Abierto 6–23 h','Planes','WhatsApp'],q:'gimnasio cerca de mí',tail:'Clases y horarios'}
+  var MSGS = {
+    es: {
+      base: 'Hola, quiero iniciar mi página web con OKfly Studio.',
+      plan: 'Hola, quiero iniciar mi página web con OKfly Studio. Me interesa el plan {plan}.',
+      annual: 'Hola, quiero pagar mi plan de OKfly Studio un año por adelantado (transferencia u OXXO).',
+      custom: 'Hola, quiero cotizar un proyecto personalizado con OKfly Studio.',
+      demo: 'Hola, quiero iniciar mi página web con OKfly Studio para mi negocio {name} ({giro}).'
     },
-    en:{
-      restaurante:{sub:'Seasonal cooking two blocks from the sea.',cta:'Book a table',nav:['Menu','Book','Contact'],chips:['Open today','Directions','WhatsApp'],q:'restaurant near me',qCafe:'coffee near me',tail:'Menu and bookings'},
-      inmobiliaria:{sub:'Caribbean-view condos, ready to invest.',cta:'View listings',nav:['Listings','Areas','Advice'],chips:['Pre-sale','Financing','WhatsApp'],q:'condos for sale near me',tail:'Homes for sale'},
-      clinica:{sub:'Your health in expert hands.',cta:'Book a visit',nav:['Treatments','Team','Book'],chips:['Same-day visits','Location','WhatsApp'],q:'clinic near me',tail:'Book your visit'},
-      gimnasio:{sub:'Train with coaches who actually follow up.',cta:'Free class',nav:['Classes','Schedule','Plans'],chips:['Open 6 am–11 pm','Plans','WhatsApp'],q:'gym near me',tail:'Classes and schedule'}
+    en: {
+      base: 'Hi, I’d like to start my website with OKfly Studio.',
+      plan: 'Hi, I’d like to start my website with OKfly Studio. I’m interested in the {plan} plan.',
+      annual: 'Hi, I’d like to pay my OKfly Studio plan for a full year upfront by bank transfer.',
+      custom: 'Hi, I’d like a quote for a custom project with OKfly Studio.',
+      demo: 'Hi, I’d like to start my website with OKfly Studio for my business {name} ({giro}).'
     }
   };
-  var state = {name:'Café Bahía', type:'restaurante', lang:'es'};
-  function tpl(){ var b = BASE[state.type], c = COPY[state.lang][state.type], o = {}; for (var k in b) o[k]=b[k]; for (var j in c) o[j]=c[j]; return o; }
+  var PLANS_BY_LANG = {
+    es: [
+      {name:'Básico', price:'$499', desc:'Para negocios que necesitan presencia profesional.', features:['Página de una sección','Dominio, hosting y HTTPS','Botón de WhatsApp y mapa','Cambios por WhatsApp']},
+      {name:'Pro', price:'$899', desc:'Para negocios que quieren crecer y captar clientes.', featured:true, features:['Todo lo del Básico','Varias secciones con animaciones','SEO local para aparecer en Google','Formulario para captar clientes']},
+      {name:'Premium', price:'$1,499', desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','Atención prioritaria']}
+    ],
+    en: [
+      {name:'Basic', price:'$99', desc:'For businesses that need a professional presence.', features:['One-page website','Domain, hosting and HTTPS','WhatsApp button and map','Changes over WhatsApp']},
+      {name:'Pro', price:'$179', desc:'For businesses that want to grow and win customers.', featured:true, features:['Everything in Basic','Multiple sections with animations','Local SEO to show up on Google','Lead capture form']},
+      {name:'Premium', price:'$299', desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','Priority support']}
+    ]
+  };
+  /* =============================================================== */
 
-  function slug(s){
-    var t = (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'');
-    return (t || (state.lang==='en'?'yourbusiness':'tunegocio')) + '.com';
-  }
-  function fallbackName(){ return state.lang==='en' ? 'Your business' : 'Tu negocio'; }
-  function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
-  function wrapLines(ctx,text,maxW){
-    var words = text.split(' '), lines = [], cur = '';
-    for (var i=0;i<words.length;i++){var test = cur ? cur+' '+words[i] : words[i]; if (ctx.measureText(test).width > maxW && cur){lines.push(cur);cur = words[i];} else cur = test;}
-    if (cur) lines.push(cur); return lines;
-  }
-  var F = "'Outfit', 'Helvetica Neue', Arial, sans-serif";
-  var W = 1200, H = 800;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function wa(text){ return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text); }
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+  function ss(a,b,v){ var t = clamp((v-a)/(b-a),0,1); return t*t*(3-2*t); }
+  function lerp(a,b,t){ return a+(b-a)*t; }
 
-  /* Front panel: the finished website */
-  function drawSite(ctx){
-    var t = tpl(), name = state.name.trim() || fallbackName(), dark = state.type==='gimnasio';
-    ctx.clearRect(0,0,W,H);
-    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
-    ctx.fillStyle = t.bg; ctx.fillRect(0,0,W,H);
-    ctx.fillStyle = 'rgba(0,0,0,0.07)'; ctx.fillRect(0,0,W,64);
-    ['#FF5F57','#FEBC2E','#28C840'].forEach(function(c,i){ctx.fillStyle=c;ctx.beginPath();ctx.arc(40+i*28,32,9,0,Math.PI*2);ctx.fill();});
-    ctx.fillStyle = dark ? '#2a2a28' : '#FFFFFF'; rr(ctx,150,14,380,36,18); ctx.fill();
-    ctx.fillStyle = dark ? '#bdbbb4' : '#5b5b5b'; ctx.font = '500 20px '+F; ctx.textBaseline='middle'; ctx.fillText(slug(state.name),172,33);
-    ctx.fillStyle = t.ink; ctx.font = '800 30px '+F; ctx.fillText(name.length>22?name.slice(0,21)+'…':name,56,118);
-    ctx.font = '500 22px '+F; ctx.globalAlpha = 0.72; var nx = W-56;
-    for (var i=t.nav.length-1;i>=0;i--){var w=ctx.measureText(t.nav[i]).width; nx -= w; ctx.fillText(t.nav[i],nx,118); nx -= 36;}
-    ctx.globalAlpha = 1;
-    ctx.font = '900 92px '+F; ctx.textBaseline = 'alphabetic';
-    var size = 92, lines = wrapLines(ctx,name,560);
-    while ((lines.length>3 || lines.some(function(l){return ctx.measureText(l).width>580;})) && size>48){size-=6;ctx.font='900 '+size+'px '+F;lines=wrapLines(ctx,name,560);}
-    var y = 250; ctx.fillStyle = t.ink;
-    lines.slice(0,3).forEach(function(l){ctx.fillText(l,56,y); y += size*0.92;});
-    ctx.font = '400 26px '+F; ctx.globalAlpha = 0.78;
-    wrapLines(ctx,t.sub,520).slice(0,2).forEach(function(l){ctx.fillText(l,56,y+18); y+=36;});
-    ctx.globalAlpha = 1; y += 52;
-    ctx.font = '700 24px '+F; var cw = ctx.measureText(t.cta).width + 64;
-    ctx.fillStyle = t.tint; rr(ctx,56,y,cw,64,32); ctx.fill();
-    ctx.fillStyle = dark ? '#151515' : '#FFFFFF'; ctx.textBaseline='middle'; ctx.fillText(t.cta,88,y+33);
-    var ax=680, ay=170, aw=464, ah=540;
-    ctx.save(); rr(ctx,ax,ay,aw,ah,26); ctx.clip();
-    ctx.fillStyle = t.art; ctx.fillRect(ax,ay,aw,ah);
-    ctx.fillStyle = t.sun; ctx.beginPath(); ctx.arc(ax+140,ay+150,70,0,Math.PI*2); ctx.fill();
-    ctx.fillStyle = t.art2; ctx.fillRect(ax,ay+ah-190,aw,190);
-    ctx.globalAlpha = 0.35; ctx.fillStyle = t.sun; ctx.fillRect(ax,ay+ah-190,aw,10); ctx.globalAlpha = 1;
-    ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.font = '900 150px '+F; ctx.textBaseline='alphabetic';
-    var ini = (name.trim()[0]||'O').toUpperCase(); ctx.fillText(ini, ax+aw-ctx.measureText(ini).width-36, ay+ah-40);
-    ctx.restore();
-    ctx.font = '600 20px '+F; ctx.textBaseline='middle'; var cx = 56, cy = H-70;
-    t.chips.forEach(function(c){var w=ctx.measureText(c).width+40; ctx.fillStyle = dark ? '#2a2a28' : 'rgba(0,0,0,0.07)'; rr(ctx,cx,cy-22,w,44,22); ctx.fill(); ctx.fillStyle=t.ink; ctx.fillText(c,cx+20,cy+1); cx += w+12;});
-    ctx.restore();
-  }
-  /* Middle panel: wireframe */
-  function drawWire(ctx){
-    ctx.clearRect(0,0,W,H);
-    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
-    ctx.fillStyle = 'rgba(24,24,23,0.92)'; ctx.fillRect(0,0,W,H); ctx.restore();
-    ctx.strokeStyle = 'rgba(244,243,239,0.55)'; ctx.lineWidth = 4;
-    rr(ctx,2,2,W-4,H-4,34); ctx.stroke();
-    [[56,96,200,40,10],[760,96,384,40,10],[56,190,560,250,16],[56,470,520,40,10],[56,560,260,64,32],[680,170,464,540,26],[56,710,400,44,22]].forEach(function(b){rr(ctx,b[0],b[1],b[2],b[3],b[4]);ctx.stroke();});
-    ctx.setLineDash([12,12]); ctx.beginPath(); ctx.moveTo(680,170); ctx.lineTo(1144,710); ctx.moveTo(1144,170); ctx.lineTo(680,710); ctx.stroke(); ctx.setLineDash([]);
-  }
-  /* Back panel: the code */
-  function drawCode(ctx){
-    var name = state.name.trim() || fallbackName(), t = tpl();
-    ctx.clearRect(0,0,W,H);
-    ctx.save(); rr(ctx,0,0,W,H,36); ctx.clip();
-    ctx.fillStyle = '#121211'; ctx.fillRect(0,0,W,H); ctx.restore();
-    ctx.font = '500 30px ui-monospace, Menlo, Consolas, monospace'; ctx.textBaseline = 'alphabetic';
-    var lines = [
-      ['#8c8a84','<!-- ' + slug(state.name) + ' -->'],
-      ['#F4F3EF','<html lang="' + state.lang + '">'],
-      ['#BDBBB4','  <a href="/">' + name + '</a>'],
-      ['#F4F3EF','<main>'],
-      ['#F4F3EF','  <h1>' + name + '</h1>'],
-      ['#BDBBB4','  <p>' + t.sub.slice(0,30) + '…</p>'],
-      ['#F4F3EF','  <a class="cta" href="wa.me/…">'],
-      ['#BDBBB4','    ' + t.cta],
-      ['#F4F3EF','  </a>'],
-      ['#F4F3EF','</main>']
-    ];
-    lines.forEach(function(l,i){ctx.fillStyle=l[0]; ctx.fillText(l[1].length>40?l[1].slice(0,39)+'…':l[1],60,90+i*60);});
-  }
+  /* ---------- Language ---------- */
+  var LANG = 'es';
+  var EN = {
+    'Cómo funciona':'How it works','Diseños':'Designs','Planes':'Pricing','Preguntas':'FAQ',
+    'Inicia mi página':'Start my website',
+    'Tu negocio merece una página web extraordinaria.':'Your business deserves an extraordinary website.',
+    'Nosotros la diseñamos, publicamos y mantenemos. Tú solo dinos qué necesita tu negocio por WhatsApp.':'We design it, publish it and maintain it. Just tell us what your business needs on WhatsApp.',
+    'Inicia mi página web':'Start my website','Descubre cómo funciona':'See how it works',
+    heroPrice:'From <b>$99 USD a month</b>',
+    'Ve tu página antes de pagar':'See your website before you pay','Sin costo inicial':'No upfront cost',
+    'Cuenta de empresa · En línea':'Business account · Online',
+    'Vista previa · Brasa &amp; Mar':'Preview · Brasa &amp; Mar','Adaptada a celular':'Mobile ready',
+    '¡Tu página web está lista! 🎉':'Your website is ready! 🎉',
+    '¡Wow! ¡Me encanta! ¿Cómo empezamos?':'Wow! I love it! How do we start?',
+    '¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.':'Welcome to OKfly! 🚀 Pick your plan and we’ll take care of the rest.',
+    'Construimos con las mismas herramientas que usan las grandes marcas':'We build with the same tools the big brands use',
+    'Así de fácil es tener tu página web.':'Getting your website is this easy.',
+    'Nos escribes por WhatsApp':'Message us on WhatsApp',
+    'Cuéntanos de tu negocio y mándanos tu logo, fotos y redes. Sin formularios ni juntas.':'Tell us about your business and send your logo, photos and socials. No forms, no meetings.',
+    'Diseñamos tu página':'We design your website',
+    'Armamos tu sitio con tu marca, textos que venden y versión para celular.':'We build it with your brand, copy that sells and a mobile version.',
+    'La ves antes de pagar':'You see it before you pay',
+    'Te mandamos una vista previa gratuita. Si te gusta, la publicamos con tu dominio.':'We send you a free preview. If you like it, we publish it on your domain.',
+    'Eliges tu plan y listo':'Pick your plan, done',
+    'Desde $499 al mes. Nosotros nos encargamos del resto.':'From $99 a month. We take care of the rest.',
+    'Hola, tengo un restaurante y quiero tener mi propia página web. ¿Cuánto cuesta?':'Hi, I have a restaurant and I want my own website. How much is it?',
+    '¡Hola! 👋 ¡Claro que sí! En OKfly podemos crear tu página web profesional desde $499 al mes.':'Hi! 👋 Absolutely! At OKfly we can build your professional website from $99 a month.',
+    '¿Y qué necesitan para hacerla?':'What do you need from me?',
+    '¡Es muy fácil! Solo necesitamos tu logo, algunas fotos y el enlace de tu Facebook o Instagram. Nosotros hacemos todo. 🚀':'It’s easy! Just your logo, a few photos and your Facebook or Instagram link. We do everything else. 🚀',
+    '¡Perfecto! Te mando mi información.':'Perfect! Sending you my info.',
+    '¡Excelente! Nuestro equipo comienza a trabajar en tu diseño. Primero te mostraremos una vista previa gratuita. Si te gusta, la publicamos con tu propio dominio. ✨':'Great! Our team is starting on your design. First we’ll show you a free preview. If you like it, we publish it on your own domain. ✨',
+    '24 horas después':'24 hours later',
+    'Diseño personalizado · Adaptado a móviles':'Custom design · Mobile ready',
+    '¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.':'Your website is ready! 🎉 Take a look at your business online. Remember, this is just a preview.',
+    '¡Bienvenido a OKfly! 🚀 Solo elige tu plan y nosotros nos encargamos del resto.':'Welcome to OKfly! 🚀 Just pick your plan and we’ll take care of the rest.',
+    'Mensaje':'Message','Vista previa · Página lista para publicar':'Preview · Ready to publish',
+    'Tu negocio podría verse así.':'Your business could look like this.',
+    'Elige tu giro, escribe el nombre de tu negocio y mira cómo cambia tu página en tiempo real. Cada diseño se adapta a computadora y celular.':'Pick your industry, type your business name and watch your website change in real time. Every design works on desktop and mobile.',
+    'Nombre de tu negocio':'Your business name',
+    'Ejemplo conceptual de diseño, no un sitio publicado. Tu página se diseña con tu marca, tus fotos y tus textos.':'Concept design example, not a live site. Your website is designed with your brand, your photos and your copy.',
+    'Quiero una así':'I want one like this',
+    'Todo incluido. Tú no tocas nada técnico.':'All included. You never touch anything technical.',
+    'Una sola mensualidad cubre lo que normalmente pagarías por separado a un diseñador, un hosting y un programador.':'One monthly fee covers what you’d normally pay a designer, a host and a developer separately.',
+    'Diseño profesional':'Professional design',
+    'Hecho a la medida de tu negocio, con tus colores, tus fotos y textos que convierten visitas en clientes.':'Made for your business, with your colors, your photos and copy that turns visitors into customers.',
+    'Tu propio dominio':'Your own domain','Tu negocio con su propia dirección en internet.':'Your business with its own address online.',
+    'Hosting y seguridad':'Hosting and security','Tu página rápida, protegida y siempre en línea.':'Your site fast, protected and always online.',
+    'Conexión segura HTTPS':'Secure HTTPS','Hosting incluido':'Hosting included','Respaldos':'Backups',
+    'Cambios por WhatsApp':'Changes over WhatsApp',
+    '¿Nuevo horario, precio o promoción? Nos escribes y lo actualizamos, según tu plan.':'New hours, prices or a promo? Message us and we update it, depending on your plan.',
+    '¿Pueden cambiar el horario del domingo a 9 a 18 h?':'Can you change Sunday hours to 9 am – 6 pm?',
+    'Listo, ya está actualizado en tu página.':'Done, it’s updated on your website.',
+    'Mantenimiento':'Maintenance','Nos encargamos de que todo siga funcionando, sin que tengas que pensarlo.':'We keep everything running so you never have to think about it.',
+    'Actualizaciones':'Updates','Revisión de seguridad':'Security checks','Versión para celular':'Mobile version','Atención por WhatsApp':'WhatsApp support',
+    'Vista previa gratis':'Free preview','Primero ves tu página terminada. Si te gusta, empezamos. Si no, no pagas nada.':'First you see your finished website. If you like it, we start. If not, you pay nothing.',
+    'Un plan para cada negocio.':'A plan for every business.',
+    'Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.':'A fixed monthly fee, no upfront cost. See your free preview first, then pick your plan.',
+    'Precios en pesos mexicanos. Pago mensual con tarjeta.':'Prices in US dollars. Billed monthly by card.',
+    annual:'Prefer to pay a full year upfront by <b>bank transfer</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/523349814667" target="_blank" rel="noopener">Message us</a>.',
+    '¿Necesitas algo hecho a la medida?':'Need something custom?',
+    'Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.':'Online stores, booking systems, multilingual sites or special projects. We quote it with you and you pay once.',
+    'Proyectos personalizados':'Custom projects','Desde $5,000 MXN':'From $1,500 USD','Cotizar mi proyecto':'Get a quote',
+    '¿Quieres aprender a hacerlas tú?':'Want to learn to build them yourself?',
+    'En Webmasters by OKfly Studio te enseñamos a crear y vender páginas web con IA, con el mismo proceso que usamos con nuestros clientes. Prueba la comunidad 7 días gratis.':'In Webmasters by OKfly Studio we teach you to build and sell websites with AI, using the same process we use with our clients. The course is taught in Spanish. Try the community free for 7 days.',
+    'Conocer Webmasters':'Explore Webmasters',
+    'Preguntas frecuentes':'Questions',
+    '¿Qué pasa si no me gusta la vista previa?':'What if I don’t like the preview?',
+    'No pagas nada. Primero te enseñamos tu página terminada; solo si te gusta eliges tu plan y la publicamos con tu dominio.':'You pay nothing. We show you your finished website first; only if you like it do you pick a plan and we publish it on your domain.',
+    '¿Qué necesito enviarles?':'What do I need to send you?',
+    'Tu logo, algunas fotos de tu negocio y el enlace de tu Facebook o Instagram. Con eso armamos tu página; si te falta algo, te ayudamos.':'Your logo, a few photos of your business and your Facebook or Instagram link. That’s enough to build your site; if anything’s missing, we help.',
+    '¿Necesito saber de tecnología?':'Do I need to be tech-savvy?',
+    'No. Todo se hace por WhatsApp: nosotros nos encargamos del diseño, el dominio, el hosting y el mantenimiento.':'No. Everything happens on WhatsApp: we handle the design, domain, hosting and maintenance.',
+    '¿Cuánto tarda mi vista previa?':'How long does the preview take?',
+    'Normalmente te la enviamos en unas 24 horas después de recibir tu información. Los proyectos personalizados se calendarizan contigo.':'We usually send it about 24 hours after we get your info. Custom projects are scheduled with you.',
+    '¿Puedo pedir cambios después?':'Can I request changes later?',
+    'Sí. Nos escribes por WhatsApp y actualizamos textos, fotos, precios u horarios según lo que incluya tu plan.':'Yes. Message us on WhatsApp and we update text, photos, prices or hours, depending on your plan.',
+    '¿Cómo se paga?':'How do I pay?',
+    'Con tarjeta, como una suscripción mensual. Si prefieres pagar el año completo, también aceptamos transferencia u OXXO.':'By card, as a monthly subscription. If you prefer to pay for the full year, we also accept bank transfer.',
+    '¿Trabajan fuera de México?':'Do you work outside Mexico?',
+    'Sí. Todo el proceso es en línea, así que trabajamos con negocios de toda Latinoamérica y Estados Unidos. Si estás fuera de México, te cotizamos en dólares.':'Yes. Everything happens online, so we work with businesses across the United States and Latin America, in English or Spanish.',
+    'Mañana tu negocio puede verse así.':'Tomorrow your business could look like this.',
+    'Escríbenos hoy y recibe tu vista previa gratis. Sin compromiso.':'Message us today and get your free preview. No commitment.',
+    'Páginas web por suscripción para negocios de México, Latinoamérica y Estados Unidos. Diseño, dominio, hosting y mantenimiento en una sola mensualidad.':'Website subscriptions for businesses in the US, Mexico and Latin America. Design, domain, hosting and maintenance in one monthly fee.',
+    'Contacto':'Contact','Riviera Maya, México':'Riviera Maya, Mexico','Los diseños mostrados son ejemplos conceptuales.':'Designs shown are concept examples.'
+  };
+  var UI = {
+    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Brasa & Mar', tabs:'Giro del negocio', unit:'MXN / mes', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
+    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Brasa & Mar', tabs:'Type of business', unit:'USD / mo', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
+  };
+  var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-t]'));
+  i18nEls.forEach(function(el){ el._es = el.innerHTML; });
+  function tr(){ i18nEls.forEach(function(el){ var k = el.getAttribute('data-t') || el._es; el.innerHTML = (LANG === 'en' && EN[k] != null) ? EN[k] : el._es; }); }
+  function M(){ return MSGS[LANG]; }
+  function U(){ return UI[LANG]; }
 
-  function makeCanvas(){var c=document.createElement('canvas');c.width=W;c.height=H;return c;}
-  var cSite = makeCanvas(), cWire = makeCanvas(), cCode = makeCanvas();
-  function redraw(){drawSite(cSite.getContext('2d'));drawWire(cWire.getContext('2d'));drawCode(cCode.getContext('2d'));if(texSite){texSite.needsUpdate=true;texCode.needsUpdate=true;}syncCopy();}
+  /* ---------- Industries: drawn website templates ---------- */
+  var IND = {
+    restaurante:{label:'Restaurante', name:'Brasa & Mar', bg:'#F3EADF', ink:'#23140E', tint:'#9A3A23', btn:'#F3EADF', chip:'rgba(35,20,14,0.07)', a1:'#D9885A',
+      nav:['Menú','Reservas','Ubicación'], h:'Cocina al carbón frente al mar.', p:'Mariscos frescos, cocteles y atardeceres en la Riviera Maya.', cta:'Reservar mesa', chips:['Abierto hoy','Cómo llegar'],
+      items:[['Pulpo a las brasas','$380'],['Tacos de pescado','$190'],['Ceviche de la casa','$240']],
+      art:'<i class="art" style="left:16%;top:16%;width:26%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i><i class="art" style="left:0;right:0;bottom:40%;height:4%;background:#C7643F"></i><i class="art" style="left:60%;bottom:40%;width:5%;height:34%;background:#3B2116;border-radius:2px"></i><i class="art" style="left:52%;bottom:68%;width:22%;height:9%;background:#3B2116;border-radius:50%"></i>'},
+    dentista:{label:'Dentista', name:'Sonrisa Dental', bg:'#EEF3F8', ink:'#0E1B2C', tint:'#2B5C9E', btn:'#FFFFFF', chip:'rgba(14,27,44,0.06)', a1:'#2B5C9E',
+      nav:['Tratamientos','Equipo','Citas'], h:'Tu sonrisa, en manos expertas.', p:'Limpiezas, ortodoncia y urgencias el mismo día.', cta:'Agendar cita', chips:['Citas hoy','Estacionamiento'],
+      items:[['Limpieza dental','45 min'],['Ortodoncia','Valoración'],['Blanqueamiento','1 sesión']],
+      art:'<i class="art" style="left:50%;top:50%;width:62%;aspect-ratio:1;border-radius:50%;background:#EEF3F8;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:36%;aspect-ratio:1;border-radius:50%;background:#9DB9DF;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:14%;aspect-ratio:1;border-radius:50%;background:#2B5C9E;transform:translate(-50%,-50%)"></i>'},
+    barberia:{label:'Barbería', name:'Navaja Barber Co.', bg:'#161412', ink:'#EFE7DA', tint:'#C79A55', btn:'#161412', chip:'rgba(239,231,218,0.08)', a1:'#2A2420',
+      nav:['Servicios','Barberos','Reservar'], h:'Cortes clásicos, estilo moderno.', p:'Reserva tu silla en segundos y llega sin esperar.', cta:'Reservar corte', chips:['Sin filas','Pago con tarjeta'],
+      items:[['Corte','$250'],['Barba','$180'],['Corte + barba','$380']],
+      art:'<i class="art" style="left:50%;top:10%;width:16%;height:80%;border-radius:99px;transform:translateX(-50%);background:repeating-linear-gradient(135deg,#C79A55 0 12%,#EFE7DA 12% 24%,#7A2E22 24% 36%)"></i><i class="art" style="left:50%;top:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i><i class="art" style="left:50%;bottom:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i>'},
+    gimnasio:{label:'Gimnasio', name:'Pulso Gym', bg:'#0F0F0F', ink:'#F2F2F0', tint:'#E5552B', btn:'#0F0F0F', chip:'rgba(242,242,240,0.08)', a1:'#1E1E1E',
+      nav:['Clases','Horarios','Planes'], h:'Entrena con un plan hecho para ti.', p:'Coaches certificados y clases todo el día.', cta:'Clase gratis', chips:['Abierto 6–23 h','Regaderas'],
+      items:[['Funcional','7:00'],['Spinning','19:00'],['Pesas libres','Todo el día']],
+      art:'<i class="art" style="left:14%;right:14%;top:47%;height:6%;background:#8A8A86;border-radius:99px"></i><i class="art" style="left:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="left:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i><i class="art" style="right:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="right:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i>'},
+    inmobiliaria:{label:'Inmobiliaria', name:'Costa Viva', bg:'#E6EEEA', ink:'#0F1F1C', tint:'#1E5C55', btn:'#FFFFFF', chip:'rgba(15,31,28,0.06)', a1:'#1E5C55',
+      nav:['Propiedades','Zonas','Asesoría'], h:'Vive a minutos del Caribe.', p:'Departamentos en preventa en la Riviera Maya.', cta:'Ver propiedades', chips:['Preventa','Financiamiento'],
+      items:[['2 recámaras','98 m²'],['Penthouse','160 m²'],['Lote residencial','300 m²']],
+      art:'<i class="art" style="left:12%;bottom:14%;width:20%;height:46%;background:#E6EEEA"></i><i class="art" style="left:36%;bottom:14%;width:24%;height:70%;background:#BFD5CD"></i><i class="art" style="left:64%;bottom:14%;width:20%;height:56%;background:#E6EEEA"></i><i class="art" style="left:0;right:0;bottom:0;height:14%;background:#13403B"></i><i class="art" style="left:72%;top:12%;width:12%;aspect-ratio:1;border-radius:50%;background:#F4D58D"></i>'},
+    tours:{label:'Tours', name:'Cenote Azul Tours', bg:'#EAF4F3', ink:'#0B2424', tint:'#0E7C7B', btn:'#FFFFFF', chip:'rgba(11,36,36,0.06)', a1:'#0B3D2E',
+      nav:['Tours','Galería','Reservar'], h:'Nada en cenotes escondidos.', p:'Tours en grupos pequeños desde Tulum.', cta:'Reservar tour', chips:['Guías locales','Transporte'],
+      items:[['Ruta de cenotes','6 h'],['Snorkel con tortugas','4 h'],['Cobá en bici','5 h']],
+      art:'<i class="art" style="left:50%;top:58%;width:84%;height:70%;border-radius:50%;background:#0E7C7B;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:56%;height:46%;border-radius:50%;background:#58C3BA;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:24%;height:20%;border-radius:50%;background:#B9ECE4;transform:translate(-50%,-50%)"></i><i class="art" style="left:0;right:0;top:0;height:16%;background:#16543F"></i>'}
+  };
+  var ORDER = ['restaurante','dentista','barberia','gimnasio','inmobiliaria','tours'];
+  var IND_EN = {
+    restaurante:{label:'Restaurant', nav:['Menu','Book','Location'], h:'Wood-fired cooking by the sea.', p:'Fresh seafood, cocktails and sunsets in the Riviera Maya.', cta:'Book a table', chips:['Open today','Directions'], items:[['Grilled octopus','$380'],['Fish tacos','$190'],['House ceviche','$240']]},
+    dentista:{label:'Dentist', nav:['Treatments','Team','Book'], h:'Your smile, in expert hands.', p:'Cleanings, braces and same-day emergencies.', cta:'Book a visit', chips:['Same-day visits','Parking'], items:[['Dental cleaning','45 min'],['Braces','Consultation'],['Whitening','1 session']]},
+    barberia:{label:'Barbershop', nav:['Services','Barbers','Book'], h:'Classic cuts, modern style.', p:'Book your chair in seconds and skip the wait.', cta:'Book a cut', chips:['No lines','Card payments'], items:[['Haircut','$250'],['Beard','$180'],['Cut + beard','$380']]},
+    gimnasio:{label:'Gym', nav:['Classes','Schedule','Plans'], h:'Train with a plan made for you.', p:'Certified coaches and classes all day.', cta:'Free class', chips:['Open 6 am–11 pm','Showers'], items:[['Functional','7:00'],['Spinning','19:00'],['Free weights','All day']]},
+    inmobiliaria:{label:'Real estate', nav:['Listings','Areas','Advice'], h:'Live minutes from the Caribbean.', p:'Pre-sale condos in the Riviera Maya.', cta:'View listings', chips:['Pre-sale','Financing'], items:[['2 bedrooms','98 m²'],['Penthouse','160 m²'],['Residential lot','300 m²']]},
+    tours:{label:'Tours', nav:['Tours','Gallery','Book'], h:'Swim in hidden cenotes.', p:'Small-group tours from Tulum.', cta:'Book a tour', chips:['Local guides','Transport'], items:[['Cenote route','6 h'],['Turtle snorkeling','4 h'],['Cobá by bike','5 h']]}
+  };
+  function D(key){ var b = IND[key]; if (LANG !== 'en') return b; var o = {}, e = IND_EN[key], k; for (k in b) o[k] = b[k]; for (k in e) o[k] = e[k]; return o; }
+  var menuIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
 
-  /* ---------- Three.js scene ---------- */
-  var host = document.getElementById('scene');
-  var texSite=null, texCode=null, renderer, scene, camera, group, panels=[], running=false, visible=true;
-  var target={x:0,y:0}, cur={x:0,y:0}, scrollP=0, curP=0, clock0=performance.now();
+  function siteHTML(key, name, mobile){
+    var d = D(key), n = esc(name || d.name);
+    var items = (mobile ? d.items.slice(0,2) : d.items).map(function(it){ return '<span>' + esc(it[0]) + '<em>' + esc(it[1]) + '</em></span>'; }).join('');
+    return '<div class="site' + (mobile ? ' m' : '') + '" style="--sbg:' + d.bg + ';--sink:' + d.ink + ';--stint:' + d.tint + ';--sbtn:' + d.btn + ';--schip:' + d.chip + ';--a1:' + d.a1 + '">' +
+      '<div class="site-nav"><b>' + n + '</b><span>' + d.nav.map(esc).map(function(x){return '<i style="font-style:normal">'+x+'</i>';}).join('') + '</span>' + menuIcon + '</div>' +
+      '<div class="site-hero"><div class="site-copy"><h5>' + esc(d.h) + '</h5><p>' + esc(d.p) + '</p><span class="site-cta">' + esc(d.cta) + '</span><div class="site-chips">' + d.chips.map(function(c){return '<span>'+esc(c)+'</span>';}).join('') + '</div></div>' +
+      '<div class="site-art">' + d.art + '</div></div>' +
+      '<div class="site-items">' + items + '</div></div>';
+  }
+  function slug(s){ var t = String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/&/g,'y').replace(/[^a-z0-9]+/g,''); return (t || 'tunegocio') + '.com'; }
 
-  function hasGL(){try{var c=document.createElement('canvas');return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));}catch(e){return false;}}
-
-  function initGL(){
-    renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-    camera.position.set(0, 0, 11);
-    group = new THREE.Group(); scene.add(group);
-    function tex(c){var t=new THREE.CanvasTexture(c); t.anisotropy = renderer.capabilities.getMaxAnisotropy(); if (THREE.sRGBEncoding) t.encoding = THREE.sRGBEncoding; return t;}
-    texSite = tex(cSite); texCode = tex(cCode); var texWire = tex(cWire);
-    if (THREE.sRGBEncoding) renderer.outputEncoding = THREE.sRGBEncoding;
-    var geo = new THREE.PlaneGeometry(4.5, 3);
-    [{t:texCode, x:0.9, y:0.75, z:-1.6},{t:texWire, x:0.45, y:0.38, z:-0.8},{t:texSite, x:0, y:0, z:0}].forEach(function(d){
-      var m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({map:d.t, transparent:true, side:THREE.DoubleSide, depthWrite:false}));
-      m.userData = d; m.position.set(d.x,d.y,d.z); group.add(m); panels.push(m);
-    });
-    var sc = document.createElement('canvas'); sc.width=256; sc.height=256; var sx=sc.getContext('2d');
-    var g = sx.createRadialGradient(128,128,10,128,128,128); g.addColorStop(0,'rgba(0,0,0,0.55)'); g.addColorStop(1,'rgba(0,0,0,0)'); sx.fillStyle=g; sx.fillRect(0,0,256,256);
-    var shadow = new THREE.Mesh(new THREE.PlaneGeometry(7,2.2), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc), transparent:true, depthWrite:false}));
-    shadow.position.set(0.3,-2.35,-0.6); shadow.rotation.x = -Math.PI/2.3; scene.add(shadow);
-    group.rotation.set(0.12,-0.42,0.04);
-    host.appendChild(renderer.domElement);
-    resize();
-    new ResizeObserver(resize).observe(host);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function(e){visible = e[0].isIntersecting; if (visible) start();},{threshold:0}).observe(host);
-    start();
-  }
-  function resize(){
-    if(!renderer) return; var r = host.getBoundingClientRect(); var w=Math.max(1,r.width), h=Math.max(1,r.height);
-    renderer.setSize(w,h,false); camera.aspect = w/h;
-    camera.position.z = w/h < 1.05 ? 13.5 : 11;
-    camera.updateProjectionMatrix(); if (reduce) render();
-  }
-  function start(){ if (running || reduce) { if (reduce) render(); return; } running = true; requestAnimationFrame(loop); }
-  function loop(now){
-    if (!visible){running=false;return;}
-    var t = (now - clock0)/1000;
-    cur.x += (target.x - cur.x)*0.06; cur.y += (target.y - cur.y)*0.06;
-    curP += (scrollP - curP)*0.1;
-    group.rotation.y = -0.42 + cur.x*0.35 + curP*0.55;
-    group.rotation.x = 0.12 + cur.y*0.18 + curP*0.2;
-    group.position.y = Math.sin(t*0.7)*0.08 + curP*0.6;
-    var spread = 1 + curP*1.8 + Math.sin(t*0.9)*0.04;
-    panels.forEach(function(m,i){var d=m.userData; if (i===2 && kicking) { m.position.x=d.x*spread; m.position.y=d.y*spread; return; } m.position.set(d.x*spread, d.y*spread, d.z*spread);});
-    render(); requestAnimationFrame(loop);
-  }
-  function render(){ if (renderer) renderer.render(scene,camera); }
-
-  /* ---------- Live input ---------- */
-  var input = document.getElementById('bizName');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  document.getElementById('live').addEventListener('submit', function(e){e.preventDefault();});
-  input.addEventListener('input', function(){ state.name = input.value; redraw(); kick(); });
-  chips.forEach(function(c){c.addEventListener('click', function(){
-    state.type = c.dataset.type; chips.forEach(function(o){o.setAttribute('aria-pressed', o===c ? 'true':'false');}); redraw(); kick();
-  });});
-  var kicking = false;
-  function kick(){ if (reduce || !panels.length) { render(); return; } var f = panels[2]; var s=performance.now(); kicking = true;
-    (function step(n){var p=Math.min(1,(n-s)/520); var e = Math.sin(p*Math.PI)*(1-p)*0.9; f.position.z = e; f.rotation.y = e*0.15; if(p<1) requestAnimationFrame(step); else {f.rotation.y=0; kicking=false;}})(s);
-  }
-
-  function syncCopy(){
-    var name = state.name.trim() || fallbackName(), t = tpl();
-    document.querySelectorAll('.js-url').forEach(function(el){el.textContent = slug(state.name);});
-    document.querySelectorAll('.js-title').forEach(function(el){el.textContent = name + ' · ' + t.tail;});
-    document.querySelectorAll('.js-q').forEach(function(el){el.textContent = (t.qCafe && /caf|coffee/i.test(name)) ? t.qCafe : t.q;});
-    setWA();
-  }
+  /* Fill every drawn site on the page */
+  function paintSites(){ document.querySelectorAll('[data-site]').forEach(function(el){ el.innerHTML = siteHTML(el.dataset.site, '', el.dataset.mobile === '1'); }); }
 
   /* ---------- WhatsApp links ---------- */
-  function setWA(){
-    var name = state.name.trim(), dict = state.lang==='en' ? EN : ES;
-    document.querySelectorAll('.js-wa').forEach(function(a){
-      var plan = a.dataset.plan ? dict[a.dataset.plan] : '';
-      var msg = state.lang==='en'
-        ? 'Hi OKfly, I’d like a quote for a website' + (plan ? ' (' + plan + ' plan)' : '') + (name ? ' for my business ' + name : '') + '.'
-        : 'Hola OKfly, quiero cotizar una página web' + (plan ? ' (plan ' + plan + ')' : '') + (name ? ' para mi negocio ' + name : '') + '.';
-      a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+  function setWA(){ document.querySelectorAll('.js-wa').forEach(function(a){
+    if (a.id === 'demoCta') return;
+    var k = a.dataset.msg; a.href = wa(k && M()[k] ? M()[k] : M().base);
+  }); }
+
+  /* ---------- Tech marquee ---------- */
+  var TECH = [
+    ['WordPress','<circle cx="12" cy="12" r="9.5"/><path d="M5 8.5l3.8 10M9.5 8.5l3.6 10 3.4-10M14 8.5h4"/>'],
+    ['Stripe','<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/>'],
+    ['WhatsApp','<path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/>'],
+    ['Google','<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>'],
+    ['Cloudflare','<path d="M7 18h11a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 18z"/>'],
+    ['Elementor','<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 8v8M13 8h3M13 12h3M13 16h3"/>'],
+    ['AI','<path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3.5"/>']
+  ];
+  function paintTech(){
+    var techHTML = TECH.map(function(t){ return '<span class="tech-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + t[1] + '</svg>' + (t[0] === 'AI' ? U().ai : t[0]) + '</span>'; }).join('');
+    document.getElementById('techTrack').innerHTML = techHTML + techHTML;
+  }
+
+  /* ---------- Gallery strip ---------- */
+  function paintGallery(){
+    var gal = ORDER.map(function(k){ return '<figure class="g-card"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">' + slug(IND[k].name) + '</span></div><div class="bw-scr">' + siteHTML(k,'',false) + '</div></div><figcaption><b>' + D(k).label + '</b><span>' + U().example + '</span></figcaption></figure>'; }).join('');
+    document.getElementById('galleryTrack').innerHTML = gal + gal.replace(/<figure class="g-card">/g,'<figure class="g-card" aria-hidden="true">');
+  }
+
+  /* ---------- Plans ---------- */
+  var check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var plansEl = document.getElementById('plans');
+  function paintPlans(){
+    var cards = plansEl.children;
+    if (!cards.length){
+      plansEl.innerHTML = PLANS_BY_LANG.es.map(function(p){ return '<article class="plan' + (p.featured ? ' featured' : '') + '" data-rv data-tilt3></article>'; }).join('');
+      cards = plansEl.children;
+    }
+    PLANS_BY_LANG[LANG].forEach(function(p, i){
+      cards[i].innerHTML = (p.featured ? '<span class="plan-tag">' + U().popular + '</span>' : '') +
+        '<h3>' + esc(p.name) + '</h3><p class="pdesc">' + esc(p.desc) + '</p>' +
+        '<div class="amount"><b>' + esc(p.price) + '</b><span>' + U().unit + '</span></div>' +
+        '<ul>' + p.features.map(function(f){ return '<li>' + check + '<span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' +
+        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + wa(M().plan.replace('{plan}', p.name)) + '" target="_blank" rel="noopener">' + U().start + esc(p.name) + '</a>';
     });
   }
+  paintPlans();
+
+  /* ---------- Demo switcher ---------- */
+  var demo = {key:'restaurante', name:''};
+  var tabs = document.getElementById('tabs');
+  tabs.innerHTML = ORDER.map(function(k,i){ return '<button type="button" class="tab" data-k="' + k + '" aria-pressed="' + (i===0) + '">' + IND[k].label + '</button>'; }).join('');
+  function paintTabs(){ tabs.querySelectorAll('.tab').forEach(function(b){ b.textContent = D(b.dataset.k).label; }); tabs.setAttribute('aria-label', U().tabs); }
+  var dDesk = document.getElementById('demoDesk'), dMob = document.getElementById('demoMob'), dUrl = document.getElementById('demoUrl'), dCta = document.getElementById('demoCta'), dName = document.getElementById('demoName');
+  function paintDemo(){
+    var nm = demo.name.trim();
+    dDesk.innerHTML = siteHTML(demo.key, nm, false);
+    dMob.innerHTML = siteHTML(demo.key, nm, true);
+    dUrl.textContent = slug(nm || IND[demo.key].name);
+    dCta.href = nm ? wa(M().demo.replace('{name}', nm).replace('{giro}', D(demo.key).label.toLowerCase())) : wa(M().base);
+  }
+  function swap(fn){
+    if (reduce || !Element.prototype.animate){ fn(); return; }
+    var els = [dDesk, dMob];
+    var outs = els.map(function(e){ return e.animate([{opacity:1,filter:'blur(0px)',transform:'scale(1)'},{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'}],{duration:140,easing:'ease-out',fill:'forwards'}); });
+    outs[0].onfinish = function(){ fn(); els.forEach(function(e){ e.animate([{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'},{opacity:1,filter:'blur(0px)',transform:'scale(1)'}],{duration:280,easing:'cubic-bezier(0.23,1,0.32,1)',fill:'forwards'}); }); };
+  }
+  tabs.addEventListener('click', function(e){
+    var b = e.target.closest('.tab'); if (!b || b.dataset.k === demo.key) return;
+    demo.key = b.dataset.k;
+    tabs.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-pressed', t===b ? 'true':'false'); });
+    swap(paintDemo);
+  });
+  dName.addEventListener('input', function(){ demo.name = dName.value; paintDemo(); });
+  document.getElementById('demoForm').addEventListener('submit', function(e){ e.preventDefault(); });
+
+  /* ---------- Domain typing in the bento ---------- */
+  var doms = ['brasaymar.com','sonrisadental.mx','navajabarber.com','pulsogym.mx','costaviva.mx','tunegocio.com'], di = 0, domEl = document.getElementById('domText');
+  if (!reduce) setInterval(function(){
+    if (document.hidden) return;
+    domEl.classList.add('hide');
+    setTimeout(function(){ di = (di+1) % doms.length; domEl.textContent = doms[di]; domEl.classList.remove('hide'); }, 620);
+  }, 2800);
+
+  /* ---------- Copy number ---------- */
+  var copyBtn = document.getElementById('copyNum');
+  copyBtn.addEventListener('click', function(){
+    var label = copyBtn.firstChild;
+    function done(t){ label.textContent = t; setTimeout(function(){ label.textContent = '+52 33 4981 4667'; }, 1600); }
+    try { navigator.clipboard.writeText('+52 33 4981 4667').then(function(){ done(U().copied); }, function(){ selectNum(); }); } catch(e){ selectNum(); }
+    function selectNum(){ var r = document.createRange(); r.selectNodeContents(label); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
 
   /* ---------- Language switch ---------- */
   var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
   function setLang(lang, save){
-    state.lang = lang;
-    var dict = lang==='en' ? EN : ES;
-    i18nEls.forEach(function(el){ var v = dict[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
-    document.documentElement.lang = lang;
-    document.title = UI[lang].title;
-    input.placeholder = UI[lang].placeholder;
-    if (input.value === 'Café Bahía' || input.value === 'Bahia Coffee') { input.value = lang==='en' ? 'Bahia Coffee' : 'Café Bahía'; state.name = input.value; }
-    document.getElementById('chips').setAttribute('aria-label', UI[lang].chipsLabel);
-    host.setAttribute('aria-label', UI[lang].scene);
-    langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true' : 'false'); });
-    redraw(); kick();
-    if (save) { try { localStorage.setItem('okfly-lang', lang); } catch(e){} }
+    LANG = lang === 'en' ? 'en' : 'es';
+    document.documentElement.lang = LANG;
+    document.title = U().title;
+    tr(); paintSites(); paintTech(); paintGallery(); paintPlans(); paintTabs(); paintDemo(); setWA();
+    dName.placeholder = U().placeholder;
+    copyBtn.setAttribute('aria-label', U().copyAria);
+    langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === LANG ? 'true' : 'false'); });
+    if (typeof resetStory === 'function') resetStory();
+    if (save){ try { localStorage.setItem('okfly-lang', LANG); } catch(e){} }
   }
-  langBtns.forEach(function(b){ b.addEventListener('click', function(){ if (b.dataset.lang !== state.lang) setLang(b.dataset.lang, true); }); });
+  langBtns.forEach(function(b){ b.addEventListener('click', function(){ if (b.dataset.lang !== LANG) setLang(b.dataset.lang, true); }); });
+  var startLang = 'es';
+  try { var saved = localStorage.getItem('okfly-lang'); if (saved === 'en' || saved === 'es') startLang = saved; else if (/^en/i.test(navigator.language || '')) startLang = 'en'; }
+  catch(e){ if (/^en/i.test(navigator.language || '')) startLang = 'en'; }
+  if (location.hash === '#en') startLang = 'en'; else if (location.hash === '#es') startLang = 'es';
+  setLang(startLang, false);
 
-  /* ---------- Pointer for hero ---------- */
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches){
-    window.addEventListener('pointermove', function(e){ target.x = (e.clientX/window.innerWidth - 0.5)*2; target.y = (e.clientY/window.innerHeight - 0.5)*2; }, {passive:true});
+  /* ---------- Spring helper for pointer-driven 3D ---------- */
+  function Spring(k,d){ this.x=0; this.v=0; this.t=0; this.k=k||0.06; this.d=d||0.8; }
+  Spring.prototype.step = function(){ this.v += (this.t - this.x) * this.k; this.v *= this.d; this.x += this.v; return Math.abs(this.v) > 0.0001 || Math.abs(this.t - this.x) > 0.0001; };
+
+  /* ---------- Hero rig ---------- */
+  var heroRig = document.getElementById('heroRig'), heroEl = document.querySelector('.hero');
+  var hx = new Spring(0.05,0.82), hy = new Spring(0.05,0.82), heroScroll = 0;
+  function heroFrame(){
+    var moving = hx.step() | hy.step();
+    heroRig.style.transform = 'rotateX(' + (10 + hy.x*-5 + heroScroll*-8).toFixed(2) + 'deg) rotateY(' + (hx.x*8).toFixed(2) + 'deg) translateY(' + (heroScroll*-40).toFixed(1) + 'px)';
+    if (moving) requestAnimationFrame(heroFrame); else heroRaf = null;
   }
+  var heroRaf = null;
+  function kickHero(){ if (!heroRaf) heroRaf = requestAnimationFrame(heroFrame); }
+  if (!reduce){
+    heroRig.style.transform = 'rotateX(10deg)';
+    if (fine) window.addEventListener('pointermove', function(e){ hx.t = (e.clientX/innerWidth - 0.5)*2; hy.t = (e.clientY/innerHeight - 0.5)*2; kickHero(); }, {passive:true});
+  } else heroRig.style.transform = 'rotateX(8deg)';
 
-  /* ---------- Process: scroll-linked 3D layer explosion ---------- */
-  var stack = document.getElementById('stack');
-  var layers = stack ? Array.prototype.slice.call(stack.querySelectorAll('.layer')) : [];
-  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
-  var procSec = document.getElementById('proceso');
-  var heroEl = document.querySelector('.hero');
-  var ticking = false;
+  /* ---------- Demo rig + plan tilt ---------- */
+  function tiltOn(el, max, z){
+    if (reduce || !fine) return;
+    var sx = new Spring(0.08,0.78), sy = new Spring(0.08,0.78), raf = null, base = el.classList.contains('featured') ? 'translateY(-12px) ' : '';
+    function f(){ var m = sx.step() | sy.step(); el.style.transform = base + 'rotateX(' + sy.x.toFixed(2) + 'deg) rotateY(' + sx.x.toFixed(2) + 'deg)' + (z ? ' translateZ(' + z + 'px)' : ''); if (m) raf = requestAnimationFrame(f); else raf = null; }
+    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); sx.t = ((e.clientX-r.left)/r.width - 0.5)*max; sy.t = -((e.clientY-r.top)/r.height - 0.5)*max; if(!raf) raf = requestAnimationFrame(f); });
+    el.addEventListener('pointerleave', function(){ sx.t = 0; sy.t = 0; if(!raf) raf = requestAnimationFrame(f); });
+  }
+  var demoRig = document.getElementById('demoRig');
+  if (!reduce) demoRig.style.transform = 'rotateX(6deg) rotateY(-6deg)';
+  (function(){
+    if (reduce || !fine) return;
+    var sx = new Spring(0.05,0.82), sy = new Spring(0.05,0.82), raf=null; sx.x = sx.t = -6; sy.x = sy.t = 6;
+    function f(){ var m = sx.step() | sy.step(); demoRig.style.transform = 'rotateX(' + sy.x.toFixed(2) + 'deg) rotateY(' + sx.x.toFixed(2) + 'deg)'; if (m) raf = requestAnimationFrame(f); else raf = null; }
+    var stage = demoRig.parentNode;
+    stage.addEventListener('pointermove', function(e){ var r = stage.getBoundingClientRect(); sx.t = ((e.clientX-r.left)/r.width - 0.5)*14; sy.t = -((e.clientY-r.top)/r.height - 0.5)*10; if(!raf) raf = requestAnimationFrame(f); });
+    stage.addEventListener('pointerleave', function(){ sx.t = -6; sy.t = 6; if(!raf) raf = requestAnimationFrame(f); });
+  })();
+  document.querySelectorAll('[data-tilt3]').forEach(function(el){ tiltOn(el, 8); });
+
+  /* ---------- Story: WhatsApp conversation becomes the website ---------- */
+  var story = document.querySelector('.story');
+  var pin = story.querySelector('.story-pin');
+  var sticky = story.querySelector('.story-sticky');
+  var phoneEl = document.getElementById('storyPhone');
+  var browserEl = document.getElementById('storyBrowser');
+  var doneEl = document.getElementById('storyDone');
+  var copyEl = document.getElementById('storyCopy');
+  var feed = document.getElementById('waFeed'), body = document.getElementById('waBody');
+  var items = Array.prototype.slice.call(feed.children);
+  var phases = Array.prototype.slice.call(story.querySelectorAll('.phase'));
+  var live = !reduce && !!window.requestAnimationFrame;
+  var geo = null, lastP = -1, lastShown = -1;
+
+  if (live){
+    story.classList.add('is-live');
+    items.forEach(function(el){ if (el.classList.contains('msg')) el.classList.add('pending'); });
+  } else {
+    items.forEach(function(el){ if (!el.classList.contains('typing')) el.classList.add('on'); });
+  }
+  function measure(){
+    if (!live) return;
+    var sr = sticky.getBoundingClientRect();
+    var pr = phoneEl.getBoundingClientRect();
+    var bwW = browserEl.offsetWidth, bwH = browserEl.offsetHeight;
+    var mobile = innerWidth <= 900;
+    geo = {
+      cx: sr.width/2, cy: sr.height/2,
+      px: pr.left - sr.left + pr.width/2, py: pr.top - sr.top + pr.height/2,
+      pw: pr.width, ph: pr.height, bw: bwW, bh: bwH, mobile: mobile, sw: sr.width
+    };
+  }
+  function storyFrame(){
+    if (!live) return;
+    var r = pin.getBoundingClientRect();
+    var total = r.height - innerHeight;
+    var p = clamp(-r.top / Math.max(1,total), 0, 1);
+    if (Math.abs(p - lastP) < 0.0004) return;
+    lastP = p;
+    if (!geo) measure();
+
+    /* messages */
+    var shown = -1;
+    items.forEach(function(el, i){
+      var at = parseFloat(el.dataset.at || 0), until = el.dataset.until ? parseFloat(el.dataset.until) : 9;
+      var on = p >= at && p < until;
+      if (el.classList.contains('typing')) el.classList.toggle('on', on);
+      else { el.classList.toggle('pending', !on); el.classList.toggle('on', on); }
+      if (on) shown = i;
+    });
+    if (shown !== lastShown){
+      lastShown = shown;
+      var last = shown >= 0 ? items[shown] : null;
+      var off = last ? Math.max(0, last.offsetTop + last.offsetHeight - body.clientHeight + 14) : 0;
+      feed.style.transform = 'translateY(' + (-off) + 'px)';
+    }
+
+    /* phases */
+    var ph = p < 0.29 ? 0 : p < 0.48 ? 1 : p < 0.86 ? 2 : 3;
+    phases.forEach(function(el,i){ el.classList.toggle('on', i===ph); });
+
+    /* morph: preview bubble -> fullscreen browser -> settled beside the phone */
+    var m = ss(0.54, 0.72, p), s = ss(0.76, 0.88, p);
+    var g = geo;
+    var fitScale = Math.min(1, (innerHeight*0.86) / g.bh);
+    var startScale = (g.pw*0.78) / g.bw;
+    var sx0 = g.px - g.cx, sy0 = g.py - g.cy + g.ph*0.12;
+    var endX, endY, endScale, endRY, phoneEndX, phoneEndY, phoneEndScale;
+    if (g.mobile){ endX = 0; endY = -g.ph*0.18; endScale = 0.92*fitScale; endRY = -8; phoneEndX = g.sw*0.28 - (g.px - g.cx); phoneEndY = g.ph*0.2; phoneEndScale = 0.5; }
+    else { var endW = Math.min(g.sw*0.46, 700), ecx = g.sw - Math.max(32, (g.sw - 1360)/2 + 24) - endW/2; endScale = endW/g.bw; endX = ecx - g.cx; endY = -g.ph*0.04; endRY = -14; phoneEndX = (ecx - endW/2 + g.pw*0.08) - g.px; phoneEndY = g.ph*0.06; phoneEndScale = 0.84; }
+    var bx = lerp(lerp(sx0, 0, m), endX, s), by = lerp(lerp(sy0, 0, m), endY, s);
+    var bsc = lerp(lerp(startScale, fitScale, m), endScale, s);
+    var bry = lerp(lerp(8, 0, m), endRY, s), brx = lerp(lerp(10, 0, m), 6, s);
+    var bop = clamp(m*4, 0, 1);
+    browserEl.style.opacity = bop.toFixed(3);
+    browserEl.style.transform = 'translate(-50%,-50%) translate3d(' + bx.toFixed(1) + 'px,' + by.toFixed(1) + 'px,0) perspective(1600px) rotateY(' + bry.toFixed(2) + 'deg) rotateX(' + brx.toFixed(2) + 'deg) scale(' + bsc.toFixed(4) + ')';
+
+    var pOp = clamp(1 - m*1.6 + s*1.6, 0, 1);
+    var pScale = lerp(lerp(1, 0.9, m), phoneEndScale, s);
+    var pX = lerp(0, phoneEndX, s), pY = lerp(0, phoneEndY, s);
+    phoneEl.style.opacity = pOp.toFixed(3);
+    phoneEl.style.transform = 'translate3d(' + pX.toFixed(1) + 'px,' + pY.toFixed(1) + 'px,0) rotateY(' + lerp(0, g.mobile ? -10 : 12, s).toFixed(2) + 'deg) scale(' + pScale.toFixed(4) + ')';
+    phoneEl.style.position = 'relative'; phoneEl.style.zIndex = s > 0.5 ? 8 : 1;
+
+    copyEl.style.opacity = clamp(1 - m*1.4 + s*1.4, 0, 1).toFixed(3);
+    doneEl.style.opacity = (m > 0.6 && s < 0.4) ? 1 : 0;
+  }
+  var sTick = false;
   function onScroll(){
-    if (ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      ticking = false;
-      var vh = window.innerHeight;
+    if (!sTick){ sTick = true; requestAnimationFrame(function(){ sTick = false;
+      storyFrame();
       var hr = heroEl.getBoundingClientRect();
-      scrollP = Math.max(0, Math.min(1, -hr.top / Math.max(1, hr.height)));
-      var r = procSec.getBoundingClientRect();
-      var p = Math.max(0, Math.min(1, (vh*0.85 - r.top) / (r.height*0.9)));
-      var gap = reduce ? 70 : 14 + p*120;
-      layers.forEach(function(l,i){ l.style.transform = 'translateZ(' + (i*gap) + 'px)'; });
-      var idx = p < 0.34 ? 0 : (p < 0.67 ? 1 : 2);
-      steps.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
-    });
+      var hs = clamp(-hr.top / Math.max(1, hr.height), 0, 1);
+      if (!reduce && Math.abs(hs - heroScroll) > 0.001){ heroScroll = hs; kickHero(); }
+      fab.classList.toggle('show', hr.bottom < innerHeight*0.4);
+    }); }
   }
+  var fab = document.getElementById('fab');
   window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
+  function resetStory(){ geo = null; lastP = -1; lastShown = -1; if (live) storyFrame(); }
+  window.addEventListener('resize', function(){ geo = null; lastP = -1; lastShown = -1; measure(); onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ geo = null; lastP = -1; lastShown = -1; onScroll(); });
 
-  /* ---------- Example cards: pointer tilt with eased follow ---------- */
-  if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches){
-    document.querySelectorAll('[data-tilt]').forEach(function(card){
-      var tx=0, ty=0, cx=0, cy=0, raf=null, hovering=false;
-      function tick(){ cx += (tx-cx)*0.12; cy += (ty-cy)*0.12;
-        card.style.transform = 'rotateX(' + cy.toFixed(2) + 'deg) rotateY(' + cx.toFixed(2) + 'deg) translateZ(' + (hovering?12:0) + 'px)';
-        card.style.boxShadow = hovering ? '0 30px 60px rgba(0,0,0,0.45)' : 'none';
-        if (Math.abs(tx-cx)>0.01 || Math.abs(ty-cy)>0.01 || hovering) raf = requestAnimationFrame(tick); else raf = null; }
-      card.addEventListener('pointermove', function(e){ var r=card.getBoundingClientRect(); tx = ((e.clientX-r.left)/r.width - 0.5)*14; ty = -((e.clientY-r.top)/r.height - 0.5)*14; hovering = true; if(!raf) raf=requestAnimationFrame(tick); });
-      card.addEventListener('pointerleave', function(){ tx=0; ty=0; hovering=false; if(!raf) raf=requestAnimationFrame(tick); });
-    });
-  }
-
-  /* ---------- Staggered reveal (only for content below the first screen) ---------- */
-  if ('IntersectionObserver' in window){
-    var vh0 = window.innerHeight;
+  /* ---------- Staggered reveal for content below the first screen ---------- */
+  if ('IntersectionObserver' in window && !reduce){
+    var vh0 = innerHeight;
     var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]')).filter(function(el){ return el.getBoundingClientRect().top > vh0*0.95; });
     els.forEach(function(el){ el.classList.add('pre'); });
     requestAnimationFrame(function(){ els.forEach(function(el){ el.classList.add('rv'); }); });
     var io = new IntersectionObserver(function(entries){
-      var batch = entries.filter(function(e){return e.isIntersecting;});
-      batch.forEach(function(e,i){ setTimeout(function(){ e.target.classList.remove('pre'); }, i*80); io.unobserve(e.target); });
+      entries.filter(function(e){ return e.isIntersecting; }).forEach(function(e,i){
+        setTimeout(function(){ e.target.classList.remove('pre'); setTimeout(function(){ e.target.classList.remove('rv'); }, 800); }, i*80);
+        io.unobserve(e.target);
+      });
     }, {rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- Boot ---------- */
-  var startLang = 'es';
-  try { var saved = localStorage.getItem('okfly-lang'); if (saved === 'en' || saved === 'es') startLang = saved; else if (/^en/i.test(navigator.language||'')) startLang = 'en'; } catch(e){ if (/^en/i.test(navigator.language||'')) startLang = 'en'; }
-  if (location.hash === '#en') startLang = 'en'; else if (location.hash === '#es') startLang = 'es';
-  var glOK = typeof THREE !== 'undefined' && hasGL();
-  if (glOK) { try { initGL(); } catch(e){ glOK = false; if (renderer && renderer.domElement.parentNode) renderer.domElement.remove(); renderer = null; } }
-  if (!glOK) { var fb=document.createElement('div'); fb.className='fallback'; fb.appendChild(cSite); host.appendChild(fb); }
-  if (startLang === 'en') setLang('en', false); else redraw();
   onScroll();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ redraw(); render(); });
 })();
 </script>
 
