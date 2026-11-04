@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OKfly Studio Membresía</title>
-<meta property="og:title" content="OKfly Studio · Tu página web desde $499 al mes">
-<meta property="og:description" content="La diseñamos, publicamos y mantenemos. Ve tu página antes de pagar. Todo por WhatsApp.">
+<meta property="og:title" content="OKfly Studio · Sistemas para recibir clientes desde $499 al mes">
+<meta property="og:description" content="Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.">
 <meta name="description" content="Tu página web profesional por suscripción desde $499 MXN al mes. La diseñamos, publicamos y mantenemos. Todo por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;1,500&family=Lilita+One&family=Caveat:wght@600&family=Nunito:wght@500;700&family=Poppins:wght@400;500;600&family=Anton&family=Manrope:wght@400;600&family=Archivo:wdth,wght@100,500;125,800&display=swap">
 <style>
 /* Layout: one 12-col grid with tight equal margins. The page is a WhatsApp chat that turns into the finished website. */
 :root{
@@ -163,36 +163,309 @@ section{padding-block:clamp(96px,11vw,170px)}
 .wa-input i{width:10cqw;height:10cqw;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center}
 .wa-input i svg{width:4.6cqw;height:auto}
 
-/* Generated website (drawn in code, scales with its frame) */
-.site{position:absolute;inset:0;background:var(--sbg);color:var(--sink);font-family:var(--font);display:flex;flex-direction:column;overflow:hidden}
-.site-nav{display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 4cqw}
-.site-nav b{font-size:2.3cqw;font-weight:800;letter-spacing:-0.03em}
-.site-nav span{display:flex;gap:2.6cqw;font-size:1.45cqw;font-weight:500;opacity:0.75}
-.site-nav svg{display:none}
-.site-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:3.4cqw;align-items:center;padding:1.5cqw 4cqw 2.6cqw}
-.site-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.8cqw;min-width:0}
-.site-copy h5{margin:0;font-size:5.5cqw;font-weight:900;letter-spacing:-0.045em;line-height:0.93}
-.site-copy p{font-size:1.7cqw;line-height:1.4;opacity:0.8;max-width:26em}
-.site-cta{display:inline-flex;align-items:center;gap:1cqw;padding:1.3cqw 2.4cqw;border-radius:99px;background:var(--stint);color:var(--sbtn);font-size:1.55cqw;font-weight:700}
-.site-chips{display:flex;gap:1cqw;flex-wrap:wrap}
-.site-chips span{padding:0.8cqw 1.6cqw;border-radius:99px;background:var(--schip);font-size:1.25cqw;font-weight:600}
-.site-art{position:relative;height:28cqw;border-radius:1.8cqw;overflow:hidden;background:var(--a1)}
-.site-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6cqw;padding:0 4cqw 3cqw}
-.site-items span{display:flex;justify-content:space-between;gap:1cqw;padding:1.6cqw 1.8cqw;border-radius:1.2cqw;background:var(--schip);font-size:1.4cqw;font-weight:600}
-.site-items em{font-style:normal;opacity:0.7;font-weight:500}
-.site.m .site-nav{padding:5cqw 6cqw}
-.site.m .site-nav b{font-size:6.4cqw}
-.site.m .site-nav span{display:none}
-.site.m .site-nav svg{display:block;width:6.4cqw;height:auto}
-.site.m .site-hero{grid-template-columns:1fr;gap:5cqw;padding:2cqw 6cqw 5cqw}
-.site.m .site-copy{gap:4cqw}
-.site.m .site-copy h5{font-size:12.5cqw}
-.site.m .site-copy p{font-size:4.4cqw}
-.site.m .site-cta{font-size:4.2cqw;padding:3.4cqw 6cqw}
-.site.m .site-chips{display:none}
-.site.m .site-art{height:52cqw;border-radius:4cqw;order:-1}
-.site.m .site-items{grid-template-columns:1fr;gap:3cqw;padding:0 6cqw 6cqw}
-.site.m .site-items span{font-size:4cqw;padding:4cqw;border-radius:3cqw}
+/* Demo websites (realistic layout, scales with its frame via cqw) */
+.site{position:absolute;inset:0;background:var(--sbg);color:var(--sink);font-family:var(--font);overflow:hidden;display:flex;flex-direction:column}
+.s-nav{display:flex;align-items:center;gap:3cqw;padding:1.9cqw 4.2cqw;position:relative;z-index:2;flex-shrink:0}
+.s-logo{display:flex;align-items:center;gap:0.8cqw;font-weight:700;font-size:1.75cqw;letter-spacing:-0.02em;white-space:nowrap}
+.s-logo svg{width:2.7cqw;height:2.7cqw;color:var(--sacc)}
+.s-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:500;white-space:nowrap}
+.s-links span:first-child{box-shadow:0 0.25cqw 0 var(--sprim);padding-bottom:0.35cqw}
+.s-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.8cqw;border-radius:99px;background:var(--sprim);color:var(--sbtn);font-size:1.15cqw;font-weight:600;white-space:nowrap}
+.s-btn svg{width:1.4cqw;height:1.4cqw}
+.s-btn.o{background:transparent;color:var(--sink);box-shadow:inset 0 0 0 0.12cqw currentColor}
+.s-menu{display:none}
+.s-hero{position:relative;height:31cqw;display:flex;align-items:center;padding:0 4.2cqw;flex-shrink:0}
+.s-photo{position:absolute;right:0;top:0;bottom:0;width:58%;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 32%);mask-image:linear-gradient(90deg,transparent,#000 32%)}
+.s-photo.art{right:4.2cqw;top:2cqw;bottom:2cqw;width:40%;border-radius:1.6cqw;overflow:hidden;background:var(--a1);-webkit-mask-image:none;mask-image:none}
+.s-copy{position:relative;z-index:1;width:52%;display:flex;flex-direction:column;align-items:flex-start;gap:1.5cqw}
+.s-chip{display:inline-flex;align-items:center;gap:0.6cqw;padding:0.6cqw 1.2cqw;border-radius:99px;background:var(--schipbg);font-size:1.05cqw;font-weight:600;box-shadow:0 0.2cqw 0.8cqw rgba(0,0,0,0.07)}
+.s-chip svg{width:1.25cqw;height:1.25cqw;color:var(--sprim)}
+.s-h{margin:0;font-size:4.9cqw;font-weight:700;letter-spacing:-0.035em;line-height:1}
+.s-h em{font-style:normal;color:var(--sacc)}
+.s-p{font-size:1.45cqw;line-height:1.45;opacity:0.82;max-width:32em}
+.s-ctas{display:flex;gap:1cqw;margin-top:0.5cqw}
+.s-ctas .s-btn{font-size:1.3cqw;padding:1.3cqw 2.2cqw}
+.s-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:2cqw 4.2cqw;background:var(--sstrip);flex-shrink:0}
+.s-strip span{display:flex;align-items:center;justify-content:center;gap:1cqw;font-size:1.1cqw;font-weight:500;line-height:1.2}
+.s-strip svg{width:2.5cqw;height:2.5cqw;flex-shrink:0}
+.s-sec{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;padding:3.6cqw 4.2cqw;align-items:center}
+.s-card{position:relative;height:18cqw;border-radius:1.4cqw;overflow:hidden;background:var(--a1);background-size:cover;background-position:center}
+.s-sec small{display:block;font-size:1cqw;font-weight:700;letter-spacing:0.08em;color:var(--sprim);margin-bottom:1cqw}
+.s-sec b{display:block;font-size:2.8cqw;font-weight:700;letter-spacing:-0.03em;line-height:1.05}
+.s-sec p{font-size:1.3cqw;line-height:1.45;opacity:0.8;margin-top:1cqw}
+.site.m .s-nav{padding:4cqw 5cqw}
+.site.m .s-logo{font-size:5.2cqw;gap:2cqw}
+.site.m .s-logo svg{width:7.4cqw;height:7.4cqw}
+.site.m .s-links,.site.m .s-nav > .s-btn{display:none}
+.site.m .s-menu{display:block;margin-left:auto;width:6.6cqw;height:6.6cqw}
+.site.m .s-hero{height:auto;flex-direction:column;align-items:stretch;padding:0}
+.site.m .s-photo{position:relative;width:100%;height:64cqw;-webkit-mask-image:linear-gradient(180deg,#000 68%,transparent);mask-image:linear-gradient(180deg,#000 68%,transparent)}
+.site.m .s-photo.art{right:auto;top:auto;bottom:auto;width:auto;height:56cqw;margin:0 5cqw;border-radius:4cqw}
+.site.m .s-copy{width:auto;padding:0 5cqw;margin-top:-7cqw;gap:3cqw}
+.site.m .s-chip{font-size:3cqw;padding:1.6cqw 3cqw;gap:1.4cqw}
+.site.m .s-chip svg{width:3.4cqw;height:3.4cqw}
+.site.m .s-h{font-size:9.6cqw}
+.site.m .s-p{font-size:3.9cqw}
+.site.m .s-ctas{flex-direction:column;align-self:stretch;gap:2.4cqw;margin-top:1cqw}
+.site.m .s-ctas .s-btn{justify-content:center;font-size:3.8cqw;padding:3.6cqw;gap:2cqw}
+.site.m .s-btn svg{width:4cqw;height:4cqw}
+.site.m .s-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:2cqw;padding:5cqw;background:transparent}
+.site.m .s-strip span{flex-direction:column;gap:1.6cqw;font-size:2.7cqw;text-align:center;padding:3cqw 1cqw;border-radius:3cqw;background:var(--sstrip)}
+.site.m .s-strip span:nth-child(n+4){display:none}
+.site.m .s-strip svg{width:6.6cqw;height:6.6cqw}
+.site.m .s-sec{display:none}
+/* Casa Mar: dark luxury restaurant template */
+.lux{background:#0A0C0B;color:#F3EEE6}
+.lux .serif{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-0.01em}
+.lux-hero{position:relative;height:38cqw;flex-shrink:0;background:#0A0C0B}
+.lux-photo{position:absolute;right:0;top:0;bottom:0;width:66%;background-size:cover;background-position:center}
+.lux-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0A0C0B 30%,rgba(10,12,11,0.85) 42%,rgba(10,12,11,0) 66%),linear-gradient(0deg,#0A0C0B,rgba(10,12,11,0) 18%)}
+.lux-nav{position:absolute;left:0;right:0;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 5cqw}
+.lux-logo{display:flex;flex-direction:column;align-items:center;gap:0.3cqw;line-height:1}
+.lux-logo svg{width:2.8cqw;height:auto;color:#E9D2B0}
+.lux-logo b{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:2.2cqw;letter-spacing:0.12em}
+.lux-logo small{font-size:0.62cqw;letter-spacing:0.22em;opacity:0.8}
+.lux-links{display:flex;gap:2.6cqw;padding:1cqw 2.4cqw;border-radius:99px;background:rgba(10,12,11,0.55);box-shadow:inset 0 0 0 0.08cqw rgba(243,238,230,0.12);font-size:1.05cqw;font-weight:500}
+.lux-links span:first-child{box-shadow:0 0.6cqw 0 -0.45cqw #E9D2B0}
+.lux-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#F1DDBF;color:#1A120A;font-size:1.05cqw;font-weight:600;white-space:nowrap}
+.lux-btn svg{width:1.3cqw;height:1.3cqw}
+.lux-copy{position:absolute;z-index:2;left:5cqw;top:11cqw;width:44%;display:flex;flex-direction:column;align-items:flex-start;gap:1.4cqw}
+.lux-eye{display:flex;align-items:center;gap:1cqw;font-size:0.8cqw;letter-spacing:0.28em;color:#D9B98F}
+.lux-eye::before{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-h{margin:0;font-size:5.4cqw;line-height:0.98}
+.lux-h em{font-style:italic;color:#E2C39A}
+.lux-p{font-size:1.35cqw;line-height:1.45;opacity:0.9;max-width:28em}
+.lux-ctas{display:flex;align-items:center;gap:2cqw;margin-top:0.8cqw}
+.lux-ctas .lux-btn{font-size:1.2cqw;padding:1.3cqw 2.2cqw}
+.lux-play{display:flex;align-items:center;gap:1cqw;font-size:1.2cqw;font-weight:600}
+.lux-play i{width:3.4cqw;height:3.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.12cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-play svg{width:1.2cqw;height:1.2cqw;margin-left:0.2cqw}
+.lux-sec{padding:2.4cqw 5cqw 3cqw;display:flex;flex-direction:column;align-items:center;gap:1.2cqw;background:#0D1211}
+.lux-sec .lux-eye::after{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-sec h6{margin:0;font-size:3.2cqw;line-height:1}
+.lux-cards{align-self:stretch;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.8cqw;margin-top:1cqw}
+.lux-card{position:relative;height:10cqw;border-radius:1.4cqw;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:space-between;padding:1.4cqw 1.8cqw}
+.lux-card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.65),rgba(0,0,0,0) 65%)}
+.lux-card span,.lux-card i{position:relative}
+.lux-card span{font-size:1.3cqw;font-weight:600}
+.lux-card i{width:2.4cqw;height:2.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.1cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-card svg{width:1.2cqw;height:1.2cqw}
+.site.m.lux .lux-hero{height:auto;display:flex;flex-direction:column}
+.site.m.lux .lux-hero::before{display:none}
+.site.m.lux .lux-photo{position:relative;width:100%;height:58cqw;-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+.site.m.lux .lux-nav{padding:4cqw 5cqw}
+.site.m.lux .lux-logo svg{width:7cqw}
+.site.m.lux .lux-logo b{font-size:4.6cqw}
+.site.m.lux .lux-logo small{font-size:1.6cqw}
+.site.m.lux .lux-links{display:block;padding:2.6cqw;width:auto;font-size:0}
+.site.m.lux .lux-links span{display:none}
+.site.m.lux .lux-links svg{display:block;width:5cqw;height:5cqw}
+.site.m.lux .lux-nav .lux-btn{font-size:3cqw;padding:2.4cqw 3.6cqw;gap:1.4cqw}
+.site.m.lux .lux-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.lux .lux-copy{position:relative;left:auto;top:auto;width:auto;padding:2cqw 6cqw 6cqw;gap:3.4cqw}
+.site.m.lux .lux-eye{font-size:2.3cqw;gap:2.6cqw}
+.site.m.lux .lux-eye::before,.site.m.lux .lux-sec .lux-eye::after{width:5cqw;height:0.25cqw}
+.site.m.lux .lux-h{font-size:11cqw}
+.site.m.lux .lux-p{font-size:3.9cqw}
+.site.m.lux .lux-ctas{gap:4cqw}
+.site.m.lux .lux-ctas .lux-btn{font-size:3.6cqw;padding:3.4cqw 5cqw}
+.site.m.lux .lux-play{font-size:3.6cqw;gap:2.4cqw}
+.site.m.lux .lux-play i{width:9cqw;height:9cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-play svg{width:3.4cqw;height:3.4cqw}
+.site.m.lux .lux-sec{padding:6cqw 6cqw;gap:3cqw}
+.site.m.lux .lux-sec h6{font-size:8cqw}
+.site.m.lux .lux-cards{grid-template-columns:1fr;gap:3cqw}
+.site.m.lux .lux-card{height:30cqw;border-radius:4cqw;padding:4cqw 5cqw}
+.site.m.lux .lux-card span{font-size:4.4cqw}
+.site.m.lux .lux-card i{width:8cqw;height:8cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-card svg{width:3.6cqw;height:3.6cqw}
+.lux-links svg{display:none}
+/* Altura: photo-led gym template */
+.alt{background:#1B1B1B center 78%/cover no-repeat;color:#F4F2EE;font-family:'Archivo','Outfit',sans-serif;font-stretch:100%}
+.alt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.15) 30%,rgba(0,0,0,0.55) 70%,rgba(0,0,0,0.75))}
+.alt > *{position:relative}
+.alt .wide{font-stretch:125%;font-weight:800}
+.alt-nav{display:flex;align-items:center;gap:3cqw;padding:2cqw 2.8cqw;flex-shrink:0}
+.alt-logo{font-size:2.1cqw;letter-spacing:-0.01em}
+.alt-links{display:flex;gap:2.4cqw;margin-left:auto;margin-right:auto;font-size:1.15cqw;font-weight:500}
+.alt-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1.1cqw 1.8cqw;background:#D4F55A;color:#111;font-size:1.1cqw;font-weight:700;white-space:nowrap}
+.alt-btn svg{width:1.3cqw;height:1.3cqw}
+.alt-hero{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.8cqw 3cqw;gap:2.4cqw}
+.alt-h{margin:0;font-size:8.4cqw;line-height:0.9;letter-spacing:-0.035em;max-width:11em}
+.alt-row{display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw}
+.alt-p{font-size:1.45cqw;line-height:1.45;max-width:26em}
+.alt-ctas{display:flex;align-items:center;gap:2.4cqw;flex-shrink:0}
+.alt-ctas .alt-btn{font-size:1.3cqw;padding:1.5cqw 2.2cqw}
+.alt-link{font-size:1.3cqw;font-weight:700;box-shadow:0 0.15cqw 0 currentColor}
+.alt-bar{height:1.2cqw;background:#D4F55A;flex-shrink:0}
+.site.m.alt{background-position:center 40%}
+.site.m.alt .alt-nav{padding:5cqw 5cqw}
+.site.m.alt .alt-logo{font-size:6.6cqw}
+.site.m.alt .alt-links{display:none}
+.site.m.alt .alt-nav .alt-btn{margin-left:auto;font-size:3.6cqw;padding:3cqw 4cqw}
+.site.m.alt .alt-hero{padding:0 5cqw 8cqw;gap:5cqw}
+.site.m.alt .alt-h{font-size:12.5cqw}
+.site.m.alt .alt-row{flex-direction:column;align-items:flex-start;gap:6cqw}
+.site.m.alt .alt-p{font-size:3.8cqw}
+.site.m.alt .alt-ctas{gap:6cqw}
+.site.m.alt .alt-ctas .alt-btn{font-size:3.8cqw;padding:4cqw 5cqw;gap:2.4cqw}
+.site.m.alt .alt-btn svg{width:4cqw;height:4cqw}
+.site.m.alt .alt-link{font-size:3.8cqw;box-shadow:0 0.4cqw 0 currentColor}
+.site.m.alt .alt-bar{display:none}
+/* Barber Royce: dark barbershop template */
+.roy{background:radial-gradient(70% 90% at 75% 50%,#4A1517,#120B0B 70%);color:#F3ECE4;font-family:'Manrope','Outfit',sans-serif}
+.roy .cond{font-family:'Anton','Outfit',sans-serif;font-weight:400;letter-spacing:0}
+.roy-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 6cqw;flex-shrink:0}
+.roy-logo{display:flex;align-items:center;gap:0.9cqw;font-size:1.6cqw;letter-spacing:0.02em}
+.roy-logo span{width:2.2cqw;height:2.7cqw;background:center/contain no-repeat}
+.roy-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.05cqw;opacity:0.9}
+.roy-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#B3282D;color:#fff;font-size:1.05cqw;font-weight:600;white-space:nowrap;box-shadow:0 0.6cqw 1.6cqw -0.6cqw rgba(179,40,45,0.7)}
+.roy-btn svg{width:1.2cqw;height:1.2cqw}
+.roy-btn.o{background:transparent;box-shadow:inset 0 0 0 0.1cqw rgba(243,236,228,0.35)}
+.roy-menu{display:none}
+.roy-hero{flex:1;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;padding:0 6cqw 2cqw;gap:2cqw}
+.roy-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.roy-eye{display:flex;align-items:center;gap:0.8cqw;font-size:0.8cqw;letter-spacing:0.2em;opacity:0.85}
+.roy-eye i{width:0.6cqw;height:0.6cqw;border-radius:50%;background:#E0393E}
+.roy-h{margin:0;font-size:6.6cqw;line-height:0.86;text-transform:uppercase}
+.roy-h em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;text-transform:none;color:#D13A3F;font-size:0.8em}
+.roy-p{font-size:1.25cqw;line-height:1.5;opacity:0.85;max-width:30em}
+.roy-ctas{display:flex;gap:1cqw;margin-top:0.4cqw}
+.roy-ctas .roy-btn{font-size:1.15cqw;padding:1.2cqw 2.1cqw}
+.roy-badge{justify-self:center;width:28cqw;aspect-ratio:1;background:center/cover no-repeat;-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.roy-ribbon{display:none}
+.site.m.roy .roy-nav{padding:4cqw 5cqw;box-shadow:0 0.2cqw 0 rgba(243,236,228,0.08)}
+.site.m.roy .roy-logo{font-size:5cqw;gap:2.4cqw}
+.site.m.roy .roy-logo span{width:7cqw;height:8.6cqw}
+.site.m.roy .roy-links,.site.m.roy .roy-nav > .roy-btn{display:none}
+.site.m.roy .roy-menu{display:flex;margin-left:auto;width:10cqw;height:10cqw;border-radius:50%;box-shadow:inset 0 0 0 0.3cqw rgba(243,236,228,0.2);align-items:center;justify-content:center}
+.site.m.roy .roy-menu svg{width:5cqw;height:5cqw}
+.site.m.roy .roy-hero{display:flex;flex-direction:column;align-items:stretch;padding:2cqw 5cqw 4cqw;gap:3cqw}
+.site.m.roy .roy-badge{order:-1;width:62cqw}
+.site.m.roy .roy-copy{gap:3cqw}
+.site.m.roy .roy-eye{font-size:2.3cqw;gap:1.6cqw}
+.site.m.roy .roy-eye i{width:1.6cqw;height:1.6cqw}
+.site.m.roy .roy-h{font-size:12cqw}
+.site.m.roy .roy-h br.d{display:none}
+.site.m.roy .roy-p{font-size:3.5cqw}
+.site.m.roy .roy-ctas{gap:2.6cqw}
+.site.m.roy .roy-ctas .roy-btn{font-size:3.4cqw;padding:3cqw 4.6cqw;gap:1.6cqw}
+.site.m.roy .roy-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.roy .roy-ribbon{display:flex;align-items:center;justify-content:space-around;margin:auto -2cqw 6cqw;padding:3.4cqw 0;background:#B3282D;transform:rotate(-2deg);font-size:5.6cqw;flex-shrink:0}
+.site.m.roy .roy-ribbon i{font-style:normal;font-size:3.6cqw}
+/* iproperty: real-estate marketplace template */
+.ip{background:#fff;color:#1D1D1F;font-family:'Poppins','Outfit',sans-serif}
+.ip-nav{display:flex;align-items:center;gap:2.4cqw;padding:1.4cqw 2.4cqw;box-shadow:0 0.3cqw 1cqw rgba(0,0,0,0.06);position:relative;z-index:2;flex-shrink:0}
+.ip-logo{display:flex;align-items:center;gap:0.3cqw;font-size:1.6cqw;font-weight:600;letter-spacing:-0.02em}
+.ip-logo svg{width:1.5cqw;height:1.8cqw}
+.ip-links{display:flex;gap:0.6cqw;font-size:1cqw;font-weight:500}
+.ip-links span{padding:0.6cqw 1cqw;border-radius:99px}
+.ip-links span:first-child{background:#EEEEEE}
+.ip-right{margin-left:auto;display:flex;gap:0.8cqw;align-items:center}
+.ip-ghost{display:flex;align-items:center;gap:0.5cqw;padding:0.7cqw 1.1cqw;border-radius:99px;background:#F2F2F2;font-size:0.95cqw;color:#444}
+.ip-dark{display:flex;align-items:center;gap:0.5cqw;padding:0.9cqw 1.3cqw;border-radius:99px;background:#111;color:#fff;font-size:1cqw;font-weight:600}
+.ip-ghost svg,.ip-dark svg{width:1.1cqw;height:1.1cqw}
+.ip-body{flex:1;display:grid;grid-template-columns:54% 46%;min-height:0}
+.ip-list{padding:2cqw 2cqw;display:flex;flex-direction:column;gap:2cqw;overflow:hidden}
+.ip-bar{display:flex;align-items:center;gap:1.4cqw}
+.ip-filter{display:flex;align-items:center;border-radius:99px;overflow:hidden;background:#4CAF50;color:#fff;font-size:1cqw;font-weight:500;flex-shrink:0}
+.ip-filter i{display:flex;padding:1cqw 1.1cqw;background:#3E9842}
+.ip-filter i svg{width:1.2cqw;height:1.2cqw}
+.ip-filter span{padding:1cqw 1.4cqw}
+.ip-cats{display:flex;gap:0.4cqw;font-size:0.85cqw;color:#555}
+.ip-cats span{display:flex;flex-direction:column;align-items:center;gap:0.4cqw;padding:0.8cqw 0.9cqw;border-radius:0.6cqw;white-space:nowrap}
+.ip-cats span:first-child{background:#F2F2F2}
+.ip-cats svg{width:1.5cqw;height:1.5cqw}
+.ip-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.4cqw}
+.ip-card{aspect-ratio:486/282;border-radius:0.8cqw;background:#ddd center/cover no-repeat}
+.ip-map{position:relative;background:#8DCDEE center/cover no-repeat}
+.ip-map small{position:absolute;right:0.6cqw;bottom:0.6cqw;padding:0.3cqw 0.6cqw;border-radius:0.3cqw;background:rgba(255,255,255,0.85);font-size:0.65cqw;color:#333}
+.ip-pill{display:none}
+.site.m.ip .ip-nav{padding:5cqw 5cqw;gap:3cqw}
+.site.m.ip .ip-logo{font-size:5.6cqw;gap:1cqw}
+.site.m.ip .ip-logo svg{width:5cqw;height:6cqw}
+.site.m.ip .ip-links,.site.m.ip .ip-ghost span,.site.m.ip .ip-dark{display:none}
+.site.m.ip .ip-ghost{width:10cqw;height:10cqw;padding:0;justify-content:center;border-radius:50%}
+.site.m.ip .ip-ghost svg{width:4.6cqw;height:4.6cqw}
+.site.m.ip .ip-body{display:flex;flex-direction:column}
+.site.m.ip .ip-map{order:-1;height:30cqw;flex-shrink:0;background-size:260% auto;background-position:62% 42%}
+.site.m.ip .ip-map small{display:none}
+.site.m.ip .ip-pill{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:2.4cqw 5cqw;border-radius:99px;background:rgba(255,255,255,0.8);box-shadow:inset 0 0 0 0.4cqw #555;font-size:3.6cqw;color:#444}
+.site.m.ip .ip-list{padding:6cqw 5cqw;gap:5cqw}
+.site.m.ip .ip-bar{flex-direction:column;align-items:flex-start;gap:5cqw}
+.site.m.ip .ip-filter{font-size:3.6cqw}
+.site.m.ip .ip-filter i{padding:3cqw 3.4cqw}
+.site.m.ip .ip-filter i svg{width:4.4cqw;height:4.4cqw}
+.site.m.ip .ip-filter span{padding:3cqw 4cqw}
+.site.m.ip .ip-cats{font-size:3.2cqw;gap:1cqw}
+.site.m.ip .ip-cats span{padding:3cqw 3.2cqw;border-radius:2cqw;gap:1.4cqw}
+.site.m.ip .ip-cats span:nth-child(n+5){display:none}
+.site.m.ip .ip-cats svg{width:6cqw;height:6cqw}
+.site.m.ip .ip-cards{grid-template-columns:1fr;gap:4cqw}
+.site.m.ip .ip-card{border-radius:3cqw}
+/* Zootropolis: friendly veterinary template */
+.vet{background:linear-gradient(180deg,#E6F4FA,#F3FAFC);color:#1F2A44;font-family:'Nunito','Outfit',sans-serif}
+.vet .fun{font-family:'Lilita One','Outfit',sans-serif;font-weight:400;letter-spacing:0.01em}
+.vet-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 5cqw;flex-shrink:0}
+.vet-logo{display:flex;align-items:center;gap:1cqw;font-size:1.9cqw;color:#2E4BB1}
+.vet-logo span{width:5cqw;height:3.4cqw;border-radius:0.8cqw;overflow:hidden;background:#fff center/cover no-repeat;background-position:20% 40%;background-size:150% auto}
+.vet-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:700}
+.vet-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 2cqw;border-radius:99px;background:#EB6B2A;color:#fff;font-size:1.2cqw;box-shadow:0 0.35cqw 0 #B9501C;white-space:nowrap}
+.vet-btn svg{width:1.4cqw;height:1.4cqw}
+.vet-btn.w{background:#fff;color:#2E4BB1;box-shadow:0 0.35cqw 0 #D3D8F0}
+.vet-menu{display:none}
+.vet-hero{flex:1;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2cqw;padding:0.6cqw 5cqw 2cqw}
+.vet-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.vet-chip{display:inline-flex;align-items:center;gap:0.7cqw;padding:0.7cqw 1.4cqw;border-radius:99px;border:0.14cqw dashed #3FB2C6;background:rgba(255,255,255,0.7);font-size:1.05cqw;color:#2E4BB1}
+.vet-chip i{width:0.8cqw;height:0.8cqw;border-radius:50%;background:#3FAE4C}
+.vet-h{margin:0;font-size:5.6cqw;line-height:0.98;color:#2E4BB1}
+.vet-h em{display:block;font-style:normal;color:#EB6B2A}
+.vet-script{font-family:'Caveat',cursive;font-weight:600;font-size:2.2cqw;color:#3E9B35;line-height:1}
+.vet-p{font-size:1.3cqw;line-height:1.5;color:#4A5568;max-width:34em}
+.vet-ctas{display:flex;gap:1.2cqw;margin-top:0.4cqw}
+.vet-ctas .vet-btn{font-size:1.35cqw;padding:1.3cqw 2.3cqw}
+.vet-stats{display:flex;gap:3cqw;margin-top:1cqw}
+.vet-stats span{display:flex;flex-direction:column;gap:0.3cqw;font-size:0.95cqw;font-weight:700;color:#4A5568}
+.vet-stats b{font-size:2.8cqw;line-height:1;color:#2E4BB1}
+.vet-art{position:relative;height:100%;min-height:26cqw;display:flex;align-items:center;justify-content:center}
+.vet-globe{position:absolute;width:30cqw;height:30cqw;border-radius:50%;background:#5AA9C9;overflow:hidden}
+.vet-globe::before{content:"";position:absolute;left:18%;top:8%;width:46%;height:40%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-globe::after{content:"";position:absolute;right:6%;bottom:12%;width:36%;height:32%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-card{position:relative;width:26cqw;aspect-ratio:778/612;border-radius:2.2cqw;background:#fff center/cover no-repeat;box-shadow:0 1.6cqw 3cqw -1cqw rgba(31,42,68,0.25)}
+.vet-tag{position:absolute;display:flex;align-items:center;gap:0.9cqw;padding:1cqw 1.4cqw;border-radius:1.2cqw;background:#fff;box-shadow:0 1cqw 2.4cqw -0.8cqw rgba(31,42,68,0.3);font-size:1.15cqw;color:#1F2A44;white-space:nowrap}
+.vet-tag i{width:2.6cqw;height:2.6cqw;border-radius:0.7cqw;display:flex;align-items:center;justify-content:center}
+.vet-tag svg{width:1.5cqw;height:1.5cqw}
+.vet-tag.t1{left:-4cqw;top:-3cqw}.vet-tag.t1 i{background:#E5F3D9;color:#3E9B35}
+.vet-tag.t2{left:76%;top:38%}.vet-tag.t2 i{background:#EDE7FB;color:#6B4FD1}
+.vet-tag.t3{left:-6cqw;bottom:-3cqw}.vet-tag.t3 i{background:#FDE6D8;color:#EB6B2A}
+.site.m.vet .vet-nav{padding:4cqw 5cqw;gap:3cqw}
+.site.m.vet .vet-logo{font-size:5.4cqw;gap:2.4cqw}
+.site.m.vet .vet-logo span{width:13cqw;height:9cqw;border-radius:2cqw}
+.site.m.vet .vet-links,.site.m.vet .vet-nav > .vet-btn{display:none}
+.site.m.vet .vet-menu{display:block;margin-left:auto;width:7cqw;height:7cqw;color:#2E4BB1}
+.site.m.vet .vet-hero{display:flex;flex-direction:column;align-items:stretch;padding:1cqw 5cqw 5cqw;gap:5cqw}
+.site.m.vet .vet-art{display:flex;min-height:0;height:72cqw;margin-top:3cqw}
+.site.m.vet .vet-globe{width:72cqw;height:72cqw}
+.site.m.vet .vet-card{width:68cqw;border-radius:5cqw}
+.site.m.vet .vet-tag{font-size:2.8cqw;padding:1.8cqw 2.4cqw;gap:1.6cqw;border-radius:3cqw}
+.site.m.vet .vet-tag i{width:5.6cqw;height:5.6cqw;border-radius:1.6cqw}
+.site.m.vet .vet-tag svg{width:3.4cqw;height:3.4cqw}
+.site.m.vet .vet-tag.t1{left:-6cqw;top:-5cqw}
+.site.m.vet .vet-tag.t2{left:62%;top:36%}
+.site.m.vet .vet-tag.t3{left:-6cqw;bottom:-4cqw}
+.site.m.vet .vet-copy{gap:2.6cqw}
+.site.m.vet .vet-chip{font-size:3.2cqw;padding:2cqw 3.6cqw;gap:2cqw;border-width:0.4cqw}
+.site.m.vet .vet-chip i{width:2.4cqw;height:2.4cqw}
+.site.m.vet .vet-h{font-size:11cqw}
+.site.m.vet .vet-script{font-size:5.4cqw}
+.site.m.vet .vet-p{font-size:3.4cqw}
+.site.m.vet .vet-ctas{flex-direction:row;gap:2.6cqw}
+.site.m.vet .vet-ctas .vet-btn{font-size:3.5cqw;padding:3cqw 4.2cqw;box-shadow:0 1cqw 0 #B9501C;gap:1.6cqw}
+.site.m.vet .vet-ctas .vet-btn.w{box-shadow:0 1cqw 0 #D3D8F0}
+.site.m.vet .vet-btn svg{width:4.4cqw;height:4.4cqw}
+.site.m.vet .vet-stats{gap:8cqw}
+.site.m.vet .vet-stats span{font-size:2.8cqw}
+.site.m.vet .vet-stats b{font-size:7cqw}
 .art{position:absolute;display:block}
 
 /* Tech marquee */
@@ -264,10 +537,25 @@ section{padding-block:clamp(96px,11vw,170px)}
 .demo-rig{position:relative;max-width:1180px;margin:0 auto;transform-style:preserve-3d;will-change:transform;padding-right:12%}
 .demo-desk{position:relative}
 .demo-mob{position:absolute;right:0;bottom:-8%;width:20%;transform:translateZ(90px)}
-.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;margin-top:64px}
+.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;margin-top:clamp(90px,10vw,150px)}
 .demo-foot p{color:var(--ink-2);font-size:15px}
 @media (max-width:900px){.demo-head h2,.demo-head .lede{grid-column:1 / -1}.demo-rig{padding-right:16%}.demo-mob{width:28%}}
 
+/* Live site frames */
+.bw-scr > .fb,.bw-scr > .lv,.phone-scr > .fb,.phone-scr > .lv{position:absolute;inset:0}
+.bw-scr > .lv,.phone-scr > .lv{z-index:5}
+.lv{overflow:hidden;background:#fff;opacity:0;transition:opacity 500ms var(--ease-out)}
+.lv.on{opacity:1}
+.lv iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:#fff}
+.live-tag{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:#1F3A2A;color:#9BE8B4;font-size:max(10px,1.2cqw);font-weight:600;white-space:nowrap}
+.live-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#25D366;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.35}}
+.live-tag[hidden]{display:none}
+.bw-scr > .shot{position:absolute;inset:0;z-index:6;overflow:hidden;background:#111}
+.shot img{display:block;width:100%;height:auto;will-change:transform}
+.shot-hint{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:8px 14px;border-radius:99px;background:rgba(5,5,5,0.78);color:#F4F3EF;font-size:max(11px,1.25cqw);font-weight:600;white-space:nowrap;pointer-events:none;transition:opacity 300ms ease}
+.shot-on .shot-hint{opacity:0}
+@media (hover:none){.shot-hint{display:none}}
 /* Gallery strip */
 .gallery{padding-block:0 clamp(40px,6vw,80px);overflow:hidden}
 .gallery-track{display:inline-flex;gap:28px;padding:40px 0;animation:marquee 60s linear infinite;perspective:1400px}
@@ -294,10 +582,11 @@ section{padding-block:clamp(96px,11vw,170px)}
 .t-preview{grid-column:span 4;grid-row:span 2;background:var(--ink);color:var(--bg)}
 .t-preview p{color:var(--paper-ink-2)}
 .t-frag{margin-top:auto}
-.t-design .t-frag{position:relative;height:300px;perspective:1200px}
-.t-design .bw{position:absolute;width:74%;transform-origin:50% 100%}
-.t-design .bw:nth-child(1){left:0;top:30px;transform:rotateY(14deg) rotateX(4deg);opacity:0.7}
-.t-design .bw:nth-child(2){right:0;top:0;transform:rotateY(-10deg) rotateX(4deg)}
+.t-design .t-frag{position:relative;height:auto;aspect-ratio:2.15/1;perspective:1200px}
+.t-design .td-back{position:absolute;left:50%;top:0;width:64%;transform:translateX(-50%) translateZ(-60px);opacity:0.6}
+.t-design .td-shot{position:absolute;width:60%;height:auto;border-radius:12px;box-shadow:0 40px 80px -24px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.06);transform-origin:50% 100%}
+.t-design .td-a{left:0;top:3%;transform:rotateY(14deg) rotateX(4deg)}
+.t-design .td-b{right:0;bottom:0;transform:rotateY(-12deg) rotateX(4deg)}
 .urlbar{display:flex;align-items:center;gap:12px;height:62px;padding:0 22px;border-radius:999px;background:var(--surface-2);font-size:clamp(17px,1.6vw,22px);font-weight:600;overflow:hidden}
 .urlbar svg{flex-shrink:0}
 .urlbar .dom{display:inline-block;transition:clip-path 600ms var(--ease-in-out);clip-path:inset(0 0 0 0)}
@@ -315,6 +604,7 @@ section{padding-block:clamp(96px,11vw,170px)}
 .checks li span{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .pv-big{display:flex;flex-direction:column;gap:10px;margin-top:auto}
 .pv-big .bw{transform:rotate(-3deg)}
+.pv-shot{display:block;width:100%;height:auto;border-radius:12px;transform:rotate(-3deg);box-shadow:0 30px 60px -24px rgba(0,0,0,0.55)}
 @media (max-width:1000px){
   .inc-head h2,.inc-head .lede{grid-column:1 / -1}
   .t-design,.t-domain,.t-secure,.t-changes,.t-maint,.t-preview{grid-column:1 / -1;grid-row:auto}
@@ -340,7 +630,7 @@ section{padding-block:clamp(96px,11vw,170px)}
 @media (hover:hover){.plan:not(.featured):hover{background:#171716}}
 .price-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:40px;font-size:16px;color:var(--ink-2)}
 .price-note b{color:var(--ink)}
-@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none;order:-1}}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none}}
 
 /* Custom projects */
 .custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding:clamp(36px,5vw,64px);border-radius:36px;background:var(--surface)}
@@ -350,18 +640,6 @@ section{padding-block:clamp(96px,11vw,170px)}
 .custom-side b{font-size:clamp(40px,3.6vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:1}
 .custom-side span{color:var(--ink-2)}
 @media (max-width:900px){.custom-copy,.custom-side{grid-column:1 / -1}}
-
-/* Webmasters band */
-.academy{background:var(--paper);color:var(--paper-ink)}
-.academy-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
-.academy-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:26px;min-width:0}
-.academy .lede{color:var(--paper-ink-2)}
-.academy-mark{grid-column:9 / span 4;display:flex;justify-content:center;perspective:900px}
-.badge{width:min(300px,64vw);aspect-ratio:1;border-radius:68px;background:var(--paper-ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transform:rotateY(-18deg) rotateX(8deg) rotate(-4deg);transition:transform 700ms var(--ease-out)}
-.badge b{font-size:clamp(34px,3.4vw,48px);font-weight:900;letter-spacing:-0.045em;line-height:0.9}
-.badge span{font-size:16px;font-weight:500;letter-spacing:0.28em}
-@media (hover:hover){.academy-mark:hover .badge{transform:rotateY(8deg) rotateX(-4deg) rotate(2deg)}}
-@media (max-width:900px){.academy-copy,.academy-mark{grid-column:1 / -1}.academy-mark{justify-content:flex-start}}
 
 /* FAQ */
 .faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
@@ -414,10 +692,49 @@ footer{padding-block:40px 40px;overflow:hidden}
   .typing i{animation:none}
   .badge{transition:none}
 }
+
+/* ---------- Design catalog ---------- */
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:48px}
+.cat-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 20px 16px;border-radius:22px;border:0;background:var(--surface);box-shadow:inset 0 0 0 1px #22221F;color:var(--ink);font-family:var(--font);text-align:left;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 220ms ease,color 220ms ease,box-shadow 220ms ease}
+.cat-card:active{transform:scale(0.98)}
+.cat-card small{font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:0.1em;font-variant-numeric:tabular-nums}
+.cat-card b{font-size:18px;font-weight:700;line-height:1.2;margin-top:6px}
+.cat-card span{font-size:14px;color:var(--ink-2)}
+.cat-card em{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-style:normal;font-size:14px;font-weight:600}
+.cat-card em::after{content:"→";transition:transform 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.cat-card[aria-pressed="false"]:hover{background:var(--surface-2)}.cat-card:hover em::after{transform:translateX(3px)}}
+.cat-card[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none}
+.cat-card[aria-pressed="true"] small,.cat-card[aria-pressed="true"] span{color:#55534E}
+.cat-card[aria-pressed="true"] em::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A}
+.ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#121211;color:var(--ink-2);font-size:max(11px,1.3cqw);font-weight:500}
+.ld i{width:28px;height:28px;border-radius:50%;border:3px solid #2E2E2B;border-top-color:var(--ink);animation:ldSpin 0.9s linear infinite}
+@keyframes ldSpin{to{transform:rotate(360deg)}}
+.demo-acts{display:flex;flex-wrap:wrap;gap:10px}
+.dv{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;background:rgba(5,5,5,0.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.dv[hidden]{display:none}
+.dv-bar{display:flex;align-items:center;gap:16px;padding:12px max(16px,env(safe-area-inset-left,0px));height:68px}
+.dv-bar b{font-size:18px;font-weight:700;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dv-dev{display:flex;gap:4px;padding:4px;border-radius:99px;background:var(--surface-2)}
+.dv-dev button{height:38px;padding:0 16px;border-radius:99px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer}
+.dv-dev button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.dv-x{width:44px;height:44px;border-radius:50%;border:0;background:var(--surface-3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dv-body{flex:1;display:flex;justify-content:center;padding:0 12px 12px;min-height:0}
+.dv-frame{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#121211;transition:width 400ms var(--ease-out)}
+.dv-frame.mob{width:min(400px,100%)}
+.dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+@media (max-width:900px){
+  .demo-desk{display:none}
+  .demo-rig{padding-right:0}
+  .demo-mob{position:relative;right:auto;bottom:auto;width:min(300px,78vw);margin:0 auto;transform:none}
+  .demo-foot{margin-top:40px}
+  .dv-dev{display:none}
+  .cat{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -24px 0;padding:0 24px 6px;scrollbar-width:none}
+  .cat::-webkit-scrollbar{display:none}
+  .cat-card{flex:0 0 min(64vw,240px);scroll-snap-align:start}
+}
 </style>
 </head>
 <body>
-
 <header class="wrap">
   <nav class="nav" aria-label="Principal">
     <a class="brand" href="#top" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
@@ -441,8 +758,8 @@ footer{padding-block:40px 40px;overflow:hidden}
   <!-- HERO -->
   <div class="hero">
     <div class="wrap hero-copy">
-      <h1 class="rise"><span data-t>Tu negocio merece una página web extraordinaria.</span></h1>
-      <p class="hero-sub rise d1"><span data-t>Nosotros la diseñamos, publicamos y mantenemos. Tú solo dinos qué necesita tu negocio por WhatsApp.</span></p>
+      <h1 class="rise"><span data-t>Creamos sistemas para recibir clientes.</span></h1>
+      <p class="hero-sub rise d1"><span data-t>No solo construimos tu presencia en línea. Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.</span></p>
       <div class="hero-actions rise d2">
         <a class="btn js-wa" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Inicia mi página web</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -455,14 +772,14 @@ footer{padding-block:40px 40px;overflow:hidden}
       <div class="hero-stage-in">
         <div class="hero-rig" id="heroRig">
           <div class="hero-browser">
-            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>brasaymar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
+            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>casamar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
           </div>
           <div class="hero-phone"><div class="float-a">
             <div class="phone"><div class="phone-notch"></div><div class="phone-scr">
               <div class="wa">
                 <div class="wa-head"><div class="wa-av"><b>OK</b><span>fly</span></div><div class="wa-who"><b>OKfly Studio <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#25D366"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#0B141A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><span data-t>Cuenta de empresa · En línea</span></span></div></div>
                 <div class="wa-body"><div class="wa-feed" style="justify-content:flex-end;bottom:0;top:auto">
-                  <div class="msg in"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Brasa &amp; Mar</span></b><span><span data-t>Adaptada a celular</span></span></div></div><span data-t>¡Tu página web está lista! 🎉</span><time>09:15</time></div>
+                  <div class="msg in"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Casa Mar</span></b><span><span data-t>Adaptada a celular</span></span></div></div><span data-t>¡Tu página web está lista! 🎉</span><time>09:15</time></div>
                   <div class="msg out"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
                   <div class="msg in"><span data-t>¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
                 </div></div>
@@ -480,7 +797,7 @@ footer{padding-block:40px 40px;overflow:hidden}
   <!-- TECH -->
   <div class="tech">
     <p><span data-t>Construimos con las mismas herramientas que usan las grandes marcas</span></p>
-    <div class="marquee" aria-label="Tecnologías: WordPress, Stripe, WhatsApp, Google, Cloudflare, Elementor e inteligencia artificial">
+    <div class="marquee" aria-label="Tecnologías: HTML5, Stripe, WhatsApp, Google, Supabase, Meta, Vercel y GitHub">
       <div class="marquee-track" id="techTrack" aria-hidden="true"></div>
     </div>
   </div>
@@ -512,12 +829,12 @@ footer{padding-block:40px 40px;overflow:hidden}
                       <div class="msg out" data-at=".16"><span data-t>¿Y qué necesitan para hacerla?</span><time>10:33 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
                       <div class="typing" data-at=".19" data-until=".23"><i></i><i></i><i></i></div>
                       <div class="msg in" data-at=".23"><span data-t>¡Es muy fácil! Solo necesitamos tu logo, algunas fotos y el enlace de tu Facebook o Instagram. Nosotros hacemos todo. 🚀</span><time>10:33</time></div>
-                      <div class="msg out" data-at=".29"><div class="att"><div class="att-file"><span>B&amp;M</span><span>logo-brasaymar.png</span></div><div class="att-pics"><span style="background:#D9885A"><i class="art" style="left:20%;top:18%;width:34%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i></span><span style="background:#3C2A22"><i class="art" style="left:22%;top:30%;width:56%;aspect-ratio:1;border-radius:50%;background:#E8D8C3"></i><i class="art" style="left:36%;top:44%;width:28%;aspect-ratio:1;border-radius:50%;background:#C2552F"></i></span><span style="background:#2E5E73"><i class="art" style="left:0;right:0;bottom:0;height:45%;background:#E9D9B8"></i><i class="art" style="left:58%;bottom:45%;width:8%;height:40%;background:#24402F"></i></span></div><span class="att-link">instagram.com/brasaymar</span></div><span data-t>¡Perfecto! Te mando mi información.</span><time>10:34 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="msg out" data-at=".29"><div class="att"><div class="att-file"><span>CM</span><span>logo-casamar.png</span></div><div class="att-pics"><span style="background:#D9885A"><i class="art" style="left:20%;top:18%;width:34%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i></span><span style="background:#3C2A22"><i class="art" style="left:22%;top:30%;width:56%;aspect-ratio:1;border-radius:50%;background:#E8D8C3"></i><i class="art" style="left:36%;top:44%;width:28%;aspect-ratio:1;border-radius:50%;background:#C2552F"></i></span><span style="background:#2E5E73"><i class="art" style="left:0;right:0;bottom:0;height:45%;background:#E9D9B8"></i><i class="art" style="left:58%;bottom:45%;width:8%;height:40%;background:#24402F"></i></span></div><span class="att-link">instagram.com/casamar</span></div><span data-t>¡Perfecto! Te mando mi información.</span><time>10:34 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
                       <div class="typing" data-at=".32" data-until=".35"><i></i><i></i><i></i></div>
                       <div class="msg in" data-at=".35"><span data-t>¡Excelente! Nuestro equipo comienza a trabajar en tu diseño. Primero te mostraremos una vista previa gratuita. Si te gusta, la publicamos con tu propio dominio. ✨</span><time>10:34</time></div>
                       <div class="wa-day msg" data-at=".41" style="max-width:none;background:#182229"><span data-t>24 horas después</span></div>
                       <div class="typing" data-at=".44" data-until=".48"><i></i><i></i><i></i></div>
-                      <div class="msg in" data-at=".48" id="previewMsg"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Brasa &amp; Mar</span></b><span><span data-t>Diseño personalizado · Adaptado a móviles</span></span></div></div><span data-t>¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.</span><time>09:15</time></div>
+                      <div class="msg in" data-at=".48" id="previewMsg"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Casa Mar</span></b><span><span data-t>Diseño personalizado · Adaptado a móviles</span></span></div></div><span data-t>¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.</span><time>09:15</time></div>
                       <div class="msg out" data-at=".88"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
                       <div class="typing" data-at=".91" data-until=".94"><i></i><i></i><i></i></div>
                       <div class="msg in" data-at=".94"><span data-t>¡Bienvenido a OKfly! 🚀 Solo elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
@@ -530,7 +847,7 @@ footer{padding-block:40px 40px;overflow:hidden}
           </div>
         </div>
         <div class="story-browser" id="storyBrowser" aria-hidden="true">
-          <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>brasaymar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
+          <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>casamar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
         </div>
         <p class="story-done" id="storyDone"><i></i><span data-t>Vista previa · Página lista para publicar</span></p>
       </div>
@@ -541,32 +858,37 @@ footer{padding-block:40px 40px;overflow:hidden}
   <section id="disenos" aria-labelledby="demo-h">
     <div class="wrap">
       <div class="demo-head">
-        <h2 class="h2" id="demo-h" data-rv><span data-t>Tu negocio podría verse así.</span></h2>
-        <p class="lede" data-rv><span data-t>Elige tu giro, escribe el nombre de tu negocio y mira cómo cambia tu página en tiempo real. Cada diseño se adapta a computadora y celular.</span></p>
+        <h2 class="h2" id="demo-h" data-rv><span data-t>Mira algunos de nuestros diseños activos.</span></h2>
+        <p class="lede" data-rv><span data-t>Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.</span></p>
       </div>
-      <form class="demo-controls" id="demoForm" autocomplete="off" data-rv>
-        <div class="demo-name">
-          <label for="demoName"><span data-t>Nombre de tu negocio</span></label>
-          <input id="demoName" name="demoName" type="text" maxlength="26" placeholder="Ej. Brasa &amp; Mar" value="">
-        </div>
-        <div class="tabs" role="group" aria-label="Giro del negocio" id="tabs"></div>
-      </form>
+      <div class="cat" id="cat" role="group" aria-label="Diseños" data-rv></div>
       <div class="demo-stage" data-rv>
         <div class="demo-rig" id="demoRig">
-          <div class="demo-desk"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="demoUrl">brasaymar.com</span></span></div><div class="bw-scr" id="demoDesk"></div></div></div>
+          <div class="demo-desk"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="demoUrl"></span></span><span class="live-tag" id="liveTag">En vivo</span></div><div class="bw-scr" id="demoDesk"></div></div></div>
           <div class="demo-mob"><div class="phone"><div class="phone-notch"></div><div class="phone-scr" id="demoMob"></div></div></div>
         </div>
       </div>
       <div class="demo-foot">
-        <p><span data-t>Ejemplo conceptual de diseño, no un sitio publicado. Tu página se diseña con tu marca, tus fotos y tus textos.</span></p>
-        <a class="btn js-wa" id="demoCta" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Quiero una así</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <p id="demoNote"><span data-t>Sitios reales funcionando. Haz scroll y da clic adentro para explorarlos.</span></p>
+        <div class="demo-acts">
+          <button type="button" class="btn btn--ghost" id="demoBig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span data-t>Ver en pantalla completa</span></button>
+          <a class="btn" id="demoCta" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Quiero una así</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="gallery" aria-label="Ejemplos de diseño por giro">
-    <div class="gallery-track" id="galleryTrack"></div>
+  <div class="dv" id="dv" role="dialog" aria-modal="true" aria-labelledby="dvName" hidden>
+    <div class="dv-bar">
+      <b id="dvName"></b>
+      <div class="dv-dev" role="group" aria-label="Dispositivo">
+        <button type="button" data-d="desk" aria-pressed="true"><span data-t>Computadora</span></button>
+        <button type="button" data-d="mob" aria-pressed="false"><span data-t>Celular</span></button>
+      </div>
+      <button type="button" class="dv-x" id="dvClose" aria-label="Cerrar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="dv-body"><div class="dv-frame" id="dvFrame"></div></div>
   </div>
 
   <!-- INCLUDED -->
@@ -581,14 +903,14 @@ footer{padding-block:40px 40px;overflow:hidden}
           <h3><span data-t>Diseño profesional</span></h3>
           <p><span data-t>Hecho a la medida de tu negocio, con tus colores, tus fotos y textos que convierten visitas en clientes.</span></p>
           <div class="t-frag" aria-hidden="true">
-            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="dentista"></div></div>
-            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="tours"></div></div>
+            <img class="td-shot td-a" src="demos/preview-autotech.jpg" alt="" loading="lazy" decoding="async">
+            <img class="td-shot td-b" src="demos/bento-dental.jpg" alt="" loading="lazy" decoding="async">
           </div>
         </article>
         <article class="tile t-domain" data-rv>
           <h3><span data-t>Tu propio dominio</span></h3>
           <p><span data-t>Tu negocio con su propia dirección en internet.</span></p>
-          <div class="t-frag urlbar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="dom" id="domText">brasaymar.com</span><span class="caret"></span></div>
+          <div class="t-frag urlbar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="dom" id="domText">casamar.com</span><span class="caret"></span></div>
         </article>
         <article class="tile t-secure" data-rv>
           <h3><span data-t>Hosting y seguridad</span></h3>
@@ -616,7 +938,7 @@ footer{padding-block:40px 40px;overflow:hidden}
         <article class="tile t-preview" data-rv>
           <h3><span data-t>Vista previa gratis</span></h3>
           <p><span data-t>Primero ves tu página terminada. Si te gusta, empezamos. Si no, no pagas nada.</span></p>
-          <div class="pv-big" aria-hidden="true"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-scr" data-site="barberia"></div></div></div>
+          <div class="pv-big" aria-hidden="true"><img class="pv-shot" src="demos/bento-hotel.jpg" alt="" loading="lazy" decoding="async"></div>
         </article>
       </div>
     </div>
@@ -651,19 +973,6 @@ footer{padding-block:40px 40px;overflow:hidden}
           <a class="btn btn--ghost js-wa" data-msg="custom" href="https://wa.me/523349814667" target="_blank" rel="noopener"><span data-t>Cotizar mi proyecto</span></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WEBMASTERS -->
-  <section class="academy" aria-labelledby="acad-h">
-    <div class="wrap academy-in">
-      <div class="academy-copy">
-        <h2 class="h2" id="acad-h" data-rv><span data-t>¿Quieres aprender a hacerlas tú?</span></h2>
-        <p class="lede" data-rv><span data-t>En Webmasters by OKfly Studio te enseñamos a crear y vender páginas web con IA, con el mismo proceso que usamos con nuestros clientes. Prueba la comunidad 7 días gratis.</span></p>
-        <div data-rv><a class="btn btn--dark" href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener"><span data-t>Conocer Webmasters</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
-      </div>
-      <div class="academy-mark" aria-hidden="true"><div class="badge"><b>Webmasters</b><span>BY OKFLY</span></div></div>
     </div>
   </section>
 
@@ -713,7 +1022,6 @@ footer{padding-block:40px 40px;overflow:hidden}
         <h4><span data-t>Contacto</span></h4>
         <a class="js-wa" href="https://wa.me/523349814667" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.skool.com/jorge-nava-2070" target="_blank" rel="noopener">Webmasters</a>
         <span><span data-t>Riviera Maya, México</span></span>
       </div>
     </div>
@@ -772,15 +1080,22 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Language ---------- */
   var LANG = 'es';
   var EN = {
+    'Mira algunos de nuestros diseños activos.':'Take a look at some of our live designs.',
+    'Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.':'Real projects built by OKfly, running live. Pick one and browse it the way your customers would.',
+    'Sitios reales funcionando. Haz scroll y da clic adentro para explorarlos.':'Real, working websites. Scroll and click inside to explore them.',
+    'Ver en pantalla completa':'View full screen',
+    'Computadora':'Desktop',
+    'Celular':'Mobile',
     'Cómo funciona':'How it works','Diseños':'Designs','Planes':'Pricing','Preguntas':'FAQ',
     'Inicia mi página':'Start my website',
-    'Tu negocio merece una página web extraordinaria.':'Your business deserves an extraordinary website.',
+    'Creamos sistemas para recibir clientes.':'We build systems that bring you customers.',
+    'No solo construimos tu presencia en línea. Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.':'We don’t just build your online presence. We design, launch and maintain a system that turns visitors into customers on WhatsApp.',
     'Nosotros la diseñamos, publicamos y mantenemos. Tú solo dinos qué necesita tu negocio por WhatsApp.':'We design it, publish it and maintain it. Just tell us what your business needs on WhatsApp.',
     'Inicia mi página web':'Start my website','Descubre cómo funciona':'See how it works',
     heroPrice:'From <b>$99 USD a month</b>',
     'Ve tu página antes de pagar':'See your website before you pay','Sin costo inicial':'No upfront cost',
     'Cuenta de empresa · En línea':'Business account · Online',
-    'Vista previa · Brasa &amp; Mar':'Preview · Brasa &amp; Mar','Adaptada a celular':'Mobile ready',
+    'Vista previa · Casa Mar':'Preview · Casa Mar','Adaptada a celular':'Mobile ready',
     '¡Tu página web está lista! 🎉':'Your website is ready! 🎉',
     '¡Wow! ¡Me encanta! ¿Cómo empezamos?':'Wow! I love it! How do we start?',
     '¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.':'Welcome to OKfly! 🚀 Pick your plan and we’ll take care of the rest.',
@@ -855,8 +1170,8 @@ footer{padding-block:40px 40px;overflow:hidden}
     'Contacto':'Contact','Riviera Maya, México':'Riviera Maya, Mexico','Los diseños mostrados son ejemplos conceptuales.':'Designs shown are concept examples.'
   };
   var UI = {
-    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Brasa & Mar', tabs:'Giro del negocio', unit:'MXN / mes', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
-    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Brasa & Mar', tabs:'Type of business', unit:'USD / mo', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
+    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Casa Mar', tabs:'Giro del negocio', unit:'MXN / mes', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
+    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Casa Mar', tabs:'Type of business', unit:'USD / mo', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
   };
   var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-t]'));
   i18nEls.forEach(function(el){ el._es = el.innerHTML; });
@@ -864,54 +1179,209 @@ footer{padding-block:40px 40px;overflow:hidden}
   function M(){ return MSGS[LANG]; }
   function U(){ return UI[LANG]; }
 
-  /* ---------- Industries: drawn website templates ---------- */
+  /* ---------- Demo websites ----------
+     PHOTOS: put each industry's photo file here (e.g. 'demos/restaurante.jpg').
+     Empty = a drawn illustration is shown instead. */
+  var PHOTOS = {
+    restaurante: 'demos/casamar-hero.jpg',
+    dentista: 'demos/dentista.jpg',
+    barberia: 'demos/royce-badge.jpg',
+    gimnasio: 'demos/altura-m.jpg',
+    inmobiliaria: 'demos/ip-1.jpg',
+    tours: '',
+    veterinaria: 'demos/zootropolis-logo.jpg'
+  };
+  var ICONS = {
+    tooth:'M7 3c-2.2 0-4 1.8-4 4.4 0 3 1.4 4.6 2 7.6.5 2.6 1 6 2.6 6 1.4 0 1.4-4.5 2.4-6 .4-.6.8-1 2-1s1.6.4 2 1c1 1.5 1 6 2.4 6 1.6 0 2.1-3.4 2.6-6 .6-3 2-4.6 2-7.6C21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z',
+    implant:'M8 3h8v4H8zM9 7l1 3h4l1-3M10 10l-1 3h6l-1-3M9 13l1 3h4l1-3M11 16l1 5 1-5',
+    braces:'M3 9h18v6H3zM8 9v6M12 9v6M16 9v6',
+    sparkle:'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z',
+    shield:'M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5',
+    pin:'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21zM12 7a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5',
+    cal:'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',
+    arrow:'M5 12h14M13 6l6 6-6 6',
+    fork:'M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-1.7 0-3 2.2-3 5s1.3 4 3 4v9',
+    fish:'M2 12c3-4.5 8-6.5 12.5-4.5L19 4v16l-4.5-3.5C10 18.5 5 16.5 2 12zM8 11.5h.01',
+    wine:'M8 3h8c0 4.5-1.5 7-4 7s-4-2.5-4-7zM12 10v8M8 21h8',
+    sun:'M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5',
+    scissors:'M6 3a3 3 0 1 1 0 6a3 3 0 1 1 0-6M6 15a3 3 0 1 1 0 6a3 3 0 1 1 0-6M8.6 7.6L20 19M8.6 16.4L20 5',
+    razor:'M4 15l10-10 5 5-10 10H4zM9 10l5 5',
+    user:'M12 4a4 4 0 1 0 0 8a4 4 0 1 0 0-8M5 21c0-4 3-6 7-6s7 2 7 6',
+    coffee:'M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M8 3v2M11 3v2',
+    dumbbell:'M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12',
+    bolt:'M13 3L5 13h6l-1 8 8-10h-6z',
+    bike:'M6 14a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7M18 14a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7M6 17.5l4-7h6l2 7M9 6h3l2 4.5',
+    heart:'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10zM7 12h3l1-2 2 4 1-2h3',
+    home:'M4 11l8-7 8 7v9H4zM10 20v-5h4v5',
+    key:'M8 11a4 4 0 1 1 0 8a4 4 0 1 1 0-8M11 13l9-9M17 7l2 2M15 9l2 2',
+    chart:'M4 20V10M10 20V4M16 20v-7M2 20h20',
+    wave:'M2 10c2.5-3 5-3 7.5 0s5 3 7.5 0 3.5-2 5 0M2 16c2.5-3 5-3 7.5 0s5 3 7.5 0 3.5-2 5 0',
+    compass:'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M15.5 8.5l-2 5-5 2 2-5z',
+    camera:'M4 8h4l2-3h4l2 3h4v11H4zM12 10a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7',
+    leaf:'M5 19C5 11 11 5 20 5c0 9-6 15-14 15M5 19l7-7',
+    menu:'M4 7h16M4 12h16M4 17h16',
+    steth:'M6 3v6a4 4 0 0 0 8 0V3M10 13v2a5 5 0 0 0 10 0v-3M20 9a2 2 0 1 0 0 .01',
+    bird:'M5 18c4 0 7-3 8-7l2-4 3 1 1 3-3 1c0 4-3 7-7 7zM16 6h.01M8 18l-3 3',
+    bone:'M7 4a2.5 2.5 0 0 0-1.7 4.3A2.5 2.5 0 0 0 8.7 11.7l3.6 3.6a2.5 2.5 0 0 0 3.4 3.4 2.5 2.5 0 0 0 4.3-1.7 2.5 2.5 0 0 0-3.4-3.4l-3.6-3.6A2.5 2.5 0 0 0 7 4z',
+    grid:'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
+    bldg:'M6 3h12v18H6zM9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3',
+    door:'M5 21V5l8-2v18M13 6h4v15M10 12v1M3 21h18',
+    lot:'M12 3a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5M12 8v7M5 18c0-1.5 3-2.5 7-2.5s7 1 7 2.5-3 2.5-7 2.5-7-1-7-2.5z',
+    login:'M10 17l5-5-5-5M15 12H3M14 4h5v16h-5',
+    search:'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M20 20l-4-4',
+    sliders:'M6 4v16M12 4v16M18 4v16M4 9h4M10 15h4M16 7h4',
+    paw:'M12 13c-3 0-5.5 3-5.5 5 0 1.5 1.5 2 2.5 2s2-.6 3-.6 2 .6 3 .6 2.5-.5 2.5-2c0-2-2.5-5-5.5-5zM6 10a1.8 2.2 0 1 0 0 .01M18 10a1.8 2.2 0 1 0 0 .01M9.5 6.5a1.8 2.2 0 1 0 0 .01M14.5 6.5a1.8 2.2 0 1 0 0 .01'
+  };
+  function ic(k, cls){ return '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + ICONS[k] + '"/></svg>'; }
+
   var IND = {
-    restaurante:{label:'Restaurante', name:'Brasa & Mar', bg:'#F3EADF', ink:'#23140E', tint:'#9A3A23', btn:'#F3EADF', chip:'rgba(35,20,14,0.07)', a1:'#D9885A',
-      nav:['Menú','Reservas','Ubicación'], h:'Cocina al carbón frente al mar.', p:'Mariscos frescos, cocteles y atardeceres en la Riviera Maya.', cta:'Reservar mesa', chips:['Abierto hoy','Cómo llegar'],
-      items:[['Pulpo a las brasas','$380'],['Tacos de pescado','$190'],['Ceviche de la casa','$240']],
+    restaurante:{label:'Restaurante', name:'Casa Mar', logo:'fork', bg:'#F6EFE6', ink:'#1F130D', prim:'#8E2F1E', acc:'#C2552F', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#EFE4D6', a1:'#D9885A',
+      nav:['Inicio','Menú','Reservas','Nosotros','Contacto'], chip:'Restaurante en Playa del Carmen', h:'Cocina al carbón frente al', acc_w:'mar.', p:'Mariscos frescos, cocteles de autor y atardeceres frente al Caribe.', cta:'Reservar mesa', cta2:'Ver el menú',
+      svc:[['fish','Mariscos frescos'],['fork','Cocina al carbón'],['wine','Coctelería'],['sun','Terraza con vista'],['cal','Eventos privados']], sec:['NUESTRA COCINA','Fuego, mar y producto local','Cada plato nace del carbón y de la pesca del día.'],
       art:'<i class="art" style="left:16%;top:16%;width:26%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i><i class="art" style="left:0;right:0;bottom:40%;height:4%;background:#C7643F"></i><i class="art" style="left:60%;bottom:40%;width:5%;height:34%;background:#3B2116;border-radius:2px"></i><i class="art" style="left:52%;bottom:68%;width:22%;height:9%;background:#3B2116;border-radius:50%"></i>'},
-    dentista:{label:'Dentista', name:'Sonrisa Dental', bg:'#EEF3F8', ink:'#0E1B2C', tint:'#2B5C9E', btn:'#FFFFFF', chip:'rgba(14,27,44,0.06)', a1:'#2B5C9E',
-      nav:['Tratamientos','Equipo','Citas'], h:'Tu sonrisa, en manos expertas.', p:'Limpiezas, ortodoncia y urgencias el mismo día.', cta:'Agendar cita', chips:['Citas hoy','Estacionamiento'],
-      items:[['Limpieza dental','45 min'],['Ortodoncia','Valoración'],['Blanqueamiento','1 sesión']],
+    dentista:{label:'Dentista', name:'Sonrisa Dental', logo:'tooth', bg:'#F4F7FB', ink:'#0B1B33', prim:'#0E3D86', acc:'#2F7FC1', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#2B5C9E',
+      nav:['Inicio','Servicios','Nosotros','Testimonios','Contacto'], chip:'Clínica dental en Playa del Carmen', h:'Tu sonrisa, en manos', acc_w:'expertas.', p:'Cuidamos tu salud bucal con tecnología avanzada y atención personalizada.', cta:'Agendar cita', cta2:'Conoce nuestros servicios',
+      svc:[['tooth','Odontología general'],['implant','Implantes dentales'],['braces','Ortodoncia'],['sparkle','Estética dental'],['shield','Urgencias dentales']], sec:['NUESTRA CLÍNICA','Tecnología y cuidado en un solo lugar','Un equipo de especialistas para brindarte la mejor experiencia.'],
       art:'<i class="art" style="left:50%;top:50%;width:62%;aspect-ratio:1;border-radius:50%;background:#EEF3F8;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:36%;aspect-ratio:1;border-radius:50%;background:#9DB9DF;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:14%;aspect-ratio:1;border-radius:50%;background:#2B5C9E;transform:translate(-50%,-50%)"></i>'},
-    barberia:{label:'Barbería', name:'Navaja Barber Co.', bg:'#161412', ink:'#EFE7DA', tint:'#C79A55', btn:'#161412', chip:'rgba(239,231,218,0.08)', a1:'#2A2420',
-      nav:['Servicios','Barberos','Reservar'], h:'Cortes clásicos, estilo moderno.', p:'Reserva tu silla en segundos y llega sin esperar.', cta:'Reservar corte', chips:['Sin filas','Pago con tarjeta'],
-      items:[['Corte','$250'],['Barba','$180'],['Corte + barba','$380']],
+    barberia:{label:'Barbería', name:'Barber Royce', logo:'scissors', bg:'#121110', ink:'#EFE7DA', prim:'#C79A55', acc:'#D9B276', btn:'#121110', chipbg:'#1F1D1B', strip:'#1A1816', a1:'#2A2420',
+      nav:['Inicio','Servicios','Barberos','Galería','Reservar'], chip:'Barbería en Cancún', h:'Cortes clásicos, estilo', acc_w:'moderno.', p:'Reserva tu silla en segundos y llega sin esperar.', cta:'Reservar corte', cta2:'Ver servicios',
+      svc:[['scissors','Cortes'],['razor','Afeitado clásico'],['user','Barba y perfilado'],['coffee','Café de cortesía'],['cal','Reserva en línea']], sec:['NUESTRO ESPACIO','Tradición de barbería, hecha a tu estilo','Barberos expertos, buena música y cero filas.'],
       art:'<i class="art" style="left:50%;top:10%;width:16%;height:80%;border-radius:99px;transform:translateX(-50%);background:repeating-linear-gradient(135deg,#C79A55 0 12%,#EFE7DA 12% 24%,#7A2E22 24% 36%)"></i><i class="art" style="left:50%;top:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i><i class="art" style="left:50%;bottom:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i>'},
-    gimnasio:{label:'Gimnasio', name:'Pulso Gym', bg:'#0F0F0F', ink:'#F2F2F0', tint:'#E5552B', btn:'#0F0F0F', chip:'rgba(242,242,240,0.08)', a1:'#1E1E1E',
-      nav:['Clases','Horarios','Planes'], h:'Entrena con un plan hecho para ti.', p:'Coaches certificados y clases todo el día.', cta:'Clase gratis', chips:['Abierto 6–23 h','Regaderas'],
-      items:[['Funcional','7:00'],['Spinning','19:00'],['Pesas libres','Todo el día']],
+    gimnasio:{label:'Gimnasio', name:'Altura', logo:'dumbbell', bg:'#0E0E0E', ink:'#F2F2F0', prim:'#E5552B', acc:'#FF7A4D', btn:'#FFFFFF', chipbg:'#1C1C1C', strip:'#161616', a1:'#1E1E1E',
+      nav:['Inicio','Clases','Horarios','Planes','Contacto'], chip:'Gimnasio en Playa del Carmen', h:'Entrena con un plan hecho', acc_w:'para ti.', p:'Coaches certificados, clases todo el día y equipo de primera.', cta:'Clase gratis', cta2:'Ver horarios',
+      svc:[['dumbbell','Pesas libres'],['bolt','Funcional'],['bike','Spinning'],['heart','Cardio'],['user','Coach personal']], sec:['NUESTRO GYM','Todo lo que necesitas para entrenar','Clases todos los días, de 6 a 23 h.'],
       art:'<i class="art" style="left:14%;right:14%;top:47%;height:6%;background:#8A8A86;border-radius:99px"></i><i class="art" style="left:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="left:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i><i class="art" style="right:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="right:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i>'},
-    inmobiliaria:{label:'Inmobiliaria', name:'Costa Viva', bg:'#E6EEEA', ink:'#0F1F1C', tint:'#1E5C55', btn:'#FFFFFF', chip:'rgba(15,31,28,0.06)', a1:'#1E5C55',
-      nav:['Propiedades','Zonas','Asesoría'], h:'Vive a minutos del Caribe.', p:'Departamentos en preventa en la Riviera Maya.', cta:'Ver propiedades', chips:['Preventa','Financiamiento'],
-      items:[['2 recámaras','98 m²'],['Penthouse','160 m²'],['Lote residencial','300 m²']],
+    inmobiliaria:{label:'Inmobiliaria', name:'iproperty', logo:'home', bg:'#F2F5F3', ink:'#0F1F1C', prim:'#1E5C55', acc:'#2E8A7E', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#1E5C55',
+      nav:['Inicio','Propiedades','Zonas','Nosotros','Contacto'], chip:'Inmobiliaria en Tulum', h:'Vive a minutos del', acc_w:'Caribe.', p:'Departamentos y lotes en preventa en la Riviera Maya.', cta:'Ver propiedades', cta2:'Agendar visita',
+      svc:[['home','Departamentos'],['key','Entrega inmediata'],['chart','Inversión'],['pin','Mejores zonas'],['shield','Asesoría legal']], sec:['NUESTRO DESARROLLO','Diseño, ubicación y plusvalía','Te acompañamos desde la visita hasta la escritura.'],
       art:'<i class="art" style="left:12%;bottom:14%;width:20%;height:46%;background:#E6EEEA"></i><i class="art" style="left:36%;bottom:14%;width:24%;height:70%;background:#BFD5CD"></i><i class="art" style="left:64%;bottom:14%;width:20%;height:56%;background:#E6EEEA"></i><i class="art" style="left:0;right:0;bottom:0;height:14%;background:#13403B"></i><i class="art" style="left:72%;top:12%;width:12%;aspect-ratio:1;border-radius:50%;background:#F4D58D"></i>'},
-    tours:{label:'Tours', name:'Cenote Azul Tours', bg:'#EAF4F3', ink:'#0B2424', tint:'#0E7C7B', btn:'#FFFFFF', chip:'rgba(11,36,36,0.06)', a1:'#0B3D2E',
-      nav:['Tours','Galería','Reservar'], h:'Nada en cenotes escondidos.', p:'Tours en grupos pequeños desde Tulum.', cta:'Reservar tour', chips:['Guías locales','Transporte'],
-      items:[['Ruta de cenotes','6 h'],['Snorkel con tortugas','4 h'],['Cobá en bici','5 h']],
+    veterinaria:{label:'Veterinaria', name:'Zootropolis', logo:'paw', bg:'#EAF6FB', ink:'#1F2A44', prim:'#EB6B2A', acc:'#2E4BB1', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#5AA9C9', nav:[], chip:'', h:'', acc_w:'', p:'', cta:'', cta2:'', svc:[], sec:['','',''], art:''},
+    tours:{label:'Tours', name:'Cenote Azul Tours', logo:'wave', bg:'#F1F8F7', ink:'#0B2424', prim:'#0E7C7B', acc:'#14A3A0', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#0B3D2E',
+      nav:['Inicio','Tours','Galería','Opiniones','Reservar'], chip:'Tours desde Tulum', h:'Nada en cenotes', acc_w:'escondidos.', p:'Tours en grupos pequeños con guías locales.', cta:'Reservar tour', cta2:'Ver tours',
+      svc:[['wave','Cenotes'],['compass','Guías locales'],['bike','Ruta en bici'],['camera','Fotos incluidas'],['leaf','Eco-amigable']], sec:['LA EXPERIENCIA','La Riviera Maya que no sale en las guías','Rutas pensadas para grupos pequeños.'],
       art:'<i class="art" style="left:50%;top:58%;width:84%;height:70%;border-radius:50%;background:#0E7C7B;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:56%;height:46%;border-radius:50%;background:#58C3BA;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:24%;height:20%;border-radius:50%;background:#B9ECE4;transform:translate(-50%,-50%)"></i><i class="art" style="left:0;right:0;top:0;height:16%;background:#16543F"></i>'}
   };
-  var ORDER = ['restaurante','dentista','barberia','gimnasio','inmobiliaria','tours'];
+  var ORDER = ['restaurante','dentista','barberia','gimnasio','inmobiliaria','veterinaria'];
   var IND_EN = {
-    restaurante:{label:'Restaurant', nav:['Menu','Book','Location'], h:'Wood-fired cooking by the sea.', p:'Fresh seafood, cocktails and sunsets in the Riviera Maya.', cta:'Book a table', chips:['Open today','Directions'], items:[['Grilled octopus','$380'],['Fish tacos','$190'],['House ceviche','$240']]},
-    dentista:{label:'Dentist', nav:['Treatments','Team','Book'], h:'Your smile, in expert hands.', p:'Cleanings, braces and same-day emergencies.', cta:'Book a visit', chips:['Same-day visits','Parking'], items:[['Dental cleaning','45 min'],['Braces','Consultation'],['Whitening','1 session']]},
-    barberia:{label:'Barbershop', nav:['Services','Barbers','Book'], h:'Classic cuts, modern style.', p:'Book your chair in seconds and skip the wait.', cta:'Book a cut', chips:['No lines','Card payments'], items:[['Haircut','$250'],['Beard','$180'],['Cut + beard','$380']]},
-    gimnasio:{label:'Gym', nav:['Classes','Schedule','Plans'], h:'Train with a plan made for you.', p:'Certified coaches and classes all day.', cta:'Free class', chips:['Open 6 am–11 pm','Showers'], items:[['Functional','7:00'],['Spinning','19:00'],['Free weights','All day']]},
-    inmobiliaria:{label:'Real estate', nav:['Listings','Areas','Advice'], h:'Live minutes from the Caribbean.', p:'Pre-sale condos in the Riviera Maya.', cta:'View listings', chips:['Pre-sale','Financing'], items:[['2 bedrooms','98 m²'],['Penthouse','160 m²'],['Residential lot','300 m²']]},
-    tours:{label:'Tours', nav:['Tours','Gallery','Book'], h:'Swim in hidden cenotes.', p:'Small-group tours from Tulum.', cta:'Book a tour', chips:['Local guides','Transport'], items:[['Cenote route','6 h'],['Turtle snorkeling','4 h'],['Cobá by bike','5 h']]}
+    restaurante:{label:'Restaurant', nav:['Home','Menu','Book','About','Contact'], chip:'Restaurant in Playa del Carmen', h:'Wood-fired cooking by the', acc_w:'sea.', p:'Fresh seafood, signature cocktails and Caribbean sunsets.', cta:'Book a table', cta2:'See the menu',
+      svc:['Fresh seafood','Wood-fired grill','Cocktails','Ocean-view terrace','Private events'], sec:['OUR KITCHEN','Fire, sea and local produce','Every dish starts on the grill with the catch of the day.']},
+    dentista:{label:'Dentist', nav:['Home','Services','About','Reviews','Contact'], chip:'Dental clinic in Playa del Carmen', h:'Your smile, in expert', acc_w:'hands.', p:'We care for your oral health with advanced technology and personal attention.', cta:'Book a visit', cta2:'See our services',
+      svc:['General dentistry','Dental implants','Orthodontics','Cosmetic dentistry','Dental emergencies'], sec:['OUR CLINIC','Technology and care in one place','A team of specialists for the best possible experience.']},
+    barberia:{label:'Barbershop', nav:['Home','Services','Barbers','Gallery','Book'], chip:'Barbershop in Cancún', h:'Classic cuts, modern', acc_w:'style.', p:'Book your chair in seconds and skip the wait.', cta:'Book a cut', cta2:'See services',
+      svc:['Haircuts','Hot-towel shave','Beard trims','Free coffee','Online booking'], sec:['OUR SPACE','Barbershop tradition, your style','Expert barbers, good music and no lines.']},
+    gimnasio:{label:'Gym', nav:['Home','Classes','Schedule','Plans','Contact'], chip:'Gym in Playa del Carmen', h:'Train with a plan made', acc_w:'for you.', p:'Certified coaches, classes all day and top equipment.', cta:'Free class', cta2:'See schedule',
+      svc:['Free weights','Functional','Spinning','Cardio','Personal coach'], sec:['OUR GYM','Everything you need to train','Classes every day, 6 am to 11 pm.']},
+    inmobiliaria:{label:'Real estate', nav:['Home','Listings','Areas','About','Contact'], chip:'Real estate in Tulum', h:'Live minutes from the', acc_w:'Caribbean.', p:'Pre-sale condos and lots in the Riviera Maya.', cta:'View listings', cta2:'Book a tour',
+      svc:['Condos','Move-in ready','Investment','Prime locations','Legal advice'], sec:['OUR DEVELOPMENT','Design, location and appreciation','We guide you from the first visit to closing.']},
+    veterinaria:{label:'Veterinary', svc:[]},
+    tours:{label:'Tours', nav:['Home','Tours','Gallery','Reviews','Book'], chip:'Tours from Tulum', h:'Swim in hidden', acc_w:'cenotes.', p:'Small-group tours with local guides.', cta:'Book a tour', cta2:'See tours',
+      svc:['Cenotes','Local guides','Bike route','Photos included','Eco-friendly'], sec:['THE EXPERIENCE','The Riviera Maya the guidebooks miss','Routes designed for small groups.']}
   };
-  function D(key){ var b = IND[key]; if (LANG !== 'en') return b; var o = {}, e = IND_EN[key], k; for (k in b) o[k] = b[k]; for (k in e) o[k] = e[k]; return o; }
-  var menuIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  function D(key){
+    var b = IND[key], o = {}, k; for (k in b) o[k] = b[k];
+    if (LANG === 'en'){ var e = IND_EN[key]; for (k in e) o[k] = e[k]; o.svc = b.svc.map(function(s, i){ return [s[0], e.svc[i]]; }); }
+    return o;
+  }
+
+  var LUX = {
+    es:{tag:'COCINA · MAR · EXPERIENCIAS', nav:['Inicio','Menú','Nosotros','Contacto'], cta:'Reservar mesa', eye:'UNA EXPERIENCIA JUNTO AL MAR', h:'Sabores que cuentan', em:'historias.', p:'Ingredientes frescos, cocina de autor y momentos inolvidables en el corazón del Caribe.', play:'Explorar menú', sec:'NUESTRA COCINA', sech:'Platos que inspiran', cards:['Ceviches frescos','Cocina de autor','Postres únicos']},
+    en:{tag:'KITCHEN · SEA · EXPERIENCES', nav:['Home','Menu','About','Contact'], cta:'Book a table', eye:'A SEASIDE EXPERIENCE', h:'Flavors that tell', em:'stories.', p:'Fresh ingredients, signature cuisine and unforgettable moments in the heart of the Caribbean.', play:'Explore menu', sec:'OUR KITCHEN', sech:'Dishes that inspire', cards:['Fresh ceviches','Signature cuisine','Unique desserts']}
+  };
+  var waveLogo = '<svg viewBox="0 0 32 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M2 5c3-3 6-3 9 0s6 3 9 0 6-3 9 0M2 11c3-3 6-3 9 0s6 3 9 0 6-3 9 0"/></svg>';
+  function luxHTML(name, mobile){
+    var t = LUX[LANG], n = esc(name || 'Casa Mar');
+    var photo = mobile ? 'demos/casamar-hero-m.jpg' : 'demos/casamar-hero.jpg';
+    var arrow = ic('arrow'), play = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>';
+    return '<div class="site lux' + (mobile ? ' m' : '') + '">' +
+      '<div class="lux-hero"><div class="lux-photo" style="background-image:url(' + photo + ')"></div>' +
+        '<div class="lux-nav"><span class="lux-logo">' + waveLogo + '<b>' + n.toUpperCase() + '.</b><small>' + t.tag + '</small></span>' +
+        '<span class="lux-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + ic('menu') + '</span>' +
+        '<span class="lux-btn">' + ic('cal') + t.cta + '</span></div>' +
+        '<div class="lux-copy"><span class="lux-eye">' + t.eye + '</span><h5 class="lux-h serif">' + t.h + ' <em>' + t.em + '</em></h5><p class="lux-p">' + t.p + '</p>' +
+        '<div class="lux-ctas"><span class="lux-btn">' + ic('cal') + t.cta + arrow + '</span><span class="lux-play"><i>' + play + '</i>' + t.play + '</span></div></div></div>' +
+      '<div class="lux-sec"><span class="lux-eye">' + t.sec + '</span><h6 class="serif">' + t.sech + '</h6><div class="lux-cards">' +
+        t.cards.map(function(c, i){ return '<span class="lux-card" style="background-image:url(demos/casamar-' + (i+1) + '.jpg)"><span>' + c + '</span><i>' + arrow + '</i></span>'; }).join('') +
+      '</div></div></div>';
+  }
+
+  var VET = {
+    es:{nav:['Servicios','Peluquería','Promos','Nutrición','Contacto'], cta:'Agendar cita', chip:'Abierto hoy · Cierra a las 8 p.m.', h:'Veterinaria', script:'¡Clínica veterinaria, ortopedia y fauna silvestre!', p:'Más de 25 años cuidando a perros, gatos, mascotas no convencionales y fauna silvestre en Cancún.', b1:'Agenda por WhatsApp', b2:'Ver servicios', stats:[['25','+ años de experiencia'],['4','tipos de pacientes'],['10','+ servicios']], tags:['Consultas médicas','Fauna silvestre','Ortopedia y Rayos X']},
+    en:{nav:['Services','Grooming','Deals','Nutrition','Contact'], cta:'Book a visit', chip:'Open today · Closes at 8 p.m.', h:'Veterinary', script:'Vet clinic, orthopedics and wildlife care!', p:'Over 25 years caring for dogs, cats, exotic pets and wildlife in Cancún.', b1:'Book on WhatsApp', b2:'See services', stats:[['25','+ years of experience'],['4','patient types'],['10','+ services']], tags:['Medical visits','Wildlife','Orthopedics & X-rays']}
+  };
+  function vetHTML(name, mobile){
+    var t = VET[LANG], n = esc(name || 'Zootropolis'), logo = PHOTOS.veterinaria;
+    return '<div class="site vet' + (mobile ? ' m' : '') + '">' +
+      '<div class="vet-nav"><span class="vet-logo fun"><span style="background-image:url(' + logo + ')"></span>' + n + '</span><span class="vet-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="vet-btn fun">' + t.cta + '</span>' + ic('menu','vet-menu') + '</div>' +
+      '<div class="vet-hero"><div class="vet-copy"><span class="vet-chip fun"><i></i>' + t.chip + '</span><h5 class="vet-h fun">' + t.h + '<em>' + n + '</em></h5><span class="vet-script">' + t.script + '</span><p class="vet-p">' + t.p + '</p>' +
+        '<div class="vet-ctas"><span class="vet-btn fun">' + ic('paw') + t.b1 + '</span><span class="vet-btn w fun">' + t.b2 + '</span></div>' +
+        '<div class="vet-stats">' + t.stats.map(function(x){ return '<span><b class="fun">' + x[0] + '</b>' + x[1] + '</span>'; }).join('') + '</div></div>' +
+        '<div class="vet-art"><div class="vet-globe"></div><div class="vet-card" style="background-image:url(' + logo + ')">' +
+          '<span class="vet-tag t1 fun"><i>' + ic('steth') + '</i>' + t.tags[0] + '</span><span class="vet-tag t2 fun"><i>' + ic('bird') + '</i>' + t.tags[1] + '</span><span class="vet-tag t3 fun"><i>' + ic('bone') + '</i>' + t.tags[2] + '</span>' +
+        '</div></div></div></div>';
+  }
+
+  var IPT = {
+    es:{nav:['Comprar','Rentar','Servicios','Contacto'], login:'Iniciar sesión', cta:'Ver Propiedades', filters:'Mostrar Filtros', map:'Mostrar Mapa', cats:['Todos','Casas','Departamentos','Estudios','Terrenos','Villas']},
+    en:{nav:['Buy','Rent','Services','Contact'], login:'Log in', cta:'View listings', filters:'Show filters', map:'Show map', cats:['All','Houses','Condos','Studios','Lots','Villas']}
+  };
+  var pinLogo = '<svg viewBox="0 0 20 24" aria-hidden="true"><path d="M10 1a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8z" fill="#33B6E5"/><circle cx="10" cy="9" r="3.2" fill="#fff"/></svg>';
+  function ipHTML(name, mobile){
+    var t = IPT[LANG], n = esc(name || 'iproperty'), icons = ['grid','home','bldg','door','lot','home'];
+    return '<div class="site ip' + (mobile ? ' m' : '') + '">' +
+      '<div class="ip-nav"><span class="ip-logo">' + pinLogo + n + '</span><span class="ip-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span>' +
+        '<span class="ip-right"><span class="ip-ghost">' + ic('login') + '<span>' + t.login + '</span></span><span class="ip-dark">' + ic('search') + t.cta + '</span>' + (mobile ? '<span class="ip-ghost">' + ic('menu') + '</span>' : '') + '</span></div>' +
+      '<div class="ip-body"><div class="ip-list"><div class="ip-bar"><span class="ip-filter"><i>' + ic('sliders') + '</i><span>' + t.filters + '</span></span>' +
+        '<span class="ip-cats">' + t.cats.map(function(c, i){ return '<span>' + ic(icons[i]) + c + '</span>'; }).join('') + '</span></div>' +
+        '<div class="ip-cards">' + [1,2,3,4].map(function(i){ return '<span class="ip-card" style="background-image:url(demos/ip-' + i + '.jpg)"></span>'; }).join('') + '</div></div>' +
+        '<div class="ip-map" style="background-image:url(demos/ip-map.jpg)"><span class="ip-pill">' + t.map + '</span><small>Leaflet | © Mapbox © OpenStreetMap</small></div></div></div>';
+  }
+
+  var ROY = {
+    es:{nav:['Servicios','Experiencia','Reservar','Ubicación'], cta:'Reservar cita', eye:'CERRADO AHORA · RESERVA PARA TU PRÓXIMA VISITA', l1:'Corte', l2:'de', em:'rey,', l3:'Estilo', p:'Fades precisos, barbas esculpidas y afeitado clásico con toalla caliente. Reserva en segundos y llega directo a la silla.', b1:'Reservar mi cita', b2:'Ver servicios', rib:['FADE','BARBA','AFEITADO CLÁSICO']},
+    en:{nav:['Services','Experience','Book','Location'], cta:'Book now', eye:'CLOSED NOW · BOOK YOUR NEXT VISIT', l1:'Cuts', l2:'for a', em:'king,', l3:'Style', p:'Precise fades, sculpted beards and classic hot-towel shaves. Book in seconds and go straight to the chair.', b1:'Book my visit', b2:'See services', rib:['FADE','BEARD','CLASSIC SHAVE']}
+  };
+  function royHTML(name, mobile){
+    var t = ROY[LANG], n = esc(name || 'Barber Royce'), last = n.split(' ').pop();
+    return '<div class="site roy' + (mobile ? ' m' : '') + '">' +
+      '<div class="roy-nav"><span class="roy-logo cond"><span style="background-image:url(demos/royce-logo.jpg)"></span>' + n.toUpperCase() + '</span><span class="roy-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="roy-btn">' + t.cta + '</span><span class="roy-menu">' + ic('menu') + '</span></div>' +
+      '<div class="roy-hero"><div class="roy-copy"><span class="roy-eye"><i></i>' + t.eye + '</span>' +
+        '<h5 class="roy-h cond">' + t.l1 + '<br>' + t.l2 + ' <em>' + t.em + '</em><br>' + t.l3 + '<br class="d"> ' + last + '</h5>' +
+        '<p class="roy-p">' + t.p + '</p><div class="roy-ctas"><span class="roy-btn">' + t.b1 + ic('arrow') + '</span><span class="roy-btn o">' + t.b2 + '</span></div></div>' +
+        '<div class="roy-badge" style="background-image:url(' + PHOTOS.barberia + ')"></div></div>' +
+      '<div class="roy-ribbon cond">' + t.rib.map(function(r){ return '<i>✦</i><span>' + r + '</span>'; }).join('') + '<i>✦</i></div></div>';
+  }
+
+  var ALT = {
+    es:{nav:['El piso','Clases','Precios','Visítanos'], cta:'Prueba gratis', h:'Entrena en lo más alto.', p:'Un piso entero de fuerza, cardio y funcional bañado de luz natural. Sin inscripción y abierto todos los días.', b1:'Agenda tu día gratis', b2:'Ver precios'},
+    en:{nav:['The floor','Classes','Pricing','Visit us'], cta:'Free trial', h:'Train at the top.', p:'A full floor of strength, cardio and functional training bathed in natural light. No sign-up fee, open every day.', b1:'Book your free day', b2:'See pricing'}
+  };
+  function altHTML(name, mobile){
+    var t = ALT[LANG], n = esc(name || 'Altura');
+    return '<div class="site alt' + (mobile ? ' m' : '') + '" style="background-image:url(' + PHOTOS.gimnasio + ')">' +
+      '<div class="alt-nav"><span class="alt-logo wide">' + n.toUpperCase() + '</span><span class="alt-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="alt-btn">' + t.cta + '</span></div>' +
+      '<div class="alt-hero"><h5 class="alt-h wide">' + t.h + '</h5><div class="alt-row"><p class="alt-p">' + t.p + '</p><div class="alt-ctas"><span class="alt-btn">' + t.b1 + ic('arrow') + '</span><span class="alt-link">' + t.b2 + '</span></div></div></div>' +
+      '<div class="alt-bar"></div></div>';
+  }
 
   function siteHTML(key, name, mobile){
-    var d = D(key), n = esc(name || d.name);
-    var items = (mobile ? d.items.slice(0,2) : d.items).map(function(it){ return '<span>' + esc(it[0]) + '<em>' + esc(it[1]) + '</em></span>'; }).join('');
-    return '<div class="site' + (mobile ? ' m' : '') + '" style="--sbg:' + d.bg + ';--sink:' + d.ink + ';--stint:' + d.tint + ';--sbtn:' + d.btn + ';--schip:' + d.chip + ';--a1:' + d.a1 + '">' +
-      '<div class="site-nav"><b>' + n + '</b><span>' + d.nav.map(esc).map(function(x){return '<i style="font-style:normal">'+x+'</i>';}).join('') + '</span>' + menuIcon + '</div>' +
-      '<div class="site-hero"><div class="site-copy"><h5>' + esc(d.h) + '</h5><p>' + esc(d.p) + '</p><span class="site-cta">' + esc(d.cta) + '</span><div class="site-chips">' + d.chips.map(function(c){return '<span>'+esc(c)+'</span>';}).join('') + '</div></div>' +
-      '<div class="site-art">' + d.art + '</div></div>' +
-      '<div class="site-items">' + items + '</div></div>';
+    if (key === 'restaurante') return luxHTML(name, mobile);
+    if (key === 'gimnasio') return altHTML(name, mobile);
+    if (key === 'barberia') return royHTML(name, mobile);
+    if (key === 'inmobiliaria') return ipHTML(name, mobile);
+    if (key === 'veterinaria') return vetHTML(name, mobile);
+    var d = D(key), n = esc(name || d.name), photo = PHOTOS[key];
+    var vars = '--sbg:' + d.bg + ';--sink:' + d.ink + ';--sprim:' + d.prim + ';--sacc:' + d.acc + ';--sbtn:' + d.btn + ';--schipbg:' + d.chipbg + ';--sstrip:' + d.strip + ';--a1:' + d.a1;
+    var ph = photo ? '<div class="s-photo" style="background-image:url(' + photo + ')"></div>' : '<div class="s-photo art">' + d.art + '</div>';
+    return '<div class="site' + (mobile ? ' m' : '') + '" style="' + vars + '">' +
+      '<div class="s-nav"><span class="s-logo">' + ic(d.logo) + n + '</span><span class="s-links">' + d.nav.map(function(x){ return '<span>' + esc(x) + '</span>'; }).join('') + '</span><span class="s-btn">' + ic('cal') + esc(d.cta) + '</span>' + ic('menu','s-menu') + '</div>' +
+      '<div class="s-hero">' + ph + '<div class="s-copy"><span class="s-chip">' + ic('pin') + esc(d.chip) + '</span><h5 class="s-h">' + esc(d.h) + ' <em>' + esc(d.acc_w) + '</em></h5><p class="s-p">' + esc(d.p) + '</p>' +
+        '<div class="s-ctas"><span class="s-btn">' + ic('cal') + esc(d.cta) + '</span><span class="s-btn o">' + esc(d.cta2) + ic('arrow') + '</span></div></div></div>' +
+      '<div class="s-strip">' + d.svc.map(function(s){ return '<span>' + ic(s[0]) + esc(s[1]) + '</span>'; }).join('') + '</div>' +
+      '<div class="s-sec"><div class="s-card">' + d.art + '</div><div><small>' + esc(d.sec[0]) + '</small><b>' + esc(d.sec[1]) + '</b><p>' + esc(d.sec[2]) + '</p></div></div>' +
+      '</div>';
   }
+  var DOMAINS = { inmobiliaria: 'iproperty.mx', gimnasio: 'alturagym.mx' };
+  function domainFor(k, nm){ return nm ? slug(nm) : (DOMAINS[k] || slug(IND[k].name)); }
   function slug(s){ var t = String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/&/g,'y').replace(/[^a-z0-9]+/g,''); return (t || 'tunegocio') + '.com'; }
 
   /* Fill every drawn site on the page */
@@ -925,23 +1395,18 @@ footer{padding-block:40px 40px;overflow:hidden}
 
   /* ---------- Tech marquee ---------- */
   var TECH = [
-    ['WordPress','<circle cx="12" cy="12" r="9.5"/><path d="M5 8.5l3.8 10M9.5 8.5l3.6 10 3.4-10M14 8.5h4"/>'],
+    ['HTML5','<path d="M4.5 3l1.4 16L12 21l6.1-2 1.4-16z"/><path d="M15.5 7.5h-7l.4 4h6.2l-.5 4.5-2.6.9-2.6-.9-.2-2"/>'],
     ['Stripe','<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/>'],
     ['WhatsApp','<path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/>'],
     ['Google','<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>'],
-    ['Cloudflare','<path d="M7 18h11a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 18z"/>'],
-    ['Elementor','<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 8v8M13 8h3M13 12h3M13 16h3"/>'],
-    ['AI','<path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3.5"/>']
+    ['Supabase','<path d="M13 3L5 13.5h7L11 21l8-10.5h-7z"/>'],
+    ['Meta','<path d="M7 8c-2.5 0-4 2-4 4s1.5 4 4 4c3.5 0 6.5-8 10-8 2.5 0 4 2 4 4s-1.5 4-4 4c-3.5 0-6.5-8-10-8z"/>'],
+    ['Vercel','<path d="M12 5l8.5 14h-17z"/>'],
+    ['GitHub','<path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>']
   ];
   function paintTech(){
     var techHTML = TECH.map(function(t){ return '<span class="tech-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + t[1] + '</svg>' + (t[0] === 'AI' ? U().ai : t[0]) + '</span>'; }).join('');
     document.getElementById('techTrack').innerHTML = techHTML + techHTML;
-  }
-
-  /* ---------- Gallery strip ---------- */
-  function paintGallery(){
-    var gal = ORDER.map(function(k){ return '<figure class="g-card"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">' + slug(IND[k].name) + '</span></div><div class="bw-scr">' + siteHTML(k,'',false) + '</div></div><figcaption><b>' + D(k).label + '</b><span>' + U().example + '</span></figcaption></figure>'; }).join('');
-    document.getElementById('galleryTrack').innerHTML = gal + gal.replace(/<figure class="g-card">/g,'<figure class="g-card" aria-hidden="true">');
   }
 
   /* ---------- Plans ---------- */
@@ -963,18 +1428,55 @@ footer{padding-block:40px 40px;overflow:hidden}
   }
   paintPlans();
 
-  /* ---------- Demo switcher ---------- */
-  var demo = {key:'restaurante', name:''};
-  var tabs = document.getElementById('tabs');
-  tabs.innerHTML = ORDER.map(function(k,i){ return '<button type="button" class="tab" data-k="' + k + '" aria-pressed="' + (i===0) + '">' + IND[k].label + '</button>'; }).join('');
-  function paintTabs(){ tabs.querySelectorAll('.tab').forEach(function(b){ b.textContent = D(b.dataset.k).label; }); tabs.setAttribute('aria-label', U().tabs); }
-  var dDesk = document.getElementById('demoDesk'), dMob = document.getElementById('demoMob'), dUrl = document.getElementById('demoUrl'), dCta = document.getElementById('demoCta'), dName = document.getElementById('demoName');
+  /* ---------- Design catalog (live demos) ----------
+     Real sites shown inside the frames. Add more: {url, es:[title, sub], en:[title, sub], name}. */
+  var DEMOS = [
+    {url:'https://hydra-clean-playa.okfly.here.now/', name:'Hydra Clean', es:['Limpieza a domicilio','Hydra Clean · Playa del Carmen'], en:['Home cleaning','Hydra Clean · Playa del Carmen']},
+    {url:'https://zensi-spa-cozumel.okfly.here.now/', name:'Zensi Spa', es:['Spa y belleza','Zensi Spa · Cozumel'], en:['Spa & beauty','Zensi Spa · Cozumel']},
+    {url:'https://index.okfly.here.now/', name:'', es:['Taller mecánico','Playa del Carmen'], en:['Auto repair shop','Playa del Carmen']},
+    {url:'https://barberiaroyce.okflystudio.workers.dev/', name:'Barber Royce', es:['Barbería','Barber Royce · Cancún'], en:['Barbershop','Barber Royce · Cancún']},
+    {url:'https://zootropolis.okflystudio.workers.dev/', name:'Zootropolis', es:['Veterinaria','Zootropolis · Cancún'], en:['Veterinary clinic','Zootropolis · Cancún']},
+    {url:'https://www.xsales.cc/es', name:'Xsales', es:['Agencia de marketing','Xsales · México'], en:['Marketing agency','Xsales · Mexico']}
+  ];
+  var demo = {i:0}, demoOn = false;
+  var cat = document.getElementById('cat');
+  var dDesk = document.getElementById('demoDesk'), dMob = document.getElementById('demoMob'), dUrl = document.getElementById('demoUrl'), dCta = document.getElementById('demoCta'), liveTag = document.getElementById('liveTag');
+  function DT(d){ return d[LANG] || d.es; }
+  function demoLabel(d){ return d.name || DT(d)[0]; }
+  cat.innerHTML = DEMOS.map(function(d, i){ return '<button type="button" class="cat-card" data-i="' + i + '" aria-pressed="' + (i === 0) + '"><small>' + String(i + 1).padStart(2, '0') + '</small><b></b><span></span><em></em></button>'; }).join('');
+  function paintTabs(){
+    cat.querySelectorAll('.cat-card').forEach(function(c){ var d = DEMOS[+c.dataset.i]; c.querySelector('b').textContent = DT(d)[0]; c.querySelector('span').textContent = DT(d)[1]; c.querySelector('em').textContent = LANG === 'en' ? 'View demo' : 'Ver demo'; });
+    cat.setAttribute('aria-label', LANG === 'en' ? 'Designs' : 'Diseños');
+  }
+  function paintGallery(){}
+  function sizeFrame(lv){
+    var f = lv.querySelector('iframe'), vw = +lv.dataset.vw, w = lv.clientWidth, h = lv.clientHeight;
+    if (!f || !w) return;
+    var sc = w / vw;
+    f.style.width = vw + 'px'; f.style.height = Math.ceil(h / sc) + 'px'; f.style.transform = 'scale(' + sc + ')';
+  }
+  function loadingHTML(){ return '<div class="ld"><i></i><span>' + (LANG === 'en' ? 'Loading demo…' : 'Cargando demo…') + '</span></div>'; }
+  function setFrame(host, mobile){
+    var d = DEMOS[demo.i], lv = host.querySelector('.lv');
+    if (lv && lv.dataset.src === d.url) return;
+    host.innerHTML = loadingHTML();
+    if (!mobile && innerWidth < 900) return;
+    lv = document.createElement('div'); lv.className = 'lv'; lv.dataset.src = d.url; lv.dataset.vw = mobile ? 390 : 1440;
+    var f = document.createElement('iframe');
+    f.src = d.url; f.title = (LANG === 'en' ? 'Live demo: ' : 'Demo en vivo: ') + demoLabel(d);
+    f.setAttribute('referrerpolicy', 'no-referrer');
+    f.addEventListener('load', function(){ lv.classList.add('on'); });
+    lv.appendChild(f); host.appendChild(lv); sizeFrame(lv);
+  }
+  window.addEventListener('resize', function(){ document.querySelectorAll('.lv').forEach(sizeFrame); if (demoOn && innerWidth >= 900 && !dDesk.querySelector('.lv')) setFrame(dDesk, false); });
   function paintDemo(){
-    var nm = demo.name.trim();
-    dDesk.innerHTML = siteHTML(demo.key, nm, false);
-    dMob.innerHTML = siteHTML(demo.key, nm, true);
-    dUrl.textContent = slug(nm || IND[demo.key].name);
-    dCta.href = nm ? wa(M().demo.replace('{name}', nm).replace('{giro}', D(demo.key).label.toLowerCase())) : wa(M().base);
+    var d = DEMOS[demo.i];
+    dUrl.textContent = demoLabel(d);
+    liveTag.textContent = LANG === 'en' ? 'Live' : 'En vivo';
+    if (demoOn){ setFrame(dDesk, false); setFrame(dMob, true); }
+    var t = DT(d)[0].toLowerCase();
+    dCta.href = wa(LANG === 'en' ? 'Hi! I saw the ' + (d.name || t) + ' design on your site and I want a website like that.' : '¡Hola! Vi el diseño de ' + (d.name || t) + ' en su sitio y quiero una página así.');
+    document.getElementById('demoBig').setAttribute('aria-label', (LANG === 'en' ? 'Open full screen: ' : 'Ver en pantalla completa: ') + demoLabel(d));
   }
   function swap(fn){
     if (reduce || !Element.prototype.animate){ fn(); return; }
@@ -982,17 +1484,43 @@ footer{padding-block:40px 40px;overflow:hidden}
     var outs = els.map(function(e){ return e.animate([{opacity:1,filter:'blur(0px)',transform:'scale(1)'},{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'}],{duration:140,easing:'ease-out',fill:'forwards'}); });
     outs[0].onfinish = function(){ fn(); els.forEach(function(e){ e.animate([{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'},{opacity:1,filter:'blur(0px)',transform:'scale(1)'}],{duration:280,easing:'cubic-bezier(0.23,1,0.32,1)',fill:'forwards'}); }); };
   }
-  tabs.addEventListener('click', function(e){
-    var b = e.target.closest('.tab'); if (!b || b.dataset.k === demo.key) return;
-    demo.key = b.dataset.k;
-    tabs.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-pressed', t===b ? 'true':'false'); });
-    swap(paintDemo);
+  cat.addEventListener('click', function(e){
+    var b = e.target.closest('.cat-card'); if (!b) return;
+    var i = +b.dataset.i;
+    if (i !== demo.i){
+      demo.i = i;
+      cat.querySelectorAll('.cat-card').forEach(function(c){ c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
+      swap(paintDemo);
+    }
+    if (innerWidth < 900){ var st = document.querySelector('#disenos .demo-stage'); if (st) st.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'}); }
   });
-  dName.addEventListener('input', function(){ demo.name = dName.value; paintDemo(); });
-  document.getElementById('demoForm').addEventListener('submit', function(e){ e.preventDefault(); });
+  /* load the live sites only when the section gets close */
+  (function(){
+    var sec = document.getElementById('disenos');
+    function start(){ if (demoOn) return; demoOn = true; paintDemo(); }
+    if ('IntersectionObserver' in window){ var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ start(); io.disconnect(); } }, {rootMargin:'600px 0px'}); io.observe(sec); }
+    else start();
+  })();
+  dDesk.innerHTML = loadingHTML(); dMob.innerHTML = loadingHTML();
+  /* full-screen viewer */
+  var dv = document.getElementById('dv'), dvFrame = document.getElementById('dvFrame'), dvName = document.getElementById('dvName'), dvLast = null;
+  function dvDev(dev){ dvFrame.classList.toggle('mob', dev === 'mob'); dv.querySelectorAll('.dv-dev button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.d === dev ? 'true' : 'false'); }); }
+  function dvOpen(){
+    var d = DEMOS[demo.i]; dvLast = document.activeElement;
+    dvName.textContent = demoLabel(d) + ' · ' + DT(d)[0];
+    dvFrame.innerHTML = loadingHTML() + '<iframe title="' + esc(demoLabel(d)) + '" referrerpolicy="no-referrer" src="' + esc(d.url) + '"></iframe>';
+    dvDev(innerWidth < 900 ? 'mob' : 'desk');
+    dv.hidden = false; document.documentElement.style.overflow = 'hidden';
+    document.getElementById('dvClose').focus();
+  }
+  function dvShut(){ dv.hidden = true; dvFrame.innerHTML = ''; document.documentElement.style.overflow = ''; if (dvLast) dvLast.focus(); }
+  document.getElementById('demoBig').addEventListener('click', dvOpen);
+  document.getElementById('dvClose').addEventListener('click', dvShut);
+  dv.querySelectorAll('.dv-dev button').forEach(function(b){ b.addEventListener('click', function(){ dvDev(b.dataset.d); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !dv.hidden) dvShut(); });
 
   /* ---------- Domain typing in the bento ---------- */
-  var doms = ['brasaymar.com','sonrisadental.mx','navajabarber.com','pulsogym.mx','costaviva.mx','tunegocio.com'], di = 0, domEl = document.getElementById('domText');
+  var doms = ['casamar.com','sonrisadental.mx','barberroyce.com','alturagym.mx','iproperty.mx','tunegocio.com'], di = 0, domEl = document.getElementById('domText');
   if (!reduce) setInterval(function(){
     if (document.hidden) return;
     domEl.classList.add('hide');
@@ -1015,7 +1543,6 @@ footer{padding-block:40px 40px;overflow:hidden}
     document.documentElement.lang = LANG;
     document.title = U().title;
     tr(); paintSites(); paintTech(); paintGallery(); paintPlans(); paintTabs(); paintDemo(); setWA();
-    dName.placeholder = U().placeholder;
     copyBtn.setAttribute('aria-label', U().copyAria);
     langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === LANG ? 'true' : 'false'); });
     if (typeof resetStory === 'function') resetStory();
