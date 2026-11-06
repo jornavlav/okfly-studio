@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Servicios · OKfly Studio</title>
+<meta name="description" content="Página web, redes sociales y anuncios para recibir clientes por WhatsApp. Paquetes desde $499 MXN al mes.">
+<meta property="og:title" content="OKfly Studio · Servicios: página web, redes sociales y anuncios">
+<meta property="og:description" content="Todo el sistema para recibir clientes por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: one 12-col grid with tight equal margins. The page is a WhatsApp chat that turns into the finished website. */
+:root{
+  --bg:#050505;
+  --surface:#111110;
+  --surface-2:#1B1B19;
+  --surface-3:#262623;
+  --ink:#F4F3EF;
+  --ink-2:#B9B7B0;
+  --paper:#F4F3EF;
+  --paper-ink:#050505;
+  --paper-ink-2:#44433F;
+  --wa-bg:#0B141A;
+  --wa-head:#1F2C34;
+  --wa-in:#1F2C34;
+  --wa-out:#005C4B;
+  --wa-text:#E9EDEF;
+  --wa-meta:#8696A0;
+  --wa-green:#25D366;
+  --wa-tick:#53BDEB;
+  --font:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --ease-in-out:cubic-bezier(0.77,0,0.175,1);
+  --max:1360px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip;scrollbar-color:#34332f var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+::selection{background:var(--ink);color:var(--bg)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#34332f;border-radius:10px}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:0.96;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.h2{font-size:clamp(40px,5.4vw,80px)}
+.lede{font-size:clamp(18px,1.45vw,21px);color:var(--ink-2);max-width:34em}
+section{padding-block:clamp(96px,11vw,170px)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out),background-color 200ms ease}
+.btn:active{transform:scale(0.97)}
+.btn svg{flex-shrink:0;transition:transform 200ms var(--ease-out)}
+.btn--ghost{background:var(--surface-2);color:var(--ink)}
+.btn--dark{background:var(--paper-ink);color:var(--paper)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover svg{transform:translateX(4px)}
+  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#fff}
+  .btn--ghost:hover{background:var(--surface-3)}
+}
+
+/* Nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
+.brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
+.nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+@media (hover:hover){.nav ul a:hover{color:var(--ink)}}
+.nav .btn{min-height:46px;padding:0 22px;font-size:15px}
+@media (max-width:900px){.nav ul{display:none}}
+.nav .btn{white-space:nowrap}
+.nav-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+.lang-btn:active{transform:scale(0.95)}
+.lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.lang-btn[aria-pressed="false"]:hover{color:var(--ink)}}
+@media (max-width:540px){.nav-cta{display:none}}
+@media (max-width:420px){.nav .btn{min-height:44px;padding:0 16px;font-size:14px}.brand span{letter-spacing:0.22em}}
+
+/* Hero */
+.hero{padding-block:clamp(40px,6vw,80px) 0;text-align:center}
+.hero-copy{display:flex;flex-direction:column;align-items:center;gap:28px}
+.hero h1{font-size:clamp(42px,6vw,92px);font-weight:900;max-width:15em}
+.hero-sub{font-size:clamp(18px,1.55vw,22px);color:var(--ink-2);max-width:32em}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hero-price{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:16px;color:var(--ink-2)}
+.hero-price b{color:var(--ink);font-weight:700}
+.hero-price span{display:inline-flex;align-items:center;gap:8px}
+.hero-price i{width:7px;height:7px;border-radius:50%;background:var(--wa-green);display:inline-block}
+.rise{animation:rise 900ms var(--ease-out) both}
+.d1{animation-delay:80ms}.d2{animation-delay:160ms}.d3{animation-delay:240ms}.d4{animation-delay:320ms}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+
+.hero-stage{position:relative;margin-top:clamp(48px,6vw,88px);height:clamp(330px,52vw,700px);perspective:1800px;perspective-origin:50% 20%}
+.hero-stage-in{position:absolute;inset:0;transform-style:preserve-3d;animation:stageIn 1400ms 300ms var(--ease-out) both}
+@keyframes stageIn{from{opacity:0;transform:translateY(90px) rotateX(28deg) scale(0.94)}}
+.hero-rig{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.hero-light{position:absolute;left:50%;top:58%;width:90%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(244,243,239,0.10),rgba(244,243,239,0));pointer-events:none}
+.hero-browser{position:absolute;left:50%;top:0;width:min(1000px,86%);transform:translateX(-50%) translateZ(0)}
+.hero-phone{position:absolute;left:max(2%,calc(50% - 600px));top:20%;width:clamp(120px,19%,250px);transform:translateZ(140px) rotateY(10deg)}
+.hero-mphone{position:absolute;right:max(2%,calc(50% - 600px));top:30%;width:clamp(100px,15%,200px);transform:translateZ(110px) rotateY(-12deg)}
+.float-a{animation:floatA 7s ease-in-out infinite}
+.float-b{animation:floatB 8s ease-in-out infinite}
+@keyframes floatA{50%{translate:0 -12px}}
+@keyframes floatB{50%{translate:0 10px}}
+
+/* Browser frame (drawn interface) */
+.bw{container-type:inline-size;border-radius:16px;overflow:hidden;background:#1A1A18;box-shadow:0 50px 100px -30px rgba(0,0,0,0.8),0 30px 60px -40px rgba(0,0,0,0.7)}
+.bw-bar{display:flex;align-items:center;gap:0.8cqw;height:4cqw;min-height:22px;padding:0 1.6cqw;background:#232321}
+.bw-bar i{width:1.05cqw;height:1.05cqw;min-width:7px;min-height:7px;border-radius:50%;background:#4a4945}
+.bw-bar i:nth-child(1){background:#FF5F57}.bw-bar i:nth-child(2){background:#FEBC2E}.bw-bar i:nth-child(3){background:#28C840}
+.bw-url{display:flex;align-items:center;gap:0.6cqw;margin-left:2cqw;height:62%;padding:0 1.6cqw;border-radius:99px;background:#2F2F2C;color:#C9C7C0;font-size:max(9px,1.35cqw);font-weight:500;white-space:nowrap}
+.bw-url svg{width:1.3cqw;min-width:8px;height:auto}
+.bw-scr{position:relative;aspect-ratio:16/9.4;overflow:hidden}
+
+/* Phone frame (its parent is the size container, so radius and padding scale with the phone) */
+.float-a,.float-b,.story-phone,.demo-mob{container-type:inline-size}
+.phone{container-type:inline-size;position:relative;aspect-ratio:9/19;border-radius:15cqw;padding:3.2cqw;background:#1C1C1A;box-shadow:inset 0 0 0 1.2cqw #2B2B28,0 40px 80px -20px rgba(0,0,0,0.85)}
+.phone-scr{position:relative;width:100%;height:100%;border-radius:12cqw;overflow:hidden;background:var(--wa-bg)}
+.phone-notch{position:absolute;left:50%;top:2.6cqw;width:28cqw;height:7cqw;border-radius:99px;background:#000;transform:translateX(-50%);z-index:5}
+
+/* WhatsApp UI (drawn) */
+.wa{position:absolute;inset:0;display:flex;flex-direction:column;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--wa-text)}
+.wa-head{display:flex;align-items:center;gap:3cqw;padding:13cqw 4cqw 3.4cqw;background:var(--wa-head);flex-shrink:0}
+.wa-av{width:10cqw;height:10cqw;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font);line-height:0.8;flex-shrink:0}
+.wa-av b{font-size:3.6cqw;font-weight:900;letter-spacing:-0.06em}
+.wa-av span{font-size:2.8cqw;font-weight:500}
+.wa-who{display:flex;flex-direction:column;min-width:0}
+.wa-who b{font-size:4.4cqw;font-weight:600;display:flex;align-items:center;gap:1.4cqw}
+.wa-who b svg{width:3.6cqw;height:auto}
+.wa-who span{font-size:3.2cqw;color:var(--wa-meta)}
+.wa-body{position:relative;flex:1;overflow:hidden;background:var(--wa-bg)}
+.wa-feed{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:2cqw;padding:4cqw 3.6cqw 6cqw;transition:transform 520ms var(--ease-out)}
+.msg{max-width:84%;padding:2.2cqw 3cqw 1.6cqw;border-radius:3.2cqw;font-size:4.05cqw;line-height:1.36;position:relative;transform-origin:0 100%;transition:opacity 260ms var(--ease-out),transform 360ms var(--ease-out)}
+.msg.in{align-self:flex-start;background:var(--wa-in);border-top-left-radius:0.8cqw}
+.msg.out{align-self:flex-end;background:var(--wa-out);border-top-right-radius:0.8cqw;transform-origin:100% 100%}
+.msg time{display:flex;justify-content:flex-end;align-items:center;gap:1cqw;margin-top:0.6cqw;font-size:2.9cqw;color:rgba(233,237,239,0.62);font-style:normal}
+.msg time svg{width:4cqw;height:auto}
+.typing{align-self:flex-start;display:flex;gap:1.4cqw;padding:3cqw 3.6cqw;border-radius:3.2cqw;border-top-left-radius:0.8cqw;background:var(--wa-in)}
+.typing i{width:1.8cqw;height:1.8cqw;border-radius:50%;background:var(--wa-meta);animation:dot 1.1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-1cqw)}}
+.wa-day{align-self:center;padding:1.4cqw 3.4cqw;border-radius:2cqw;background:#182229;color:var(--wa-meta);font-size:3.1cqw}
+.att{display:flex;flex-direction:column;gap:1.6cqw}
+.att-file{display:flex;align-items:center;gap:2cqw;padding:2cqw;border-radius:2cqw;background:rgba(0,0,0,0.18);font-size:3.4cqw}
+.att-file span:first-child{width:8cqw;height:8cqw;border-radius:1.6cqw;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:900;font-size:3cqw}
+.att-pics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1cqw}
+.att-pics span{aspect-ratio:1;border-radius:1.4cqw;position:relative;overflow:hidden}
+.att-link{font-size:3.5cqw;color:#8ED0F7;text-decoration:underline;text-underline-offset:0.6cqw}
+.pv{margin:-0.6cqw -1.4cqw 1.6cqw;border-radius:2.4cqw;overflow:hidden;background:rgba(0,0,0,0.25)}
+.pv-shot{container-type:inline-size;position:relative;aspect-ratio:16/10;overflow:hidden}
+.pv-meta{display:flex;flex-direction:column;gap:0.4cqw;padding:2cqw 2.6cqw}
+.pv-meta b{font-size:3.7cqw}
+.pv-meta span{font-size:3cqw;color:var(--wa-meta)}
+.wa-input{display:flex;align-items:center;gap:2cqw;padding:2.4cqw 3cqw 6cqw;background:var(--wa-bg);flex-shrink:0}
+.wa-input span{flex:1;height:10cqw;border-radius:99px;background:var(--wa-head);color:var(--wa-meta);font-size:3.6cqw;display:flex;align-items:center;padding:0 4cqw}
+.wa-input i{width:10cqw;height:10cqw;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center}
+.wa-input i svg{width:4.6cqw;height:auto}
+
+/* Demo websites (realistic layout, scales with its frame via cqw) */
+.site{position:absolute;inset:0;background:var(--sbg);color:var(--sink);font-family:var(--font);overflow:hidden;display:flex;flex-direction:column}
+.s-nav{display:flex;align-items:center;gap:3cqw;padding:1.9cqw 4.2cqw;position:relative;z-index:2;flex-shrink:0}
+.s-logo{display:flex;align-items:center;gap:0.8cqw;font-weight:700;font-size:1.75cqw;letter-spacing:-0.02em;white-space:nowrap}
+.s-logo svg{width:2.7cqw;height:2.7cqw;color:var(--sacc)}
+.s-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:500;white-space:nowrap}
+.s-links span:first-child{box-shadow:0 0.25cqw 0 var(--sprim);padding-bottom:0.35cqw}
+.s-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.8cqw;border-radius:99px;background:var(--sprim);color:var(--sbtn);font-size:1.15cqw;font-weight:600;white-space:nowrap}
+.s-btn svg{width:1.4cqw;height:1.4cqw}
+.s-btn.o{background:transparent;color:var(--sink);box-shadow:inset 0 0 0 0.12cqw currentColor}
+.s-menu{display:none}
+.s-hero{position:relative;height:31cqw;display:flex;align-items:center;padding:0 4.2cqw;flex-shrink:0}
+.s-photo{position:absolute;right:0;top:0;bottom:0;width:58%;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 32%);mask-image:linear-gradient(90deg,transparent,#000 32%)}
+.s-photo.art{right:4.2cqw;top:2cqw;bottom:2cqw;width:40%;border-radius:1.6cqw;overflow:hidden;background:var(--a1);-webkit-mask-image:none;mask-image:none}
+.s-copy{position:relative;z-index:1;width:52%;display:flex;flex-direction:column;align-items:flex-start;gap:1.5cqw}
+.s-chip{display:inline-flex;align-items:center;gap:0.6cqw;padding:0.6cqw 1.2cqw;border-radius:99px;background:var(--schipbg);font-size:1.05cqw;font-weight:600;box-shadow:0 0.2cqw 0.8cqw rgba(0,0,0,0.07)}
+.s-chip svg{width:1.25cqw;height:1.25cqw;color:var(--sprim)}
+.s-h{margin:0;font-size:4.9cqw;font-weight:700;letter-spacing:-0.035em;line-height:1}
+.s-h em{font-style:normal;color:var(--sacc)}
+.s-p{font-size:1.45cqw;line-height:1.45;opacity:0.82;max-width:32em}
+.s-ctas{display:flex;gap:1cqw;margin-top:0.5cqw}
+.s-ctas .s-btn{font-size:1.3cqw;padding:1.3cqw 2.2cqw}
+.s-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:2cqw 4.2cqw;background:var(--sstrip);flex-shrink:0}
+.s-strip span{display:flex;align-items:center;justify-content:center;gap:1cqw;font-size:1.1cqw;font-weight:500;line-height:1.2}
+.s-strip svg{width:2.5cqw;height:2.5cqw;flex-shrink:0}
+.s-sec{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;padding:3.6cqw 4.2cqw;align-items:center}
+.s-card{position:relative;height:18cqw;border-radius:1.4cqw;overflow:hidden;background:var(--a1);background-size:cover;background-position:center}
+.s-sec small{display:block;font-size:1cqw;font-weight:700;letter-spacing:0.08em;color:var(--sprim);margin-bottom:1cqw}
+.s-sec b{display:block;font-size:2.8cqw;font-weight:700;letter-spacing:-0.03em;line-height:1.05}
+.s-sec p{font-size:1.3cqw;line-height:1.45;opacity:0.8;margin-top:1cqw}
+.site.m .s-nav{padding:4cqw 5cqw}
+.site.m .s-logo{font-size:5.2cqw;gap:2cqw}
+.site.m .s-logo svg{width:7.4cqw;height:7.4cqw}
+.site.m .s-links,.site.m .s-nav > .s-btn{display:none}
+.site.m .s-menu{display:block;margin-left:auto;width:6.6cqw;height:6.6cqw}
+.site.m .s-hero{height:auto;flex-direction:column;align-items:stretch;padding:0}
+.site.m .s-photo{position:relative;width:100%;height:64cqw;-webkit-mask-image:linear-gradient(180deg,#000 68%,transparent);mask-image:linear-gradient(180deg,#000 68%,transparent)}
+.site.m .s-photo.art{right:auto;top:auto;bottom:auto;width:auto;height:56cqw;margin:0 5cqw;border-radius:4cqw}
+.site.m .s-copy{width:auto;padding:0 5cqw;margin-top:-7cqw;gap:3cqw}
+.site.m .s-chip{font-size:3cqw;padding:1.6cqw 3cqw;gap:1.4cqw}
+.site.m .s-chip svg{width:3.4cqw;height:3.4cqw}
+.site.m .s-h{font-size:9.6cqw}
+.site.m .s-p{font-size:3.9cqw}
+.site.m .s-ctas{flex-direction:column;align-self:stretch;gap:2.4cqw;margin-top:1cqw}
+.site.m .s-ctas .s-btn{justify-content:center;font-size:3.8cqw;padding:3.6cqw;gap:2cqw}
+.site.m .s-btn svg{width:4cqw;height:4cqw}
+.site.m .s-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:2cqw;padding:5cqw;background:transparent}
+.site.m .s-strip span{flex-direction:column;gap:1.6cqw;font-size:2.7cqw;text-align:center;padding:3cqw 1cqw;border-radius:3cqw;background:var(--sstrip)}
+.site.m .s-strip span:nth-child(n+4){display:none}
+.site.m .s-strip svg{width:6.6cqw;height:6.6cqw}
+.site.m .s-sec{display:none}
+/* Casa Mar: dark luxury restaurant template */
+.lux{background:#0A0C0B;color:#F3EEE6}
+.lux .serif{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-0.01em}
+.lux-hero{position:relative;height:38cqw;flex-shrink:0;background:#0A0C0B}
+.lux-photo{position:absolute;right:0;top:0;bottom:0;width:66%;background-size:cover;background-position:center}
+.lux-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0A0C0B 30%,rgba(10,12,11,0.85) 42%,rgba(10,12,11,0) 66%),linear-gradient(0deg,#0A0C0B,rgba(10,12,11,0) 18%)}
+.lux-nav{position:absolute;left:0;right:0;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 5cqw}
+.lux-logo{display:flex;flex-direction:column;align-items:center;gap:0.3cqw;line-height:1}
+.lux-logo svg{width:2.8cqw;height:auto;color:#E9D2B0}
+.lux-logo b{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:2.2cqw;letter-spacing:0.12em}
+.lux-logo small{font-size:0.62cqw;letter-spacing:0.22em;opacity:0.8}
+.lux-links{display:flex;gap:2.6cqw;padding:1cqw 2.4cqw;border-radius:99px;background:rgba(10,12,11,0.55);box-shadow:inset 0 0 0 0.08cqw rgba(243,238,230,0.12);font-size:1.05cqw;font-weight:500}
+.lux-links span:first-child{box-shadow:0 0.6cqw 0 -0.45cqw #E9D2B0}
+.lux-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#F1DDBF;color:#1A120A;font-size:1.05cqw;font-weight:600;white-space:nowrap}
+.lux-btn svg{width:1.3cqw;height:1.3cqw}
+.lux-copy{position:absolute;z-index:2;left:5cqw;top:11cqw;width:44%;display:flex;flex-direction:column;align-items:flex-start;gap:1.4cqw}
+.lux-eye{display:flex;align-items:center;gap:1cqw;font-size:0.8cqw;letter-spacing:0.28em;color:#D9B98F}
+.lux-eye::before{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-h{margin:0;font-size:5.4cqw;line-height:0.98}
+.lux-h em{font-style:italic;color:#E2C39A}
+.lux-p{font-size:1.35cqw;line-height:1.45;opacity:0.9;max-width:28em}
+.lux-ctas{display:flex;align-items:center;gap:2cqw;margin-top:0.8cqw}
+.lux-ctas .lux-btn{font-size:1.2cqw;padding:1.3cqw 2.2cqw}
+.lux-play{display:flex;align-items:center;gap:1cqw;font-size:1.2cqw;font-weight:600}
+.lux-play i{width:3.4cqw;height:3.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.12cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-play svg{width:1.2cqw;height:1.2cqw;margin-left:0.2cqw}
+.lux-sec{padding:2.4cqw 5cqw 3cqw;display:flex;flex-direction:column;align-items:center;gap:1.2cqw;background:#0D1211}
+.lux-sec .lux-eye::after{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-sec h6{margin:0;font-size:3.2cqw;line-height:1}
+.lux-cards{align-self:stretch;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.8cqw;margin-top:1cqw}
+.lux-card{position:relative;height:10cqw;border-radius:1.4cqw;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:space-between;padding:1.4cqw 1.8cqw}
+.lux-card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.65),rgba(0,0,0,0) 65%)}
+.lux-card span,.lux-card i{position:relative}
+.lux-card span{font-size:1.3cqw;font-weight:600}
+.lux-card i{width:2.4cqw;height:2.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.1cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-card svg{width:1.2cqw;height:1.2cqw}
+.site.m.lux .lux-hero{height:auto;display:flex;flex-direction:column}
+.site.m.lux .lux-hero::before{display:none}
+.site.m.lux .lux-photo{position:relative;width:100%;height:58cqw;-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+.site.m.lux .lux-nav{padding:4cqw 5cqw}
+.site.m.lux .lux-logo svg{width:7cqw}
+.site.m.lux .lux-logo b{font-size:4.6cqw}
+.site.m.lux .lux-logo small{font-size:1.6cqw}
+.site.m.lux .lux-links{display:block;padding:2.6cqw;width:auto;font-size:0}
+.site.m.lux .lux-links span{display:none}
+.site.m.lux .lux-links svg{display:block;width:5cqw;height:5cqw}
+.site.m.lux .lux-nav .lux-btn{font-size:3cqw;padding:2.4cqw 3.6cqw;gap:1.4cqw}
+.site.m.lux .lux-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.lux .lux-copy{position:relative;left:auto;top:auto;width:auto;padding:2cqw 6cqw 6cqw;gap:3.4cqw}
+.site.m.lux .lux-eye{font-size:2.3cqw;gap:2.6cqw}
+.site.m.lux .lux-eye::before,.site.m.lux .lux-sec .lux-eye::after{width:5cqw;height:0.25cqw}
+.site.m.lux .lux-h{font-size:11cqw}
+.site.m.lux .lux-p{font-size:3.9cqw}
+.site.m.lux .lux-ctas{gap:4cqw}
+.site.m.lux .lux-ctas .lux-btn{font-size:3.6cqw;padding:3.4cqw 5cqw}
+.site.m.lux .lux-play{font-size:3.6cqw;gap:2.4cqw}
+.site.m.lux .lux-play i{width:9cqw;height:9cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-play svg{width:3.4cqw;height:3.4cqw}
+.site.m.lux .lux-sec{padding:6cqw 6cqw;gap:3cqw}
+.site.m.lux .lux-sec h6{font-size:8cqw}
+.site.m.lux .lux-cards{grid-template-columns:1fr;gap:3cqw}
+.site.m.lux .lux-card{height:30cqw;border-radius:4cqw;padding:4cqw 5cqw}
+.site.m.lux .lux-card span{font-size:4.4cqw}
+.site.m.lux .lux-card i{width:8cqw;height:8cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-card svg{width:3.6cqw;height:3.6cqw}
+.lux-links svg{display:none}
+/* Altura: photo-led gym template */
+.alt{background:#1B1B1B center 78%/cover no-repeat;color:#F4F2EE;font-family:'Archivo','Outfit',sans-serif;font-stretch:100%}
+.alt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.15) 30%,rgba(0,0,0,0.55) 70%,rgba(0,0,0,0.75))}
+.alt > *{position:relative}
+.alt .wide{font-stretch:125%;font-weight:800}
+.alt-nav{display:flex;align-items:center;gap:3cqw;padding:2cqw 2.8cqw;flex-shrink:0}
+.alt-logo{font-size:2.1cqw;letter-spacing:-0.01em}
+.alt-links{display:flex;gap:2.4cqw;margin-left:auto;margin-right:auto;font-size:1.15cqw;font-weight:500}
+.alt-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1.1cqw 1.8cqw;background:#D4F55A;color:#111;font-size:1.1cqw;font-weight:700;white-space:nowrap}
+.alt-btn svg{width:1.3cqw;height:1.3cqw}
+.alt-hero{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.8cqw 3cqw;gap:2.4cqw}
+.alt-h{margin:0;font-size:8.4cqw;line-height:0.9;letter-spacing:-0.035em;max-width:11em}
+.alt-row{display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw}
+.alt-p{font-size:1.45cqw;line-height:1.45;max-width:26em}
+.alt-ctas{display:flex;align-items:center;gap:2.4cqw;flex-shrink:0}
+.alt-ctas .alt-btn{font-size:1.3cqw;padding:1.5cqw 2.2cqw}
+.alt-link{font-size:1.3cqw;font-weight:700;box-shadow:0 0.15cqw 0 currentColor}
+.alt-bar{height:1.2cqw;background:#D4F55A;flex-shrink:0}
+.site.m.alt{background-position:center 40%}
+.site.m.alt .alt-nav{padding:5cqw 5cqw}
+.site.m.alt .alt-logo{font-size:6.6cqw}
+.site.m.alt .alt-links{display:none}
+.site.m.alt .alt-nav .alt-btn{margin-left:auto;font-size:3.6cqw;padding:3cqw 4cqw}
+.site.m.alt .alt-hero{padding:0 5cqw 8cqw;gap:5cqw}
+.site.m.alt .alt-h{font-size:12.5cqw}
+.site.m.alt .alt-row{flex-direction:column;align-items:flex-start;gap:6cqw}
+.site.m.alt .alt-p{font-size:3.8cqw}
+.site.m.alt .alt-ctas{gap:6cqw}
+.site.m.alt .alt-ctas .alt-btn{font-size:3.8cqw;padding:4cqw 5cqw;gap:2.4cqw}
+.site.m.alt .alt-btn svg{width:4cqw;height:4cqw}
+.site.m.alt .alt-link{font-size:3.8cqw;box-shadow:0 0.4cqw 0 currentColor}
+.site.m.alt .alt-bar{display:none}
+/* Barber Royce: dark barbershop template */
+.roy{background:radial-gradient(70% 90% at 75% 50%,#4A1517,#120B0B 70%);color:#F3ECE4;font-family:'Manrope','Outfit',sans-serif}
+.roy .cond{font-family:'Anton','Outfit',sans-serif;font-weight:400;letter-spacing:0}
+.roy-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 6cqw;flex-shrink:0}
+.roy-logo{display:flex;align-items:center;gap:0.9cqw;font-size:1.6cqw;letter-spacing:0.02em}
+.roy-logo span{width:2.2cqw;height:2.7cqw;background:center/contain no-repeat}
+.roy-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.05cqw;opacity:0.9}
+.roy-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#B3282D;color:#fff;font-size:1.05cqw;font-weight:600;white-space:nowrap;box-shadow:0 0.6cqw 1.6cqw -0.6cqw rgba(179,40,45,0.7)}
+.roy-btn svg{width:1.2cqw;height:1.2cqw}
+.roy-btn.o{background:transparent;box-shadow:inset 0 0 0 0.1cqw rgba(243,236,228,0.35)}
+.roy-menu{display:none}
+.roy-hero{flex:1;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;padding:0 6cqw 2cqw;gap:2cqw}
+.roy-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.roy-eye{display:flex;align-items:center;gap:0.8cqw;font-size:0.8cqw;letter-spacing:0.2em;opacity:0.85}
+.roy-eye i{width:0.6cqw;height:0.6cqw;border-radius:50%;background:#E0393E}
+.roy-h{margin:0;font-size:6.6cqw;line-height:0.86;text-transform:uppercase}
+.roy-h em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;text-transform:none;color:#D13A3F;font-size:0.8em}
+.roy-p{font-size:1.25cqw;line-height:1.5;opacity:0.85;max-width:30em}
+.roy-ctas{display:flex;gap:1cqw;margin-top:0.4cqw}
+.roy-ctas .roy-btn{font-size:1.15cqw;padding:1.2cqw 2.1cqw}
+.roy-badge{justify-self:center;width:28cqw;aspect-ratio:1;background:center/cover no-repeat;-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.roy-ribbon{display:none}
+.site.m.roy .roy-nav{padding:4cqw 5cqw;box-shadow:0 0.2cqw 0 rgba(243,236,228,0.08)}
+.site.m.roy .roy-logo{font-size:5cqw;gap:2.4cqw}
+.site.m.roy .roy-logo span{width:7cqw;height:8.6cqw}
+.site.m.roy .roy-links,.site.m.roy .roy-nav > .roy-btn{display:none}
+.site.m.roy .roy-menu{display:flex;margin-left:auto;width:10cqw;height:10cqw;border-radius:50%;box-shadow:inset 0 0 0 0.3cqw rgba(243,236,228,0.2);align-items:center;justify-content:center}
+.site.m.roy .roy-menu svg{width:5cqw;height:5cqw}
+.site.m.roy .roy-hero{display:flex;flex-direction:column;align-items:stretch;padding:2cqw 5cqw 4cqw;gap:3cqw}
+.site.m.roy .roy-badge{order:-1;width:62cqw}
+.site.m.roy .roy-copy{gap:3cqw}
+.site.m.roy .roy-eye{font-size:2.3cqw;gap:1.6cqw}
+.site.m.roy .roy-eye i{width:1.6cqw;height:1.6cqw}
+.site.m.roy .roy-h{font-size:12cqw}
+.site.m.roy .roy-h br.d{display:none}
+.site.m.roy .roy-p{font-size:3.5cqw}
+.site.m.roy .roy-ctas{gap:2.6cqw}
+.site.m.roy .roy-ctas .roy-btn{font-size:3.4cqw;padding:3cqw 4.6cqw;gap:1.6cqw}
+.site.m.roy .roy-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.roy .roy-ribbon{display:flex;align-items:center;justify-content:space-around;margin:auto -2cqw 6cqw;padding:3.4cqw 0;background:#B3282D;transform:rotate(-2deg);font-size:5.6cqw;flex-shrink:0}
+.site.m.roy .roy-ribbon i{font-style:normal;font-size:3.6cqw}
+/* iproperty: real-estate marketplace template */
+.ip{background:#fff;color:#1D1D1F;font-family:'Poppins','Outfit',sans-serif}
+.ip-nav{display:flex;align-items:center;gap:2.4cqw;padding:1.4cqw 2.4cqw;box-shadow:0 0.3cqw 1cqw rgba(0,0,0,0.06);position:relative;z-index:2;flex-shrink:0}
+.ip-logo{display:flex;align-items:center;gap:0.3cqw;font-size:1.6cqw;font-weight:600;letter-spacing:-0.02em}
+.ip-logo svg{width:1.5cqw;height:1.8cqw}
+.ip-links{display:flex;gap:0.6cqw;font-size:1cqw;font-weight:500}
+.ip-links span{padding:0.6cqw 1cqw;border-radius:99px}
+.ip-links span:first-child{background:#EEEEEE}
+.ip-right{margin-left:auto;display:flex;gap:0.8cqw;align-items:center}
+.ip-ghost{display:flex;align-items:center;gap:0.5cqw;padding:0.7cqw 1.1cqw;border-radius:99px;background:#F2F2F2;font-size:0.95cqw;color:#444}
+.ip-dark{display:flex;align-items:center;gap:0.5cqw;padding:0.9cqw 1.3cqw;border-radius:99px;background:#111;color:#fff;font-size:1cqw;font-weight:600}
+.ip-ghost svg,.ip-dark svg{width:1.1cqw;height:1.1cqw}
+.ip-body{flex:1;display:grid;grid-template-columns:54% 46%;min-height:0}
+.ip-list{padding:2cqw 2cqw;display:flex;flex-direction:column;gap:2cqw;overflow:hidden}
+.ip-bar{display:flex;align-items:center;gap:1.4cqw}
+.ip-filter{display:flex;align-items:center;border-radius:99px;overflow:hidden;background:#4CAF50;color:#fff;font-size:1cqw;font-weight:500;flex-shrink:0}
+.ip-filter i{display:flex;padding:1cqw 1.1cqw;background:#3E9842}
+.ip-filter i svg{width:1.2cqw;height:1.2cqw}
+.ip-filter span{padding:1cqw 1.4cqw}
+.ip-cats{display:flex;gap:0.4cqw;font-size:0.85cqw;color:#555}
+.ip-cats span{display:flex;flex-direction:column;align-items:center;gap:0.4cqw;padding:0.8cqw 0.9cqw;border-radius:0.6cqw;white-space:nowrap}
+.ip-cats span:first-child{background:#F2F2F2}
+.ip-cats svg{width:1.5cqw;height:1.5cqw}
+.ip-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.4cqw}
+.ip-card{aspect-ratio:486/282;border-radius:0.8cqw;background:#ddd center/cover no-repeat}
+.ip-map{position:relative;background:#8DCDEE center/cover no-repeat}
+.ip-map small{position:absolute;right:0.6cqw;bottom:0.6cqw;padding:0.3cqw 0.6cqw;border-radius:0.3cqw;background:rgba(255,255,255,0.85);font-size:0.65cqw;color:#333}
+.ip-pill{display:none}
+.site.m.ip .ip-nav{padding:5cqw 5cqw;gap:3cqw}
+.site.m.ip .ip-logo{font-size:5.6cqw;gap:1cqw}
+.site.m.ip .ip-logo svg{width:5cqw;height:6cqw}
+.site.m.ip .ip-links,.site.m.ip .ip-ghost span,.site.m.ip .ip-dark{display:none}
+.site.m.ip .ip-ghost{width:10cqw;height:10cqw;padding:0;justify-content:center;border-radius:50%}
+.site.m.ip .ip-ghost svg{width:4.6cqw;height:4.6cqw}
+.site.m.ip .ip-body{display:flex;flex-direction:column}
+.site.m.ip .ip-map{order:-1;height:30cqw;flex-shrink:0;background-size:260% auto;background-position:62% 42%}
+.site.m.ip .ip-map small{display:none}
+.site.m.ip .ip-pill{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:2.4cqw 5cqw;border-radius:99px;background:rgba(255,255,255,0.8);box-shadow:inset 0 0 0 0.4cqw #555;font-size:3.6cqw;color:#444}
+.site.m.ip .ip-list{padding:6cqw 5cqw;gap:5cqw}
+.site.m.ip .ip-bar{flex-direction:column;align-items:flex-start;gap:5cqw}
+.site.m.ip .ip-filter{font-size:3.6cqw}
+.site.m.ip .ip-filter i{padding:3cqw 3.4cqw}
+.site.m.ip .ip-filter i svg{width:4.4cqw;height:4.4cqw}
+.site.m.ip .ip-filter span{padding:3cqw 4cqw}
+.site.m.ip .ip-cats{font-size:3.2cqw;gap:1cqw}
+.site.m.ip .ip-cats span{padding:3cqw 3.2cqw;border-radius:2cqw;gap:1.4cqw}
+.site.m.ip .ip-cats span:nth-child(n+5){display:none}
+.site.m.ip .ip-cats svg{width:6cqw;height:6cqw}
+.site.m.ip .ip-cards{grid-template-columns:1fr;gap:4cqw}
+.site.m.ip .ip-card{border-radius:3cqw}
+/* Zootropolis: friendly veterinary template */
+.vet{background:linear-gradient(180deg,#E6F4FA,#F3FAFC);color:#1F2A44;font-family:'Nunito','Outfit',sans-serif}
+.vet .fun{font-family:'Lilita One','Outfit',sans-serif;font-weight:400;letter-spacing:0.01em}
+.vet-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 5cqw;flex-shrink:0}
+.vet-logo{display:flex;align-items:center;gap:1cqw;font-size:1.9cqw;color:#2E4BB1}
+.vet-logo span{width:5cqw;height:3.4cqw;border-radius:0.8cqw;overflow:hidden;background:#fff center/cover no-repeat;background-position:20% 40%;background-size:150% auto}
+.vet-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:700}
+.vet-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 2cqw;border-radius:99px;background:#EB6B2A;color:#fff;font-size:1.2cqw;box-shadow:0 0.35cqw 0 #B9501C;white-space:nowrap}
+.vet-btn svg{width:1.4cqw;height:1.4cqw}
+.vet-btn.w{background:#fff;color:#2E4BB1;box-shadow:0 0.35cqw 0 #D3D8F0}
+.vet-menu{display:none}
+.vet-hero{flex:1;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2cqw;padding:0.6cqw 5cqw 2cqw}
+.vet-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.vet-chip{display:inline-flex;align-items:center;gap:0.7cqw;padding:0.7cqw 1.4cqw;border-radius:99px;border:0.14cqw dashed #3FB2C6;background:rgba(255,255,255,0.7);font-size:1.05cqw;color:#2E4BB1}
+.vet-chip i{width:0.8cqw;height:0.8cqw;border-radius:50%;background:#3FAE4C}
+.vet-h{margin:0;font-size:5.6cqw;line-height:0.98;color:#2E4BB1}
+.vet-h em{display:block;font-style:normal;color:#EB6B2A}
+.vet-script{font-family:'Caveat',cursive;font-weight:600;font-size:2.2cqw;color:#3E9B35;line-height:1}
+.vet-p{font-size:1.3cqw;line-height:1.5;color:#4A5568;max-width:34em}
+.vet-ctas{display:flex;gap:1.2cqw;margin-top:0.4cqw}
+.vet-ctas .vet-btn{font-size:1.35cqw;padding:1.3cqw 2.3cqw}
+.vet-stats{display:flex;gap:3cqw;margin-top:1cqw}
+.vet-stats span{display:flex;flex-direction:column;gap:0.3cqw;font-size:0.95cqw;font-weight:700;color:#4A5568}
+.vet-stats b{font-size:2.8cqw;line-height:1;color:#2E4BB1}
+.vet-art{position:relative;height:100%;min-height:26cqw;display:flex;align-items:center;justify-content:center}
+.vet-globe{position:absolute;width:30cqw;height:30cqw;border-radius:50%;background:#5AA9C9;overflow:hidden}
+.vet-globe::before{content:"";position:absolute;left:18%;top:8%;width:46%;height:40%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-globe::after{content:"";position:absolute;right:6%;bottom:12%;width:36%;height:32%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-card{position:relative;width:26cqw;aspect-ratio:778/612;border-radius:2.2cqw;background:#fff center/cover no-repeat;box-shadow:0 1.6cqw 3cqw -1cqw rgba(31,42,68,0.25)}
+.vet-tag{position:absolute;display:flex;align-items:center;gap:0.9cqw;padding:1cqw 1.4cqw;border-radius:1.2cqw;background:#fff;box-shadow:0 1cqw 2.4cqw -0.8cqw rgba(31,42,68,0.3);font-size:1.15cqw;color:#1F2A44;white-space:nowrap}
+.vet-tag i{width:2.6cqw;height:2.6cqw;border-radius:0.7cqw;display:flex;align-items:center;justify-content:center}
+.vet-tag svg{width:1.5cqw;height:1.5cqw}
+.vet-tag.t1{left:-4cqw;top:-3cqw}.vet-tag.t1 i{background:#E5F3D9;color:#3E9B35}
+.vet-tag.t2{left:76%;top:38%}.vet-tag.t2 i{background:#EDE7FB;color:#6B4FD1}
+.vet-tag.t3{left:-6cqw;bottom:-3cqw}.vet-tag.t3 i{background:#FDE6D8;color:#EB6B2A}
+.site.m.vet .vet-nav{padding:4cqw 5cqw;gap:3cqw}
+.site.m.vet .vet-logo{font-size:5.4cqw;gap:2.4cqw}
+.site.m.vet .vet-logo span{width:13cqw;height:9cqw;border-radius:2cqw}
+.site.m.vet .vet-links,.site.m.vet .vet-nav > .vet-btn{display:none}
+.site.m.vet .vet-menu{display:block;margin-left:auto;width:7cqw;height:7cqw;color:#2E4BB1}
+.site.m.vet .vet-hero{display:flex;flex-direction:column;align-items:stretch;padding:1cqw 5cqw 5cqw;gap:5cqw}
+.site.m.vet .vet-art{display:flex;min-height:0;height:72cqw;margin-top:3cqw}
+.site.m.vet .vet-globe{width:72cqw;height:72cqw}
+.site.m.vet .vet-card{width:68cqw;border-radius:5cqw}
+.site.m.vet .vet-tag{font-size:2.8cqw;padding:1.8cqw 2.4cqw;gap:1.6cqw;border-radius:3cqw}
+.site.m.vet .vet-tag i{width:5.6cqw;height:5.6cqw;border-radius:1.6cqw}
+.site.m.vet .vet-tag svg{width:3.4cqw;height:3.4cqw}
+.site.m.vet .vet-tag.t1{left:-6cqw;top:-5cqw}
+.site.m.vet .vet-tag.t2{left:62%;top:36%}
+.site.m.vet .vet-tag.t3{left:-6cqw;bottom:-4cqw}
+.site.m.vet .vet-copy{gap:2.6cqw}
+.site.m.vet .vet-chip{font-size:3.2cqw;padding:2cqw 3.6cqw;gap:2cqw;border-width:0.4cqw}
+.site.m.vet .vet-chip i{width:2.4cqw;height:2.4cqw}
+.site.m.vet .vet-h{font-size:11cqw}
+.site.m.vet .vet-script{font-size:5.4cqw}
+.site.m.vet .vet-p{font-size:3.4cqw}
+.site.m.vet .vet-ctas{flex-direction:row;gap:2.6cqw}
+.site.m.vet .vet-ctas .vet-btn{font-size:3.5cqw;padding:3cqw 4.2cqw;box-shadow:0 1cqw 0 #B9501C;gap:1.6cqw}
+.site.m.vet .vet-ctas .vet-btn.w{box-shadow:0 1cqw 0 #D3D8F0}
+.site.m.vet .vet-btn svg{width:4.4cqw;height:4.4cqw}
+.site.m.vet .vet-stats{gap:8cqw}
+.site.m.vet .vet-stats span{font-size:2.8cqw}
+.site.m.vet .vet-stats b{font-size:7cqw}
+.art{position:absolute;display:block}
+
+/* Tech marquee */
+.tech{padding-block:72px 40px}
+.tech p{text-align:center;color:var(--ink-2);font-size:17px;margin-bottom:28px}
+.marquee{overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;align-items:center;gap:64px;padding-right:64px;animation:marquee 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.tech-item{display:inline-flex;align-items:center;gap:14px;font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-0.03em;color:#8C8A84;transition:color 200ms ease}
+.tech-item svg{width:clamp(26px,2.4vw,34px);height:auto}
+@media (hover:hover){.tech-item:hover{color:var(--ink)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Story: WhatsApp to website */
+.story{position:relative;padding-block:clamp(96px,11vw,170px) 0}
+.story-pin{position:relative}
+.story-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.story-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:36px;min-width:0;position:relative;z-index:4}
+.phases{display:flex;flex-direction:column;gap:8px}
+.phase{padding:18px 22px;border-radius:20px;color:var(--ink-2);transition:background-color 320ms ease,color 320ms ease}
+.phase h3{font-size:26px;letter-spacing:-0.025em;line-height:1.1;color:inherit;margin-bottom:6px}
+.phase p{font-size:16.5px}
+.phase.on{background:var(--surface);color:var(--ink)}
+.story-stage{grid-column:6 / span 7;position:relative;display:flex;justify-content:center;perspective:1700px;min-width:0}
+.story-rig{position:relative;transform-style:preserve-3d}
+.story-phone{width:min(330px,72vw);will-change:transform,opacity}
+.story-browser{position:relative;width:min(1100px,100%);margin:72px auto 0;will-change:transform,opacity}
+.story-done{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:16px;font-weight:600;color:var(--ink-2)}
+.story-done i{width:8px;height:8px;border-radius:50%;background:var(--wa-green)}
+/* live (scroll-driven) mode */
+.story.is-live .story-pin{height:560vh}
+.story.is-live .story-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
+.story.is-live .story-sticky > .wrap{width:100%}
+.story.is-live .story-phone{width:auto;height:min(76vh,680px);aspect-ratio:9/19}
+.story.is-live .story-browser{position:absolute;left:50%;top:50%;width:min(1120px,88vw,132vh);margin:0;z-index:6;opacity:0;pointer-events:none}
+.story.is-live .story-done{position:absolute;left:0;right:0;bottom:4vh;margin:0;opacity:0;z-index:7;transition:opacity 300ms ease}
+.story.is-live .msg.pending{opacity:0;transform:translateY(3cqw) scale(0.96)}
+.story .typing,.story .t-hide{display:none}
+.story.is-live .typing.on{display:flex}
+@media (max-width:900px){
+  .story-copy,.story-stage{grid-column:1 / -1}
+  .story.is-live .story-grid{grid-template-rows:auto 1fr;height:100svh;padding-block:20px 16px;align-items:stretch}
+  .story.is-live .story-copy{gap:12px}
+  .story.is-live .story-copy .h2{font-size:30px}
+  .story.is-live .phase{display:none;padding:0;background:transparent}
+  .story.is-live .phase.on{display:block}
+  .story.is-live .phase h3{font-size:20px}
+  .story.is-live .phase p{font-size:15px}
+  .story.is-live .story-stage{align-items:center}
+  .story.is-live .story-phone{height:min(60svh,560px)}
+  .story.is-live .story-browser{width:92vw}
+}
+
+/* Demo switcher */
+.demo-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.demo-head h2{grid-column:1 / span 7}
+.demo-head .lede{grid-column:8 / span 5}
+.demo-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px}
+.demo-name{display:flex;flex-direction:column;gap:8px;min-width:min(320px,100%);flex:1 1 280px;max-width:380px}
+.demo-name label{font-size:15px;font-weight:600;color:var(--ink-2)}
+.demo-name input{height:54px;padding:0 20px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:500 18px var(--font);caret-color:var(--ink)}
+.demo-name input::placeholder{color:#8C8A84}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-end}
+.tab{min-height:46px;padding:0 18px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink-2);font:500 16px var(--font);cursor:pointer;transition:transform 140ms var(--ease-out),background-color 180ms ease,color 180ms ease}
+.tab:active{transform:scale(0.96)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.tab[aria-pressed="false"]:hover{color:var(--ink);background:var(--surface-3)}}
+.demo-stage{position:relative;margin-top:56px;perspective:1800px}
+.demo-rig{position:relative;max-width:1180px;margin:0 auto;transform-style:preserve-3d;will-change:transform;padding-right:12%}
+.demo-desk{position:relative}
+.demo-mob{position:absolute;right:0;bottom:-8%;width:20%;transform:translateZ(90px)}
+.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;margin-top:clamp(90px,10vw,150px)}
+.demo-foot p{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.demo-head h2,.demo-head .lede{grid-column:1 / -1}.demo-rig{padding-right:16%}.demo-mob{width:28%}}
+
+/* Live site frames */
+.bw-scr > .fb,.bw-scr > .lv,.phone-scr > .fb,.phone-scr > .lv{position:absolute;inset:0}
+.bw-scr > .lv,.phone-scr > .lv{z-index:5}
+.lv{overflow:hidden;background:#fff;opacity:0;transition:opacity 500ms var(--ease-out)}
+.lv.on{opacity:1}
+.lv iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:#fff}
+.live-tag{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:#1F3A2A;color:#9BE8B4;font-size:max(10px,1.2cqw);font-weight:600;white-space:nowrap}
+.live-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#25D366;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.35}}
+.live-tag[hidden]{display:none}
+.bw-scr > .shot{position:absolute;inset:0;z-index:6;overflow:hidden;background:#111}
+.shot img{display:block;width:100%;height:auto;will-change:transform}
+.shot-hint{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:8px 14px;border-radius:99px;background:rgba(5,5,5,0.78);color:#F4F3EF;font-size:max(11px,1.25cqw);font-weight:600;white-space:nowrap;pointer-events:none;transition:opacity 300ms ease}
+.shot-on .shot-hint{opacity:0}
+@media (hover:none){.shot-hint{display:none}}
+/* Gallery strip */
+.gallery{padding-block:0 clamp(40px,6vw,80px);overflow:hidden}
+.gallery-track{display:inline-flex;gap:28px;padding:40px 0;animation:marquee 60s linear infinite;perspective:1400px}
+.gallery:hover .gallery-track{animation-play-state:paused}
+.g-card{width:clamp(260px,26vw,380px);flex-shrink:0;display:flex;flex-direction:column;gap:14px;transform:rotateY(-8deg);transition:transform 400ms var(--ease-out)}
+.g-card figcaption{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2)}
+.g-card figcaption b{color:var(--ink);font-weight:600}
+@media (hover:hover){.g-card:hover{transform:rotateY(0deg) translateY(-6px)}}
+.g-card{margin:0}
+
+/* Included: bento of real fragments */
+.inc-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;margin-bottom:56px}
+.inc-head h2{grid-column:1 / span 7}
+.inc-head .lede{grid-column:8 / span 5}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{position:relative;border-radius:28px;background:var(--surface);padding:30px;display:flex;flex-direction:column;gap:12px;overflow:hidden;min-width:0}
+.tile h3{font-size:28px;letter-spacing:-0.03em;line-height:1.05}
+.tile p{color:var(--ink-2);font-size:16.5px;max-width:30em}
+.t-design{grid-column:span 7;grid-row:span 2}
+.t-domain{grid-column:span 5}
+.t-secure{grid-column:span 5}
+.t-changes{grid-column:span 4;grid-row:span 2}
+.t-maint{grid-column:span 4;grid-row:span 2}
+.t-preview{grid-column:span 4;grid-row:span 2;background:var(--ink);color:var(--bg)}
+.t-preview p{color:var(--paper-ink-2)}
+.t-frag{margin-top:auto}
+.t-design .t-frag{position:relative;height:auto;aspect-ratio:2.15/1;perspective:1200px}
+.t-design .td-back{position:absolute;left:50%;top:0;width:64%;transform:translateX(-50%) translateZ(-60px);opacity:0.6}
+.t-design .td-shot{position:absolute;width:60%;height:auto;border-radius:12px;box-shadow:0 40px 80px -24px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.06);transform-origin:50% 100%}
+.t-design .td-a{left:0;top:3%;transform:rotateY(14deg) rotateX(4deg)}
+.t-design .td-b{right:0;bottom:0;transform:rotateY(-12deg) rotateX(4deg)}
+.urlbar{display:flex;align-items:center;gap:12px;height:62px;padding:0 22px;border-radius:999px;background:var(--surface-2);font-size:clamp(17px,1.6vw,22px);font-weight:600;overflow:hidden}
+.urlbar svg{flex-shrink:0}
+.urlbar .dom{display:inline-block;transition:clip-path 600ms var(--ease-in-out);clip-path:inset(0 0 0 0)}
+.urlbar .dom.hide{clip-path:inset(0 100% 0 0)}
+.urlbar .caret{width:2px;height:24px;background:var(--ink);animation:blink 1s steps(1) infinite;margin-left:-8px}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--surface-2);font-size:15px;font-weight:600}
+.mini-chat{container-type:inline-size;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:22px;background:var(--wa-bg)}
+.mini-chat .msg{font-size:15px;max-width:90%;padding:10px 14px 6px;border-radius:14px}
+.mini-chat .msg time{font-size:11px}
+.mini-chat .msg time svg{width:16px}
+.checks{display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:var(--surface-2);font-size:16px;font-weight:500}
+.checks li span{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pv-big{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.pv-big .bw{transform:rotate(-3deg)}
+.pv-shot{display:block;width:100%;height:auto;border-radius:12px;transform:rotate(-3deg);box-shadow:0 30px 60px -24px rgba(0,0,0,0.55)}
+@media (max-width:1000px){
+  .inc-head h2,.inc-head .lede{grid-column:1 / -1}
+  .t-design,.t-domain,.t-secure,.t-changes,.t-maint,.t-preview{grid-column:1 / -1;grid-row:auto}
+}
+
+/* Pricing */
+.price-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch;perspective:1600px}
+.plan{position:relative;display:flex;flex-direction:column;gap:22px;padding:34px 30px;border-radius:30px;background:var(--surface);transform-style:preserve-3d;transition:background-color 220ms ease}
+.plan h3{font-size:34px}
+.plan .pdesc{color:var(--ink-2);font-size:16.5px;min-height:3em}
+.plan .amount{display:flex;align-items:baseline;gap:8px}
+.plan .amount b{font-size:clamp(46px,4.2vw,64px);font-weight:900;letter-spacing:-0.045em;line-height:1;font-variant-numeric:tabular-nums}
+.plan .amount span{font-size:17px;color:var(--ink-2)}
+.plan ul{display:flex;flex-direction:column;gap:12px;font-size:16.5px}
+.plan li{display:flex;gap:12px;align-items:flex-start}
+.plan li svg{flex-shrink:0;margin-top:4px}
+.plan .btn{margin-top:auto}
+.plan .paylink{display:block;margin-top:-8px;text-align:center;font-size:14px;color:var(--ink-2);text-decoration:none}
+.plan .paylink b{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.plan.featured .paylink{color:var(--paper-ink-2)}
+.plan.featured .paylink b{color:var(--bg)}
+.plan-tag{position:absolute;top:22px;right:22px;padding:8px 14px;border-radius:999px;background:var(--bg);color:var(--ink);font-size:14px;font-weight:600}
+.plan.featured{background:var(--ink);color:var(--bg);transform:translateY(-12px)}
+.plan.featured .pdesc,.plan.featured .amount span{color:var(--paper-ink-2)}
+.plan.featured .btn{background:var(--bg);color:var(--ink)}
+@media (hover:hover){.plan:not(.featured):hover{background:#171716}}
+.price-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:40px;font-size:16px;color:var(--ink-2)}
+.price-note b{color:var(--ink)}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none}}
+
+/* Custom projects */
+.custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding:clamp(36px,5vw,64px);border-radius:36px;background:var(--surface)}
+.custom-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:20px;min-width:0}
+.custom-copy h2{font-size:clamp(34px,3.8vw,56px)}
+.custom-side{grid-column:9 / span 4;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.custom-side b{font-size:clamp(40px,3.6vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.custom-side span{color:var(--ink-2)}
+@media (max-width:900px){.custom-copy,.custom-side{grid-column:1 / -1}}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border-radius:22px;padding:0 28px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;font-size:20px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex-shrink:0;transition:transform 240ms var(--ease-out)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{padding-bottom:26px;color:var(--ink-2);max-width:40em}
+@media (max-width:900px){.faq{grid-template-columns:1fr}}
+
+/* Final CTA + footer */
+.final{text-align:center}
+.final-in{display:flex;flex-direction:column;align-items:center;gap:28px}
+.final h2{font-size:clamp(44px,6vw,96px);max-width:12em}
+.final .lede{text-align:center}
+footer{padding-block:40px 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px 24px;padding-top:56px}
+.foot-col{grid-column:span 3;display:flex;flex-direction:column;gap:12px;font-size:16px;min-width:0}
+.foot-col h4{font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+.foot-col a,.foot-col span{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-col a:hover{color:var(--ink)}}
+.foot-intro{grid-column:span 6}
+.foot-intro p{color:var(--ink-2);max-width:28em}
+.copy-num{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:600 16px var(--font);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform 140ms var(--ease-out),background-color 180ms ease}
+.copy-num:active{transform:scale(0.97)}
+@media (hover:hover){.copy-num:hover{background:var(--surface-3)}}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:72px}
+.wordmark b{font-size:clamp(100px,24vw,370px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px,1.6vw,22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;font-size:14px;color:#8C8A84}
+@media (max-width:900px){.foot-col{grid-column:span 6}.foot-intro{grid-column:1 / -1}}
+@media (max-width:640px){.wordmark{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* Floating mobile CTA */
+.fab{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;display:none;box-shadow:0 18px 40px -12px rgba(0,0,0,0.8);transform:translateY(140%);transition:transform 380ms var(--ease-out)}
+.fab.show{transform:translateY(0)}
+@media (max-width:760px){.fab{display:flex}}
+
+/* Reveal: visible at rest; JS hides only what is below the fold, then reveals it */
+.pre{opacity:0;transform:translateY(26px)}
+.rv{transition:opacity 760ms var(--ease-out),transform 760ms var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.hero-stage-in,.float-a,.float-b{animation:none}
+  .marquee-track,.gallery-track{animation:none}
+  .pre{transform:none}
+  .rv{transition:opacity 300ms ease}
+  .typing i{animation:none}
+  .badge{transition:none}
+}
+
+/* ---------- Design catalog ---------- */
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:48px}
+.cat-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 20px 16px;border-radius:22px;border:0;background:var(--surface);box-shadow:inset 0 0 0 1px #22221F;color:var(--ink);font-family:var(--font);text-align:left;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 220ms ease,color 220ms ease,box-shadow 220ms ease}
+.cat-card:active{transform:scale(0.98)}
+.cat-card small{font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:0.1em;font-variant-numeric:tabular-nums}
+.cat-card b{font-size:18px;font-weight:700;line-height:1.2;margin-top:6px}
+.cat-card span{font-size:14px;color:var(--ink-2)}
+.cat-card em{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-style:normal;font-size:14px;font-weight:600}
+.cat-card em::after{content:"→";transition:transform 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.cat-card[aria-pressed="false"]:hover{background:var(--surface-2)}.cat-card:hover em::after{transform:translateX(3px)}}
+.cat-card[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none}
+.cat-card[aria-pressed="true"] small,.cat-card[aria-pressed="true"] span{color:#55534E}
+.cat-card[aria-pressed="true"] em::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A}
+.ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#121211;color:var(--ink-2);font-size:max(11px,1.3cqw);font-weight:500}
+.ld i{width:28px;height:28px;border-radius:50%;border:3px solid #2E2E2B;border-top-color:var(--ink);animation:ldSpin 0.9s linear infinite}
+@keyframes ldSpin{to{transform:rotate(360deg)}}
+.demo-acts{display:flex;flex-wrap:wrap;gap:10px}
+.dv{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;background:rgba(5,5,5,0.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.dv[hidden]{display:none}
+.dv-bar{display:flex;align-items:center;gap:16px;padding:12px max(16px,env(safe-area-inset-left,0px));height:68px}
+.dv-bar b{font-size:18px;font-weight:700;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dv-dev{display:flex;gap:4px;padding:4px;border-radius:99px;background:var(--surface-2)}
+.dv-dev button{height:38px;padding:0 16px;border-radius:99px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer}
+.dv-dev button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.dv-x{width:44px;height:44px;border-radius:50%;border:0;background:var(--surface-3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dv-body{flex:1;display:flex;justify-content:center;padding:0 12px 12px;min-height:0}
+.dv-frame{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#121211;transition:width 400ms var(--ease-out)}
+.dv-frame.mob{width:min(400px,100%)}
+.dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+@media (max-width:900px){
+  .demo-desk{display:none}
+  .demo-rig{padding-right:0}
+  .demo-mob{position:relative;right:auto;bottom:auto;width:min(300px,78vw);margin:0 auto;transform:none}
+  .demo-foot{margin-top:40px}
+  .dv-dev{display:none}
+  .cat{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -24px 0;padding:0 24px 6px;scrollbar-width:none}
+  .cat::-webkit-scrollbar{display:none}
+  .cat-card{flex:0 0 min(64vw,240px);scroll-snap-align:start}
+}
+</style>
+<style>
+:root{--bg:#FFFFFF;--surface:#F5F4F0;--surface-2:#ECEAE4;--surface-3:#E2E0D9;--ink:#0A0A0A;--ink-2:#5E5C57;--paper:#0A0A0A;--paper-ink:#F4F3EF;--paper-ink-2:#B9B7B0;color-scheme:light}
+html{scrollbar-color:#CFCDC6 var(--bg)}
+::-webkit-scrollbar-thumb{background:#CFCDC6}
+@media (hover:hover){.plan:not(.featured):hover{background:#EFEDE8}}
+@media (hover:hover){
+  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#2E2E2B;color:#fff}
+  .plan.featured .btn:not(.btn--ghost):hover,.combo .btn:not(.btn--ghost):hover,.res .btn:not(.btn--ghost):not(.btn--dark):hover{background:#E4E2DB;color:#0A0A0A}
+  .res .btn--ghost:hover{background:#34332F;color:#fff}
+}
+.plan{box-shadow:inset 0 0 0 1px #E8E6E0}
+.plan.featured{box-shadow:0 40px 80px -40px rgba(0,0,0,0.45)}
+.fab{box-shadow:0 18px 40px -12px rgba(0,0,0,0.35)}
+.plan .amount b{font-size:clamp(60px,6.2vw,96px);letter-spacing:-0.055em;line-height:0.9}
+.plan .amount span{font-size:18px}
+.combo .amount b{font-size:clamp(68px,7.4vw,116px);letter-spacing:-0.055em;line-height:0.9}
+.amount b>span,.web-row strong>span:first-child{font-size:inherit!important;color:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important}
+.res .rp{font-size:clamp(28px,2.6vw,40px);font-weight:900;letter-spacing:-0.04em;color:#fff}
+.sv-show{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.show-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:28px 28px 0;border-radius:30px;background:var(--surface);overflow:hidden;min-height:440px}
+.show-card h3{font-size:22px;letter-spacing:-0.02em}
+.show-card>p{color:var(--ink-2);font-size:16px;max-width:26em}
+.tagx{position:absolute;top:22px;right:22px;padding:6px 12px;border-radius:99px;background:#fff;font-size:12px;font-weight:600;color:var(--ink-2);letter-spacing:0.04em;box-shadow:0 0 0 1px #E2E0D9}
+.ig{position:relative;width:min(290px,78%);margin:26px auto 0;padding:10px 10px 0;border-radius:38px 38px 0 0;background:#0A0A0A}
+.ig-scr{border-radius:30px 30px 0 0;background:#fff;overflow:hidden;padding-top:18px}
+.ig-top{display:flex;align-items:center;gap:10px;padding:8px 14px 10px}
+.ig-av{width:42px;height:42px;border-radius:50%;padding:2px;background:conic-gradient(#F58529,#DD2A7B,#8134AF,#F58529)}
+.ig-av i{display:block;width:100%;height:100%;border-radius:50%;border:2px solid #fff;background:#0A0A0A url(demos/casamar-1.jpg) center/cover}
+.ig-top b{font-size:14px;color:#0A0A0A;letter-spacing:-0.01em}
+.ig-top small{display:block;font-size:11px;color:#737373;font-weight:500}
+.ig-stats{display:flex;gap:16px;margin-left:auto;font-size:11px;color:#0A0A0A;text-align:center;line-height:1.15}
+.ig-stats b{display:block;font-size:13px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.ig-grid span{position:relative;aspect-ratio:4/5;background-size:cover;background-position:center}
+.ig-grid span.r::after{content:"";position:absolute;top:6px;right:6px;width:0;height:0;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.5))}
+.wa-mock{width:min(330px,88%);margin:26px auto 0;border-radius:26px 26px 0 0;background:#0B141A;overflow:hidden;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wa-mock .hd{display:flex;align-items:center;gap:10px;padding:14px 16px;background:#1F2C34;color:#E9EDEF;font-size:14px;font-weight:600}
+.wa-mock .hd i{width:34px;height:34px;border-radius:50%;background:#F4F3EF;color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;font-weight:800}
+.wa-mock .hd small{display:block;font-size:11px;font-weight:400;color:#8696A0}
+.wa-mock .bd{display:flex;flex-direction:column;gap:8px;padding:14px 12px 18px}
+.wm{max-width:84%;padding:8px 10px 6px;border-radius:10px;font-size:13.5px;line-height:1.35;color:#E9EDEF}
+.wm.in{align-self:flex-start;background:#1F2C34;border-top-left-radius:3px}
+.wm.out{align-self:flex-end;background:#005C4B;border-top-right-radius:3px}
+.wm time{display:block;text-align:right;font-size:10px;color:rgba(233,237,239,0.6);margin-top:2px}
+.wm-prev{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:2px 0 6px;border-radius:7px;overflow:hidden}
+.wm-prev span{aspect-ratio:1;background-size:cover;background-position:center}
+.phn{width:min(340px,84%);aspect-ratio:340/420;margin:28px auto 0;overflow:hidden;flex-shrink:0}
+.phn img{display:block;width:100%;height:auto}
+.phn-wa{border-radius:58px 58px 0 0;padding:11px 11px 0;background:#121212;box-shadow:inset 0 0 0 2px #2A2A2A,0 0 0 3px #CFCFCF}
+.phn-wa .wa-mock{width:100%;height:100%;margin:0;border-radius:47px 47px 0 0}
+.wa-mock .sb{display:flex;align-items:center;justify-content:space-between;height:46px;padding:0 26px 0 30px;background:#1F2C34;color:#fff;position:relative}
+.wa-mock .sb b{font-size:14px;font-weight:600}
+.wa-mock .sb i{position:absolute;left:50%;top:9px;width:92px;height:27px;border-radius:20px;background:#000;transform:translateX(-50%)}
+.wa-mock .hd{padding-top:6px}
+.rep{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3vw,48px);align-items:center;padding:clamp(28px,3vw,44px);border-radius:30px;background:var(--surface);margin-bottom:12px}
+.rep h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-0.03em}
+.rep>div>p{color:var(--ink-2);margin-top:10px;font-size:16px}
+.rep-card{position:relative;padding:24px;border-radius:24px;background:#fff;box-shadow:0 30px 60px -36px rgba(0,0,0,0.35),0 0 0 1px #ECEAE4}
+.rep-card .tagx{top:20px;right:20px;background:var(--surface);box-shadow:none}
+.rep-card h4{font-size:15px;font-weight:700;letter-spacing:0}
+.rep-card h4 small{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin-top:2px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.kpis div{padding:14px;border-radius:16px;background:var(--surface)}
+.kpis small{display:block;font-size:12.5px;color:var(--ink-2);font-weight:500}
+.kpis b{display:block;font-size:clamp(26px,2.6vw,38px);font-weight:800;letter-spacing:-0.03em;margin-top:2px;font-variant-numeric:tabular-nums}
+.bars{display:flex;align-items:flex-end;gap:10px;height:110px;margin-top:18px;padding-top:6px}
+.bars div{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bars i{display:block;width:100%;border-radius:8px 8px 4px 4px;background:#0A0A0A}
+.bars i.lt{background:#D9D7D0}
+.bars span{font-size:11.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.quiz{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:12px}
+.qs{display:flex;flex-direction:column;gap:12px}
+.q{padding:22px 24px;border-radius:24px;background:var(--surface)}
+.q p{font-size:18px;font-weight:600}
+.q div{display:flex;gap:8px;margin-top:14px}
+.q button{min-height:46px;padding:0 22px;border-radius:99px;border:0;background:#fff;color:var(--ink);font:600 15px var(--font);cursor:pointer;box-shadow:inset 0 0 0 1px #E2E0D9;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+.q button:active{transform:scale(0.96)}
+.q button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
+.res{display:flex;flex-direction:column;padding:clamp(26px,3vw,40px);border-radius:30px;background:var(--ink);color:#fff;min-height:100%}
+.res small{font-size:13px;font-weight:600;letter-spacing:0.14em;color:#8E8C86}
+.res h3{font-size:clamp(32px,3.4vw,48px);letter-spacing:-0.04em;margin-top:14px}
+.res .rp{font-size:20px;font-weight:700;margin-top:8px;color:#D9D7D0}
+.res p.why{color:#B9B7B0;margin-top:14px;font-size:16.5px;max-width:30em}
+.res .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:28px}
+.res .btn{background:#fff;color:#0A0A0A}
+.res .btn--ghost{background:#262623;color:#fff}
+.res.empty h3{color:#8E8C86}
+.res.swap{animation:resIn 420ms var(--ease-out)}
+@keyframes resIn{from{opacity:0.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pay{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:-8px;font-size:13px;color:var(--ink-2)}
+.plan.featured .pay{color:#8E8C86}
+.pay svg{flex-shrink:0}
+.faq details{background:var(--surface)}
+@media (max-width:980px){.sv-show,.quiz,.rep{grid-template-columns:1fr}.show-card{min-height:0}}
+.sv-hero{padding-top:clamp(56px,8vw,120px);padding-bottom:clamp(40px,5vw,72px)}
+.sv-hero h1{font-size:clamp(48px,7.4vw,116px);font-weight:900;letter-spacing:-0.05em;line-height:0.92;max-width:11em}
+.sv-hero .lede{margin-top:28px;max-width:32em}
+.sv-hero .hero-actions{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px;margin-top:36px}
+.sv-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(48px,6vw,80px)}
+.sv-flow div{padding:26px 26px 24px;border-radius:26px;background:var(--surface)}
+.sv-flow small{display:block;font-size:13px;font-weight:600;letter-spacing:0.14em;color:var(--ink-2)}
+.sv-flow b{display:block;font-size:24px;font-weight:800;letter-spacing:-0.02em;margin-top:14px}
+.sv-flow p{color:var(--ink-2);margin-top:6px;font-size:16px}
+.sv-sec{padding-block:clamp(72px,9vw,140px)}
+.sv-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px;margin-bottom:clamp(36px,4vw,56px)}
+.sv-head .lede{max-width:30em}
+.kick{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.16em;color:var(--ink-2);margin-bottom:16px}
+.plans.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.plan h3+.pdesc{margin-top:8px}
+.plan .pbadge{position:absolute;top:-13px;right:26px;padding:7px 14px;border-radius:99px;background:var(--wa-green);color:#052E16;font-size:13px;font-weight:800;letter-spacing:0.04em}
+.web-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.web-row a{display:flex;flex-direction:column;gap:6px;padding:26px;border-radius:26px;background:var(--surface);text-decoration:none;color:var(--ink);transition:background-color 200ms ease,transform 160ms var(--ease-out)}
+.web-row a:active{transform:scale(0.985)}
+@media (hover:hover){.web-row a:hover{background:#EFEDE8}}
+.web-row b{font-size:22px;font-weight:800}
+.web-row strong{font-size:clamp(52px,5vw,72px);font-weight:900;letter-spacing:-0.055em;line-height:0.95;margin-top:10px;font-variant-numeric:tabular-nums}
+.web-row strong span{font-size:16px;font-weight:500;color:var(--ink-2);letter-spacing:0}
+.web-row p{color:var(--ink-2);font-size:15.5px}
+.web-row em{font-style:normal;font-size:15px;font-weight:600;margin-top:12px}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rules div{padding:28px;border-radius:26px;background:var(--surface)}
+.rules b{display:block;font-size:clamp(44px,4vw,60px);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.rules h3{font-size:20px;margin-top:16px}
+.rules p{color:var(--ink-2);margin-top:6px;font-size:16px}
+.combo{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(32px,4vw,56px);border-radius:36px;background:var(--ink);color:var(--bg)}
+.combo .kick{color:#8E8C86}
+.combo h2{font-size:clamp(38px,4.6vw,68px);font-weight:900;letter-spacing:-0.045em;line-height:0.95}
+.combo p{color:#B9B7B0;margin-top:16px;font-size:18px;max-width:28em}
+.combo .amount{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.combo .amount b{font-size:clamp(56px,6vw,88px);font-weight:900;letter-spacing:-0.05em;line-height:1}
+.combo .amount span{color:#B9B7B0;font-size:18px}
+.combo .amount s{color:#8E8C86;font-size:20px;width:100%}
+.combo ul{display:flex;flex-direction:column;gap:12px;margin:22px 0 26px;font-size:17px}
+.combo li{display:flex;gap:12px;align-items:flex-start}
+.combo li svg{flex-shrink:0;margin-top:3px}
+.combo .btn{background:#fff;color:#0A0A0A}
+.combo li svg path{stroke:#25D366}
+.nav ul a[aria-current="page"]{color:var(--ink)}
+@media (max-width:980px){.plans.two{grid-template-columns:1fr}.combo{grid-template-columns:1fr}}
+@media (max-width:900px){.sv-flow,.web-row,.rules{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="./" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
+    <ul>
+      <li><a href="./#como-funciona"><span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span></a></li>
+      <li><a href="./#disenos"><span data-es="Diseños" data-en="Designs">Diseños</span></a></li>
+      <li><a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a></li>
+      <li><a href="servicios" aria-current="page"><span data-es="Servicios" data-en="Services">Servicios</span></a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn js-wa nav-cta" data-msg-es="Hola, vi sus servicios y quiero más información." data-msg-en="Hi, I saw your services and I'd like more information." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Hablemos" data-en="Let’s talk">Hablemos</span></a>
+    </div>
+  </nav>
+</header>
+<main id="top">
+  <section class="sv-hero">
+    <div class="wrap">
+      <span class="kick"><span data-es="SERVICIOS" data-en="SERVICES">SERVICIOS</span></span>
+      <h1><span data-es="Todo el sistema para recibir clientes." data-en="The whole system to bring you customers.">Todo el sistema para recibir clientes.</span></h1>
+      <p class="lede"><span data-es="Página web, redes sociales y anuncios trabajando juntos para llevar mensajes a tu WhatsApp. Tú atiendes clientes; nosotros hacemos el resto." data-en="Website, social media and ads working together to bring messages to your WhatsApp. You serve customers; we handle the rest.">Página web, redes sociales y anuncios trabajando juntos para llevar mensajes a tu WhatsApp. Tú atiendes clientes; nosotros hacemos el resto.</span></p>
+      <div class="hero-actions">
+        <a class="btn js-wa" data-msg-es="Hola, quiero el sistema completo para mi negocio." data-msg-en="Hi, I want the complete system for my business." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Quiero mi sistema" data-en="I want my system">Quiero mi sistema</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#redes"><span data-es="Ver paquetes" data-en="See packages">Ver paquetes</span></a>
+      </div>
+      <div class="sv-flow"><div><small>01</small><b><span data-es="Lo creamos" data-en="We create it">Lo creamos</span></b><p><span data-es="Estrategia, diseños, reels y textos del mes, con tu marca y tu voz." data-en="Strategy, designs, reels and copy for the month, in your brand and voice.">Estrategia, diseños, reels y textos del mes, con tu marca y tu voz.</span></p></div><div><small>02</small><b><span data-es="Lo apruebas por WhatsApp" data-en="You approve it on WhatsApp">Lo apruebas por WhatsApp</span></b><p><span data-es="Cada semana te llega la vista previa. Respondes ✅ o pides cambios." data-en="Every week you get a preview. Reply ✅ or ask for changes.">Cada semana te llega la vista previa. Respondes ✅ o pides cambios.</span></p></div><div><small>03</small><b><span data-es="Lo publicamos y medimos" data-en="We publish and measure">Lo publicamos y medimos</span></b><p><span data-es="Programamos todo y te mandamos un reporte claro cada mes." data-en="We schedule everything and send you a clear report every month.">Programamos todo y te mandamos un reporte claro cada mes.</span></p></div></div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="web" style="padding-top:0">
+    <div class="wrap">
+      <div class="sv-head">
+        <div><span class="kick"><span data-es="1 · TU PÁGINA WEB" data-en="1 · YOUR WEBSITE">1 · TU PÁGINA WEB</span></span><h2 class="h2"><span data-es="La base de todo." data-en="The foundation.">La base de todo.</span></h2></div>
+        <p class="lede"><span data-es="Tu página diseñada, publicada y mantenida, con botón directo a tu WhatsApp. Primero la ves gratis." data-en="Your website designed, published and maintained, with a direct WhatsApp button. See it free first.">Tu página diseñada, publicada y mantenida, con botón directo a tu WhatsApp. Primero la ves gratis.</span></p>
+      </div>
+      <div class="web-row">
+        <a href="./#planes"><b><span data-es="Básico" data-en="Basic">Básico</span></b><strong><span data-es="$499" data-en="$99">$499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Una página clara que presenta tu negocio." data-en="A clear page that presents your business.">Una página clara que presenta tu negocio.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+        <a href="./#planes"><b>Pro</b><strong><span data-es="$899" data-en="$179">$899</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Varias secciones, animaciones y SEO local." data-en="Multiple sections, animations and local SEO.">Varias secciones, animaciones y SEO local.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+        <a href="./#planes"><b>Premium</b><strong><span data-es="$1,499" data-en="$299">$1,499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Efectos 3D, reservas, catálogo o tienda." data-en="3D effects, bookings, catalog or store.">Efectos 3D, reservas, catálogo o tienda.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="redes" style="padding-top:0">
+    <div class="wrap">
+      <div class="sv-head">
+        <div><span class="kick"><span data-es="2 · REDES SOCIALES" data-en="2 · SOCIAL MEDIA">2 · REDES SOCIALES</span></span><h2 class="h2"><span data-es="Presencia constante, sin que tú publiques." data-en="Consistent presence, without you posting.">Presencia constante, sin que tú publiques.</span></h2></div>
+        <p class="lede"><span data-es="Creamos tu contenido, lo apruebas por WhatsApp y nosotros lo publicamos. Así tus redes nunca se quedan abandonadas." data-en="We create your content, you approve it on WhatsApp and we publish it. Your social media is never left behind.">Creamos tu contenido, lo apruebas por WhatsApp y nosotros lo publicamos. Así tus redes nunca se quedan abandonadas.</span></p>
+      </div>
+      <div class="sv-show">
+        <div class="show-card"><span class="tagx"><span data-es="EJEMPLO" data-en="EXAMPLE">EJEMPLO</span></span>
+          <h3><span data-es="Un perfil que da confianza" data-en="A profile that builds trust">Un perfil que da confianza</span></h3>
+          <p><span data-es="Publicaciones y reels con tu marca, todos los meses, sin huecos." data-en="Posts and reels in your brand, every month, no gaps.">Publicaciones y reels con tu marca, todos los meses, sin huecos.</span></p>
+          <div class="phn" aria-hidden="true"><img src="demos/ig-casamar.webp" alt="" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="show-card"><span class="tagx"><span data-es="EJEMPLO" data-en="EXAMPLE">EJEMPLO</span></span>
+          <h3><span data-es="Tú solo apruebas por WhatsApp" data-en="You just approve on WhatsApp">Tú solo apruebas por WhatsApp</span></h3>
+          <p><span data-es="Cada semana te mandamos lo que se va a publicar. Un mensaje y listo." data-en="Every week we send what will be published. One message and done.">Cada semana te mandamos lo que se va a publicar. Un mensaje y listo.</span></p>
+          <div class="phn phn-wa" aria-hidden="true"><div class="wa-mock">
+            <div class="sb"><b>9:41</b><i></i><span><svg width="38" height="12" viewBox="0 0 38 12" fill="#fff"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/><rect x="23" y="1" width="13" height="10" rx="3" fill="none" stroke="#fff" stroke-width="1.4"/><rect x="25" y="3" width="9" height="6" rx="1.5"/></svg></span></div>
+            <div class="hd"><i>OK</i><div>OKfly Studio<small><span data-es="en línea" data-en="online">en línea</span></small></div></div>
+            <div class="bd">
+              <div class="wm in"><span data-es="¡Hola! 👋 Tu contenido de esta semana está listo:" data-en="Hi! 👋 Your content for this week is ready:">¡Hola! 👋 Tu contenido de esta semana está listo:</span><div class="wm-prev"><span style="background-image:url(demos/casamar-2.jpg)"></span><span style="background-image:url(demos/casamar-3.jpg)"></span><span style="background-image:url(demos/casamar-1.jpg)"></span></div><span data-es="3 posts + 1 reel. ¿Lo aprobamos?" data-en="3 posts + 1 reel. Shall we approve it?">3 posts + 1 reel. ¿Lo aprobamos?</span><time>10:02</time></div>
+              <div class="wm out"><span data-es="✅ Aprobado, me encantó el reel" data-en="✅ Approved, loved the reel">✅ Aprobado, me encantó el reel</span><time>10:15</time></div>
+              <div class="wm in"><span data-es="¡Perfecto! Queda programado para lunes, miércoles y viernes 🚀" data-en="Perfect! Scheduled for Monday, Wednesday and Friday 🚀">¡Perfecto! Queda programado para lunes, miércoles y viernes 🚀</span><time>10:16</time></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <div class="plans two">
+        <article class="plan">
+          <div><h3><span data-es="Redes Esencial" data-en="Social Essential">Redes Esencial</span></h3><p class="pdesc"><span data-es="Para negocios que quieren aparecer con constancia en una red." data-en="For businesses that want to show up consistently on one network.">Para negocios que quieren aparecer con constancia en una red.</span></p></div>
+          <div class="amount"><b><span data-es="$3,490" data-en="$790">$3,490</span></b><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></div>
+          <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="12 publicaciones al mes" data-en="12 posts per month">12 publicaciones al mes</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="8 diseños + 4 reels" data-en="8 designs + 4 reels">8 diseños + 4 reels</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="1 red social: Instagram o Facebook" data-en="1 network: Instagram or Facebook">1 red social: Instagram o Facebook</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Textos y calendario mensual" data-en="Copy and monthly calendar">Textos y calendario mensual</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Aprobación por WhatsApp" data-en="Approval via WhatsApp">Aprobación por WhatsApp</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Nosotros publicamos" data-en="We publish for you">Nosotros publicamos</span></li></ul>
+          <a class="btn js-buy" data-plan="esencial" data-msg-es="Hola, quiero contratar Redes Esencial." data-msg-en="Hi, I want to sign up for Social Essential." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Contratar ahora" data-en="Sign up now">Contratar ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+          <p class="pay"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-es="Pago seguro con Mercado Pago" data-en="Secure card payment">Pago seguro con Mercado Pago</span></p>
+        </article>
+        <article class="plan featured"><span class="pbadge"><span data-es="MÁS COMPLETO" data-en="MOST COMPLETE">MÁS COMPLETO</span></span>
+          <div><h3><span data-es="Redes Pro" data-en="Social Pro">Redes Pro</span></h3><p class="pdesc"><span data-es="Para negocios que quieren crecer en Facebook e Instagram." data-en="For businesses that want to grow on Facebook and Instagram.">Para negocios que quieren crecer en Facebook e Instagram.</span></p></div>
+          <div class="amount"><b><span data-es="$5,990" data-en="$1,290">$5,990</span></b><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></div>
+          <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="16 publicaciones al mes" data-en="16 posts per month">16 publicaciones al mes</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="8 reels con edición profesional" data-en="8 professionally edited reels">8 reels con edición profesional</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Facebook + Instagram" data-en="Facebook + Instagram">Facebook + Instagram</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Historias cada semana" data-en="Weekly stories">Historias cada semana</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Aprobación por WhatsApp" data-en="Approval via WhatsApp">Aprobación por WhatsApp</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Reporte mensual de resultados" data-en="Monthly results report">Reporte mensual de resultados</span></li></ul>
+          <a class="btn js-buy" data-plan="pro" data-msg-es="Hola, quiero contratar Redes Pro." data-msg-en="Hi, I want to sign up for Social Pro." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Contratar ahora" data-en="Sign up now">Contratar ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+          <p class="pay"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-es="Pago seguro con Mercado Pago" data-en="Secure card payment">Pago seguro con Mercado Pago</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="anuncios" style="padding-top:0">
+    <div class="wrap">
+      <div class="sv-head">
+        <div><span class="kick"><span data-es="3 · ANUNCIOS" data-en="3 · ADS">3 · ANUNCIOS</span></span><h2 class="h2"><span data-es="Mensajes nuevos en tu WhatsApp." data-en="New messages in your WhatsApp.">Mensajes nuevos en tu WhatsApp.</span></h2></div>
+        <p class="lede"><span data-es="Campañas en Facebook e Instagram pensadas para que te escriban, no solo para que te vean. El presupuesto de anuncios lo pagas directo a Meta." data-en="Facebook and Instagram campaigns built to make people message you, not just see you. You pay the ad budget directly to Meta.">Campañas en Facebook e Instagram pensadas para que te escriban, no solo para que te vean. El presupuesto de anuncios lo pagas directo a Meta.</span></p>
+      </div>
+      <div class="rep">
+        <div><h3><span data-es="Sabrás exactamente qué te dejó cada peso." data-en="You will know exactly what every peso brought you.">Sabrás exactamente qué te dejó cada peso.</span></h3><p><span data-es="Cada mes recibes un reporte simple: cuántas personas te escribieron y cuánto costó cada mensaje." data-en="Every month you get a simple report: how many people messaged you and what each message cost.">Cada mes recibes un reporte simple: cuántas personas te escribieron y cuánto costó cada mensaje.</span></p></div>
+        <div class="rep-card" aria-hidden="true"><span class="tagx"><span data-es="Datos de ejemplo" data-en="Sample data">Datos de ejemplo</span></span>
+          <h4><span data-es="Reporte mensual" data-en="Monthly report">Reporte mensual</span><small><span data-es="Campaña a WhatsApp · 4 semanas" data-en="WhatsApp campaign · 4 weeks">Campaña a WhatsApp · 4 semanas</span></small></h4>
+          <div class="kpis"><div><small><span data-es="Mensajes nuevos" data-en="New messages">Mensajes nuevos</span></small><b>142</b></div><div><small><span data-es="Costo por mensaje" data-en="Cost per message">Costo por mensaje</span></small><b>$21</b></div><div><small><span data-es="Personas alcanzadas" data-en="People reached">Personas alcanzadas</span></small><b>38.4k</b></div></div>
+          <div class="bars"><div><i class="lt" style="height:38%"></i><span>S1</span></div><div><i class="lt" style="height:52%"></i><span>S2</span></div><div><i class="" style="height:71%"></i><span>S3</span></div><div><i class="" style="height:92%"></i><span>S4</span></div></div>
+        </div>
+      </div>
+      <div class="plans two">
+        <article class="plan">
+          <div><h3><span data-es="Anuncios" data-en="Ads">Anuncios</span></h3><p class="pdesc"><span data-es="Gestión completa de tus campañas, semana a semana." data-en="Full management of your campaigns, week by week.">Gestión completa de tus campañas, semana a semana.</span></p></div>
+          <div class="amount"><b><span data-es="$3,990" data-en="$790">$3,990</span></b><span><span data-es=" MXN/mes + presupuesto" data-en=" USD/mo + ad budget"> MXN/mes + presupuesto</span></span></div>
+          <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Estrategia y segmentación" data-en="Strategy and targeting">Estrategia y segmentación</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Diseño de anuncios y reels" data-en="Ad and reel creatives">Diseño de anuncios y reels</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Campañas a WhatsApp" data-en="Click-to-WhatsApp campaigns">Campañas a WhatsApp</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Optimización cada semana" data-en="Weekly optimization">Optimización cada semana</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Reporte mensual claro" data-en="Clear monthly report">Reporte mensual claro</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Presupuesto recomendado: desde $3,000/mes" data-en="Recommended budget: from $500/mo">Presupuesto recomendado: desde $3,000/mes</span></li></ul>
+          <a class="btn js-buy" data-plan="anuncios" data-msg-es="Hola, quiero contratar Anuncios." data-msg-en="Hi, I want to sign up for Ads." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Contratar ahora" data-en="Sign up now">Contratar ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+          <p class="pay"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-es="Pago seguro con Mercado Pago" data-en="Secure card payment">Pago seguro con Mercado Pago</span></p>
+        </article>
+        <article class="plan">
+          <div><h3><span data-es="Sin promesas vacías" data-en="No empty promises">Sin promesas vacías</span></h3><p class="pdesc"><span data-es="Así trabajamos la publicidad." data-en="How we handle advertising.">Así trabajamos la publicidad.</span></p></div>
+          <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Nunca prometemos un número de ventas: medimos y ajustamos cada mes." data-en="We never promise a number of sales: we measure and adjust every month.">Nunca prometemos un número de ventas: medimos y ajustamos cada mes.</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Tus cuentas y tu presupuesto siempre están a tu nombre." data-en="Your accounts and budget always stay in your name.">Tus cuentas y tu presupuesto siempre están a tu nombre.</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Ves en el reporte cuántos mensajes llegaron y cuánto costó cada uno." data-en="Your report shows how many messages came in and what each one cost.">Ves en el reporte cuántos mensajes llegaron y cuánto costó cada uno.</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Funciona mejor junto con tu página web y tus redes activas." data-en="Works best together with your website and active social media.">Funciona mejor junto con tu página web y tus redes activas.</span></li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="sistema" style="padding-top:0">
+    <div class="wrap">
+      <div class="combo">
+        <div>
+          <span class="kick"><span data-es="EL SISTEMA COMPLETO" data-en="THE COMPLETE SYSTEM">EL SISTEMA COMPLETO</span></span>
+          <h2><span data-es="Página + redes + anuncios, trabajando juntos." data-en="Website + social + ads, working together.">Página + redes + anuncios, trabajando juntos.</span></h2>
+          <p><span data-es="Todo conectado para que cada visita termine en un mensaje a tu WhatsApp. Un solo equipo, una sola mensualidad." data-en="Everything connected so every visit ends in a message to your WhatsApp. One team, one monthly fee.">Todo conectado para que cada visita termine en un mensaje a tu WhatsApp. Un solo equipo, una sola mensualidad.</span></p>
+        </div>
+        <div>
+          <div class="amount"><s><span data-es="$8,379 por separado" data-en="$1,759 separately">$8,379 por separado</span></s><b><span data-es="$6,990" data-en="$1,490">$6,990</span></b><span><span data-es="MXN/mes" data-en="USD/mo">MXN/mes</span></span></div>
+          <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Página web Pro" data-en="Pro website">Página web Pro</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Redes Esencial" data-en="Social Essential">Redes Esencial</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Anuncios en Facebook e Instagram" data-en="Facebook & Instagram ads">Anuncios en Facebook e Instagram</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-es="Un solo reporte mensual de todo" data-en="One monthly report for everything">Un solo reporte mensual de todo</span></li></ul>
+          <a class="btn js-buy" data-plan="sistema" data-msg-es="Hola, quiero contratar el Sistema completo." data-msg-en="Hi, I want to sign up for the Complete System." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Contratar sistema completo" data-en="Sign up for the complete system">Contratar sistema completo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+          <p class="pay" style="justify-content:flex-start;margin-top:12px;color:#8E8C86"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-es="Pago seguro con Mercado Pago" data-en="Secure card payment">Pago seguro con Mercado Pago</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="reglas" style="padding-top:0">
+    <div class="wrap">
+      <div class="sv-head">
+        <div><span class="kick"><span data-es="CÓMO TRABAJAMOS" data-en="HOW WE WORK">CÓMO TRABAJAMOS</span></span><h2 class="h2"><span data-es="Pocos clientes, bien atendidos." data-en="Fewer clients, well served.">Pocos clientes, bien atendidos.</span></h2></div>
+        <p class="lede"><span data-es="Aplica para redes sociales, anuncios y el sistema completo." data-en="Applies to social media, ads and the complete system.">Aplica para redes sociales, anuncios y el sistema completo.</span></p>
+      </div>
+      <div class="rules">
+        <div><b>$0</b><h3><span data-es="Sin costo de arranque" data-en="No setup fee">Sin costo de arranque</span></h3><p><span data-es="La estrategia, el kit de marca y la configuración de tus cuentas van incluidos. Solo pagas tu mensualidad." data-en="Strategy, brand kit and account setup are included. You only pay your monthly fee.">La estrategia, el kit de marca y la configuración de tus cuentas van incluidos. Solo pagas tu mensualidad.</span></p></div>
+        <div><b><span data-es="3 meses" data-en="3 months">3 meses</span></b><h3><span data-es="Mínimo de contrato" data-en="Minimum term">Mínimo de contrato</span></h3><p><span data-es="Las redes y los anuncios necesitan tiempo para dar resultados." data-en="Social media and ads need time to show results.">Las redes y los anuncios necesitan tiempo para dar resultados.</span></p></div>
+        <div><b>10</b><h3><span data-es="Negocios nuevos al mes" data-en="New businesses per month">Negocios nuevos al mes</span></h3><p><span data-es="Aceptamos pocos clientes para darle a cada uno la atención que merece." data-en="We take on few clients so each one gets the attention it deserves.">Aceptamos pocos clientes para darle a cada uno la atención que merece.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sv-sec" id="cual" style="padding-top:0">
+    <div class="wrap">
+      <div class="sv-head">
+        <div><span class="kick"><span data-es="¿NO SABES CUÁL ELEGIR?" data-en="NOT SURE WHICH ONE?">¿NO SABES CUÁL ELEGIR?</span></span><h2 class="h2"><span data-es="¿Cuál te conviene?" data-en="Which one fits you?">¿Cuál te conviene?</span></h2></div>
+        <p class="lede"><span data-es="Contesta 3 preguntas y te decimos qué necesita tu negocio, y qué no." data-en="Answer 3 questions and we will tell you what your business needs, and what it doesn’t.">Contesta 3 preguntas y te decimos qué necesita tu negocio, y qué no.</span></p>
+      </div>
+      <div class="quiz">
+        <div class="qs">
+          <div class="q" data-q="web"><p><span data-es="¿Ya tienes página web?" data-en="Do you already have a website?">¿Ya tienes página web?</span></p><div><button type="button" data-v="1" aria-pressed="false"><span data-es="Sí" data-en="Yes">Sí</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></div>
+          <div class="q" data-q="posts"><p><span data-es="¿Publicas seguido en tus redes?" data-en="Do you post regularly on social media?">¿Publicas seguido en tus redes?</span></p><div><button type="button" data-v="1" aria-pressed="false"><span data-es="Sí" data-en="Yes">Sí</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></div>
+          <div class="q" data-q="now"><p><span data-es="¿Quieres más mensajes de clientes este mes?" data-en="Do you want more customer messages this month?">¿Quieres más mensajes de clientes este mes?</span></p><div><button type="button" data-v="1" aria-pressed="false"><span data-es="Sí, ya" data-en="Yes, now">Sí, ya</span></button><button type="button" data-v="0" aria-pressed="false"><span data-es="Puedo esperar" data-en="I can wait">Puedo esperar</span></button></div></div>
+        </div>
+        <div class="res empty" id="res" aria-live="polite">
+          <small><span data-es="TU RECOMENDACIÓN" data-en="YOUR RECOMMENDATION">TU RECOMENDACIÓN</span></small>
+          <h3 id="resName"><span data-es="Contesta las 3 preguntas" data-en="Answer the 3 questions">Contesta las 3 preguntas</span></h3>
+          <div class="rp" id="resPrice"></div>
+          <p class="why" id="resWhy"><span data-es="Te mostramos el paquete que mejor se ajusta a tu negocio." data-en="We will show you the package that best fits your business.">Te mostramos el paquete que mejor se ajusta a tu negocio.</span></p>
+          <div class="acts" id="resActs" hidden>
+            <a class="btn" id="resBuy" href="#" target="_blank" rel="noopener"></a>
+            <a class="btn btn--ghost" id="resAsk" href="#" target="_blank" rel="noopener"><span data-es="Prefiero preguntar" data-en="I’d rather ask">Prefiero preguntar</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-sec" id="preguntas" style="padding-top:0">
+    <div class="wrap faq">
+      <h2 class="h2"><span data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</span></h2>
+      <div class="faq-list"><details><summary><span data-es="¿Tengo que darles mis contraseñas?" data-en="Do I have to give you my passwords?">¿Tengo que darles mis contraseñas?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="No. Nos das acceso como colaboradores desde tu Meta Business Suite y tú puedes quitarlo cuando quieras. Tus cuentas siempre son tuyas." data-en="No. You add us as collaborators in your Meta Business Suite and you can remove us anytime. Your accounts are always yours.">No. Nos das acceso como colaboradores desde tu Meta Business Suite y tú puedes quitarlo cuando quieras. Tus cuentas siempre son tuyas.</span></p></details><details><summary><span data-es="¿Cómo se paga?" data-en="How do I pay?">¿Cómo se paga?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="Con tarjeta, como suscripción mensual con Mercado Pago. Se cobra automáticamente cada mes y te llega tu comprobante." data-en="By card, as a monthly subscription. It is charged automatically each month and you receive your receipt.">Con tarjeta, como suscripción mensual con Mercado Pago. Se cobra automáticamente cada mes y te llega tu comprobante.</span></p></details><details><summary><span data-es="¿Quién paga los anuncios?" data-en="Who pays for the ads?">¿Quién paga los anuncios?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="El presupuesto de anuncios lo pagas tú directo a Meta con tu tarjeta. Nuestra mensualidad cubre la estrategia, los diseños y la gestión." data-en="You pay the ad budget directly to Meta with your card. Our monthly fee covers strategy, creatives and management.">El presupuesto de anuncios lo pagas tú directo a Meta con tu tarjeta. Nuestra mensualidad cubre la estrategia, los diseños y la gestión.</span></p></details><details><summary><span data-es="¿Puedo pedir cambios al contenido?" data-en="Can I request changes to the content?">¿Puedo pedir cambios al contenido?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="Sí. Antes de publicar te mandamos todo por WhatsApp; si algo no te gusta, lo ajustamos." data-en="Yes. Before anything goes live we send it on WhatsApp; if you don’t like something, we adjust it.">Sí. Antes de publicar te mandamos todo por WhatsApp; si algo no te gusta, lo ajustamos.</span></p></details><details><summary><span data-es="¿Qué pasa después de los 3 meses?" data-en="What happens after 3 months?">¿Qué pasa después de los 3 meses?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="Sigues mes a mes y puedes cancelar cuando quieras, o cambiar a otro paquete según tus resultados." data-en="You continue month to month and can cancel anytime, or switch packages based on your results.">Sigues mes a mes y puedes cancelar cuando quieras, o cambiar a otro paquete según tus resultados.</span></p></details><details><summary><span data-es="¿Necesito tener página web para contratar redes o anuncios?" data-en="Do I need a website to sign up for social or ads?">¿Necesito tener página web para contratar redes o anuncios?</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-es="No es obligatorio, pero funciona mucho mejor: la página da confianza y lleva a tu WhatsApp. Por eso el Sistema completo la incluye." data-en="It’s not required, but it works much better: the website builds trust and leads to your WhatsApp. That’s why the Complete System includes it.">No es obligatorio, pero funciona mucho mejor: la página da confianza y lleva a tu WhatsApp. Por eso el Sistema completo la incluye.</span></p></details></div>
+    </div>
+  </section>
+  <section class="final" aria-labelledby="final-h" style="padding-top:0">
+    <div class="wrap final-in">
+      <h2 id="final-h"><span data-es="¿Cuál es el siguiente paso para tu negocio?" data-en="What is the next step for your business?">¿Cuál es el siguiente paso para tu negocio?</span></h2>
+      <p class="lede"><span data-es="Cuéntanos qué vendes y a quién. En un mensaje te decimos qué necesitas y qué no." data-en="Tell us what you sell and to whom. In one message we will tell you what you need and what you don’t.">Cuéntanos qué vendes y a quién. En un mensaje te decimos qué necesitas y qué no.</span></p>
+      <div><a class="btn js-wa" data-msg-es="Hola, quiero saber qué servicio me conviene para mi negocio." data-msg-en="Hi, I want to know which service is right for my business." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Escríbenos por WhatsApp" data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-intro">
+        <a class="brand" href="./" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+        <p><span data-es="Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos." data-en="Systems to bring you customers: websites, social media and ads for businesses in Mexico, Latin America and the United States.">Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos.</span></p>
+      </div>
+      <div class="foot-col">
+        <h4>OKfly Studio</h4>
+        <a href="./#como-funciona"><span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span></a>
+        <a href="./#disenos"><span data-es="Diseños" data-en="Designs">Diseños</span></a>
+        <a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a>
+        <a href="servicios"><span data-es="Servicios" data-en="Services">Servicios</span></a>
+      </div>
+      <div class="foot-col">
+        <h4><span data-es="Contacto" data-en="Contact">Contacto</span></h4>
+        <a class="js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+        <span><span data-es="Riviera Maya, México" data-en="Riviera Maya, Mexico">Riviera Maya, México</span></span>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
+    <div class="legal"><span>© 2026 OKfly Studio · okflystudio.com</span><span><span data-es="Precios en pesos mexicanos." data-en="Prices in US dollars.">Precios en pesos mexicanos.</span></span></div>
+  </div>
+</footer>
+
+<a class="btn fab js-wa" id="fab" data-msg-es="Hola, vi sus servicios y quiero más información." data-msg-en="Hi, I saw your services and I'd like more information." href="https://wa.me/525528879621" target="_blank" rel="noopener">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+  <span data-es="Hablemos por WhatsApp" data-en="Chat on WhatsApp">Hablemos por WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  var WA='525528879621', KEY='okfly-lang', LANG='es';
+  /* Pega aquí los links de suscripción de Mercado Pago. Mientras estén vacíos, el botón abre WhatsApp. */
+  var PAY = { es:{ esencial:'https://mpago.la/1JvZy74', pro:'https://mpago.la/1fSsZK5', anuncios:'https://mpago.la/2X1XYF3', sistema:'https://mpago.la/1fRD6CQ' }, en:{ esencial:'', pro:'', anuncios:'', sistema:'' } };  /* es = Mercado Pago (MXN) · en = Stripe (USD) */
+  function MPL(k){ return (PAY[LANG]||{})[k]||''; }
+  function pick(){ var h=location.hash.replace('#',''); if(h==='en'||h==='es') return h; try{ var s=localStorage.getItem(KEY); if(s==='en'||s==='es') return s; }catch(e){} return (navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en'; }
+  function setLang(l){
+    LANG=l; document.documentElement.lang=l;
+    document.querySelectorAll('[data-es]').forEach(function(el){ el.textContent=el.getAttribute('data-'+l); });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===l?'true':'false'); });
+    document.querySelectorAll('.js-wa').forEach(function(a){ var m=a.getAttribute('data-msg-'+l)||(l==='en'?'Hi, I saw your services and I would like more information.':'Hola, vi sus servicios y quiero más información.'); a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m); });
+    document.querySelectorAll('.js-buy').forEach(function(a){ var link=MPL(a.dataset.plan); a.href = link ? link : 'https://wa.me/'+WA+'?text='+encodeURIComponent(a.getAttribute('data-msg-'+l)); });
+    paintRes();
+    document.title = l==='en' ? 'Services · OKfly Studio' : 'Servicios · OKfly Studio';
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); try{ localStorage.setItem(KEY,b.dataset.lang); }catch(e){} }); });
+  var ANS={};
+  var REC={
+    sistema:{es:['Sistema completo','$6,990 MXN/mes','Necesitas todo: una página que dé confianza, redes activas y anuncios que traigan mensajes ya.'],en:['Complete System','$1,490 USD/mo','You need it all: a website that builds trust, active social media and ads that bring messages now.'],plan:'sistema'},
+    web:{es:['Página web Pro','$899 MXN/mes','Empieza por la base: tu página profesional. Primero la ves gratis y después decides.'],en:['Pro Website','$179 USD/mo','Start with the foundation: your professional website. See it free first, then decide.'],plan:''},
+    anuncios:{es:['Anuncios','$3,990 MXN/mes + presupuesto','Ya tienes página y redes activas: lo que falta es llevar más gente a tu WhatsApp.'],en:['Ads','$790 USD/mo + ad budget','You already have a website and active social media: what’s missing is more people messaging you.'],plan:'anuncios'},
+    pro:{es:['Redes Pro','$5,990 MXN/mes','Ya publicas; ahora toca crecer en Facebook e Instagram con reels y un plan constante.'],en:['Social Pro','$1,290 USD/mo','You already post; now it’s time to grow on Facebook and Instagram with reels and a steady plan.'],plan:'pro'},
+    esencial:{es:['Redes Esencial','$3,490 MXN/mes','Tienes página pero tus redes están quietas. Empieza con presencia constante sin publicar tú.'],en:['Social Essential','$790 USD/mo','You have a website but your social media is quiet. Start with a steady presence without posting yourself.'],plan:'esencial'}
+  };
+  function pickRec(){ if(ANS.web===undefined||ANS.posts===undefined||ANS.now===undefined) return null;
+    if(!ANS.web) return ANS.now?'sistema':'web';
+    if(ANS.posts) return ANS.now?'anuncios':'pro';
+    return ANS.now?'sistema':'esencial'; }
+  function paintRes(){
+    var res=document.getElementById('res'); if(!res) return;
+    var k=pickRec(), acts=document.getElementById('resActs');
+    if(!k){ return; }
+    var r=REC[k], d=r[LANG]; res.classList.remove('empty');
+    document.getElementById('resName').textContent=d[0]; document.getElementById('resPrice').textContent=d[1]; document.getElementById('resWhy').textContent=d[2];
+    var buy=document.getElementById('resBuy'), ask=document.getElementById('resAsk');
+    var askMsg = LANG==='en' ? 'Hi! Your site recommended '+d[0]+' for my business. Can you tell me more?' : '¡Hola! Su página me recomendó '+d[0]+' para mi negocio. ¿Me cuentan más?';
+    ask.href='https://wa.me/'+WA+'?text='+encodeURIComponent(askMsg);
+    if(r.plan){ buy.textContent = LANG==='en' ? 'Sign up now' : 'Contratar ahora'; buy.href = MPL(r.plan) || 'https://wa.me/'+WA+'?text='+encodeURIComponent(LANG==='en'?'Hi, I want to sign up for '+d[0]+'.':'Hola, quiero contratar '+d[0]+'.'); }
+    else { buy.textContent = LANG==='en' ? 'Get my free preview' : 'Quiero mi vista previa gratis'; buy.href='https://wa.me/'+WA+'?text='+encodeURIComponent(LANG==='en'?'Hi, I want my free website preview.':'Hola, quiero mi vista previa gratis de página web.'); }
+    acts.hidden=false;
+  }
+  document.querySelectorAll('.q').forEach(function(q){ q.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', function(){
+    q.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
+    ANS[q.dataset.q] = b.dataset.v==='1'; var res=document.getElementById('res'); res.classList.remove('swap'); void res.offsetWidth; if(pickRec()) res.classList.add('swap'); paintRes();
+  }); }); });
+  setLang(pick());
+  /* Idioma por país: México (y quien navega en español desde Latinoamérica o España) ve español; el resto, inglés. Solo si la persona no eligió idioma antes. */
+  function geoLang(cb){
+    try { var c = sessionStorage.getItem('okfly-geo'); if (c === 'es' || c === 'en'){ cb(c); return; } } catch(e){}
+    if (!window.fetch) return;
+    fetch('/cdn-cgi/trace', {cache:'no-store'}).then(function(r){ return r.ok ? r.text() : ''; }).then(function(t){
+      var m = /loc=([A-Z]{2})/.exec(t || ''); if (!m) return;
+      var cc = m[1], ES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','NI','PA','PY','PE','PR','ES','UY','VE'];
+      var l = cc === 'MX' ? 'es' : (ES.indexOf(cc) >= 0 && /^es/i.test(navigator.language || '') ? 'es' : 'en');
+      try { sessionStorage.setItem('okfly-geo', l); } catch(e){}
+      cb(l);
+    }).catch(function(){});
+  }
+  (function(){ var s=null; try{ s=localStorage.getItem(KEY); }catch(e){} var h=location.hash.replace('#',''); if(s==='en'||s==='es'||h==='en'||h==='es') return; geoLang(function(l){ if(l!==LANG) setLang(l); }); })();
+  var fab=document.getElementById('fab'), hero=document.querySelector('.sv-hero');
+  function onScroll(){ fab.classList.toggle('show', hero.getBoundingClientRect().bottom < innerHeight*0.4); }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+})();
+</script>
+</body>
+</html>

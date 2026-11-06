@@ -623,6 +623,10 @@ section{padding-block:clamp(96px,11vw,170px)}
 .plan li{display:flex;gap:12px;align-items:flex-start}
 .plan li svg{flex-shrink:0;margin-top:4px}
 .plan .btn{margin-top:auto}
+.plan .paylink{display:block;margin-top:-8px;text-align:center;font-size:14px;color:var(--ink-2);text-decoration:none}
+.plan .paylink b{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.plan.featured .paylink{color:var(--paper-ink-2)}
+.plan.featured .paylink b{color:var(--bg)}
 .plan-tag{position:absolute;top:22px;right:22px;padding:8px 14px;border-radius:999px;background:var(--bg);color:var(--ink);font-size:14px;font-weight:600}
 .plan.featured{background:var(--ink);color:var(--bg);transform:translateY(-12px)}
 .plan.featured .pdesc,.plan.featured .amount span{color:var(--paper-ink-2)}
@@ -743,6 +747,7 @@ footer{padding-block:40px 40px;overflow:hidden}
       <li><a href="#disenos"><span data-t>Diseños</span></a></li>
       <li><a href="#planes"><span data-t>Planes</span></a></li>
       <li><a href="#preguntas"><span data-t>Preguntas</span></a></li>
+      <li><a href="servicios"><span data-t>Servicios</span></a></li>
     </ul>
     <div class="nav-end">
       <div class="lang" role="group" aria-label="Idioma / Language">
@@ -1017,6 +1022,7 @@ footer{padding-block:40px 40px;overflow:hidden}
         <a href="#disenos"><span data-t>Diseños</span></a>
         <a href="#planes"><span data-t>Planes</span></a>
         <a href="#preguntas"><span data-t>Preguntas</span></a>
+        <a href="servicios"><span data-t>Servicios</span></a>
       </div>
       <div class="foot-col">
         <h4><span data-t>Contacto</span></h4>
@@ -1080,6 +1086,7 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Language ---------- */
   var LANG = 'es';
   var EN = {
+    'Servicios':'Services',
     'Mira algunos de nuestros diseños activos.':'Take a look at some of our live designs.',
     'Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.':'Real projects built by OKfly, running live. Pick one and browse it the way your customers would.',
     'Sitios reales funcionando. Haz scroll y da clic adentro para explorarlos.':'Real, working websites. Scroll and click inside to explore them.',
@@ -1412,6 +1419,8 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Plans ---------- */
   var check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   var plansEl = document.getElementById('plans');
+  /* Links de suscripción de Mercado Pago (Básico, Pro, Premium). Se muestran solo en español, después del botón principal. */
+  var WEB_PAY = ['https://mpago.la/2v6j8uS', 'https://mpago.la/1Ts8rT4', 'https://mpago.la/1BHAZyv'];
   function paintPlans(){
     var cards = plansEl.children;
     if (!cards.length){
@@ -1423,7 +1432,8 @@ footer{padding-block:40px 40px;overflow:hidden}
         '<h3>' + esc(p.name) + '</h3><p class="pdesc">' + esc(p.desc) + '</p>' +
         '<div class="amount"><b>' + esc(p.price) + '</b><span>' + U().unit + '</span></div>' +
         '<ul>' + p.features.map(function(f){ return '<li>' + check + '<span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' +
-        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + wa(M().plan.replace('{plan}', p.name)) + '" target="_blank" rel="noopener">' + U().start + esc(p.name) + '</a>';
+        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + wa(M().plan.replace('{plan}', p.name)) + '" target="_blank" rel="noopener">' + U().start + esc(p.name) + '</a>' +
+        (LANG === 'es' && WEB_PAY[i] ? '<a class="paylink" href="' + WEB_PAY[i] + '" target="_blank" rel="noopener">¿Ya aprobaste tu vista previa? <b>Paga aquí →</b></a>' : '');
     });
   }
   paintPlans();
@@ -1554,6 +1564,21 @@ footer{padding-block:40px 40px;overflow:hidden}
   catch(e){ if (/^en/i.test(navigator.language || '')) startLang = 'en'; }
   if (location.hash === '#en') startLang = 'en'; else if (location.hash === '#es') startLang = 'es';
   setLang(startLang, false);
+  /* Idioma por país: México (y quien navega en español desde Latinoamérica o España) ve español; el resto, inglés. Solo si la persona no eligió idioma antes. */
+  function geoLang(cb){
+    try { var c = sessionStorage.getItem('okfly-geo'); if (c === 'es' || c === 'en'){ cb(c); return; } } catch(e){}
+    if (!window.fetch) return;
+    fetch('/cdn-cgi/trace', {cache:'no-store'}).then(function(r){ return r.ok ? r.text() : ''; }).then(function(t){
+      var m = /(?:^|\n)loc=([A-Z]{2})/.exec(t || ''); if (!m) return;
+      var cc = m[1], ES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','NI','PA','PY','PE','PR','ES','UY','VE'];
+      var l = cc === 'MX' ? 'es' : (ES.indexOf(cc) >= 0 && /^es/i.test(navigator.language || '') ? 'es' : 'en');
+      try { sessionStorage.setItem('okfly-geo', l); } catch(e){}
+      cb(l);
+    }).catch(function(){});
+  }
+  (function(){ var saved = null; try { saved = localStorage.getItem('okfly-lang'); } catch(e){}
+    if (saved === 'en' || saved === 'es' || location.hash === '#en' || location.hash === '#es') return;
+    geoLang(function(l){ if (l !== LANG) setLang(l, false); }); })();
 
   /* ---------- Spring helper for pointer-driven 3D ---------- */
   function Spring(k,d){ this.x=0; this.v=0; this.t=0; this.k=k||0.06; this.d=d||0.8; }
