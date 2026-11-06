@@ -736,6 +736,28 @@ footer{padding-block:40px 40px;overflow:hidden}
   .cat::-webkit-scrollbar{display:none}
   .cat-card{flex:0 0 min(64vw,240px);scroll-snap-align:start}
 }
+
+/* ---------- Upsell: sistema completo ---------- */
+.up-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,88px);align-items:center}
+.up-kick{display:block;font-size:13px;font-weight:600;letter-spacing:0.16em;color:var(--ink-2);margin-bottom:18px}
+.up-copy .lede{margin-top:22px;max-width:32em}
+.up-list{display:flex;flex-direction:column;gap:10px;margin-top:36px}
+.up-list li{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 22px;border-radius:22px;background:var(--surface)}
+.up-ic{width:46px;height:46px;border-radius:14px;background:var(--surface-3);display:flex;align-items:center;justify-content:center}
+.up-list b{display:block;font-size:18px;font-weight:700}
+.up-list p{color:var(--ink-2);font-size:15px;margin-top:2px}
+.up-list em{font-style:normal;font-size:15px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.up-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.up-vis{position:relative;display:flex;justify-content:center}
+.up-glow{position:absolute;left:50%;top:50%;width:130%;height:110%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(244,243,239,0.10),rgba(244,243,239,0));pointer-events:none}
+.up-phone{position:relative;width:min(360px,86%);aspect-ratio:620/900;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent);mask-image:linear-gradient(180deg,#000 78%,transparent)}
+.up-phone img{display:block;width:100%;height:auto}
+.up-note{position:absolute;left:0;bottom:16%;display:flex;gap:12px;align-items:flex-start;max-width:290px;padding:14px 16px;border-radius:18px;background:#1F2C34;color:#E9EDEF;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35;box-shadow:0 30px 60px -20px rgba(0,0,0,0.9);transform:rotate(-3deg)}
+.up-note i{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#25D366}
+.up-note b{display:block;font-size:13px;color:#25D366;margin-bottom:2px}
+.plan.featured .btn:not(.btn--ghost):hover{background:#262623;color:var(--ink)}
+@media (max-width:900px){.up-in{grid-template-columns:1fr}.up-vis{order:-1}.up-note{left:4%}}
+@media (max-width:560px){.up-list li{grid-template-columns:auto 1fr}.up-list em{grid-column:2}}
 </style>
 </head>
 <body>
@@ -981,6 +1003,27 @@ footer{padding-block:40px 40px;overflow:hidden}
     </div>
   </section>
 
+  <!-- SISTEMA / SERVICIOS -->
+  <section class="upsell" id="sistema" aria-labelledby="up-h" style="padding-top:0">
+    <div class="wrap up-in">
+      <div class="up-copy">
+        <span class="up-kick" data-rv><span data-t>MÁS QUE UNA PÁGINA</span></span>
+        <h2 class="h2" id="up-h" data-rv><span data-t>Tu página es el inicio. El sistema te trae clientes.</span></h2>
+        <p class="lede" data-rv><span data-t>Suma redes sociales y anuncios a tu página, todo conectado a tu WhatsApp y manejado por el mismo equipo.</span></p>
+        <ul class="up-list" data-rv><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/></svg></span><div><b><span data-t>Página web</span></b><p><span data-t>Tu base: diseño, dominio, hosting y cambios.</span></p></div><em><span data-t>Desde $499/mes</span></em></li><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span><div><b><span data-t>Redes sociales</span></b><p><span data-t>Contenido y reels cada mes. Tú solo apruebas por WhatsApp.</span></p></div><em><span data-t>Desde $3,490/mes</span></em></li><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6a8 8 0 0 1 0 12"/></svg></span><div><b><span data-t>Anuncios en Facebook e Instagram</span></b><p><span data-t>Campañas que llevan mensajes nuevos a tu WhatsApp.</span></p></div><em><span data-t>Desde $3,990/mes</span></em></li></ul>
+        <div class="up-acts" data-rv>
+          <a class="btn" href="servicios"><span data-t>Ver servicios</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="servicios#sistema"><span data-t>Sistema completo · $6,990/mes</span></a>
+        </div>
+      </div>
+      <div class="up-vis" aria-hidden="true" data-rv>
+        <div class="up-glow"></div>
+        <div class="up-phone"><img src="demos/ig-casamar.webp" alt="" loading="lazy" decoding="async"></div>
+        <div class="up-note"><i></i><div><b><span data-t>Nuevo mensaje</span></b><span><span data-t>“Hola, vi su anuncio en Instagram. ¿Tienen mesa hoy?”</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="preguntas" aria-labelledby="faq-h">
     <div class="wrap faq">
@@ -1086,6 +1129,23 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Language ---------- */
   var LANG = 'es';
   var EN = {
+    'MÁS QUE UNA PÁGINA':'MORE THAN A WEBSITE',
+    'Tu página es el inicio. El sistema te trae clientes.':'Your website is the start. The system brings you customers.',
+    'Suma redes sociales y anuncios a tu página, todo conectado a tu WhatsApp y manejado por el mismo equipo.':'Add social media and ads to your website, all connected to your WhatsApp and run by the same team.',
+    'Página web':'Website',
+    'Tu base: diseño, dominio, hosting y cambios.':'Your foundation: design, domain, hosting and updates.',
+    'Desde $499/mes':'From $99/mo',
+    'Redes sociales':'Social media',
+    'Contenido y reels cada mes. Tú solo apruebas por WhatsApp.':'Content and reels every month. You just approve on WhatsApp.',
+    'Desde $3,490/mes':'From $790/mo',
+    'Anuncios en Facebook e Instagram':'Facebook & Instagram ads',
+    'Campañas que llevan mensajes nuevos a tu WhatsApp.':'Campaigns that bring new messages to your WhatsApp.',
+    'Desde $3,990/mes':'From $790/mo',
+    'Ver servicios':'See services',
+    'Sistema completo · $6,990/mes':'Complete system · $1,490/mo',
+    'Nuevo mensaje':'New message',
+    '“Hola, vi su anuncio en Instagram. ¿Tienen mesa hoy?”':'“Hi, I saw your ad on Instagram. Do you have a table today?”',
+
     'Servicios':'Services',
     'Mira algunos de nuestros diseños activos.':'Take a look at some of our live designs.',
     'Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.':'Real projects built by OKfly, running live. Pick one and browse it the way your customers would.',
