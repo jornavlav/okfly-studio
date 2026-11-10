@@ -851,6 +851,14 @@ html{scrollbar-color:#CFCDC6 var(--bg)}
 .web-row a{display:flex;flex-direction:column;gap:6px;padding:26px;border-radius:26px;background:var(--surface);text-decoration:none;color:var(--ink);transition:background-color 200ms ease,transform 160ms var(--ease-out)}
 .web-row a:active{transform:scale(0.985)}
 @media (hover:hover){.web-row a:hover{background:#EFEDE8}}
+.web-row strong.price-a{display:none}
+.web-row.is-annual strong.price-m{display:none}
+.web-row.is-annual strong.price-a{display:inline}
+.billing-toggle{display:inline-flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:var(--surface-2)}
+.bt-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 15px/1 var(--font);cursor:pointer;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
+.bt-btn.is-on{background:var(--ink);color:var(--bg)}
+.bt-badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 12px/1 var(--font)}
+.bt-btn.is-on .bt-badge{background:#052E16;color:var(--wa-green)}
 .web-row b{font-size:22px;font-weight:800}
 .web-row strong{font-size:clamp(52px,5vw,72px);font-weight:900;letter-spacing:-0.055em;line-height:0.95;margin-top:10px;font-variant-numeric:tabular-nums}
 .web-row strong span{font-size:16px;font-weight:500;color:var(--ink-2);letter-spacing:0}
@@ -917,11 +925,24 @@ html{scrollbar-color:#CFCDC6 var(--bg)}
       <div class="sv-head">
         <div><span class="kick"><span data-es="1 · TU PÁGINA WEB" data-en="1 · YOUR WEBSITE">1 · TU PÁGINA WEB</span></span><h2 class="h2"><span data-es="La base de todo." data-en="The foundation.">La base de todo.</span></h2></div>
         <p class="lede"><span data-es="Tu página diseñada, publicada y mantenida, con botón directo a tu WhatsApp. Primero la ves gratis." data-en="Your website designed, published and maintained, with a direct WhatsApp button. See it free first.">Tu página diseñada, publicada y mantenida, con botón directo a tu WhatsApp. Primero la ves gratis.</span></p>
+        <div class="billing-toggle" id="webBillingToggle" role="group" aria-label="Forma de pago">
+          <button type="button" class="bt-btn is-on" data-billing="monthly" aria-pressed="true"><span data-es="Mensual" data-en="Monthly">Mensual</span></button>
+          <button type="button" class="bt-btn" data-billing="annual" aria-pressed="false"><span data-es="Anual" data-en="Annual">Anual</span><b class="bt-badge">-30%</b></button>
+        </div>
       </div>
-      <div class="web-row">
-        <a href="./#planes"><b><span data-es="Básico" data-en="Basic">Básico</span></b><strong><span data-es="$499" data-en="$99">$499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Una página clara que presenta tu negocio." data-en="A clear page that presents your business.">Una página clara que presenta tu negocio.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
-        <a href="./#planes"><b>Pro</b><strong><span data-es="$899" data-en="$179">$899</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Varias secciones, animaciones y SEO local." data-en="Multiple sections, animations and local SEO.">Varias secciones, animaciones y SEO local.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
-        <a href="./#planes"><b>Premium</b><strong><span data-es="$1,499" data-en="$299">$1,499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong><p><span data-es="Efectos 3D, reservas, catálogo o tienda." data-en="3D effects, bookings, catalog or store.">Efectos 3D, reservas, catálogo o tienda.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+      <div class="web-row" id="webRow">
+        <a href="./#planes"><b><span data-es="Básico" data-en="Basic">Básico</span></b>
+          <strong class="price-m"><span data-es="$499" data-en="$99">$499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong>
+          <strong class="price-a"><span data-es="$349" data-en="$69">$349</span><span><span data-es=" MXN/mes · anual" data-en=" USD/mo · annual"> MXN/mes · anual</span></span></strong>
+          <p><span data-es="Una página clara que presenta tu negocio." data-en="A clear page that presents your business.">Una página clara que presenta tu negocio.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+        <a href="./#planes"><b>Pro</b>
+          <strong class="price-m"><span data-es="$899" data-en="$179">$899</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong>
+          <strong class="price-a"><span data-es="$629" data-en="$125">$629</span><span><span data-es=" MXN/mes · anual" data-en=" USD/mo · annual"> MXN/mes · anual</span></span></strong>
+          <p><span data-es="Varias secciones, animaciones y SEO local." data-en="Multiple sections, animations and local SEO.">Varias secciones, animaciones y SEO local.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
+        <a href="./#planes"><b>Premium</b>
+          <strong class="price-m"><span data-es="$1,499" data-en="$299">$1,499</span><span><span data-es=" MXN/mes" data-en=" USD/mo"> MXN/mes</span></span></strong>
+          <strong class="price-a"><span data-es="$1,049" data-en="$209">$1,049</span><span><span data-es=" MXN/mes · anual" data-en=" USD/mo · annual"> MXN/mes · anual</span></span></strong>
+          <p><span data-es="Efectos 3D, reservas, catálogo o tienda." data-en="3D effects, bookings, catalog or store.">Efectos 3D, reservas, catálogo o tienda.</span></p><em><span data-es="Ver detalles →" data-en="See details →">Ver detalles →</span></em></a>
       </div>
     </div>
   </section>
@@ -1123,6 +1144,15 @@ html{scrollbar-color:#CFCDC6 var(--bg)}
     document.title = l==='en' ? 'Services · OKfly Studio' : 'Servicios · OKfly Studio';
   }
   document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); try{ localStorage.setItem(KEY,b.dataset.lang); }catch(e){} }); });
+  var webToggle = document.getElementById('webBillingToggle'), webRow = document.getElementById('webRow');
+  if (webToggle && webRow){
+    webToggle.addEventListener('click', function(e){
+      var btn = e.target.closest('.bt-btn'); if (!btn) return;
+      var annual = btn.getAttribute('data-billing') === 'annual';
+      webRow.classList.toggle('is-annual', annual);
+      webToggle.querySelectorAll('.bt-btn').forEach(function(b){ var on=b===btn; b.classList.toggle('is-on',on); b.setAttribute('aria-pressed', on?'true':'false'); });
+    });
+  }
   var ANS={};
   var REC={
     sistema:{es:['Sistema completo','$6,990 MXN/mes','Necesitas todo: una página que dé confianza, redes activas y anuncios que traigan mensajes ya.'],en:['Complete System','$1,490 USD/mo','You need it all: a website that builds trust, active social media and ads that bring messages now.'],plan:'sistema'},

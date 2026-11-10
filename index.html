@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OKfly Studio Membresía</title>
-<meta property="og:title" content="OKfly Studio · Sistemas para recibir clientes desde $499 al mes">
-<meta property="og:description" content="Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.">
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Tu página web profesional por suscripción desde $499 MXN al mes. La diseñamos, publicamos y mantenemos. Todo por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -619,6 +613,8 @@ section{padding-block:clamp(96px,11vw,170px)}
 .plan .amount{display:flex;align-items:baseline;gap:8px}
 .plan .amount b{font-size:clamp(46px,4.2vw,64px);font-weight:900;letter-spacing:-0.045em;line-height:1;font-variant-numeric:tabular-nums}
 .plan .amount span{font-size:17px;color:var(--ink-2)}
+.plan .annual-total{font-size:14.5px;color:var(--ink-2);margin-top:-14px}
+.plan.featured .annual-total{color:var(--paper-ink-2)}
 .plan ul{display:flex;flex-direction:column;gap:12px;font-size:16.5px}
 .plan li{display:flex;gap:12px;align-items:flex-start}
 .plan li svg{flex-shrink:0;margin-top:4px}
@@ -634,7 +630,12 @@ section{padding-block:clamp(96px,11vw,170px)}
 @media (hover:hover){.plan:not(.featured):hover{background:#171716}}
 .price-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:40px;font-size:16px;color:var(--ink-2)}
 .price-note b{color:var(--ink)}
-@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none}}
+.billing-toggle{display:inline-flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:var(--surface-2)}
+.bt-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 15px/1 var(--font);cursor:pointer;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
+.bt-btn.is-on{background:var(--ink);color:var(--bg)}
+.bt-badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 12px/1 var(--font)}
+.bt-btn.is-on .bt-badge{background:#052E16;color:var(--wa-green)}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none}.price-head{align-items:flex-start}}
 
 /* Custom projects */
 .custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding:clamp(36px,5vw,64px);border-radius:36px;background:var(--surface)}
@@ -736,31 +737,8 @@ footer{padding-block:40px 40px;overflow:hidden}
   .cat::-webkit-scrollbar{display:none}
   .cat-card{flex:0 0 min(64vw,240px);scroll-snap-align:start}
 }
-
-/* ---------- Upsell: sistema completo ---------- */
-.up-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,88px);align-items:center}
-.up-kick{display:block;font-size:13px;font-weight:600;letter-spacing:0.16em;color:var(--ink-2);margin-bottom:18px}
-.up-copy .lede{margin-top:22px;max-width:32em}
-.up-list{display:flex;flex-direction:column;gap:10px;margin-top:36px}
-.up-list li{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 22px;border-radius:22px;background:var(--surface)}
-.up-ic{width:46px;height:46px;border-radius:14px;background:var(--surface-3);display:flex;align-items:center;justify-content:center}
-.up-list b{display:block;font-size:18px;font-weight:700}
-.up-list p{color:var(--ink-2);font-size:15px;margin-top:2px}
-.up-list em{font-style:normal;font-size:15px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
-.up-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.up-vis{position:relative;display:flex;justify-content:center}
-.up-glow{position:absolute;left:50%;top:50%;width:130%;height:110%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(244,243,239,0.10),rgba(244,243,239,0));pointer-events:none}
-.up-phone{position:relative;width:min(360px,86%);aspect-ratio:620/900;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent);mask-image:linear-gradient(180deg,#000 78%,transparent)}
-.up-phone img{display:block;width:100%;height:auto}
-.up-note{position:absolute;left:0;bottom:16%;display:flex;gap:12px;align-items:flex-start;max-width:290px;padding:14px 16px;border-radius:18px;background:#1F2C34;color:#E9EDEF;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35;box-shadow:0 30px 60px -20px rgba(0,0,0,0.9);transform:rotate(-3deg)}
-.up-note i{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#25D366}
-.up-note b{display:block;font-size:13px;color:#25D366;margin-bottom:2px}
-.plan.featured .btn:not(.btn--ghost):hover{background:#262623;color:var(--ink)}
-@media (max-width:900px){.up-in{grid-template-columns:1fr}.up-vis{order:-1}.up-note{left:4%}}
-@media (max-width:560px){.up-list li{grid-template-columns:auto 1fr}.up-list em{grid-column:2}}
 </style>
-</head>
-<body>
+
 <header class="wrap">
   <nav class="nav" aria-label="Principal">
     <a class="brand" href="#top" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
@@ -977,11 +955,15 @@ footer{padding-block:40px 40px;overflow:hidden}
       <div class="price-head">
         <h2 class="h2" id="plan-h" data-rv><span data-t>Un plan para cada negocio.</span></h2>
         <p class="lede" data-rv><span data-t>Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.</span></p>
+        <div class="billing-toggle" id="billingToggle" role="group" aria-label="Forma de pago" data-rv>
+          <button type="button" class="bt-btn is-on" data-billing="monthly" aria-pressed="true"><span data-t>Mensual</span></button>
+          <button type="button" class="bt-btn" data-billing="annual" aria-pressed="false"><span data-t>Anual</span><b class="bt-badge">-30%</b></button>
+        </div>
       </div>
       <div class="plans" id="plans"></div>
       <div class="price-note" data-rv>
-        <p><span data-t>Precios en pesos mexicanos. Pago mensual con tarjeta.</span></p>
-        <p data-t="annual">¿Prefieres pagar un año por adelantado por <b>transferencia u OXXO</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/525528879621" target="_blank" rel="noopener">Escríbenos</a>.</p>
+        <p id="priceNoteMonthly"><span data-t>Precios en pesos mexicanos. Pago mensual con tarjeta.</span></p>
+        <p id="priceNoteAnnual" style="display:none"><span data-t>Precio anual facturado una sola vez por transferencia u OXXO. Puedes volver a mensual cuando quieras.</span></p>
       </div>
     </div>
   </section>
@@ -999,27 +981,6 @@ footer{padding-block:40px 40px;overflow:hidden}
           <b><span data-t>Desde $5,000 MXN</span></b>
           <a class="btn btn--ghost js-wa" data-msg="custom" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Cotizar mi proyecto</span></a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SISTEMA / SERVICIOS -->
-  <section class="upsell" id="sistema" aria-labelledby="up-h" style="padding-top:0">
-    <div class="wrap up-in">
-      <div class="up-copy">
-        <span class="up-kick" data-rv><span data-t>MÁS QUE UNA PÁGINA</span></span>
-        <h2 class="h2" id="up-h" data-rv><span data-t>Tu página es el inicio. El sistema te trae clientes.</span></h2>
-        <p class="lede" data-rv><span data-t>Suma redes sociales y anuncios a tu página, todo conectado a tu WhatsApp y manejado por el mismo equipo.</span></p>
-        <ul class="up-list" data-rv><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/></svg></span><div><b><span data-t>Página web</span></b><p><span data-t>Tu base: diseño, dominio, hosting y cambios.</span></p></div><em><span data-t>Desde $499/mes</span></em></li><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span><div><b><span data-t>Redes sociales</span></b><p><span data-t>Contenido y reels cada mes. Tú solo apruebas por WhatsApp.</span></p></div><em><span data-t>Desde $3,490/mes</span></em></li><li><span class="up-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6a8 8 0 0 1 0 12"/></svg></span><div><b><span data-t>Anuncios en Facebook e Instagram</span></b><p><span data-t>Campañas que llevan mensajes nuevos a tu WhatsApp.</span></p></div><em><span data-t>Desde $3,990/mes</span></em></li></ul>
-        <div class="up-acts" data-rv>
-          <a class="btn" href="servicios"><span data-t>Ver servicios</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--ghost" href="servicios#sistema"><span data-t>Sistema completo · $6,990/mes</span></a>
-        </div>
-      </div>
-      <div class="up-vis" aria-hidden="true" data-rv>
-        <div class="up-glow"></div>
-        <div class="up-phone"><img src="demos/ig-casamar.webp" alt="" loading="lazy" decoding="async"></div>
-        <div class="up-note"><i></i><div><b><span data-t>Nuevo mensaje</span></b><span><span data-t>“Hola, vi su anuncio en Instagram. ¿Tienen mesa hoy?”</span></span></div></div>
       </div>
     </div>
   </section>
@@ -1092,30 +1053,34 @@ footer{padding-block:40px 40px;overflow:hidden}
     es: {
       base: 'Hola, quiero iniciar mi página web con OKfly Studio.',
       plan: 'Hola, quiero iniciar mi página web con OKfly Studio. Me interesa el plan {plan}.',
-      annual: 'Hola, quiero pagar mi plan de OKfly Studio un año por adelantado (transferencia u OXXO).',
+      annual: 'Hola, quiero pagar mi plan {plan} de OKfly Studio un año por adelantado (transferencia u OXXO).',
       custom: 'Hola, quiero cotizar un proyecto personalizado con OKfly Studio.',
       demo: 'Hola, quiero iniciar mi página web con OKfly Studio para mi negocio {name} ({giro}).'
     },
     en: {
       base: 'Hi, I’d like to start my website with OKfly Studio.',
       plan: 'Hi, I’d like to start my website with OKfly Studio. I’m interested in the {plan} plan.',
-      annual: 'Hi, I’d like to pay my OKfly Studio plan for a full year upfront by bank transfer.',
+      annual: 'Hi, I’d like to pay my {plan} OKfly Studio plan for a full year upfront by bank transfer.',
       custom: 'Hi, I’d like a quote for a custom project with OKfly Studio.',
       demo: 'Hi, I’d like to start my website with OKfly Studio for my business {name} ({giro}).'
     }
   };
   var PLANS_BY_LANG = {
     es: [
-      {name:'Básico', price:'$499', desc:'Para negocios que necesitan presencia profesional.', features:['Página de una sección','Dominio, hosting y HTTPS','Botón de WhatsApp y mapa','Cambios por WhatsApp']},
-      {name:'Pro', price:'$899', desc:'Para negocios que quieren crecer y captar clientes.', featured:true, features:['Todo lo del Básico','Varias secciones con animaciones','SEO local para aparecer en Google','Formulario para captar clientes']},
-      {name:'Premium', price:'$1,499', desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','Atención prioritaria']}
+      {name:'Básico', price:'$499', base:499, desc:'Para negocios que necesitan presencia profesional.', features:['Página de una sección','Dominio, hosting y HTTPS','Botón de WhatsApp y mapa','Cambios por WhatsApp']},
+      {name:'Pro', price:'$899', base:899, desc:'Para negocios que quieren crecer y captar clientes.', featured:true, features:['Todo lo del Básico','Varias secciones con animaciones','SEO local para aparecer en Google','Formulario para captar clientes']},
+      {name:'Premium', price:'$1,499', base:1499, desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','Atención prioritaria']}
     ],
     en: [
-      {name:'Basic', price:'$99', desc:'For businesses that need a professional presence.', features:['One-page website','Domain, hosting and HTTPS','WhatsApp button and map','Changes over WhatsApp']},
-      {name:'Pro', price:'$179', desc:'For businesses that want to grow and win customers.', featured:true, features:['Everything in Basic','Multiple sections with animations','Local SEO to show up on Google','Lead capture form']},
-      {name:'Premium', price:'$299', desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','Priority support']}
+      {name:'Basic', price:'$99', base:99, desc:'For businesses that need a professional presence.', features:['One-page website','Domain, hosting and HTTPS','WhatsApp button and map','Changes over WhatsApp']},
+      {name:'Pro', price:'$179', base:179, desc:'For businesses that want to grow and win customers.', featured:true, features:['Everything in Basic','Multiple sections with animations','Local SEO to show up on Google','Lead capture form']},
+      {name:'Premium', price:'$299', base:299, desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','Priority support']}
     ]
   };
+  /* Pago anual: 30% de descuento, mostrado como equivalente mensual facturado una vez al año. */
+  var ANNUAL_OFF = 0.3;
+  function annualMonthly(base){ return Math.round(base * (1 - ANNUAL_OFF)); }
+  function fmtMoney(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
   /* =============================================================== */
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1129,23 +1094,6 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Language ---------- */
   var LANG = 'es';
   var EN = {
-    'MÁS QUE UNA PÁGINA':'MORE THAN A WEBSITE',
-    'Tu página es el inicio. El sistema te trae clientes.':'Your website is the start. The system brings you customers.',
-    'Suma redes sociales y anuncios a tu página, todo conectado a tu WhatsApp y manejado por el mismo equipo.':'Add social media and ads to your website, all connected to your WhatsApp and run by the same team.',
-    'Página web':'Website',
-    'Tu base: diseño, dominio, hosting y cambios.':'Your foundation: design, domain, hosting and updates.',
-    'Desde $499/mes':'From $99/mo',
-    'Redes sociales':'Social media',
-    'Contenido y reels cada mes. Tú solo apruebas por WhatsApp.':'Content and reels every month. You just approve on WhatsApp.',
-    'Desde $3,490/mes':'From $790/mo',
-    'Anuncios en Facebook e Instagram':'Facebook & Instagram ads',
-    'Campañas que llevan mensajes nuevos a tu WhatsApp.':'Campaigns that bring new messages to your WhatsApp.',
-    'Desde $3,990/mes':'From $790/mo',
-    'Ver servicios':'See services',
-    'Sistema completo · $6,990/mes':'Complete system · $1,490/mo',
-    'Nuevo mensaje':'New message',
-    '“Hola, vi su anuncio en Instagram. ¿Tienen mesa hoy?”':'“Hi, I saw your ad on Instagram. Do you have a table today?”',
-
     'Servicios':'Services',
     'Mira algunos de nuestros diseños activos.':'Take a look at some of our live designs.',
     'Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.':'Real projects built by OKfly, running live. Pick one and browse it the way your customers would.',
@@ -1209,6 +1157,8 @@ footer{padding-block:40px 40px;overflow:hidden}
     'Un plan para cada negocio.':'A plan for every business.',
     'Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.':'A fixed monthly fee, no upfront cost. See your free preview first, then pick your plan.',
     'Precios en pesos mexicanos. Pago mensual con tarjeta.':'Prices in US dollars. Billed monthly by card.',
+    'Precio anual facturado una sola vez por transferencia u OXXO. Puedes volver a mensual cuando quieras.':'Annual price billed once by bank transfer. Switch back to monthly anytime.',
+    'Mensual':'Monthly','Anual':'Annual',
     annual:'Prefer to pay a full year upfront by <b>bank transfer</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/525528879621" target="_blank" rel="noopener">Message us</a>.',
     '¿Necesitas algo hecho a la medida?':'Need something custom?',
     'Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.':'Online stores, booking systems, multilingual sites or special projects. We quote it with you and you pay once.',
@@ -1237,8 +1187,8 @@ footer{padding-block:40px 40px;overflow:hidden}
     'Contacto':'Contact','Riviera Maya, México':'Riviera Maya, Mexico','Los diseños mostrados son ejemplos conceptuales.':'Designs shown are concept examples.'
   };
   var UI = {
-    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Casa Mar', tabs:'Giro del negocio', unit:'MXN / mes', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
-    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Casa Mar', tabs:'Type of business', unit:'USD / mo', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
+    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Casa Mar', tabs:'Giro del negocio', unit:'MXN / mes', unitAnnual:'MXN / mes · facturado anual', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
+    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Casa Mar', tabs:'Type of business', unit:'USD / mo', unitAnnual:'USD / mo · billed annually', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
   };
   var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-t]'));
   i18nEls.forEach(function(el){ el._es = el.innerHTML; });
@@ -1479,24 +1429,53 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* ---------- Plans ---------- */
   var check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   var plansEl = document.getElementById('plans');
-  /* Links de suscripción de Mercado Pago (Básico, Pro, Premium). Se muestran solo en español, después del botón principal. */
+  /* Links de suscripción de Mercado Pago (Básico, Pro, Premium). Se muestran solo en español, en pago mensual, después del botón principal. */
   var WEB_PAY = ['https://mpago.la/2v6j8uS', 'https://mpago.la/1Ts8rT4', 'https://mpago.la/1BHAZyv'];
+  var BILLING = 'monthly';
   function paintPlans(){
     var cards = plansEl.children;
     if (!cards.length){
       plansEl.innerHTML = PLANS_BY_LANG.es.map(function(p){ return '<article class="plan' + (p.featured ? ' featured' : '') + '" data-rv data-tilt3></article>'; }).join('');
       cards = plansEl.children;
     }
+    var annual = BILLING === 'annual';
     PLANS_BY_LANG[LANG].forEach(function(p, i){
+      var shown = annual ? fmtMoney(annualMonthly(p.base)) : p.price;
+      var annualTotalLine = annual ? '<p class="annual-total">' + fmtMoney(annualMonthly(p.base) * 12) + (LANG === 'es' ? ' MXN al año' : ' USD / year') + '</p>' : '';
+      var ctaHref, ctaLabel;
+      if (annual){
+        ctaHref = wa(M().annual.replace('{plan}', p.name));
+        ctaLabel = (LANG === 'es' ? 'Pagar el año · ' : 'Pay the year · ') + esc(p.name);
+      } else {
+        ctaHref = wa(M().plan.replace('{plan}', p.name));
+        ctaLabel = U().start + esc(p.name);
+      }
       cards[i].innerHTML = (p.featured ? '<span class="plan-tag">' + U().popular + '</span>' : '') +
         '<h3>' + esc(p.name) + '</h3><p class="pdesc">' + esc(p.desc) + '</p>' +
-        '<div class="amount"><b>' + esc(p.price) + '</b><span>' + U().unit + '</span></div>' +
+        '<div class="amount"><b>' + esc(shown) + '</b><span>' + (annual ? U().unitAnnual : U().unit) + '</span></div>' +
+        annualTotalLine +
         '<ul>' + p.features.map(function(f){ return '<li>' + check + '<span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' +
-        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + wa(M().plan.replace('{plan}', p.name)) + '" target="_blank" rel="noopener">' + U().start + esc(p.name) + '</a>' +
-        (LANG === 'es' && WEB_PAY[i] ? '<a class="paylink" href="' + WEB_PAY[i] + '" target="_blank" rel="noopener">¿Ya aprobaste tu vista previa? <b>Paga aquí →</b></a>' : '');
+        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + ctaHref + '" target="_blank" rel="noopener">' + ctaLabel + '</a>' +
+        (!annual && LANG === 'es' && WEB_PAY[i] ? '<a class="paylink" href="' + WEB_PAY[i] + '" target="_blank" rel="noopener">¿Ya aprobaste tu vista previa? <b>Paga aquí →</b></a>' : '');
     });
   }
   paintPlans();
+  var billingToggle = document.getElementById('billingToggle');
+  if (billingToggle){
+    billingToggle.addEventListener('click', function(e){
+      var btn = e.target.closest('.bt-btn');
+      if (!btn) return;
+      BILLING = btn.getAttribute('data-billing');
+      Array.prototype.forEach.call(billingToggle.querySelectorAll('.bt-btn'), function(b){
+        var on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      var pm = document.getElementById('priceNoteMonthly'), pa = document.getElementById('priceNoteAnnual');
+      if (pm && pa){ pm.style.display = BILLING === 'annual' ? 'none' : ''; pa.style.display = BILLING === 'annual' ? '' : 'none'; }
+      paintPlans();
+    });
+  }
 
   /* ---------- Design catalog (live demos) ----------
      Real sites shown inside the frames. Add more: {url, es:[title, sub], en:[title, sub], name}. */
@@ -1800,6 +1779,3 @@ footer{padding-block:40px 40px;overflow:hidden}
   onScroll();
 })();
 </script>
-
-</body>
-</html>
