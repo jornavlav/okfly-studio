@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Términos de Servicio · OKfly Studio</title>
+<meta name="description" content="Términos de servicio de OKfly Studio: diseño web, marketing digital, automatización y gestión de redes sociales.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --bg:#050505;
+  --surface:#111110;
+  --surface-2:#1B1B19;
+  --surface-3:#262623;
+  --ink:#F4F3EF;
+  --ink-2:#B9B7B0;
+  --font:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --max:1360px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip;scrollbar-color:#34332f var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;margin:0}
+::selection{background:var(--ink);color:var(--bg)}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance}
+p{margin:0}
+ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out),background-color 200ms ease}
+.btn:active{transform:scale(0.97)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:#fff}}
+
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
+.brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
+.nav-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+.lang-btn:active{transform:scale(0.95)}
+.lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.lang-btn[aria-pressed="false"]:hover{color:var(--ink)}}
+@media (max-width:540px){.nav-cta{display:none}}
+
+.legal-wrap{padding-block:48px 140px}
+.legal-doc{max-width:760px}
+.kick{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.16em;color:var(--ink-2);margin-bottom:16px}
+.legal-doc h1{font-size:clamp(36px,5vw,56px);margin-bottom:10px}
+.updated{color:var(--ink-2);font-size:15px;margin-bottom:40px}
+.legal-doc .intro{color:var(--ink-2);font-size:19px;line-height:1.6;margin-bottom:48px;max-width:34em}
+.legal-doc .tabs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--surface);margin-bottom:48px}
+.legal-doc .tabs a{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;text-decoration:none;color:var(--ink-2);font:600 14px var(--font)}
+.legal-doc .tabs a.is-current{background:var(--ink);color:var(--bg)}
+.legal-doc ol{counter-reset:item;display:flex;flex-direction:column;gap:32px}
+.legal-doc ol li{counter-increment:item;display:flex;gap:20px}
+.legal-doc ol li::before{content:counter(item);flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.legal-doc ol li h2{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px}
+.legal-doc ol li p{color:var(--ink-2);font-size:16.5px;line-height:1.6}
+.legal-doc ol li p a{color:var(--ink);text-decoration:underline}
+
+footer{padding-block:40px 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px 24px;padding-top:56px}
+.foot-col{grid-column:span 3;display:flex;flex-direction:column;gap:12px;font-size:16px;min-width:0}
+.foot-col h4{font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+.foot-col a,.foot-col span{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-col a:hover{color:var(--ink)}}
+.foot-intro{grid-column:span 6}
+.foot-intro p{color:var(--ink-2);max-width:28em}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:72px}
+.wordmark b{font-size:clamp(100px,24vw,370px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px,1.6vw,22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;font-size:14px;color:#8C8A84}
+@media (max-width:900px){.foot-col{grid-column:span 6}.foot-intro{grid-column:1 / -1}}
+@media (max-width:640px){.wordmark{flex-direction:column;align-items:flex-start;gap:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="./" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn js-wa nav-cta" data-msg-es="Hola, tengo una pregunta sobre sus términos de servicio." data-msg-en="Hi, I have a question about your terms of service." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Hablemos" data-en="Let’s talk">Hablemos</span></a>
+    </div>
+  </nav>
+</div>
+
+<section class="legal-wrap">
+  <div class="wrap legal-doc">
+    <span class="kick" data-es="LEGAL" data-en="LEGAL">LEGAL</span>
+    <h1 data-es="Términos de Servicio" data-en="Terms of Service">Términos de Servicio</h1>
+    <p class="updated"><span data-es="Última actualización: 11 de noviembre de 2026" data-en="Last updated: November 11, 2026">Última actualización: 11 de noviembre de 2026</span></p>
+
+    <div class="tabs">
+      <a href="terminos" class="is-current" data-es="Términos" data-en="Terms">Términos</a>
+      <a href="privacidad" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+    </div>
+
+    <p class="intro"><span data-es="Al utilizar los servicios de OKfly Studio (diseño web, marketing digital, automatización y gestión de redes sociales), aceptas los siguientes términos:" data-en="By using OKfly Studio's services (web design, digital marketing, automation and social media management), you agree to the following terms:">Al utilizar los servicios de OKfly Studio (diseño web, marketing digital, automatización y gestión de redes sociales), aceptas los siguientes términos:</span></p>
+
+    <ol>
+      <li>
+        <div>
+          <h2 data-es="Servicios" data-en="Services">Servicios</h2>
+          <p><span data-es="OKfly Studio ofrece desarrollo de sitios web, marketing digital, automatización de atención al cliente y gestión/programación de contenido en redes sociales para sus clientes." data-en="OKfly Studio provides website development, digital marketing, customer-service automation and social media content management/scheduling for its clients.">OKfly Studio ofrece desarrollo de sitios web, marketing digital, automatización de atención al cliente y gestión/programación de contenido en redes sociales para sus clientes.</span></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2 data-es="Cuentas de terceros" data-en="Third-party accounts">Cuentas de terceros</h2>
+          <p><span data-es="Para prestar servicios de gestión de redes sociales, OKfly Studio puede requerir acceso autorizado a tus cuentas de Facebook, Instagram, TikTok u otras plataformas, únicamente con el fin de publicar y administrar contenido en tu nombre." data-en="To provide social media management services, OKfly Studio may require authorized access to your Facebook, Instagram, TikTok or other platform accounts, solely to publish and manage content on your behalf.">Para prestar servicios de gestión de redes sociales, OKfly Studio puede requerir acceso autorizado a tus cuentas de Facebook, Instagram, TikTok u otras plataformas, únicamente con el fin de publicar y administrar contenido en tu nombre.</span></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2 data-es="Responsabilidades del cliente" data-en="Client responsibilities">Responsabilidades del cliente</h2>
+          <p><span data-es="El cliente es responsable de la veracidad del contenido proporcionado y de cumplir con las políticas de cada red social." data-en="The client is responsible for the accuracy of the content provided and for complying with each social network's policies.">El cliente es responsable de la veracidad del contenido proporcionado y de cumplir con las políticas de cada red social.</span></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2 data-es="Limitación de responsabilidad" data-en="Limitation of liability">Limitación de responsabilidad</h2>
+          <p><span data-es="OKfly Studio no se hace responsable por suspensiones, sanciones o cambios de política de plataformas de terceros (Meta, TikTok, etc.) ajenos a nuestro control." data-en="OKfly Studio is not responsible for suspensions, penalties or policy changes by third-party platforms (Meta, TikTok, etc.) that are outside our control.">OKfly Studio no se hace responsable por suspensiones, sanciones o cambios de política de plataformas de terceros (Meta, TikTok, etc.) ajenos a nuestro control.</span></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2 data-es="Cambios en los términos" data-en="Changes to these terms">Cambios en los términos</h2>
+          <p><span data-es="Estos términos pueden actualizarse; notificaremos cambios relevantes a los clientes activos." data-en="These terms may be updated; we will notify active clients of relevant changes.">Estos términos pueden actualizarse; notificaremos cambios relevantes a los clientes activos.</span></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+          <p><span data-es="Para dudas, escríbenos a" data-en="For questions, write to us at">Para dudas, escríbenos a</span> <a href="mailto:contacto@okflystudio.com">contacto@okflystudio.com</a> <span data-es="o por" data-en="or via">o por</span> <a class="js-wa" data-msg-es="Hola, tengo una pregunta sobre sus términos de servicio." data-msg-en="Hi, I have a question about your terms of service." href="https://wa.me/525528879621" target="_blank" rel="noopener">WhatsApp</a>.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-intro">
+        <a class="brand" href="./" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+        <p><span data-es="Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos." data-en="Systems to bring you customers: websites, social media and ads for businesses in Mexico, Latin America and the United States.">Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos.</span></p>
+      </div>
+      <div class="foot-col">
+        <h4>OKfly Studio</h4>
+        <a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a>
+        <a href="servicios"><span data-es="Servicios" data-en="Services">Servicios</span></a>
+        <a href="terminos"><span data-es="Términos" data-en="Terms">Términos</span></a>
+        <a href="privacidad"><span data-es="Privacidad" data-en="Privacy">Privacidad</span></a>
+      </div>
+      <div class="foot-col">
+        <h4><span data-es="Contacto" data-en="Contact">Contacto</span></h4>
+        <a class="js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contacto@okflystudio.com">contacto@okflystudio.com</a>
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
+    <div class="legal-note"><span>© 2026 OKfly Studio · okflystudio.com</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='525528879621', KEY='okfly-lang', LANG='es';
+  function pick(){ var h=location.hash.replace('#',''); if(h==='en'||h==='es') return h; try{ var s=localStorage.getItem(KEY); if(s==='en'||s==='es') return s; }catch(e){} return (navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en'; }
+  function setLang(l){
+    LANG=l; document.documentElement.lang=l;
+    document.querySelectorAll('[data-es]').forEach(function(el){ el.textContent=el.getAttribute('data-'+l); });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===l?'true':'false'); });
+    document.querySelectorAll('.js-wa').forEach(function(a){ var m=a.getAttribute('data-msg-'+l)||(l==='en'?'Hi, I have a question.':'Hola, tengo una pregunta.'); a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m); });
+    document.title = l==='en' ? 'Terms of Service · OKfly Studio' : 'Términos de Servicio · OKfly Studio';
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); try{ localStorage.setItem(KEY,b.dataset.lang); }catch(e){} }); });
+  setLang(pick());
+})();
+</script>
+</body>
+</html>
