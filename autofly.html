@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Autofly · OKfly Studio</title>
+<meta name="description" content="Autofly: tu presencia en redes sociales en automático. Inteligencia artificial que crea y publica tu contenido, tú solo apruebas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --bg:#050505;
+  --surface:#111110;
+  --surface-2:#1B1B19;
+  --surface-3:#262623;
+  --ink:#F4F3EF;
+  --ink-2:#B9B7B0;
+  --wa-green:#25D366;
+  --wa-green-deep:#052E16;
+  --font:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --max:1360px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip;scrollbar-color:#34332f var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;margin:0}
+::selection{background:var(--ink);color:var(--bg)}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(64px,8vw,120px)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out),background-color 200ms ease}
+.btn:active{transform:scale(0.97)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:#fff}}
+.btn--green{background:var(--wa-green);color:var(--wa-green-deep)}
+@media (hover:hover) and (pointer:fine){.btn--green:hover{background:#2EE878}}
+
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
+.brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
+.nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+.nav ul a[aria-current]{color:var(--ink)}
+@media (hover:hover){.nav ul a:hover{color:var(--ink)}}
+.nav-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+.lang-btn:active{transform:scale(0.95)}
+.lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (max-width:860px){.nav ul{display:none}}
+@media (max-width:540px){.nav-cta{display:none}}
+
+/* Hero */
+.hero{padding-top:clamp(40px,6vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center}
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.16em;color:var(--ink-2);margin-bottom:20px}
+.kick b{display:inline-flex;align-items:center;height:22px;padding:0 10px;border-radius:999px;background:var(--wa-green);color:var(--wa-green-deep);font:800 11.5px/1 var(--font);letter-spacing:0.02em}
+.hero h1{font-size:clamp(44px,6.4vw,82px)}
+.hero h1 em{font-style:normal;color:var(--wa-green)}
+.hero .lede{color:var(--ink-2);font-size:clamp(18px,1.7vw,21px);line-height:1.55;margin-top:24px;max-width:36em}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:36px}
+.hero-cta .note{font-size:14.5px;color:var(--ink-2)}
+.hero-card{background:var(--surface);border-radius:32px;padding:36px;display:flex;flex-direction:column;gap:22px}
+.hero-card .chat{display:flex;flex-direction:column;gap:10px}
+.bubble{max-width:86%;padding:14px 18px;border-radius:20px;font-size:15.5px;line-height:1.4}
+.bubble.them{align-self:flex-start;background:var(--surface-2);border-bottom-left-radius:6px}
+.bubble.me{align-self:flex-end;background:var(--wa-green);color:var(--wa-green-deep);border-bottom-right-radius:6px;font-weight:600}
+.hero-card .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid #222120;padding-top:22px}
+.hero-card .stat b{display:block;font-size:30px;font-weight:900;letter-spacing:-0.03em}
+.hero-card .stat span{font-size:13px;color:var(--ink-2)}
+
+/* How it works */
+.how-head{max-width:640px;margin-bottom:48px}
+.how-head .kick{margin-bottom:16px}
+.how-head h2{font-size:clamp(32px,4vw,48px)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--surface);border-radius:28px;padding:40px 32px;display:flex;flex-direction:column;gap:16px}
+.step b{font-size:15px;color:var(--wa-green);font-weight:700;letter-spacing:0.04em}
+.step h3{font-size:24px;font-weight:800;letter-spacing:-0.02em}
+.step p{color:var(--ink-2);font-size:16px;line-height:1.5}
+
+/* Plan */
+.plan-wrap{display:grid;grid-template-columns:0.95fr 1.05fr;gap:56px;align-items:start}
+.plan-copy h2{font-size:clamp(32px,4vw,48px)}
+.plan-copy p.lede{color:var(--ink-2);font-size:18px;margin-top:18px;max-width:30em;line-height:1.55}
+.plan-copy .vs{margin-top:40px;background:var(--surface);border-radius:24px;padding:28px 30px;display:flex;flex-direction:column;gap:14px}
+.plan-copy .vs b{font-size:14px;letter-spacing:0.04em;color:var(--ink-2)}
+.plan-copy .vs-row{display:flex;justify-content:space-between;gap:16px;font-size:15.5px}
+.plan-copy .vs-row span:first-child{color:var(--ink-2)}
+.plan-copy .vs-row span:last-child{font-weight:600;text-align:right}
+
+.plan-card{background:var(--surface);border:1px solid #232220;border-radius:36px;padding:48px;display:flex;flex-direction:column;gap:24px}
+.plan-card .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.plan-card h3{font-size:30px;font-weight:800;letter-spacing:-0.02em}
+.billing-toggle{display:inline-flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:var(--surface-2)}
+.bt-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14.5px/1 var(--font);cursor:pointer;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
+.bt-btn.is-on{background:var(--ink);color:var(--bg)}
+.bt-badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:var(--wa-green);color:var(--wa-green-deep);font:800 11.5px/1 var(--font)}
+.bt-btn.is-on .bt-badge{background:var(--wa-green-deep);color:var(--wa-green)}
+.amount{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.amount s{font-size:24px;font-weight:700;color:var(--ink-2);text-decoration:line-through}
+.amount b{font-size:clamp(48px,6vw,64px);font-weight:900;letter-spacing:-0.03em;line-height:1}
+.amount span{font-size:17px;color:var(--ink-2)}
+.total-line{font-size:14.5px;color:var(--ink-2);margin-top:-10px}
+.plan-card ul{display:flex;flex-direction:column;gap:14px}
+.plan-card li{display:flex;gap:14px;align-items:flex-start;font-size:16px;color:var(--ink-2)}
+.plan-card li svg{flex-shrink:0;margin-top:2px;color:var(--ink-2)}
+.plan-card li.hl{color:var(--wa-green)}
+.plan-card li.hl svg{color:var(--wa-green)}
+.plan-card .cta-note{font-size:14px;color:#8C8A84}
+
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.plan-wrap{grid-template-columns:1fr}.plan-card{order:-1}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+details{background:var(--surface);border-radius:22px;padding:24px 28px}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:24px;font-weight:400;color:var(--ink-2);flex-shrink:0}
+details[open] summary::after{content:'–'}
+details p{color:var(--ink-2);margin-top:14px;font-size:15.5px;line-height:1.55}
+@media (max-width:760px){.faq-grid{grid-template-columns:1fr}}
+
+/* Closing */
+.close-wrap{background:var(--surface);border-radius:40px;padding:clamp(40px,6vw,72px);display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.close-wrap h2{font-size:clamp(34px,4.6vw,54px);max-width:16em}
+.close-wrap p{color:var(--ink-2);font-size:18px;max-width:32em}
+
+footer{padding-block:40px 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px 24px;padding-top:56px}
+.foot-col{grid-column:span 3;display:flex;flex-direction:column;gap:12px;font-size:16px;min-width:0}
+.foot-col h4{font-size:16px;font-weight:600;margin-bottom:4px}
+.foot-col a,.foot-col span{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-col a:hover{color:var(--ink)}}
+.foot-intro{grid-column:span 6}
+.foot-intro p{color:var(--ink-2);max-width:28em}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:72px}
+.wordmark b{font-size:clamp(100px,24vw,370px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px,1.6vw,22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;font-size:14px;color:#8C8A84}
+@media (max-width:900px){.foot-col{grid-column:span 6}.foot-intro{grid-column:1 / -1}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="./" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
+    <ul>
+      <li><a href="./#como-funciona"><span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span></a></li>
+      <li><a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a></li>
+      <li><a href="servicios"><span data-es="Servicios" data-en="Services">Servicios</span></a></li>
+      <li><a href="autofly" aria-current="page">Autofly</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--green js-wa nav-cta" data-msg-es="Hola, quiero probar Autofly, el plan de contenido automático de OKfly." data-msg-en="Hi, I'd like to try Autofly, OKfly's automated content plan." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Probar Autofly" data-en="Try Autofly">Probar Autofly</span></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kick"><b data-es="NUEVO" data-en="NEW">NUEVO</b><span data-es="AUTOFLY · CONTENIDO EN AUTOMÁTICO" data-en="AUTOFLY · AUTOMATED CONTENT">AUTOFLY · CONTENIDO EN AUTOMÁTICO</span></span>
+        <h1><span data-es="Tus redes, publicando" data-en="Your social media, posting">Tus redes, publicando</span> <em data-es="solas." data-en="on their own.">solas.</em></h1>
+        <p class="lede"><span data-es="Autofly es la IA de OKfly Studio que aprende tu negocio, crea tus publicaciones y las programa en tus redes — tú solo le das el visto bueno desde un link, sin instalar nada." data-en="Autofly is OKfly Studio's AI that learns your business, creates your posts and schedules them on your channels — you just approve from a link, no app to install.">Autofly es la IA de OKfly Studio que aprende tu negocio, crea tus publicaciones y las programa en tus redes — tú solo le das el visto bueno desde un link, sin instalar nada.</span></p>
+        <div class="hero-cta">
+          <a class="btn btn--green js-wa" data-msg-es="Hola, quiero probar Autofly, el plan de contenido automático de OKfly." data-msg-en="Hi, I'd like to try Autofly, OKfly's automated content plan." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Quiero probar Autofly" data-en="I want to try Autofly">Quiero probar Autofly</span></a>
+          <span class="note"><span data-es="Desde $990 MXN/mes · sin costo de arranque" data-en="From $990 MXN/mo · no setup fee">Desde $990 MXN/mes · sin costo de arranque</span></span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="chat">
+          <div class="bubble them"><span data-es="Autofly: 3 publicaciones listas para esta semana. ¿Las apruebo?" data-en="Autofly: 3 posts ready for this week. Should I approve them?">Autofly: 3 publicaciones listas para esta semana. ¿Las apruebo?</span></div>
+          <div class="bubble me"><span data-es="Sí, publícalas 👍" data-en="Yes, post them 👍">Sí, publícalas 👍</span></div>
+          <div class="bubble them"><span data-es="Hecho. Programadas en Instagram y Facebook." data-en="Done. Scheduled on Instagram and Facebook.">Hecho. Programadas en Instagram y Facebook.</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>12+</b><span data-es="publicaciones / mes" data-en="posts / month">publicaciones / mes</span></div>
+          <div class="stat"><b>0</b><span data-es="horas tuyas" data-en="hours of your time">horas tuyas</span></div>
+          <div class="stat"><b>24/7</b><span data-es="publicando" data-en="posting">publicando</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona-autofly">
+    <div class="wrap">
+      <div class="how-head">
+        <span class="kick"><span data-es="CÓMO FUNCIONA" data-en="HOW IT WORKS">CÓMO FUNCIONA</span></span>
+        <h2><span data-es="Tres pasos y queda corriendo." data-en="Three steps and it's running.">Tres pasos y queda corriendo.</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <b>01</b>
+          <h3><span data-es="Perfil de marca" data-en="Brand profile">Perfil de marca</span></h3>
+          <p><span data-es="Nos compartes tu negocio: logo, fotos, tono y tus redes actuales. La IA aprende cómo hablas y qué vendes." data-en="You share your business with us: logo, photos, tone and your current channels. The AI learns how you speak and what you sell.">Nos compartes tu negocio: logo, fotos, tono y tus redes actuales. La IA aprende cómo hablas y qué vendes.</span></p>
+        </div>
+        <div class="step">
+          <b>02</b>
+          <h3><span data-es="Genera y apruebas" data-en="It creates, you approve">Genera y apruebas</span></h3>
+          <p><span data-es="Cada semana te llega un link con las publicaciones listas. Apruebas, pides un cambio o lo dejas pasar — tú decides qué sale." data-en="Every week you get a link with posts ready to go. Approve, ask for a change, or let it pass — you decide what goes out.">Cada semana te llega un link con las publicaciones listas. Apruebas, pides un cambio o lo dejas pasar — tú decides qué sale.</span></p>
+        </div>
+        <div class="step">
+          <b>03</b>
+          <h3><span data-es="Publica solo" data-en="Posts on its own">Publica solo</span></h3>
+          <p><span data-es="Una vez aprobado, Autofly programa y publica en tus redes automáticamente, sin que tengas que entrar a ninguna app." data-en="Once approved, Autofly schedules and publishes to your channels automatically — no app for you to open.">Una vez aprobado, Autofly programa y publica en tus redes automáticamente, sin que tengas que entrar a ninguna app.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan-autofly">
+    <div class="wrap plan-wrap">
+      <div class="plan-copy">
+        <span class="kick"><span data-es="PRECIO" data-en="PRICE">PRECIO</span></span>
+        <h2><span data-es="Un plan, sin letras chiquitas." data-en="One plan, no fine print.">Un plan, sin letras chiquitas.</span></h2>
+        <p class="lede"><span data-es="Autofly es más económico que un plan de redes manejado por nuestro equipo porque la IA hace la mayor parte del trabajo. Si prefieres contenido 100% diseñado a mano, ahí siguen Redes Esencial y Redes Pro." data-en="Autofly costs less than a plan run by our team because the AI does most of the work. If you'd rather have content designed by hand, Redes Esencial and Redes Pro are still there.">Autofly es más económico que un plan de redes manejado por nuestro equipo porque la IA hace la mayor parte del trabajo. Si prefieres contenido 100% diseñado a mano, ahí siguen Redes Esencial y Redes Pro.</span></p>
+        <div class="vs">
+          <b><span data-es="¿AUTOFLY O REDES ESENCIAL?" data-en="AUTOFLY OR REDES ESENCIAL?">¿AUTOFLY O REDES ESENCIAL?</span></b>
+          <div class="vs-row"><span data-es="Quién lo crea" data-en="Who creates it">Quién lo crea</span><span data-es="Autofly: IA · Redes Esencial: tu equipo humano" data-en="Autofly: AI · Redes Esencial: your human team">Autofly: IA · Redes Esencial: tu equipo humano</span></div>
+          <div class="vs-row"><span data-es="Ideal para" data-en="Best for">Ideal para</span><span data-es="Empezar a publicar seguido, bajo costo" data-en="Posting consistently, low cost">Empezar a publicar seguido, bajo costo</span></div>
+          <div class="vs-row"><span data-es="Precio" data-en="Price">Precio</span><span data-es="Desde $990/mes vs. $3,490/mes" data-en="From $990/mo vs. $3,490/mo">Desde $990/mes vs. $3,490/mes</span></div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="top-row">
+          <h3>Autofly</h3>
+          <div class="billing-toggle" id="autoflyToggle" role="group" aria-label="Forma de pago">
+            <button type="button" class="bt-btn is-on" data-billing="monthly" aria-pressed="true"><span data-es="Mensual" data-en="Monthly">Mensual</span></button>
+            <button type="button" class="bt-btn" data-billing="semester" aria-pressed="false"><span data-es="6 meses" data-en="6 months">6 meses</span><b class="bt-badge">-20%</b></button>
+          </div>
+        </div>
+        <div>
+          <div class="amount" id="autoflyAmount"><b>$1,490</b><span><span data-es="MXN / mes" data-en="MXN / mo">MXN / mes</span></span></div>
+          <p class="total-line" id="autoflyTotal" style="display:none"></p>
+        </div>
+        <ul>
+          <li>{check}<span><span data-es="Perfil de marca generado por IA desde tu sitio o redes" data-en="AI-built brand profile from your site or channels">Perfil de marca generado por IA desde tu sitio o redes</span></span></li>
+          <li>{check}<span><span data-es="12 publicaciones al mes (diseños + texto) listas para tus redes" data-en="12 posts a month (designs + copy) ready for your channels">12 publicaciones al mes (diseños + texto) listas para tus redes</span></span></li>
+          <li>{check}<span><span data-es="Publicación programada automática en Facebook e Instagram" data-en="Automatic scheduled posting on Facebook and Instagram">Publicación programada automática en Facebook e Instagram</span></span></li>
+          <li>{check}<span><span data-es="Apruebas cada publicación con un link privado, sin instalar nada" data-en="Approve every post from a private link, nothing to install">Apruebas cada publicación con un link privado, sin instalar nada</span></span></li>
+          <li class="hl">{check}<span><span data-es="Modo autopiloto: publica solo sin que revises cada pieza" data-en="Autopilot mode: posts on its own without reviewing every piece">Modo autopiloto: publica solo sin que revises cada pieza</span></span></li>
+          <li>{check}<span><span data-es="Reporte mensual de resultados" data-en="Monthly results report">Reporte mensual de resultados</span></span></li>
+        </ul>
+        <a class="btn btn--green js-wa" data-msg-es="Hola, quiero probar Autofly, el plan de contenido automático de OKfly." data-msg-en="Hi, I'd like to try Autofly, OKfly's automated content plan." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Quiero probar Autofly" data-en="I want to try Autofly">Quiero probar Autofly</span></a>
+        <p class="cta-note"><span data-es="Sin contrato forzoso en el plan mensual. Cancela cuando quieras." data-en="No lock-in on the monthly plan. Cancel anytime.">Sin contrato forzoso en el plan mensual. Cancela cuando quieras.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas-autofly">
+    <div class="wrap">
+      <div class="how-head">
+        <span class="kick"><span data-es="PREGUNTAS" data-en="QUESTIONS">PREGUNTAS</span></span>
+        <h2><span data-es="Antes de que preguntes." data-en="Before you ask.">Antes de que preguntes.</span></h2>
+      </div>
+      <div class="faq-grid">
+        <details>
+          <summary><span data-es="¿Necesito mis propias cuentas de Facebook e Instagram?" data-en="Do I need my own Facebook and Instagram accounts?">¿Necesito mis propias cuentas de Facebook e Instagram?</span></summary>
+          <p><span data-es="Sí. Autofly publica en tus cuentas; solo necesitamos que nos des acceso de administrador para programar el contenido." data-en="Yes. Autofly posts to your own accounts; we just need admin access to schedule the content.">Sí. Autofly publica en tus cuentas; solo necesitamos que nos des acceso de administrador para programar el contenido.</span></p>
+        </details>
+        <details>
+          <summary><span data-es="¿Qué pasa si no me gusta una publicación?" data-en="What if I don't like a post?">¿Qué pasa si no me gusta una publicación?</span></summary>
+          <p><span data-es="La rechazas o pides un ajuste desde el mismo link antes de que salga. Nada se publica sin tu aprobación, salvo que actives el modo autopiloto." data-en="You reject it or request a change from the same link before it goes out. Nothing publishes without your approval unless you turn on autopilot mode.">La rechazas o pides un ajuste desde el mismo link antes de que salga. Nada se publica sin tu aprobación, salvo que actives el modo autopiloto.</span></p>
+        </details>
+        <details>
+          <summary><span data-es="¿Puedo cambiarme después a Redes Esencial o Pro?" data-en="Can I switch to Redes Esencial or Pro later?">¿Puedo cambiarme después a Redes Esencial o Pro?</span></summary>
+          <p><span data-es="Sí, en cualquier momento. Muchos negocios arrancan en Autofly y suben de plan cuando quieren contenido diseñado a mano." data-en="Yes, anytime. Many businesses start on Autofly and move up when they want hand-designed content.">Sí, en cualquier momento. Muchos negocios arrancan en Autofly y suben de plan cuando quieren contenido diseñado a mano.</span></p>
+        </details>
+        <details>
+          <summary><span data-es="¿Por qué pagar 6 meses por adelantado?" data-en="Why pay 6 months upfront?">¿Por qué pagar 6 meses por adelantado?</span></summary>
+          <p><span data-es="Te ahorras 20% y a Autofly le toma unas semanas aprender bien tu marca — 6 meses es el tiempo real para ver resultados." data-en="You save 20%, and Autofly takes a few weeks to really learn your brand — 6 months is realistically how long it takes to see results.">Te ahorras 20% y a Autofly le toma unas semanas aprender bien tu marca — 6 meses es el tiempo real para ver resultados.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cierre-autofly">
+    <div class="wrap">
+      <div class="close-wrap">
+        <h2><span data-es="Deja que tus redes se publiquen solas." data-en="Let your social media post itself.">Deja que tus redes se publiquen solas.</span></h2>
+        <p><span data-es="Escríbenos y en la misma conversación vemos tu negocio y armamos tu perfil de marca." data-en="Message us and in the same conversation we'll look at your business and build your brand profile.">Escríbenos y en la misma conversación vemos tu negocio y armamos tu perfil de marca.</span></p>
+        <a class="btn btn--green js-wa" data-msg-es="Hola, quiero probar Autofly, el plan de contenido automático de OKfly." data-msg-en="Hi, I'd like to try Autofly, OKfly's automated content plan." href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-es="Quiero probar Autofly" data-en="I want to try Autofly">Quiero probar Autofly</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-intro">
+        <a class="brand" href="./" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+        <p><span data-es="Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos." data-en="Systems to bring you customers: websites, social media and ads for businesses in Mexico, Latin America and the United States.">Sistemas para recibir clientes: página web, redes sociales y anuncios para negocios de México, Latinoamérica y Estados Unidos.</span></p>
+      </div>
+      <div class="foot-col">
+        <h4>OKfly Studio</h4>
+        <a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a>
+        <a href="servicios"><span data-es="Servicios" data-en="Services">Servicios</span></a>
+        <a href="autofly">Autofly</a>
+        <a href="terminos"><span data-es="Términos" data-en="Terms">Términos</span></a>
+        <a href="privacidad"><span data-es="Privacidad" data-en="Privacy">Privacidad</span></a>
+      </div>
+      <div class="foot-col">
+        <h4><span data-es="Contacto" data-en="Contact">Contacto</span></h4>
+        <a class="js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contacto@okflystudio.com">contacto@okflystudio.com</a>
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
+    <div class="legal"><span>© 2026 OKfly Studio · okflystudio.com</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='525528879621', KEY='okfly-lang', LANG='es';
+  function pick(){ try{ var s=localStorage.getItem(KEY); if(s==='en'||s==='es') return s; }catch(e){} return (navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en'; }
+  function setLang(l){
+    LANG=l; document.documentElement.lang=l;
+    document.querySelectorAll('[data-es]').forEach(function(el){ el.textContent=el.getAttribute('data-'+l); });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===l?'true':'false'); });
+    document.querySelectorAll('.js-wa').forEach(function(a){ var m=a.getAttribute('data-msg-'+l); if(m) a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m); });
+    document.title = l==='en' ? 'Autofly · OKfly Studio' : 'Autofly · OKfly Studio';
+    paintPlan();
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); try{ localStorage.setItem(KEY,b.dataset.lang); }catch(e){} }); });
+
+  /* check icon, injected where the template uses {check} */
+  var check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  document.querySelectorAll('.plan-card li').forEach(function(li){ li.innerHTML = li.innerHTML.replace('{check}', check); });
+
+  var BASE = 1490, OFF = 0.20;
+  var BILLING = 'monthly';
+  var toggle = document.getElementById('autoflyToggle');
+  var amountEl = document.getElementById('autoflyAmount');
+  var totalEl = document.getElementById('autoflyTotal');
+  function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function paintPlan(){
+    var semester = BILLING === 'semester';
+    var shown = semester ? Math.round(BASE * (1 - OFF)) : BASE;
+    var unit = LANG === 'es' ? 'MXN / mes' : 'MXN / mo';
+    amountEl.innerHTML = (semester ? '<s>' + fmt(BASE) + '</s>' : '') + '<b>' + fmt(shown) + '</b><span>' + unit + '</span>';
+    if (semester){
+      var total = shown * 6;
+      totalEl.style.display = '';
+      totalEl.textContent = fmt(total) + (LANG === 'es' ? ' MXN cada 6 meses' : ' MXN every 6 months');
+    } else {
+      totalEl.style.display = 'none';
+    }
+  }
+  if (toggle){
+    toggle.addEventListener('click', function(e){
+      var btn = e.target.closest('.bt-btn'); if (!btn) return;
+      BILLING = btn.getAttribute('data-billing');
+      toggle.querySelectorAll('.bt-btn').forEach(function(b){ var on=b===btn; b.classList.toggle('is-on',on); b.setAttribute('aria-pressed', on?'true':'false'); });
+      paintPlan();
+    });
+  }
+  setLang(pick());
+})();
+</script>
+</body>
+</html>

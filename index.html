@@ -64,6 +64,8 @@ section{padding-block:clamp(96px,11vw,170px)}
 .brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
 .nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
 .nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+.nav ul a.nav-new{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.nav ul a.nav-new::after{content:'Nuevo';display:inline-flex;align-items:center;height:20px;padding:0 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 11px/1 var(--font);letter-spacing:0.02em}
 @media (hover:hover){.nav ul a:hover{color:var(--ink)}}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 @media (max-width:900px){.nav ul{display:none}}
@@ -752,6 +754,7 @@ footer{padding-block:40px 40px;overflow:hidden}
       <li><a href="#planes"><span data-t>Planes</span></a></li>
       <li><a href="#preguntas"><span data-t>Preguntas</span></a></li>
       <li><a href="servicios"><span data-t>Servicios</span></a></li>
+      <li><a href="autofly" class="nav-new">Autofly</a></li>
     </ul>
     <div class="nav-end">
       <div class="lang" role="group" aria-label="Idioma / Language">
@@ -972,6 +975,23 @@ footer{padding-block:40px 40px;overflow:hidden}
     </div>
   </section>
 
+  <!-- MARKETING CTA -->
+  <section aria-labelledby="mkt-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="custom" data-rv>
+        <div class="custom-copy">
+          <h2 id="mkt-h"><span data-t>¿Ya tienes tu página? También manejamos tus redes y anuncios.</span></h2>
+          <p class="lede"><span data-t>Contenido, publicaciones y campañas de Facebook e Instagram, listos para aprobar por WhatsApp. Tú solo dices que sí.</span></p>
+        </div>
+        <div class="custom-side">
+          <span><span data-t>Redes sociales y anuncios</span></span>
+          <b><span data-t>Desde $990 MXN/mes</span></b>
+          <a class="btn btn--ghost" href="servicios#redes"><span data-t>Ver planes de marketing</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CUSTOM -->
   <section aria-labelledby="custom-h" style="padding-top:0">
     <div class="wrap">
@@ -1073,12 +1093,12 @@ footer{padding-block:40px 40px;overflow:hidden}
     es: [
       {name:'Básico', price:'$499', base:499, desc:'Para negocios que necesitan presencia profesional.', features:['Página de una sección','Dominio, hosting y HTTPS','Botón de WhatsApp y mapa','Cambios por WhatsApp']},
       {name:'Pro', price:'$899', base:899, desc:'Para negocios que quieren crecer y captar clientes.', featured:true, features:['Todo lo del Básico','Varias secciones con animaciones','SEO local para aparecer en Google','Formulario para captar clientes','*CRM: tus leads organizados automáticamente']},
-      {name:'Premium', price:'$1,499', base:1499, desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','*Bot de WhatsApp: horarios, FAQ y te avisa del lead','Atención prioritaria']}
+      {name:'Premium', price:'$1,499', base:1499, desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','*Agente IA: horarios, reservas, FAQ y agenda leads','Atención prioritaria']}
     ],
     en: [
       {name:'Basic', price:'$99', base:99, desc:'For businesses that need a professional presence.', features:['One-page website','Domain, hosting and HTTPS','WhatsApp button and map','Changes over WhatsApp']},
       {name:'Pro', price:'$179', base:179, desc:'For businesses that want to grow and win customers.', featured:true, features:['Everything in Basic','Multiple sections with animations','Local SEO to show up on Google','Lead capture form','*CRM: your leads organized automatically']},
-      {name:'Premium', price:'$299', base:299, desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','*WhatsApp bot: hours, FAQs and lead alerts','Priority support']}
+      {name:'Premium', price:'$299', base:299, desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','*AI Agent: hours, bookings, FAQs and lead scheduling','Priority support']}
     ]
   };
   /* Pago anual: 30% de descuento, mostrado como equivalente mensual facturado una vez al año. */
@@ -1164,6 +1184,9 @@ footer{padding-block:40px 40px;overflow:hidden}
     'Precio anual, un solo cargo con tarjeta. Puedes volver a mensual cuando quieras.':'Annual price, a single card charge. Switch back to monthly anytime.',
     'Mensual':'Monthly','Anual':'Annual',
     annual:'Prefer to pay a full year upfront by <b>bank transfer</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/525528879621" target="_blank" rel="noopener">Message us</a>.',
+    '¿Ya tienes tu página? También manejamos tus redes y anuncios.':'Already have a website? We also run your social media and ads.',
+    'Contenido, publicaciones y campañas de Facebook e Instagram, listos para aprobar por WhatsApp. Tú solo dices que sí.':'Content, posts and Facebook & Instagram campaigns, ready for you to approve on WhatsApp. You just say yes.',
+    'Redes sociales y anuncios':'Social media and ads','Desde $990 MXN/mes':'From $199 USD/mo','Ver planes de marketing':'See marketing plans',
     '¿Necesitas algo hecho a la medida?':'Need something custom?',
     'Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.':'Online stores, booking systems, multilingual sites or special projects. We quote it with you and you pay once.',
     'Proyectos personalizados':'Custom projects','Desde $5,000 MXN':'From $1,500 USD','Cotizar mi proyecto':'Get a quote',
@@ -1436,8 +1459,19 @@ footer{padding-block:40px 40px;overflow:hidden}
   /* Links de suscripción mensual de Mercado Pago (Básico, Pro, Premium). Se muestran solo en español, en pago mensual, después del botón principal. */
   var WEB_PAY = ['https://mpago.la/2v6j8uS', 'https://mpago.la/1Ts8rT4', 'https://mpago.la/1BHAZyv'];
   /* Links de pago anual (un solo cargo por el año, -30%). Se muestran solo en español. */
-  var WEB_PAY_ANNUAL = ['https://mpago.la/1oSduXS', 'https://mpago.la/2GUEcfQ', 'https://mpago.la/2upM8At'];
+  var WEB_PAY_ANNUAL = ['https://mpago.la/32SNMR5', 'https://mpago.la/2j8KbB5', 'https://mpago.la/2upM8At'];
   var BILLING = 'annual';
+  function extraAnnualFeatures(p, annual){
+    var out = [];
+    var isPremium = p.name === 'Premium';
+    if (annual && !isPremium){
+      out.push(LANG === 'es' ? 'Agente IA: horarios, reservas, FAQ y agenda leads' : 'AI Agent: hours, bookings, FAQs and lead scheduling');
+    }
+    if (annual && isPremium){
+      out.push(LANG === 'es' ? 'Autofly: creación de contenido automático' : 'Autofly: automatic content creation');
+    }
+    return out;
+  }
   function paintPlans(){
     var cards = plansEl.children;
     if (!cards.length){
@@ -1471,7 +1505,8 @@ footer{padding-block:40px 40px;overflow:hidden}
         '<h3>' + esc(p.name) + '</h3><p class="pdesc">' + esc(p.desc) + '</p>' +
         '<div class="amount">' + shownAmount + '<span>' + (annual ? U().unitAnnual : U().unit) + '</span></div>' +
         annualTotalLine +
-        '<ul>' + p.features.map(function(f){ var hl = f.charAt(0) === '*'; var txt = hl ? f.slice(1) : f; return '<li' + (hl ? ' class="hl"' : '') + '>' + check + '<span>' + esc(txt) + '</span></li>'; }).join('') + '</ul>' +
+        '<ul>' + p.features.map(function(f){ var hl = f.charAt(0) === '*'; var txt = hl ? f.slice(1) : f; return '<li' + (hl ? ' class="hl"' : '') + '>' + check + '<span>' + esc(txt) + '</span></li>'; }).join('') +
+        extraAnnualFeatures(p, annual).map(function(f){ return '<li class="hl">' + check + '<span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' +
         '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + ctaHref + '" target="_blank" rel="noopener">' + ctaLabel + '</a>' +
         belowLink;
     });

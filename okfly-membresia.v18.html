@@ -1,0 +1,1840 @@
+<title>OKfly Studio Membresía</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tu página web profesional por suscripción desde $499 MXN al mes. La diseñamos, publicamos y mantenemos. Todo por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;1,500&family=Lilita+One&family=Caveat:wght@600&family=Nunito:wght@500;700&family=Poppins:wght@400;500;600&family=Anton&family=Manrope:wght@400;600&family=Archivo:wdth,wght@100,500;125,800&display=swap">
+<style>
+/* Layout: one 12-col grid with tight equal margins. The page is a WhatsApp chat that turns into the finished website. */
+:root{
+  --bg:#050505;
+  --surface:#111110;
+  --surface-2:#1B1B19;
+  --surface-3:#262623;
+  --ink:#F4F3EF;
+  --ink-2:#B9B7B0;
+  --paper:#F4F3EF;
+  --paper-ink:#050505;
+  --paper-ink-2:#44433F;
+  --wa-bg:#0B141A;
+  --wa-head:#1F2C34;
+  --wa-in:#1F2C34;
+  --wa-out:#005C4B;
+  --wa-text:#E9EDEF;
+  --wa-meta:#8696A0;
+  --wa-green:#25D366;
+  --wa-tick:#53BDEB;
+  --font:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --ease-in-out:cubic-bezier(0.77,0,0.175,1);
+  --max:1360px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip;scrollbar-color:#34332f var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+::selection{background:var(--ink);color:var(--bg)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#34332f;border-radius:10px}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-0.035em;line-height:0.96;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.h2{font-size:clamp(40px,5.4vw,80px)}
+.lede{font-size:clamp(18px,1.45vw,21px);color:var(--ink-2);max-width:34em}
+section{padding-block:clamp(96px,11vw,170px)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;font:600 17px/1 var(--font);text-decoration:none;cursor:pointer;background:var(--ink);color:var(--bg);transition:transform 160ms var(--ease-out),background-color 200ms ease}
+.btn:active{transform:scale(0.97)}
+.btn svg{flex-shrink:0;transition:transform 200ms var(--ease-out)}
+.btn--ghost{background:var(--surface-2);color:var(--ink)}
+.btn--dark{background:var(--paper-ink);color:var(--paper)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover svg{transform:translateX(4px)}
+  .btn:not(.btn--ghost):not(.btn--dark):hover{background:#fff}
+  .btn--ghost:hover{background:var(--surface-3)}
+}
+
+/* Nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:800;letter-spacing:-0.04em}
+.brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
+.nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+.nav ul a.nav-new{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.nav ul a.nav-new::after{content:'Nuevo';display:inline-flex;align-items:center;height:20px;padding:0 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 11px/1 var(--font);letter-spacing:0.02em}
+@media (hover:hover){.nav ul a:hover{color:var(--ink)}}
+.nav .btn{min-height:46px;padding:0 22px;font-size:15px}
+@media (max-width:900px){.nav ul{display:none}}
+.nav .btn{white-space:nowrap}
+.nav-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:var(--surface)}
+.lang-btn{height:38px;min-width:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 140ms var(--ease-out)}
+.lang-btn:active{transform:scale(0.95)}
+.lang-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.lang-btn[aria-pressed="false"]:hover{color:var(--ink)}}
+@media (max-width:540px){.nav-cta{display:none}}
+@media (max-width:420px){.nav .btn{min-height:44px;padding:0 16px;font-size:14px}.brand span{letter-spacing:0.22em}}
+
+/* Hero */
+.hero{padding-block:clamp(40px,6vw,80px) 0;text-align:center}
+.hero-copy{display:flex;flex-direction:column;align-items:center;gap:28px}
+.hero h1{font-size:clamp(42px,6vw,92px);font-weight:900;max-width:15em}
+.hero-sub{font-size:clamp(18px,1.55vw,22px);color:var(--ink-2);max-width:32em}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hero-price{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:16px;color:var(--ink-2)}
+.hero-price b{color:var(--ink);font-weight:700}
+.hero-price span{display:inline-flex;align-items:center;gap:8px}
+.hero-price i{width:7px;height:7px;border-radius:50%;background:var(--wa-green);display:inline-block}
+.rise{animation:rise 900ms var(--ease-out) both}
+.d1{animation-delay:80ms}.d2{animation-delay:160ms}.d3{animation-delay:240ms}.d4{animation-delay:320ms}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+
+.hero-stage{position:relative;margin-top:clamp(48px,6vw,88px);height:clamp(330px,52vw,700px);perspective:1800px;perspective-origin:50% 20%}
+.hero-stage-in{position:absolute;inset:0;transform-style:preserve-3d;animation:stageIn 1400ms 300ms var(--ease-out) both}
+@keyframes stageIn{from{opacity:0;transform:translateY(90px) rotateX(28deg) scale(0.94)}}
+.hero-rig{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.hero-light{position:absolute;left:50%;top:58%;width:90%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(244,243,239,0.10),rgba(244,243,239,0));pointer-events:none}
+.hero-browser{position:absolute;left:50%;top:0;width:min(1000px,86%);transform:translateX(-50%) translateZ(0)}
+.hero-phone{position:absolute;left:max(2%,calc(50% - 600px));top:20%;width:clamp(120px,19%,250px);transform:translateZ(140px) rotateY(10deg)}
+.hero-mphone{position:absolute;right:max(2%,calc(50% - 600px));top:30%;width:clamp(100px,15%,200px);transform:translateZ(110px) rotateY(-12deg)}
+.float-a{animation:floatA 7s ease-in-out infinite}
+.float-b{animation:floatB 8s ease-in-out infinite}
+@keyframes floatA{50%{translate:0 -12px}}
+@keyframes floatB{50%{translate:0 10px}}
+
+/* Browser frame (drawn interface) */
+.bw{container-type:inline-size;border-radius:16px;overflow:hidden;background:#1A1A18;box-shadow:0 50px 100px -30px rgba(0,0,0,0.8),0 30px 60px -40px rgba(0,0,0,0.7)}
+.bw-bar{display:flex;align-items:center;gap:0.8cqw;height:4cqw;min-height:22px;padding:0 1.6cqw;background:#232321}
+.bw-bar i{width:1.05cqw;height:1.05cqw;min-width:7px;min-height:7px;border-radius:50%;background:#4a4945}
+.bw-bar i:nth-child(1){background:#FF5F57}.bw-bar i:nth-child(2){background:#FEBC2E}.bw-bar i:nth-child(3){background:#28C840}
+.bw-url{display:flex;align-items:center;gap:0.6cqw;margin-left:2cqw;height:62%;padding:0 1.6cqw;border-radius:99px;background:#2F2F2C;color:#C9C7C0;font-size:max(9px,1.35cqw);font-weight:500;white-space:nowrap}
+.bw-url svg{width:1.3cqw;min-width:8px;height:auto}
+.bw-scr{position:relative;aspect-ratio:16/9.4;overflow:hidden}
+
+/* Phone frame (its parent is the size container, so radius and padding scale with the phone) */
+.float-a,.float-b,.story-phone,.demo-mob{container-type:inline-size}
+.phone{container-type:inline-size;position:relative;aspect-ratio:9/19;border-radius:15cqw;padding:3.2cqw;background:#1C1C1A;box-shadow:inset 0 0 0 1.2cqw #2B2B28,0 40px 80px -20px rgba(0,0,0,0.85)}
+.phone-scr{position:relative;width:100%;height:100%;border-radius:12cqw;overflow:hidden;background:var(--wa-bg)}
+.phone-notch{position:absolute;left:50%;top:2.6cqw;width:28cqw;height:7cqw;border-radius:99px;background:#000;transform:translateX(-50%);z-index:5}
+
+/* WhatsApp UI (drawn) */
+.wa{position:absolute;inset:0;display:flex;flex-direction:column;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--wa-text)}
+.wa-head{display:flex;align-items:center;gap:3cqw;padding:13cqw 4cqw 3.4cqw;background:var(--wa-head);flex-shrink:0}
+.wa-av{width:10cqw;height:10cqw;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font);line-height:0.8;flex-shrink:0}
+.wa-av b{font-size:3.6cqw;font-weight:900;letter-spacing:-0.06em}
+.wa-av span{font-size:2.8cqw;font-weight:500}
+.wa-who{display:flex;flex-direction:column;min-width:0}
+.wa-who b{font-size:4.4cqw;font-weight:600;display:flex;align-items:center;gap:1.4cqw}
+.wa-who b svg{width:3.6cqw;height:auto}
+.wa-who span{font-size:3.2cqw;color:var(--wa-meta)}
+.wa-body{position:relative;flex:1;overflow:hidden;background:var(--wa-bg)}
+.wa-feed{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:2cqw;padding:4cqw 3.6cqw 6cqw;transition:transform 520ms var(--ease-out)}
+.msg{max-width:84%;padding:2.2cqw 3cqw 1.6cqw;border-radius:3.2cqw;font-size:4.05cqw;line-height:1.36;position:relative;transform-origin:0 100%;transition:opacity 260ms var(--ease-out),transform 360ms var(--ease-out)}
+.msg.in{align-self:flex-start;background:var(--wa-in);border-top-left-radius:0.8cqw}
+.msg.out{align-self:flex-end;background:var(--wa-out);border-top-right-radius:0.8cqw;transform-origin:100% 100%}
+.msg time{display:flex;justify-content:flex-end;align-items:center;gap:1cqw;margin-top:0.6cqw;font-size:2.9cqw;color:rgba(233,237,239,0.62);font-style:normal}
+.msg time svg{width:4cqw;height:auto}
+.typing{align-self:flex-start;display:flex;gap:1.4cqw;padding:3cqw 3.6cqw;border-radius:3.2cqw;border-top-left-radius:0.8cqw;background:var(--wa-in)}
+.typing i{width:1.8cqw;height:1.8cqw;border-radius:50%;background:var(--wa-meta);animation:dot 1.1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-1cqw)}}
+.wa-day{align-self:center;padding:1.4cqw 3.4cqw;border-radius:2cqw;background:#182229;color:var(--wa-meta);font-size:3.1cqw}
+.att{display:flex;flex-direction:column;gap:1.6cqw}
+.att-file{display:flex;align-items:center;gap:2cqw;padding:2cqw;border-radius:2cqw;background:rgba(0,0,0,0.18);font-size:3.4cqw}
+.att-file span:first-child{width:8cqw;height:8cqw;border-radius:1.6cqw;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:900;font-size:3cqw}
+.att-pics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1cqw}
+.att-pics span{aspect-ratio:1;border-radius:1.4cqw;position:relative;overflow:hidden}
+.att-link{font-size:3.5cqw;color:#8ED0F7;text-decoration:underline;text-underline-offset:0.6cqw}
+.pv{margin:-0.6cqw -1.4cqw 1.6cqw;border-radius:2.4cqw;overflow:hidden;background:rgba(0,0,0,0.25)}
+.pv-shot{container-type:inline-size;position:relative;aspect-ratio:16/10;overflow:hidden}
+.pv-meta{display:flex;flex-direction:column;gap:0.4cqw;padding:2cqw 2.6cqw}
+.pv-meta b{font-size:3.7cqw}
+.pv-meta span{font-size:3cqw;color:var(--wa-meta)}
+.wa-input{display:flex;align-items:center;gap:2cqw;padding:2.4cqw 3cqw 6cqw;background:var(--wa-bg);flex-shrink:0}
+.wa-input span{flex:1;height:10cqw;border-radius:99px;background:var(--wa-head);color:var(--wa-meta);font-size:3.6cqw;display:flex;align-items:center;padding:0 4cqw}
+.wa-input i{width:10cqw;height:10cqw;border-radius:50%;background:var(--wa-green);display:flex;align-items:center;justify-content:center}
+.wa-input i svg{width:4.6cqw;height:auto}
+
+/* Demo websites (realistic layout, scales with its frame via cqw) */
+.site{position:absolute;inset:0;background:var(--sbg);color:var(--sink);font-family:var(--font);overflow:hidden;display:flex;flex-direction:column}
+.s-nav{display:flex;align-items:center;gap:3cqw;padding:1.9cqw 4.2cqw;position:relative;z-index:2;flex-shrink:0}
+.s-logo{display:flex;align-items:center;gap:0.8cqw;font-weight:700;font-size:1.75cqw;letter-spacing:-0.02em;white-space:nowrap}
+.s-logo svg{width:2.7cqw;height:2.7cqw;color:var(--sacc)}
+.s-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:500;white-space:nowrap}
+.s-links span:first-child{box-shadow:0 0.25cqw 0 var(--sprim);padding-bottom:0.35cqw}
+.s-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.8cqw;border-radius:99px;background:var(--sprim);color:var(--sbtn);font-size:1.15cqw;font-weight:600;white-space:nowrap}
+.s-btn svg{width:1.4cqw;height:1.4cqw}
+.s-btn.o{background:transparent;color:var(--sink);box-shadow:inset 0 0 0 0.12cqw currentColor}
+.s-menu{display:none}
+.s-hero{position:relative;height:31cqw;display:flex;align-items:center;padding:0 4.2cqw;flex-shrink:0}
+.s-photo{position:absolute;right:0;top:0;bottom:0;width:58%;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 32%);mask-image:linear-gradient(90deg,transparent,#000 32%)}
+.s-photo.art{right:4.2cqw;top:2cqw;bottom:2cqw;width:40%;border-radius:1.6cqw;overflow:hidden;background:var(--a1);-webkit-mask-image:none;mask-image:none}
+.s-copy{position:relative;z-index:1;width:52%;display:flex;flex-direction:column;align-items:flex-start;gap:1.5cqw}
+.s-chip{display:inline-flex;align-items:center;gap:0.6cqw;padding:0.6cqw 1.2cqw;border-radius:99px;background:var(--schipbg);font-size:1.05cqw;font-weight:600;box-shadow:0 0.2cqw 0.8cqw rgba(0,0,0,0.07)}
+.s-chip svg{width:1.25cqw;height:1.25cqw;color:var(--sprim)}
+.s-h{margin:0;font-size:4.9cqw;font-weight:700;letter-spacing:-0.035em;line-height:1}
+.s-h em{font-style:normal;color:var(--sacc)}
+.s-p{font-size:1.45cqw;line-height:1.45;opacity:0.82;max-width:32em}
+.s-ctas{display:flex;gap:1cqw;margin-top:0.5cqw}
+.s-ctas .s-btn{font-size:1.3cqw;padding:1.3cqw 2.2cqw}
+.s-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:2cqw 4.2cqw;background:var(--sstrip);flex-shrink:0}
+.s-strip span{display:flex;align-items:center;justify-content:center;gap:1cqw;font-size:1.1cqw;font-weight:500;line-height:1.2}
+.s-strip svg{width:2.5cqw;height:2.5cqw;flex-shrink:0}
+.s-sec{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;padding:3.6cqw 4.2cqw;align-items:center}
+.s-card{position:relative;height:18cqw;border-radius:1.4cqw;overflow:hidden;background:var(--a1);background-size:cover;background-position:center}
+.s-sec small{display:block;font-size:1cqw;font-weight:700;letter-spacing:0.08em;color:var(--sprim);margin-bottom:1cqw}
+.s-sec b{display:block;font-size:2.8cqw;font-weight:700;letter-spacing:-0.03em;line-height:1.05}
+.s-sec p{font-size:1.3cqw;line-height:1.45;opacity:0.8;margin-top:1cqw}
+.site.m .s-nav{padding:4cqw 5cqw}
+.site.m .s-logo{font-size:5.2cqw;gap:2cqw}
+.site.m .s-logo svg{width:7.4cqw;height:7.4cqw}
+.site.m .s-links,.site.m .s-nav > .s-btn{display:none}
+.site.m .s-menu{display:block;margin-left:auto;width:6.6cqw;height:6.6cqw}
+.site.m .s-hero{height:auto;flex-direction:column;align-items:stretch;padding:0}
+.site.m .s-photo{position:relative;width:100%;height:64cqw;-webkit-mask-image:linear-gradient(180deg,#000 68%,transparent);mask-image:linear-gradient(180deg,#000 68%,transparent)}
+.site.m .s-photo.art{right:auto;top:auto;bottom:auto;width:auto;height:56cqw;margin:0 5cqw;border-radius:4cqw}
+.site.m .s-copy{width:auto;padding:0 5cqw;margin-top:-7cqw;gap:3cqw}
+.site.m .s-chip{font-size:3cqw;padding:1.6cqw 3cqw;gap:1.4cqw}
+.site.m .s-chip svg{width:3.4cqw;height:3.4cqw}
+.site.m .s-h{font-size:9.6cqw}
+.site.m .s-p{font-size:3.9cqw}
+.site.m .s-ctas{flex-direction:column;align-self:stretch;gap:2.4cqw;margin-top:1cqw}
+.site.m .s-ctas .s-btn{justify-content:center;font-size:3.8cqw;padding:3.6cqw;gap:2cqw}
+.site.m .s-btn svg{width:4cqw;height:4cqw}
+.site.m .s-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:2cqw;padding:5cqw;background:transparent}
+.site.m .s-strip span{flex-direction:column;gap:1.6cqw;font-size:2.7cqw;text-align:center;padding:3cqw 1cqw;border-radius:3cqw;background:var(--sstrip)}
+.site.m .s-strip span:nth-child(n+4){display:none}
+.site.m .s-strip svg{width:6.6cqw;height:6.6cqw}
+.site.m .s-sec{display:none}
+/* Casa Mar: dark luxury restaurant template */
+.lux{background:#0A0C0B;color:#F3EEE6}
+.lux .serif{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-0.01em}
+.lux-hero{position:relative;height:38cqw;flex-shrink:0;background:#0A0C0B}
+.lux-photo{position:absolute;right:0;top:0;bottom:0;width:66%;background-size:cover;background-position:center}
+.lux-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0A0C0B 30%,rgba(10,12,11,0.85) 42%,rgba(10,12,11,0) 66%),linear-gradient(0deg,#0A0C0B,rgba(10,12,11,0) 18%)}
+.lux-nav{position:absolute;left:0;right:0;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 5cqw}
+.lux-logo{display:flex;flex-direction:column;align-items:center;gap:0.3cqw;line-height:1}
+.lux-logo svg{width:2.8cqw;height:auto;color:#E9D2B0}
+.lux-logo b{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:2.2cqw;letter-spacing:0.12em}
+.lux-logo small{font-size:0.62cqw;letter-spacing:0.22em;opacity:0.8}
+.lux-links{display:flex;gap:2.6cqw;padding:1cqw 2.4cqw;border-radius:99px;background:rgba(10,12,11,0.55);box-shadow:inset 0 0 0 0.08cqw rgba(243,238,230,0.12);font-size:1.05cqw;font-weight:500}
+.lux-links span:first-child{box-shadow:0 0.6cqw 0 -0.45cqw #E9D2B0}
+.lux-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#F1DDBF;color:#1A120A;font-size:1.05cqw;font-weight:600;white-space:nowrap}
+.lux-btn svg{width:1.3cqw;height:1.3cqw}
+.lux-copy{position:absolute;z-index:2;left:5cqw;top:11cqw;width:44%;display:flex;flex-direction:column;align-items:flex-start;gap:1.4cqw}
+.lux-eye{display:flex;align-items:center;gap:1cqw;font-size:0.8cqw;letter-spacing:0.28em;color:#D9B98F}
+.lux-eye::before{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-h{margin:0;font-size:5.4cqw;line-height:0.98}
+.lux-h em{font-style:italic;color:#E2C39A}
+.lux-p{font-size:1.35cqw;line-height:1.45;opacity:0.9;max-width:28em}
+.lux-ctas{display:flex;align-items:center;gap:2cqw;margin-top:0.8cqw}
+.lux-ctas .lux-btn{font-size:1.2cqw;padding:1.3cqw 2.2cqw}
+.lux-play{display:flex;align-items:center;gap:1cqw;font-size:1.2cqw;font-weight:600}
+.lux-play i{width:3.4cqw;height:3.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.12cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-play svg{width:1.2cqw;height:1.2cqw;margin-left:0.2cqw}
+.lux-sec{padding:2.4cqw 5cqw 3cqw;display:flex;flex-direction:column;align-items:center;gap:1.2cqw;background:#0D1211}
+.lux-sec .lux-eye::after{content:"";width:2.2cqw;height:0.08cqw;background:#D9B98F}
+.lux-sec h6{margin:0;font-size:3.2cqw;line-height:1}
+.lux-cards{align-self:stretch;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.8cqw;margin-top:1cqw}
+.lux-card{position:relative;height:10cqw;border-radius:1.4cqw;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:space-between;padding:1.4cqw 1.8cqw}
+.lux-card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.65),rgba(0,0,0,0) 65%)}
+.lux-card span,.lux-card i{position:relative}
+.lux-card span{font-size:1.3cqw;font-weight:600}
+.lux-card i{width:2.4cqw;height:2.4cqw;border-radius:50%;box-shadow:inset 0 0 0 0.1cqw #F3EEE6;display:flex;align-items:center;justify-content:center}
+.lux-card svg{width:1.2cqw;height:1.2cqw}
+.site.m.lux .lux-hero{height:auto;display:flex;flex-direction:column}
+.site.m.lux .lux-hero::before{display:none}
+.site.m.lux .lux-photo{position:relative;width:100%;height:58cqw;-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+.site.m.lux .lux-nav{padding:4cqw 5cqw}
+.site.m.lux .lux-logo svg{width:7cqw}
+.site.m.lux .lux-logo b{font-size:4.6cqw}
+.site.m.lux .lux-logo small{font-size:1.6cqw}
+.site.m.lux .lux-links{display:block;padding:2.6cqw;width:auto;font-size:0}
+.site.m.lux .lux-links span{display:none}
+.site.m.lux .lux-links svg{display:block;width:5cqw;height:5cqw}
+.site.m.lux .lux-nav .lux-btn{font-size:3cqw;padding:2.4cqw 3.6cqw;gap:1.4cqw}
+.site.m.lux .lux-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.lux .lux-copy{position:relative;left:auto;top:auto;width:auto;padding:2cqw 6cqw 6cqw;gap:3.4cqw}
+.site.m.lux .lux-eye{font-size:2.3cqw;gap:2.6cqw}
+.site.m.lux .lux-eye::before,.site.m.lux .lux-sec .lux-eye::after{width:5cqw;height:0.25cqw}
+.site.m.lux .lux-h{font-size:11cqw}
+.site.m.lux .lux-p{font-size:3.9cqw}
+.site.m.lux .lux-ctas{gap:4cqw}
+.site.m.lux .lux-ctas .lux-btn{font-size:3.6cqw;padding:3.4cqw 5cqw}
+.site.m.lux .lux-play{font-size:3.6cqw;gap:2.4cqw}
+.site.m.lux .lux-play i{width:9cqw;height:9cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-play svg{width:3.4cqw;height:3.4cqw}
+.site.m.lux .lux-sec{padding:6cqw 6cqw;gap:3cqw}
+.site.m.lux .lux-sec h6{font-size:8cqw}
+.site.m.lux .lux-cards{grid-template-columns:1fr;gap:3cqw}
+.site.m.lux .lux-card{height:30cqw;border-radius:4cqw;padding:4cqw 5cqw}
+.site.m.lux .lux-card span{font-size:4.4cqw}
+.site.m.lux .lux-card i{width:8cqw;height:8cqw;box-shadow:inset 0 0 0 0.3cqw #F3EEE6}
+.site.m.lux .lux-card svg{width:3.6cqw;height:3.6cqw}
+.lux-links svg{display:none}
+/* Altura: photo-led gym template */
+.alt{background:#1B1B1B center 78%/cover no-repeat;color:#F4F2EE;font-family:'Archivo','Outfit',sans-serif;font-stretch:100%}
+.alt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.15) 30%,rgba(0,0,0,0.55) 70%,rgba(0,0,0,0.75))}
+.alt > *{position:relative}
+.alt .wide{font-stretch:125%;font-weight:800}
+.alt-nav{display:flex;align-items:center;gap:3cqw;padding:2cqw 2.8cqw;flex-shrink:0}
+.alt-logo{font-size:2.1cqw;letter-spacing:-0.01em}
+.alt-links{display:flex;gap:2.4cqw;margin-left:auto;margin-right:auto;font-size:1.15cqw;font-weight:500}
+.alt-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1.1cqw 1.8cqw;background:#D4F55A;color:#111;font-size:1.1cqw;font-weight:700;white-space:nowrap}
+.alt-btn svg{width:1.3cqw;height:1.3cqw}
+.alt-hero{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.8cqw 3cqw;gap:2.4cqw}
+.alt-h{margin:0;font-size:8.4cqw;line-height:0.9;letter-spacing:-0.035em;max-width:11em}
+.alt-row{display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw}
+.alt-p{font-size:1.45cqw;line-height:1.45;max-width:26em}
+.alt-ctas{display:flex;align-items:center;gap:2.4cqw;flex-shrink:0}
+.alt-ctas .alt-btn{font-size:1.3cqw;padding:1.5cqw 2.2cqw}
+.alt-link{font-size:1.3cqw;font-weight:700;box-shadow:0 0.15cqw 0 currentColor}
+.alt-bar{height:1.2cqw;background:#D4F55A;flex-shrink:0}
+.site.m.alt{background-position:center 40%}
+.site.m.alt .alt-nav{padding:5cqw 5cqw}
+.site.m.alt .alt-logo{font-size:6.6cqw}
+.site.m.alt .alt-links{display:none}
+.site.m.alt .alt-nav .alt-btn{margin-left:auto;font-size:3.6cqw;padding:3cqw 4cqw}
+.site.m.alt .alt-hero{padding:0 5cqw 8cqw;gap:5cqw}
+.site.m.alt .alt-h{font-size:12.5cqw}
+.site.m.alt .alt-row{flex-direction:column;align-items:flex-start;gap:6cqw}
+.site.m.alt .alt-p{font-size:3.8cqw}
+.site.m.alt .alt-ctas{gap:6cqw}
+.site.m.alt .alt-ctas .alt-btn{font-size:3.8cqw;padding:4cqw 5cqw;gap:2.4cqw}
+.site.m.alt .alt-btn svg{width:4cqw;height:4cqw}
+.site.m.alt .alt-link{font-size:3.8cqw;box-shadow:0 0.4cqw 0 currentColor}
+.site.m.alt .alt-bar{display:none}
+/* Barber Royce: dark barbershop template */
+.roy{background:radial-gradient(70% 90% at 75% 50%,#4A1517,#120B0B 70%);color:#F3ECE4;font-family:'Manrope','Outfit',sans-serif}
+.roy .cond{font-family:'Anton','Outfit',sans-serif;font-weight:400;letter-spacing:0}
+.roy-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 6cqw;flex-shrink:0}
+.roy-logo{display:flex;align-items:center;gap:0.9cqw;font-size:1.6cqw;letter-spacing:0.02em}
+.roy-logo span{width:2.2cqw;height:2.7cqw;background:center/contain no-repeat}
+.roy-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.05cqw;opacity:0.9}
+.roy-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 1.9cqw;border-radius:99px;background:#B3282D;color:#fff;font-size:1.05cqw;font-weight:600;white-space:nowrap;box-shadow:0 0.6cqw 1.6cqw -0.6cqw rgba(179,40,45,0.7)}
+.roy-btn svg{width:1.2cqw;height:1.2cqw}
+.roy-btn.o{background:transparent;box-shadow:inset 0 0 0 0.1cqw rgba(243,236,228,0.35)}
+.roy-menu{display:none}
+.roy-hero{flex:1;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;padding:0 6cqw 2cqw;gap:2cqw}
+.roy-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.roy-eye{display:flex;align-items:center;gap:0.8cqw;font-size:0.8cqw;letter-spacing:0.2em;opacity:0.85}
+.roy-eye i{width:0.6cqw;height:0.6cqw;border-radius:50%;background:#E0393E}
+.roy-h{margin:0;font-size:6.6cqw;line-height:0.86;text-transform:uppercase}
+.roy-h em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;text-transform:none;color:#D13A3F;font-size:0.8em}
+.roy-p{font-size:1.25cqw;line-height:1.5;opacity:0.85;max-width:30em}
+.roy-ctas{display:flex;gap:1cqw;margin-top:0.4cqw}
+.roy-ctas .roy-btn{font-size:1.15cqw;padding:1.2cqw 2.1cqw}
+.roy-badge{justify-self:center;width:28cqw;aspect-ratio:1;background:center/cover no-repeat;-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.roy-ribbon{display:none}
+.site.m.roy .roy-nav{padding:4cqw 5cqw;box-shadow:0 0.2cqw 0 rgba(243,236,228,0.08)}
+.site.m.roy .roy-logo{font-size:5cqw;gap:2.4cqw}
+.site.m.roy .roy-logo span{width:7cqw;height:8.6cqw}
+.site.m.roy .roy-links,.site.m.roy .roy-nav > .roy-btn{display:none}
+.site.m.roy .roy-menu{display:flex;margin-left:auto;width:10cqw;height:10cqw;border-radius:50%;box-shadow:inset 0 0 0 0.3cqw rgba(243,236,228,0.2);align-items:center;justify-content:center}
+.site.m.roy .roy-menu svg{width:5cqw;height:5cqw}
+.site.m.roy .roy-hero{display:flex;flex-direction:column;align-items:stretch;padding:2cqw 5cqw 4cqw;gap:3cqw}
+.site.m.roy .roy-badge{order:-1;width:62cqw}
+.site.m.roy .roy-copy{gap:3cqw}
+.site.m.roy .roy-eye{font-size:2.3cqw;gap:1.6cqw}
+.site.m.roy .roy-eye i{width:1.6cqw;height:1.6cqw}
+.site.m.roy .roy-h{font-size:12cqw}
+.site.m.roy .roy-h br.d{display:none}
+.site.m.roy .roy-p{font-size:3.5cqw}
+.site.m.roy .roy-ctas{gap:2.6cqw}
+.site.m.roy .roy-ctas .roy-btn{font-size:3.4cqw;padding:3cqw 4.6cqw;gap:1.6cqw}
+.site.m.roy .roy-btn svg{width:3.6cqw;height:3.6cqw}
+.site.m.roy .roy-ribbon{display:flex;align-items:center;justify-content:space-around;margin:auto -2cqw 6cqw;padding:3.4cqw 0;background:#B3282D;transform:rotate(-2deg);font-size:5.6cqw;flex-shrink:0}
+.site.m.roy .roy-ribbon i{font-style:normal;font-size:3.6cqw}
+/* iproperty: real-estate marketplace template */
+.ip{background:#fff;color:#1D1D1F;font-family:'Poppins','Outfit',sans-serif}
+.ip-nav{display:flex;align-items:center;gap:2.4cqw;padding:1.4cqw 2.4cqw;box-shadow:0 0.3cqw 1cqw rgba(0,0,0,0.06);position:relative;z-index:2;flex-shrink:0}
+.ip-logo{display:flex;align-items:center;gap:0.3cqw;font-size:1.6cqw;font-weight:600;letter-spacing:-0.02em}
+.ip-logo svg{width:1.5cqw;height:1.8cqw}
+.ip-links{display:flex;gap:0.6cqw;font-size:1cqw;font-weight:500}
+.ip-links span{padding:0.6cqw 1cqw;border-radius:99px}
+.ip-links span:first-child{background:#EEEEEE}
+.ip-right{margin-left:auto;display:flex;gap:0.8cqw;align-items:center}
+.ip-ghost{display:flex;align-items:center;gap:0.5cqw;padding:0.7cqw 1.1cqw;border-radius:99px;background:#F2F2F2;font-size:0.95cqw;color:#444}
+.ip-dark{display:flex;align-items:center;gap:0.5cqw;padding:0.9cqw 1.3cqw;border-radius:99px;background:#111;color:#fff;font-size:1cqw;font-weight:600}
+.ip-ghost svg,.ip-dark svg{width:1.1cqw;height:1.1cqw}
+.ip-body{flex:1;display:grid;grid-template-columns:54% 46%;min-height:0}
+.ip-list{padding:2cqw 2cqw;display:flex;flex-direction:column;gap:2cqw;overflow:hidden}
+.ip-bar{display:flex;align-items:center;gap:1.4cqw}
+.ip-filter{display:flex;align-items:center;border-radius:99px;overflow:hidden;background:#4CAF50;color:#fff;font-size:1cqw;font-weight:500;flex-shrink:0}
+.ip-filter i{display:flex;padding:1cqw 1.1cqw;background:#3E9842}
+.ip-filter i svg{width:1.2cqw;height:1.2cqw}
+.ip-filter span{padding:1cqw 1.4cqw}
+.ip-cats{display:flex;gap:0.4cqw;font-size:0.85cqw;color:#555}
+.ip-cats span{display:flex;flex-direction:column;align-items:center;gap:0.4cqw;padding:0.8cqw 0.9cqw;border-radius:0.6cqw;white-space:nowrap}
+.ip-cats span:first-child{background:#F2F2F2}
+.ip-cats svg{width:1.5cqw;height:1.5cqw}
+.ip-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.4cqw}
+.ip-card{aspect-ratio:486/282;border-radius:0.8cqw;background:#ddd center/cover no-repeat}
+.ip-map{position:relative;background:#8DCDEE center/cover no-repeat}
+.ip-map small{position:absolute;right:0.6cqw;bottom:0.6cqw;padding:0.3cqw 0.6cqw;border-radius:0.3cqw;background:rgba(255,255,255,0.85);font-size:0.65cqw;color:#333}
+.ip-pill{display:none}
+.site.m.ip .ip-nav{padding:5cqw 5cqw;gap:3cqw}
+.site.m.ip .ip-logo{font-size:5.6cqw;gap:1cqw}
+.site.m.ip .ip-logo svg{width:5cqw;height:6cqw}
+.site.m.ip .ip-links,.site.m.ip .ip-ghost span,.site.m.ip .ip-dark{display:none}
+.site.m.ip .ip-ghost{width:10cqw;height:10cqw;padding:0;justify-content:center;border-radius:50%}
+.site.m.ip .ip-ghost svg{width:4.6cqw;height:4.6cqw}
+.site.m.ip .ip-body{display:flex;flex-direction:column}
+.site.m.ip .ip-map{order:-1;height:30cqw;flex-shrink:0;background-size:260% auto;background-position:62% 42%}
+.site.m.ip .ip-map small{display:none}
+.site.m.ip .ip-pill{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:2.4cqw 5cqw;border-radius:99px;background:rgba(255,255,255,0.8);box-shadow:inset 0 0 0 0.4cqw #555;font-size:3.6cqw;color:#444}
+.site.m.ip .ip-list{padding:6cqw 5cqw;gap:5cqw}
+.site.m.ip .ip-bar{flex-direction:column;align-items:flex-start;gap:5cqw}
+.site.m.ip .ip-filter{font-size:3.6cqw}
+.site.m.ip .ip-filter i{padding:3cqw 3.4cqw}
+.site.m.ip .ip-filter i svg{width:4.4cqw;height:4.4cqw}
+.site.m.ip .ip-filter span{padding:3cqw 4cqw}
+.site.m.ip .ip-cats{font-size:3.2cqw;gap:1cqw}
+.site.m.ip .ip-cats span{padding:3cqw 3.2cqw;border-radius:2cqw;gap:1.4cqw}
+.site.m.ip .ip-cats span:nth-child(n+5){display:none}
+.site.m.ip .ip-cats svg{width:6cqw;height:6cqw}
+.site.m.ip .ip-cards{grid-template-columns:1fr;gap:4cqw}
+.site.m.ip .ip-card{border-radius:3cqw}
+/* Zootropolis: friendly veterinary template */
+.vet{background:linear-gradient(180deg,#E6F4FA,#F3FAFC);color:#1F2A44;font-family:'Nunito','Outfit',sans-serif}
+.vet .fun{font-family:'Lilita One','Outfit',sans-serif;font-weight:400;letter-spacing:0.01em}
+.vet-nav{display:flex;align-items:center;gap:3cqw;padding:1.6cqw 5cqw;flex-shrink:0}
+.vet-logo{display:flex;align-items:center;gap:1cqw;font-size:1.9cqw;color:#2E4BB1}
+.vet-logo span{width:5cqw;height:3.4cqw;border-radius:0.8cqw;overflow:hidden;background:#fff center/cover no-repeat;background-position:20% 40%;background-size:150% auto}
+.vet-links{display:flex;gap:2.4cqw;margin-left:auto;font-size:1.15cqw;font-weight:700}
+.vet-btn{display:inline-flex;align-items:center;gap:0.7cqw;padding:1cqw 2cqw;border-radius:99px;background:#EB6B2A;color:#fff;font-size:1.2cqw;box-shadow:0 0.35cqw 0 #B9501C;white-space:nowrap}
+.vet-btn svg{width:1.4cqw;height:1.4cqw}
+.vet-btn.w{background:#fff;color:#2E4BB1;box-shadow:0 0.35cqw 0 #D3D8F0}
+.vet-menu{display:none}
+.vet-hero{flex:1;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2cqw;padding:0.6cqw 5cqw 2cqw}
+.vet-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;min-width:0}
+.vet-chip{display:inline-flex;align-items:center;gap:0.7cqw;padding:0.7cqw 1.4cqw;border-radius:99px;border:0.14cqw dashed #3FB2C6;background:rgba(255,255,255,0.7);font-size:1.05cqw;color:#2E4BB1}
+.vet-chip i{width:0.8cqw;height:0.8cqw;border-radius:50%;background:#3FAE4C}
+.vet-h{margin:0;font-size:5.6cqw;line-height:0.98;color:#2E4BB1}
+.vet-h em{display:block;font-style:normal;color:#EB6B2A}
+.vet-script{font-family:'Caveat',cursive;font-weight:600;font-size:2.2cqw;color:#3E9B35;line-height:1}
+.vet-p{font-size:1.3cqw;line-height:1.5;color:#4A5568;max-width:34em}
+.vet-ctas{display:flex;gap:1.2cqw;margin-top:0.4cqw}
+.vet-ctas .vet-btn{font-size:1.35cqw;padding:1.3cqw 2.3cqw}
+.vet-stats{display:flex;gap:3cqw;margin-top:1cqw}
+.vet-stats span{display:flex;flex-direction:column;gap:0.3cqw;font-size:0.95cqw;font-weight:700;color:#4A5568}
+.vet-stats b{font-size:2.8cqw;line-height:1;color:#2E4BB1}
+.vet-art{position:relative;height:100%;min-height:26cqw;display:flex;align-items:center;justify-content:center}
+.vet-globe{position:absolute;width:30cqw;height:30cqw;border-radius:50%;background:#5AA9C9;overflow:hidden}
+.vet-globe::before{content:"";position:absolute;left:18%;top:8%;width:46%;height:40%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-globe::after{content:"";position:absolute;right:6%;bottom:12%;width:36%;height:32%;border-radius:50%;background:#8CC27A;opacity:0.8}
+.vet-card{position:relative;width:26cqw;aspect-ratio:778/612;border-radius:2.2cqw;background:#fff center/cover no-repeat;box-shadow:0 1.6cqw 3cqw -1cqw rgba(31,42,68,0.25)}
+.vet-tag{position:absolute;display:flex;align-items:center;gap:0.9cqw;padding:1cqw 1.4cqw;border-radius:1.2cqw;background:#fff;box-shadow:0 1cqw 2.4cqw -0.8cqw rgba(31,42,68,0.3);font-size:1.15cqw;color:#1F2A44;white-space:nowrap}
+.vet-tag i{width:2.6cqw;height:2.6cqw;border-radius:0.7cqw;display:flex;align-items:center;justify-content:center}
+.vet-tag svg{width:1.5cqw;height:1.5cqw}
+.vet-tag.t1{left:-4cqw;top:-3cqw}.vet-tag.t1 i{background:#E5F3D9;color:#3E9B35}
+.vet-tag.t2{left:76%;top:38%}.vet-tag.t2 i{background:#EDE7FB;color:#6B4FD1}
+.vet-tag.t3{left:-6cqw;bottom:-3cqw}.vet-tag.t3 i{background:#FDE6D8;color:#EB6B2A}
+.site.m.vet .vet-nav{padding:4cqw 5cqw;gap:3cqw}
+.site.m.vet .vet-logo{font-size:5.4cqw;gap:2.4cqw}
+.site.m.vet .vet-logo span{width:13cqw;height:9cqw;border-radius:2cqw}
+.site.m.vet .vet-links,.site.m.vet .vet-nav > .vet-btn{display:none}
+.site.m.vet .vet-menu{display:block;margin-left:auto;width:7cqw;height:7cqw;color:#2E4BB1}
+.site.m.vet .vet-hero{display:flex;flex-direction:column;align-items:stretch;padding:1cqw 5cqw 5cqw;gap:5cqw}
+.site.m.vet .vet-art{display:flex;min-height:0;height:72cqw;margin-top:3cqw}
+.site.m.vet .vet-globe{width:72cqw;height:72cqw}
+.site.m.vet .vet-card{width:68cqw;border-radius:5cqw}
+.site.m.vet .vet-tag{font-size:2.8cqw;padding:1.8cqw 2.4cqw;gap:1.6cqw;border-radius:3cqw}
+.site.m.vet .vet-tag i{width:5.6cqw;height:5.6cqw;border-radius:1.6cqw}
+.site.m.vet .vet-tag svg{width:3.4cqw;height:3.4cqw}
+.site.m.vet .vet-tag.t1{left:-6cqw;top:-5cqw}
+.site.m.vet .vet-tag.t2{left:62%;top:36%}
+.site.m.vet .vet-tag.t3{left:-6cqw;bottom:-4cqw}
+.site.m.vet .vet-copy{gap:2.6cqw}
+.site.m.vet .vet-chip{font-size:3.2cqw;padding:2cqw 3.6cqw;gap:2cqw;border-width:0.4cqw}
+.site.m.vet .vet-chip i{width:2.4cqw;height:2.4cqw}
+.site.m.vet .vet-h{font-size:11cqw}
+.site.m.vet .vet-script{font-size:5.4cqw}
+.site.m.vet .vet-p{font-size:3.4cqw}
+.site.m.vet .vet-ctas{flex-direction:row;gap:2.6cqw}
+.site.m.vet .vet-ctas .vet-btn{font-size:3.5cqw;padding:3cqw 4.2cqw;box-shadow:0 1cqw 0 #B9501C;gap:1.6cqw}
+.site.m.vet .vet-ctas .vet-btn.w{box-shadow:0 1cqw 0 #D3D8F0}
+.site.m.vet .vet-btn svg{width:4.4cqw;height:4.4cqw}
+.site.m.vet .vet-stats{gap:8cqw}
+.site.m.vet .vet-stats span{font-size:2.8cqw}
+.site.m.vet .vet-stats b{font-size:7cqw}
+.art{position:absolute;display:block}
+
+/* Tech marquee */
+.tech{padding-block:72px 40px}
+.tech p{text-align:center;color:var(--ink-2);font-size:17px;margin-bottom:28px}
+.marquee{overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;align-items:center;gap:64px;padding-right:64px;animation:marquee 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.tech-item{display:inline-flex;align-items:center;gap:14px;font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-0.03em;color:#8C8A84;transition:color 200ms ease}
+.tech-item svg{width:clamp(26px,2.4vw,34px);height:auto}
+@media (hover:hover){.tech-item:hover{color:var(--ink)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Story: WhatsApp to website */
+.story{position:relative;padding-block:clamp(96px,11vw,170px) 0}
+.story-pin{position:relative}
+.story-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.story-copy{grid-column:1 / span 5;display:flex;flex-direction:column;gap:36px;min-width:0;position:relative;z-index:4}
+.phases{display:flex;flex-direction:column;gap:8px}
+.phase{padding:18px 22px;border-radius:20px;color:var(--ink-2);transition:background-color 320ms ease,color 320ms ease}
+.phase h3{font-size:26px;letter-spacing:-0.025em;line-height:1.1;color:inherit;margin-bottom:6px}
+.phase p{font-size:16.5px}
+.phase.on{background:var(--surface);color:var(--ink)}
+.story-stage{grid-column:6 / span 7;position:relative;display:flex;justify-content:center;perspective:1700px;min-width:0}
+.story-rig{position:relative;transform-style:preserve-3d}
+.story-phone{width:min(330px,72vw);will-change:transform,opacity}
+.story-browser{position:relative;width:min(1100px,100%);margin:72px auto 0;will-change:transform,opacity}
+.story-done{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:16px;font-weight:600;color:var(--ink-2)}
+.story-done i{width:8px;height:8px;border-radius:50%;background:var(--wa-green)}
+/* live (scroll-driven) mode */
+.story.is-live .story-pin{height:560vh}
+.story.is-live .story-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
+.story.is-live .story-sticky > .wrap{width:100%}
+.story.is-live .story-phone{width:auto;height:min(76vh,680px);aspect-ratio:9/19}
+.story.is-live .story-browser{position:absolute;left:50%;top:50%;width:min(1120px,88vw,132vh);margin:0;z-index:6;opacity:0;pointer-events:none}
+.story.is-live .story-done{position:absolute;left:0;right:0;bottom:4vh;margin:0;opacity:0;z-index:7;transition:opacity 300ms ease}
+.story.is-live .msg.pending{opacity:0;transform:translateY(3cqw) scale(0.96)}
+.story .typing,.story .t-hide{display:none}
+.story.is-live .typing.on{display:flex}
+@media (max-width:900px){
+  .story-copy,.story-stage{grid-column:1 / -1}
+  .story.is-live .story-grid{grid-template-rows:auto 1fr;height:100svh;padding-block:20px 16px;align-items:stretch}
+  .story.is-live .story-copy{gap:12px}
+  .story.is-live .story-copy .h2{font-size:30px}
+  .story.is-live .phase{display:none;padding:0;background:transparent}
+  .story.is-live .phase.on{display:block}
+  .story.is-live .phase h3{font-size:20px}
+  .story.is-live .phase p{font-size:15px}
+  .story.is-live .story-stage{align-items:center}
+  .story.is-live .story-phone{height:min(60svh,560px)}
+  .story.is-live .story-browser{width:92vw}
+}
+
+/* Demo switcher */
+.demo-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.demo-head h2{grid-column:1 / span 7}
+.demo-head .lede{grid-column:8 / span 5}
+.demo-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px}
+.demo-name{display:flex;flex-direction:column;gap:8px;min-width:min(320px,100%);flex:1 1 280px;max-width:380px}
+.demo-name label{font-size:15px;font-weight:600;color:var(--ink-2)}
+.demo-name input{height:54px;padding:0 20px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:500 18px var(--font);caret-color:var(--ink)}
+.demo-name input::placeholder{color:#8C8A84}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-end}
+.tab{min-height:46px;padding:0 18px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink-2);font:500 16px var(--font);cursor:pointer;transition:transform 140ms var(--ease-out),background-color 180ms ease,color 180ms ease}
+.tab:active{transform:scale(0.96)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (hover:hover) and (pointer:fine){.tab[aria-pressed="false"]:hover{color:var(--ink);background:var(--surface-3)}}
+.demo-stage{position:relative;margin-top:56px;perspective:1800px}
+.demo-rig{position:relative;max-width:1180px;margin:0 auto;transform-style:preserve-3d;will-change:transform;padding-right:12%}
+.demo-desk{position:relative}
+.demo-mob{position:absolute;right:0;bottom:-8%;width:20%;transform:translateZ(90px)}
+.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center;margin-top:clamp(90px,10vw,150px)}
+.demo-foot p{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.demo-head h2,.demo-head .lede{grid-column:1 / -1}.demo-rig{padding-right:16%}.demo-mob{width:28%}}
+
+/* Live site frames */
+.bw-scr > .fb,.bw-scr > .lv,.phone-scr > .fb,.phone-scr > .lv{position:absolute;inset:0}
+.bw-scr > .lv,.phone-scr > .lv{z-index:5}
+.lv{overflow:hidden;background:#fff;opacity:0;transition:opacity 500ms var(--ease-out)}
+.lv.on{opacity:1}
+.lv iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:#fff}
+.live-tag{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:#1F3A2A;color:#9BE8B4;font-size:max(10px,1.2cqw);font-weight:600;white-space:nowrap}
+.live-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#25D366;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.35}}
+.live-tag[hidden]{display:none}
+.bw-scr > .shot{position:absolute;inset:0;z-index:6;overflow:hidden;background:#111}
+.shot img{display:block;width:100%;height:auto;will-change:transform}
+.shot-hint{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:8px 14px;border-radius:99px;background:rgba(5,5,5,0.78);color:#F4F3EF;font-size:max(11px,1.25cqw);font-weight:600;white-space:nowrap;pointer-events:none;transition:opacity 300ms ease}
+.shot-on .shot-hint{opacity:0}
+@media (hover:none){.shot-hint{display:none}}
+/* Gallery strip */
+.gallery{padding-block:0 clamp(40px,6vw,80px);overflow:hidden}
+.gallery-track{display:inline-flex;gap:28px;padding:40px 0;animation:marquee 60s linear infinite;perspective:1400px}
+.gallery:hover .gallery-track{animation-play-state:paused}
+.g-card{width:clamp(260px,26vw,380px);flex-shrink:0;display:flex;flex-direction:column;gap:14px;transform:rotateY(-8deg);transition:transform 400ms var(--ease-out)}
+.g-card figcaption{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2)}
+.g-card figcaption b{color:var(--ink);font-weight:600}
+@media (hover:hover){.g-card:hover{transform:rotateY(0deg) translateY(-6px)}}
+.g-card{margin:0}
+
+/* Included: bento of real fragments */
+.inc-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;margin-bottom:56px}
+.inc-head h2{grid-column:1 / span 7}
+.inc-head .lede{grid-column:8 / span 5}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{position:relative;border-radius:28px;background:var(--surface);padding:30px;display:flex;flex-direction:column;gap:12px;overflow:hidden;min-width:0}
+.tile h3{font-size:28px;letter-spacing:-0.03em;line-height:1.05}
+.tile p{color:var(--ink-2);font-size:16.5px;max-width:30em}
+.t-design{grid-column:span 7;grid-row:span 2}
+.t-domain{grid-column:span 5}
+.t-secure{grid-column:span 5}
+.t-changes{grid-column:span 4;grid-row:span 2}
+.t-maint{grid-column:span 4;grid-row:span 2}
+.t-preview{grid-column:span 4;grid-row:span 2;background:var(--ink);color:var(--bg)}
+.t-preview p{color:var(--paper-ink-2)}
+.t-frag{margin-top:auto}
+.t-design .t-frag{position:relative;height:auto;aspect-ratio:2.15/1;perspective:1200px}
+.t-design .td-back{position:absolute;left:50%;top:0;width:64%;transform:translateX(-50%) translateZ(-60px);opacity:0.6}
+.t-design .td-shot{position:absolute;width:60%;height:auto;border-radius:12px;box-shadow:0 40px 80px -24px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.06);transform-origin:50% 100%}
+.t-design .td-a{left:0;top:3%;transform:rotateY(14deg) rotateX(4deg)}
+.t-design .td-b{right:0;bottom:0;transform:rotateY(-12deg) rotateX(4deg)}
+.urlbar{display:flex;align-items:center;gap:12px;height:62px;padding:0 22px;border-radius:999px;background:var(--surface-2);font-size:clamp(17px,1.6vw,22px);font-weight:600;overflow:hidden}
+.urlbar svg{flex-shrink:0}
+.urlbar .dom{display:inline-block;transition:clip-path 600ms var(--ease-in-out);clip-path:inset(0 0 0 0)}
+.urlbar .dom.hide{clip-path:inset(0 100% 0 0)}
+.urlbar .caret{width:2px;height:24px;background:var(--ink);animation:blink 1s steps(1) infinite;margin-left:-8px}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--surface-2);font-size:15px;font-weight:600}
+.mini-chat{container-type:inline-size;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:22px;background:var(--wa-bg)}
+.mini-chat .msg{font-size:15px;max-width:90%;padding:10px 14px 6px;border-radius:14px}
+.mini-chat .msg time{font-size:11px}
+.mini-chat .msg time svg{width:16px}
+.checks{display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:var(--surface-2);font-size:16px;font-weight:500}
+.checks li span{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pv-big{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.pv-big .bw{transform:rotate(-3deg)}
+.pv-shot{display:block;width:100%;height:auto;border-radius:12px;transform:rotate(-3deg);box-shadow:0 30px 60px -24px rgba(0,0,0,0.55)}
+@media (max-width:1000px){
+  .inc-head h2,.inc-head .lede{grid-column:1 / -1}
+  .t-design,.t-domain,.t-secure,.t-changes,.t-maint,.t-preview{grid-column:1 / -1;grid-row:auto}
+}
+
+/* Pricing */
+.price-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch;perspective:1600px}
+.plan{position:relative;display:flex;flex-direction:column;gap:22px;padding:34px 30px;border-radius:30px;background:var(--surface);transform-style:preserve-3d;transition:background-color 220ms ease}
+.plan h3{font-size:34px}
+.plan .pdesc{color:var(--ink-2);font-size:16.5px;min-height:3em}
+.plan .amount{display:flex;align-items:baseline;gap:8px}
+.plan .amount b{font-size:clamp(46px,4.2vw,64px);font-weight:900;letter-spacing:-0.045em;line-height:1;font-variant-numeric:tabular-nums}
+.plan .amount span{font-size:17px;color:var(--ink-2)}
+.plan .amount .was{font-size:24px;font-weight:700;color:var(--ink-2);text-decoration:line-through;letter-spacing:-0.02em}
+.plan.featured .amount .was{color:var(--paper-ink-2)}
+.plan .annual-total{font-size:14.5px;color:var(--ink-2);margin-top:-14px}
+.plan.featured .annual-total{color:var(--paper-ink-2)}
+.plan li.hl{color:var(--wa-green)}
+.btn .btn-save{display:inline-flex;align-items:center;padding:4px 10px;margin-left:2px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 12px/1 var(--font);white-space:nowrap}
+.plan ul{display:flex;flex-direction:column;gap:12px;font-size:16.5px}
+.plan li{display:flex;gap:12px;align-items:flex-start}
+.plan li svg{flex-shrink:0;margin-top:4px}
+.plan .btn{margin-top:auto}
+.plan .paylink{display:block;margin-top:-8px;text-align:center;font-size:14px;color:var(--ink-2);text-decoration:none}
+.plan .paylink b{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.plan.featured .paylink{color:var(--paper-ink-2)}
+.plan.featured .paylink b{color:var(--bg)}
+.plan-tag{position:absolute;top:22px;right:22px;padding:8px 14px;border-radius:999px;background:var(--bg);color:var(--ink);font-size:14px;font-weight:600}
+.plan.featured{background:var(--ink);color:var(--bg);transform:translateY(-12px)}
+.plan.featured .pdesc,.plan.featured .amount span{color:var(--paper-ink-2)}
+.plan.featured .btn{background:var(--bg);color:var(--ink)}
+@media (hover:hover){.plan:not(.featured):hover{background:#171716}}
+.price-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:40px;font-size:16px;color:var(--ink-2)}
+.price-note b{color:var(--ink)}
+.billing-toggle{display:inline-flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:var(--surface-2)}
+.bt-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);font:600 15px/1 var(--font);cursor:pointer;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
+.bt-btn.is-on{background:var(--ink);color:var(--bg)}
+.bt-badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 12px/1 var(--font)}
+.bt-btn.is-on .bt-badge{background:#052E16;color:var(--wa-green)}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan.featured{transform:none}.price-head{align-items:flex-start}}
+
+/* Custom projects */
+.custom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding:clamp(36px,5vw,64px);border-radius:36px;background:var(--surface)}
+.custom-copy{grid-column:1 / span 7;display:flex;flex-direction:column;gap:20px;min-width:0}
+.custom-copy h2{font-size:clamp(34px,3.8vw,56px)}
+.custom-side{grid-column:9 / span 4;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.custom-side b{font-size:clamp(40px,3.6vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.custom-side span{color:var(--ink-2)}
+@media (max-width:900px){.custom-copy,.custom-side{grid-column:1 / -1}}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border-radius:22px;padding:0 28px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;font-size:20px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex-shrink:0;transition:transform 240ms var(--ease-out)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{padding-bottom:26px;color:var(--ink-2);max-width:40em}
+@media (max-width:900px){.faq{grid-template-columns:1fr}}
+
+/* Final CTA + footer */
+.final{text-align:center}
+.final-in{display:flex;flex-direction:column;align-items:center;gap:28px}
+.final h2{font-size:clamp(44px,6vw,96px);max-width:12em}
+.final .lede{text-align:center}
+footer{padding-block:40px 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px 24px;padding-top:56px}
+.foot-col{grid-column:span 3;display:flex;flex-direction:column;gap:12px;font-size:16px;min-width:0}
+.foot-col h4{font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+.foot-col a,.foot-col span{color:var(--ink-2);text-decoration:none}
+@media (hover:hover){.foot-col a:hover{color:var(--ink)}}
+.foot-intro{grid-column:span 6}
+.foot-intro p{color:var(--ink-2);max-width:28em}
+.copy-num{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;min-height:44px;padding:0 16px;border-radius:999px;border:0;background:var(--surface-2);color:var(--ink);font:600 16px var(--font);cursor:pointer;font-variant-numeric:tabular-nums;transition:transform 140ms var(--ease-out),background-color 180ms ease}
+.copy-num:active{transform:scale(0.97)}
+@media (hover:hover){.copy-num:hover{background:var(--surface-3)}}
+.wordmark{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:72px}
+.wordmark b{font-size:clamp(100px,24vw,370px);font-weight:900;letter-spacing:-0.06em;line-height:0.78}
+.wordmark span{font-size:clamp(14px,1.6vw,22px);font-weight:500;letter-spacing:0.4em;padding-bottom:1.2vw;white-space:nowrap}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;font-size:14px;color:#8C8A84}
+@media (max-width:900px){.foot-col{grid-column:span 6}.foot-intro{grid-column:1 / -1}}
+@media (max-width:640px){.wordmark{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* Floating mobile CTA */
+.fab{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;display:none;box-shadow:0 18px 40px -12px rgba(0,0,0,0.8);transform:translateY(140%);transition:transform 380ms var(--ease-out)}
+.fab.show{transform:translateY(0)}
+@media (max-width:760px){.fab{display:flex}}
+
+/* Reveal: visible at rest; JS hides only what is below the fold, then reveals it */
+.pre{opacity:0;transform:translateY(26px)}
+.rv{transition:opacity 760ms var(--ease-out),transform 760ms var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.hero-stage-in,.float-a,.float-b{animation:none}
+  .marquee-track,.gallery-track{animation:none}
+  .pre{transform:none}
+  .rv{transition:opacity 300ms ease}
+  .typing i{animation:none}
+  .badge{transition:none}
+}
+
+/* ---------- Design catalog ---------- */
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:48px}
+.cat-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 20px 16px;border-radius:22px;border:0;background:var(--surface);box-shadow:inset 0 0 0 1px #22221F;color:var(--ink);font-family:var(--font);text-align:left;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 220ms ease,color 220ms ease,box-shadow 220ms ease}
+.cat-card:active{transform:scale(0.98)}
+.cat-card small{font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:0.1em;font-variant-numeric:tabular-nums}
+.cat-card b{font-size:18px;font-weight:700;line-height:1.2;margin-top:6px}
+.cat-card span{font-size:14px;color:var(--ink-2)}
+.cat-card em{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-style:normal;font-size:14px;font-weight:600}
+.cat-card em::after{content:"→";transition:transform 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.cat-card[aria-pressed="false"]:hover{background:var(--surface-2)}.cat-card:hover em::after{transform:translateX(3px)}}
+.cat-card[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none}
+.cat-card[aria-pressed="true"] small,.cat-card[aria-pressed="true"] span{color:#55534E}
+.cat-card[aria-pressed="true"] em::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A}
+.ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#121211;color:var(--ink-2);font-size:max(11px,1.3cqw);font-weight:500}
+.ld i{width:28px;height:28px;border-radius:50%;border:3px solid #2E2E2B;border-top-color:var(--ink);animation:ldSpin 0.9s linear infinite}
+@keyframes ldSpin{to{transform:rotate(360deg)}}
+.demo-acts{display:flex;flex-wrap:wrap;gap:10px}
+.dv{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;background:rgba(5,5,5,0.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.dv[hidden]{display:none}
+.dv-bar{display:flex;align-items:center;gap:16px;padding:12px max(16px,env(safe-area-inset-left,0px));height:68px}
+.dv-bar b{font-size:18px;font-weight:700;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dv-dev{display:flex;gap:4px;padding:4px;border-radius:99px;background:var(--surface-2)}
+.dv-dev button{height:38px;padding:0 16px;border-radius:99px;border:0;background:transparent;color:var(--ink-2);font:600 14px var(--font);cursor:pointer}
+.dv-dev button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.dv-x{width:44px;height:44px;border-radius:50%;border:0;background:var(--surface-3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dv-body{flex:1;display:flex;justify-content:center;padding:0 12px 12px;min-height:0}
+.dv-frame{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#121211;transition:width 400ms var(--ease-out)}
+.dv-frame.mob{width:min(400px,100%)}
+.dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+@media (max-width:900px){
+  .demo-desk{display:none}
+  .demo-rig{padding-right:0}
+  .demo-mob{position:relative;right:auto;bottom:auto;width:min(300px,78vw);margin:0 auto;transform:none}
+  .demo-foot{margin-top:40px}
+  .dv-dev{display:none}
+  .cat{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -24px 0;padding:0 24px 6px;scrollbar-width:none}
+  .cat::-webkit-scrollbar{display:none}
+  .cat-card{flex:0 0 min(64vw,240px);scroll-snap-align:start}
+}
+</style>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#top" aria-label="OKfly Studio, inicio"><b>OKfly</b><span>STUDIO</span></a>
+    <ul>
+      <li><a href="#como-funciona"><span data-t>Cómo funciona</span></a></li>
+      <li><a href="#disenos"><span data-t>Diseños</span></a></li>
+      <li><a href="#planes"><span data-t>Planes</span></a></li>
+      <li><a href="#preguntas"><span data-t>Preguntas</span></a></li>
+      <li><a href="servicios"><span data-t>Servicios</span></a></li>
+      <li><a href="autofly" class="nav-new">Autofly</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true"><span data-t>ES</span></button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false"><span data-t>EN</span></button>
+      </div>
+      <a class="btn js-wa nav-cta" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Inicia mi página</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-copy">
+      <h1 class="rise"><span data-t>Creamos sistemas para recibir clientes.</span></h1>
+      <p class="hero-sub rise d1"><span data-t>No solo construimos tu presencia en línea. Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.</span></p>
+      <div class="hero-actions rise d2">
+        <a class="btn js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Inicia mi página web</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#como-funciona"><span data-t>Descubre cómo funciona</span></a>
+      </div>
+      <p class="hero-price rise d3"><span data-t="heroPrice">Desde <b>$499 MXN al mes</b></span><span><i></i><span data-t>Ve tu página antes de pagar</span></span><span><span data-t>Sin costo inicial</span></span></p>
+    </div>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-light"></div>
+      <div class="hero-stage-in">
+        <div class="hero-rig" id="heroRig">
+          <div class="hero-browser">
+            <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>casamar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
+          </div>
+          <div class="hero-phone"><div class="float-a">
+            <div class="phone"><div class="phone-notch"></div><div class="phone-scr">
+              <div class="wa">
+                <div class="wa-head"><div class="wa-av"><b>OK</b><span>fly</span></div><div class="wa-who"><b>OKfly Studio <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#25D366"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#0B141A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><span data-t>Cuenta de empresa · En línea</span></span></div></div>
+                <div class="wa-body"><div class="wa-feed" style="justify-content:flex-end;bottom:0;top:auto">
+                  <div class="msg in"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Casa Mar</span></b><span><span data-t>Adaptada a celular</span></span></div></div><span data-t>¡Tu página web está lista! 🎉</span><time>09:15</time></div>
+                  <div class="msg out"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                  <div class="msg in"><span data-t>¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
+                </div></div>
+              </div>
+            </div></div>
+          </div></div>
+          <div class="hero-mphone"><div class="float-b">
+            <div class="phone"><div class="phone-notch"></div><div class="phone-scr" data-site="restaurante" data-mobile="1"></div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="tech">
+    <p><span data-t>Construimos con las mismas herramientas que usan las grandes marcas</span></p>
+    <div class="marquee" aria-label="Tecnologías: HTML5, Stripe, WhatsApp, Google, Supabase, Meta, Vercel y GitHub">
+      <div class="marquee-track" id="techTrack" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="como-funciona" aria-labelledby="story-h">
+    <div class="story-pin">
+      <div class="story-sticky">
+        <div class="wrap story-grid">
+          <div class="story-copy" id="storyCopy">
+            <h2 class="h2" id="story-h"><span data-t>Así de fácil es tener tu página web.</span></h2>
+            <ol class="phases">
+              <li class="phase on"><h3><span data-t>Nos escribes por WhatsApp</span></h3><p><span data-t>Cuéntanos de tu negocio y mándanos tu logo, fotos y redes. Sin formularios ni juntas.</span></p></li>
+              <li class="phase"><h3><span data-t>Diseñamos tu página</span></h3><p><span data-t>Armamos tu sitio con tu marca, textos que venden y versión para celular.</span></p></li>
+              <li class="phase"><h3><span data-t>La ves antes de pagar</span></h3><p><span data-t>Te mandamos una vista previa gratuita. Si te gusta, la publicamos con tu dominio.</span></p></li>
+              <li class="phase"><h3><span data-t>Eliges tu plan y listo</span></h3><p><span data-t>Desde $499 al mes. Nosotros nos encargamos del resto.</span></p></li>
+            </ol>
+          </div>
+          <div class="story-stage">
+            <div class="story-rig">
+              <div class="story-phone" id="storyPhone">
+                <div class="phone" style="height:100%"><div class="phone-notch"></div><div class="phone-scr">
+                  <div class="wa">
+                    <div class="wa-head"><div class="wa-av"><b>OK</b><span>fly</span></div><div class="wa-who"><b>OKfly Studio <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#25D366"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#0B141A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><span data-t>Cuenta de empresa · En línea</span></span></div></div>
+                    <div class="wa-body" id="waBody"><div class="wa-feed" id="waFeed">
+                      <div class="msg out" data-at=".02"><span data-t>Hola, tengo un restaurante y quiero tener mi propia página web. ¿Cuánto cuesta?</span><time>10:32 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".06" data-until=".11"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".11"><span data-t>¡Hola! 👋 ¡Claro que sí! En OKfly podemos crear tu página web profesional desde $499 al mes.</span><time>10:32</time></div>
+                      <div class="msg out" data-at=".16"><span data-t>¿Y qué necesitan para hacerla?</span><time>10:33 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".19" data-until=".23"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".23"><span data-t>¡Es muy fácil! Solo necesitamos tu logo, algunas fotos y el enlace de tu Facebook o Instagram. Nosotros hacemos todo. 🚀</span><time>10:33</time></div>
+                      <div class="msg out" data-at=".29"><div class="att"><div class="att-file"><span>CM</span><span>logo-casamar.png</span></div><div class="att-pics"><span style="background:#D9885A"><i class="art" style="left:20%;top:18%;width:34%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i></span><span style="background:#3C2A22"><i class="art" style="left:22%;top:30%;width:56%;aspect-ratio:1;border-radius:50%;background:#E8D8C3"></i><i class="art" style="left:36%;top:44%;width:28%;aspect-ratio:1;border-radius:50%;background:#C2552F"></i></span><span style="background:#2E5E73"><i class="art" style="left:0;right:0;bottom:0;height:45%;background:#E9D9B8"></i><i class="art" style="left:58%;bottom:45%;width:8%;height:40%;background:#24402F"></i></span></div><span class="att-link">instagram.com/casamar</span></div><span data-t>¡Perfecto! Te mando mi información.</span><time>10:34 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".32" data-until=".35"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".35"><span data-t>¡Excelente! Nuestro equipo comienza a trabajar en tu diseño. Primero te mostraremos una vista previa gratuita. Si te gusta, la publicamos con tu propio dominio. ✨</span><time>10:34</time></div>
+                      <div class="wa-day msg" data-at=".41" style="max-width:none;background:#182229"><span data-t>24 horas después</span></div>
+                      <div class="typing" data-at=".44" data-until=".48"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".48" id="previewMsg"><div class="pv"><div class="pv-shot" data-site="restaurante"></div><div class="pv-meta"><b><span data-t>Vista previa · Casa Mar</span></b><span><span data-t>Diseño personalizado · Adaptado a móviles</span></span></div></div><span data-t>¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.</span><time>09:15</time></div>
+                      <div class="msg out" data-at=".88"><span data-t>¡Wow! ¡Me encanta! ¿Cómo empezamos?</span><time>09:17 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+                      <div class="typing" data-at=".91" data-until=".94"><i></i><i></i><i></i></div>
+                      <div class="msg in" data-at=".94"><span data-t>¡Bienvenido a OKfly! 🚀 Solo elige tu plan y nosotros nos encargamos del resto.</span><time>09:17</time></div>
+                    </div></div>
+                    <div class="wa-input"><span><span data-t>Mensaje</span></span><i><svg viewBox="0 0 24 24" fill="#0B141A"><path d="M3 20.5l18-8.5L3 3.5v6.6l12 1.9-12 1.9z"/></svg></i></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="story-browser" id="storyBrowser" aria-hidden="true">
+          <div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>casamar.com</span></div><div class="bw-scr" data-site="restaurante"></div></div>
+        </div>
+        <p class="story-done" id="storyDone"><i></i><span data-t>Vista previa · Página lista para publicar</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="disenos" aria-labelledby="demo-h">
+    <div class="wrap">
+      <div class="demo-head">
+        <h2 class="h2" id="demo-h" data-rv><span data-t>Mira algunos de nuestros diseños activos.</span></h2>
+        <p class="lede" data-rv><span data-t>Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.</span></p>
+      </div>
+      <div class="cat" id="cat" role="group" aria-label="Diseños" data-rv></div>
+      <div class="demo-stage" data-rv>
+        <div class="demo-rig" id="demoRig">
+          <div class="demo-desk"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="demoUrl"></span></span><span class="live-tag" id="liveTag">En vivo</span></div><div class="bw-scr" id="demoDesk"></div></div></div>
+          <div class="demo-mob"><div class="phone"><div class="phone-notch"></div><div class="phone-scr" id="demoMob"></div></div></div>
+        </div>
+      </div>
+      <div class="demo-foot">
+        <p id="demoNote"><span data-t>Sitios reales funcionando. Haz scroll y da clic adentro para explorarlos.</span></p>
+        <div class="demo-acts">
+          <button type="button" class="btn btn--ghost" id="demoBig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span data-t>Ver en pantalla completa</span></button>
+          <a class="btn" id="demoCta" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Quiero una así</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dv" id="dv" role="dialog" aria-modal="true" aria-labelledby="dvName" hidden>
+    <div class="dv-bar">
+      <b id="dvName"></b>
+      <div class="dv-dev" role="group" aria-label="Dispositivo">
+        <button type="button" data-d="desk" aria-pressed="true"><span data-t>Computadora</span></button>
+        <button type="button" data-d="mob" aria-pressed="false"><span data-t>Celular</span></button>
+      </div>
+      <button type="button" class="dv-x" id="dvClose" aria-label="Cerrar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="dv-body"><div class="dv-frame" id="dvFrame"></div></div>
+  </div>
+
+  <!-- INCLUDED -->
+  <section aria-labelledby="inc-h">
+    <div class="wrap">
+      <div class="inc-head">
+        <h2 class="h2" id="inc-h" data-rv><span data-t>Todo incluido. Tú no tocas nada técnico.</span></h2>
+        <p class="lede" data-rv><span data-t>Una sola mensualidad cubre lo que normalmente pagarías por separado a un diseñador, un hosting y un programador.</span></p>
+      </div>
+      <div class="bento">
+        <article class="tile t-design" data-rv>
+          <h3><span data-t>Diseño profesional</span></h3>
+          <p><span data-t>Hecho a la medida de tu negocio, con tus colores, tus fotos y textos que convierten visitas en clientes.</span></p>
+          <div class="t-frag" aria-hidden="true">
+            <img class="td-shot td-a" src="demos/preview-autotech.jpg" alt="" loading="lazy" decoding="async">
+            <img class="td-shot td-b" src="demos/bento-dental.jpg" alt="" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="tile t-domain" data-rv>
+          <h3><span data-t>Tu propio dominio</span></h3>
+          <p><span data-t>Tu negocio con su propia dirección en internet.</span></p>
+          <div class="t-frag urlbar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="dom" id="domText">casamar.com</span><span class="caret"></span></div>
+        </article>
+        <article class="tile t-secure" data-rv>
+          <h3><span data-t>Hosting y seguridad</span></h3>
+          <p><span data-t>Tu página rápida, protegida y siempre en línea.</span></p>
+          <div class="t-frag chips"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-t>Conexión segura HTTPS</span></span><span><span data-t>Hosting incluido</span></span><span><span data-t>Respaldos</span></span></div>
+        </article>
+        <article class="tile t-changes" data-rv>
+          <h3><span data-t>Cambios por WhatsApp</span></h3>
+          <p><span data-t>¿Nuevo horario, precio o promoción? Nos escribes y lo actualizamos, según tu plan.</span></p>
+          <div class="t-frag mini-chat" aria-hidden="true">
+            <div class="msg out"><span data-t>¿Pueden cambiar el horario del domingo a 9 a 18 h?</span><time>12:04 <svg viewBox="0 0 18 12" fill="none" stroke="#53BDEB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6.5-7"/><path d="M7 9.5l1 0.5 6.5-8"/></svg></time></div>
+            <div class="msg in"><span data-t>Listo, ya está actualizado en tu página.</span><time>12:20</time></div>
+          </div>
+        </article>
+        <article class="tile t-maint" data-rv>
+          <h3><span data-t>Mantenimiento</span></h3>
+          <p><span data-t>Nos encargamos de que todo siga funcionando, sin que tengas que pensarlo.</span></p>
+          <ul class="t-frag checks">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Actualizaciones</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Revisión de seguridad</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Versión para celular</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-t>Atención por WhatsApp</span></li>
+          </ul>
+        </article>
+        <article class="tile t-preview" data-rv>
+          <h3><span data-t>Vista previa gratis</span></h3>
+          <p><span data-t>Primero ves tu página terminada. Si te gusta, empezamos. Si no, no pagas nada.</span></p>
+          <div class="pv-big" aria-hidden="true"><img class="pv-shot" src="demos/bento-hotel.jpg" alt="" loading="lazy" decoding="async"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="planes" aria-labelledby="plan-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="price-head">
+        <h2 class="h2" id="plan-h" data-rv><span data-t>Un plan para cada negocio.</span></h2>
+        <p class="lede" data-rv><span data-t>Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.</span></p>
+        <div class="billing-toggle" id="billingToggle" role="group" aria-label="Forma de pago" data-rv>
+          <button type="button" class="bt-btn" data-billing="monthly" aria-pressed="false"><span data-t>Mensual</span></button>
+          <button type="button" class="bt-btn is-on" data-billing="annual" aria-pressed="true"><span data-t>Anual</span><b class="bt-badge">-30%</b></button>
+        </div>
+      </div>
+      <div class="plans" id="plans"></div>
+      <div class="price-note" data-rv>
+        <p id="priceNoteMonthly" style="display:none"><span data-t>Precios en pesos mexicanos. Pago mensual con tarjeta.</span></p>
+        <p id="priceNoteAnnual"><span data-t>Precio anual, un solo cargo con tarjeta. Puedes volver a mensual cuando quieras.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETING CTA -->
+  <section aria-labelledby="mkt-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="custom" data-rv>
+        <div class="custom-copy">
+          <h2 id="mkt-h"><span data-t>¿Ya tienes tu página? También manejamos tus redes y anuncios.</span></h2>
+          <p class="lede"><span data-t>Contenido, publicaciones y campañas de Facebook e Instagram, listos para aprobar por WhatsApp. Tú solo dices que sí.</span></p>
+        </div>
+        <div class="custom-side">
+          <span><span data-t>Redes sociales y anuncios</span></span>
+          <b><span data-t>Desde $990 MXN/mes</span></b>
+          <a class="btn btn--ghost" href="servicios#redes"><span data-t>Ver planes de marketing</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM -->
+  <section aria-labelledby="custom-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="custom" data-rv>
+        <div class="custom-copy">
+          <h2 id="custom-h"><span data-t>¿Necesitas algo hecho a la medida?</span></h2>
+          <p class="lede"><span data-t>Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.</span></p>
+        </div>
+        <div class="custom-side">
+          <span><span data-t>Proyectos personalizados</span></span>
+          <b><span data-t>Desde $5,000 MXN</span></b>
+          <a class="btn btn--ghost js-wa" data-msg="custom" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Cotizar mi proyecto</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="preguntas" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <h2 class="h2" id="faq-h" data-rv><span data-t>Preguntas frecuentes</span></h2>
+      <div class="faq-list" data-rv>
+        <details><summary><span data-t>¿Qué pasa si no me gusta la vista previa?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>No pagas nada. Primero te enseñamos tu página terminada; solo si te gusta eliges tu plan y la publicamos con tu dominio.</span></p></details>
+        <details><summary><span data-t>¿Qué necesito enviarles?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Tu logo, algunas fotos de tu negocio y el enlace de tu Facebook o Instagram. Con eso armamos tu página; si te falta algo, te ayudamos.</span></p></details>
+        <details><summary><span data-t>¿Necesito saber de tecnología?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>No. Todo se hace por WhatsApp: nosotros nos encargamos del diseño, el dominio, el hosting y el mantenimiento.</span></p></details>
+        <details><summary><span data-t>¿Cuánto tarda mi vista previa?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Normalmente te la enviamos en unas 24 horas después de recibir tu información. Los proyectos personalizados se calendarizan contigo.</span></p></details>
+        <details><summary><span data-t>¿Puedo pedir cambios después?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Sí. Nos escribes por WhatsApp y actualizamos textos, fotos, precios u horarios según lo que incluya tu plan.</span></p></details>
+        <details><summary><span data-t>¿Cómo se paga?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Con tarjeta, como una suscripción mensual. Si prefieres pagar el año completo, también aceptamos transferencia u OXXO.</span></p></details>
+        <details><summary><span data-t>¿Trabajan fuera de México?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p><span data-t>Sí. Todo el proceso es en línea, así que trabajamos con negocios de toda Latinoamérica y Estados Unidos. Si estás fuera de México, te cotizamos en dólares.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" aria-labelledby="final-h" style="padding-top:0">
+    <div class="wrap final-in">
+      <h2 id="final-h" data-rv><span data-t>Mañana tu negocio puede verse así.</span></h2>
+      <p class="lede" data-rv><span data-t>Escríbenos hoy y recibe tu vista previa gratis. Sin compromiso.</span></p>
+      <div data-rv><a class="btn js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener"><span data-t>Inicia mi página web</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-intro">
+        <a class="brand" href="#top" aria-label="OKfly Studio"><b>OKfly</b><span>STUDIO</span></a>
+        <p><span data-t>Páginas web por suscripción para negocios de México, Latinoamérica y Estados Unidos. Diseño, dominio, hosting y mantenimiento en una sola mensualidad.</span></p>
+        <button type="button" class="copy-num" id="copyNum" aria-label="Copiar número de WhatsApp">+52 55 2887 9621<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+      </div>
+      <div class="foot-col">
+        <h4>OKfly Studio</h4>
+        <a href="#como-funciona"><span data-t>Cómo funciona</span></a>
+        <a href="#disenos"><span data-t>Diseños</span></a>
+        <a href="#planes"><span data-t>Planes</span></a>
+        <a href="#preguntas"><span data-t>Preguntas</span></a>
+        <a href="servicios"><span data-t>Servicios</span></a>
+      </div>
+      <div class="foot-col">
+        <h4><span data-t>Contacto</span></h4>
+        <a class="js-wa" href="https://wa.me/525528879621" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contacto@okflystudio.com">contacto@okflystudio.com</a>
+        <a href="https://www.facebook.com/Okfly.mx/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true"><b>OKfly</b><span>STUDIO</span></div>
+    <div class="legal"><span>© 2026 OKfly Studio · okflystudio.com</span><span><a href="terminos" style="color:inherit"><span data-t>Términos</span></a> · <a href="privacidad" style="color:inherit"><span data-t>Privacidad</span></a></span></div>
+  </div>
+</footer>
+
+<a class="btn fab js-wa" id="fab" href="https://wa.me/525528879621" target="_blank" rel="noopener">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+  <span data-t>Inicia mi página web</span>
+</a>
+
+<script>
+(function(){
+  /* ===== Configuración: edita aquí número, mensajes y planes ===== */
+  var WHATSAPP = '525528879621';
+  var MSGS = {
+    es: {
+      base: 'Hola, quiero iniciar mi página web con OKfly Studio.',
+      plan: 'Hola, quiero iniciar mi página web con OKfly Studio. Me interesa el plan {plan}.',
+      annual: 'Hola, me interesa el plan {plan} de OKfly Studio con pago anual. Antes de pagar, ¿me resuelven unas dudas?',
+      custom: 'Hola, quiero cotizar un proyecto personalizado con OKfly Studio.',
+      demo: 'Hola, quiero iniciar mi página web con OKfly Studio para mi negocio {name} ({giro}).'
+    },
+    en: {
+      base: 'Hi, I’d like to start my website with OKfly Studio.',
+      plan: 'Hi, I’d like to start my website with OKfly Studio. I’m interested in the {plan} plan.',
+      annual: 'Hi, I’m interested in the {plan} OKfly Studio plan with annual billing. Can you answer a few questions before I pay?',
+      custom: 'Hi, I’d like a quote for a custom project with OKfly Studio.',
+      demo: 'Hi, I’d like to start my website with OKfly Studio for my business {name} ({giro}).'
+    }
+  };
+  var PLANS_BY_LANG = {
+    es: [
+      {name:'Básico', price:'$499', base:499, desc:'Para negocios que necesitan presencia profesional.', features:['Página de una sección','Dominio, hosting y HTTPS','Botón de WhatsApp y mapa','Cambios por WhatsApp']},
+      {name:'Pro', price:'$899', base:899, desc:'Para negocios que quieren crecer y captar clientes.', featured:true, features:['Todo lo del Básico','Varias secciones con animaciones','SEO local para aparecer en Google','Formulario para captar clientes','*CRM: tus leads organizados automáticamente']},
+      {name:'Premium', price:'$1,499', base:1499, desc:'Para negocios que necesitan una presencia digital más completa.', features:['Todo lo del Pro','Animaciones 3D y efectos premium','Reservas, catálogo o tienda','*Agente IA: horarios, reservas, FAQ y agenda leads','Atención prioritaria']}
+    ],
+    en: [
+      {name:'Basic', price:'$99', base:99, desc:'For businesses that need a professional presence.', features:['One-page website','Domain, hosting and HTTPS','WhatsApp button and map','Changes over WhatsApp']},
+      {name:'Pro', price:'$179', base:179, desc:'For businesses that want to grow and win customers.', featured:true, features:['Everything in Basic','Multiple sections with animations','Local SEO to show up on Google','Lead capture form','*CRM: your leads organized automatically']},
+      {name:'Premium', price:'$299', base:299, desc:'For businesses that need a more complete online presence.', features:['Everything in Pro','3D animations and premium effects','Bookings, catalog or store','*AI Agent: hours, bookings, FAQs and lead scheduling','Priority support']}
+    ]
+  };
+  /* Pago anual: 30% de descuento, mostrado como equivalente mensual facturado una vez al año. */
+  var ANNUAL_OFF = 0.3;
+  function annualMonthly(base){ return Math.round(base * (1 - ANNUAL_OFF)); }
+  function fmtMoney(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  /* =============================================================== */
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function wa(text){ return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text); }
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+  function ss(a,b,v){ var t = clamp((v-a)/(b-a),0,1); return t*t*(3-2*t); }
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  /* ---------- Language ---------- */
+  var LANG = 'es';
+  var EN = {
+    'Servicios':'Services',
+    'Mira algunos de nuestros diseños activos.':'Take a look at some of our live designs.',
+    'Proyectos reales hechos por OKfly, funcionando en vivo. Elige uno y navégalo como lo haría tu cliente.':'Real projects built by OKfly, running live. Pick one and browse it the way your customers would.',
+    'Sitios reales funcionando. Haz scroll y da clic adentro para explorarlos.':'Real, working websites. Scroll and click inside to explore them.',
+    'Ver en pantalla completa':'View full screen',
+    'Computadora':'Desktop',
+    'Celular':'Mobile',
+    'Cómo funciona':'How it works','Diseños':'Designs','Planes':'Pricing','Preguntas':'FAQ',
+    'Inicia mi página':'Start my website',
+    'Creamos sistemas para recibir clientes.':'We build systems that bring you customers.',
+    'No solo construimos tu presencia en línea. Diseñamos, publicamos y mantenemos un sistema que convierte visitas en clientes por WhatsApp.':'We don’t just build your online presence. We design, launch and maintain a system that turns visitors into customers on WhatsApp.',
+    'Nosotros la diseñamos, publicamos y mantenemos. Tú solo dinos qué necesita tu negocio por WhatsApp.':'We design it, publish it and maintain it. Just tell us what your business needs on WhatsApp.',
+    'Inicia mi página web':'Start my website','Descubre cómo funciona':'See how it works',
+    heroPrice:'From <b>$99 USD a month</b>',
+    'Ve tu página antes de pagar':'See your website before you pay','Sin costo inicial':'No upfront cost',
+    'Cuenta de empresa · En línea':'Business account · Online',
+    'Vista previa · Casa Mar':'Preview · Casa Mar','Adaptada a celular':'Mobile ready',
+    '¡Tu página web está lista! 🎉':'Your website is ready! 🎉',
+    '¡Wow! ¡Me encanta! ¿Cómo empezamos?':'Wow! I love it! How do we start?',
+    '¡Bienvenido a OKfly! 🚀 Elige tu plan y nosotros nos encargamos del resto.':'Welcome to OKfly! 🚀 Pick your plan and we’ll take care of the rest.',
+    'Construimos con las mismas herramientas que usan las grandes marcas':'We build with the same tools the big brands use',
+    'Así de fácil es tener tu página web.':'Getting your website is this easy.',
+    'Nos escribes por WhatsApp':'Message us on WhatsApp',
+    'Cuéntanos de tu negocio y mándanos tu logo, fotos y redes. Sin formularios ni juntas.':'Tell us about your business and send your logo, photos and socials. No forms, no meetings.',
+    'Diseñamos tu página':'We design your website',
+    'Armamos tu sitio con tu marca, textos que venden y versión para celular.':'We build it with your brand, copy that sells and a mobile version.',
+    'La ves antes de pagar':'You see it before you pay',
+    'Te mandamos una vista previa gratuita. Si te gusta, la publicamos con tu dominio.':'We send you a free preview. If you like it, we publish it on your domain.',
+    'Eliges tu plan y listo':'Pick your plan, done',
+    'Desde $499 al mes. Nosotros nos encargamos del resto.':'From $99 a month. We take care of the rest.',
+    'Hola, tengo un restaurante y quiero tener mi propia página web. ¿Cuánto cuesta?':'Hi, I have a restaurant and I want my own website. How much is it?',
+    '¡Hola! 👋 ¡Claro que sí! En OKfly podemos crear tu página web profesional desde $499 al mes.':'Hi! 👋 Absolutely! At OKfly we can build your professional website from $99 a month.',
+    '¿Y qué necesitan para hacerla?':'What do you need from me?',
+    '¡Es muy fácil! Solo necesitamos tu logo, algunas fotos y el enlace de tu Facebook o Instagram. Nosotros hacemos todo. 🚀':'It’s easy! Just your logo, a few photos and your Facebook or Instagram link. We do everything else. 🚀',
+    '¡Perfecto! Te mando mi información.':'Perfect! Sending you my info.',
+    '¡Excelente! Nuestro equipo comienza a trabajar en tu diseño. Primero te mostraremos una vista previa gratuita. Si te gusta, la publicamos con tu propio dominio. ✨':'Great! Our team is starting on your design. First we’ll show you a free preview. If you like it, we publish it on your own domain. ✨',
+    '24 horas después':'24 hours later',
+    'Diseño personalizado · Adaptado a móviles':'Custom design · Mobile ready',
+    '¡Tu página web está lista! 🎉 Mira cómo quedó tu negocio en internet. Recuerda que esta es solo una vista previa.':'Your website is ready! 🎉 Take a look at your business online. Remember, this is just a preview.',
+    '¡Bienvenido a OKfly! 🚀 Solo elige tu plan y nosotros nos encargamos del resto.':'Welcome to OKfly! 🚀 Just pick your plan and we’ll take care of the rest.',
+    'Mensaje':'Message','Vista previa · Página lista para publicar':'Preview · Ready to publish',
+    'Tu negocio podría verse así.':'Your business could look like this.',
+    'Elige tu giro, escribe el nombre de tu negocio y mira cómo cambia tu página en tiempo real. Cada diseño se adapta a computadora y celular.':'Pick your industry, type your business name and watch your website change in real time. Every design works on desktop and mobile.',
+    'Nombre de tu negocio':'Your business name',
+    'Ejemplo conceptual de diseño, no un sitio publicado. Tu página se diseña con tu marca, tus fotos y tus textos.':'Concept design example, not a live site. Your website is designed with your brand, your photos and your copy.',
+    'Quiero una así':'I want one like this',
+    'Todo incluido. Tú no tocas nada técnico.':'All included. You never touch anything technical.',
+    'Una sola mensualidad cubre lo que normalmente pagarías por separado a un diseñador, un hosting y un programador.':'One monthly fee covers what you’d normally pay a designer, a host and a developer separately.',
+    'Diseño profesional':'Professional design',
+    'Hecho a la medida de tu negocio, con tus colores, tus fotos y textos que convierten visitas en clientes.':'Made for your business, with your colors, your photos and copy that turns visitors into customers.',
+    'Tu propio dominio':'Your own domain','Tu negocio con su propia dirección en internet.':'Your business with its own address online.',
+    'Hosting y seguridad':'Hosting and security','Tu página rápida, protegida y siempre en línea.':'Your site fast, protected and always online.',
+    'Conexión segura HTTPS':'Secure HTTPS','Hosting incluido':'Hosting included','Respaldos':'Backups',
+    'Cambios por WhatsApp':'Changes over WhatsApp',
+    '¿Nuevo horario, precio o promoción? Nos escribes y lo actualizamos, según tu plan.':'New hours, prices or a promo? Message us and we update it, depending on your plan.',
+    '¿Pueden cambiar el horario del domingo a 9 a 18 h?':'Can you change Sunday hours to 9 am – 6 pm?',
+    'Listo, ya está actualizado en tu página.':'Done, it’s updated on your website.',
+    'Mantenimiento':'Maintenance','Nos encargamos de que todo siga funcionando, sin que tengas que pensarlo.':'We keep everything running so you never have to think about it.',
+    'Actualizaciones':'Updates','Revisión de seguridad':'Security checks','Versión para celular':'Mobile version','Atención por WhatsApp':'WhatsApp support',
+    'Vista previa gratis':'Free preview','Primero ves tu página terminada. Si te gusta, empezamos. Si no, no pagas nada.':'First you see your finished website. If you like it, we start. If not, you pay nothing.',
+    'Un plan para cada negocio.':'A plan for every business.',
+    'Mensualidad fija, sin costo inicial. Primero ves tu vista previa gratis y después eliges tu plan.':'A fixed monthly fee, no upfront cost. See your free preview first, then pick your plan.',
+    'Precios en pesos mexicanos. Pago mensual con tarjeta.':'Prices in US dollars. Billed monthly by card.',
+    'Precio anual, un solo cargo con tarjeta. Puedes volver a mensual cuando quieras.':'Annual price, a single card charge. Switch back to monthly anytime.',
+    'Mensual':'Monthly','Anual':'Annual',
+    annual:'Prefer to pay a full year upfront by <b>bank transfer</b>? <a class="js-wa" data-msg="annual" href="https://wa.me/525528879621" target="_blank" rel="noopener">Message us</a>.',
+    '¿Ya tienes tu página? También manejamos tus redes y anuncios.':'Already have a website? We also run your social media and ads.',
+    'Contenido, publicaciones y campañas de Facebook e Instagram, listos para aprobar por WhatsApp. Tú solo dices que sí.':'Content, posts and Facebook & Instagram campaigns, ready for you to approve on WhatsApp. You just say yes.',
+    'Redes sociales y anuncios':'Social media and ads','Desde $990 MXN/mes':'From $199 USD/mo','Ver planes de marketing':'See marketing plans',
+    '¿Necesitas algo hecho a la medida?':'Need something custom?',
+    'Tiendas en línea, sistemas de reservas, sitios en varios idiomas o proyectos especiales. Lo cotizamos contigo y pagas una sola vez.':'Online stores, booking systems, multilingual sites or special projects. We quote it with you and you pay once.',
+    'Proyectos personalizados':'Custom projects','Desde $5,000 MXN':'From $1,500 USD','Cotizar mi proyecto':'Get a quote',
+    '¿Quieres aprender a hacerlas tú?':'Want to learn to build them yourself?',
+    'En Webmasters by OKfly Studio te enseñamos a crear y vender páginas web con IA, con el mismo proceso que usamos con nuestros clientes. Prueba la comunidad 7 días gratis.':'In Webmasters by OKfly Studio we teach you to build and sell websites with AI, using the same process we use with our clients. The course is taught in Spanish. Try the community free for 7 days.',
+    'Conocer Webmasters':'Explore Webmasters',
+    'Preguntas frecuentes':'Questions',
+    '¿Qué pasa si no me gusta la vista previa?':'What if I don’t like the preview?',
+    'No pagas nada. Primero te enseñamos tu página terminada; solo si te gusta eliges tu plan y la publicamos con tu dominio.':'You pay nothing. We show you your finished website first; only if you like it do you pick a plan and we publish it on your domain.',
+    '¿Qué necesito enviarles?':'What do I need to send you?',
+    'Tu logo, algunas fotos de tu negocio y el enlace de tu Facebook o Instagram. Con eso armamos tu página; si te falta algo, te ayudamos.':'Your logo, a few photos of your business and your Facebook or Instagram link. That’s enough to build your site; if anything’s missing, we help.',
+    '¿Necesito saber de tecnología?':'Do I need to be tech-savvy?',
+    'No. Todo se hace por WhatsApp: nosotros nos encargamos del diseño, el dominio, el hosting y el mantenimiento.':'No. Everything happens on WhatsApp: we handle the design, domain, hosting and maintenance.',
+    '¿Cuánto tarda mi vista previa?':'How long does the preview take?',
+    'Normalmente te la enviamos en unas 24 horas después de recibir tu información. Los proyectos personalizados se calendarizan contigo.':'We usually send it about 24 hours after we get your info. Custom projects are scheduled with you.',
+    '¿Puedo pedir cambios después?':'Can I request changes later?',
+    'Sí. Nos escribes por WhatsApp y actualizamos textos, fotos, precios u horarios según lo que incluya tu plan.':'Yes. Message us on WhatsApp and we update text, photos, prices or hours, depending on your plan.',
+    '¿Cómo se paga?':'How do I pay?',
+    'Con tarjeta, como una suscripción mensual. Si prefieres pagar el año completo, también aceptamos transferencia u OXXO.':'By card, as a monthly subscription. If you prefer to pay for the full year, we also accept bank transfer.',
+    '¿Trabajan fuera de México?':'Do you work outside Mexico?',
+    'Sí. Todo el proceso es en línea, así que trabajamos con negocios de toda Latinoamérica y Estados Unidos. Si estás fuera de México, te cotizamos en dólares.':'Yes. Everything happens online, so we work with businesses across the United States and Latin America, in English or Spanish.',
+    'Mañana tu negocio puede verse así.':'Tomorrow your business could look like this.',
+    'Escríbenos hoy y recibe tu vista previa gratis. Sin compromiso.':'Message us today and get your free preview. No commitment.',
+    'Páginas web por suscripción para negocios de México, Latinoamérica y Estados Unidos. Diseño, dominio, hosting y mantenimiento en una sola mensualidad.':'Website subscriptions for businesses in the US, Mexico and Latin America. Design, domain, hosting and maintenance in one monthly fee.',
+    'Contacto':'Contact','Riviera Maya, México':'Riviera Maya, Mexico','Los diseños mostrados son ejemplos conceptuales.':'Designs shown are concept examples.','Términos':'Terms','Privacidad':'Privacy'
+  };
+  var UI = {
+    es:{title:'OKfly Studio · Páginas web por suscripción', placeholder:'Ej. Casa Mar', tabs:'Giro del negocio', unit:'MXN / mes', unitAnnual:'MXN / mes · facturado anual', popular:'Más popular', start:'Empezar con ', example:'Ejemplo de diseño', copied:'Copiado ', ai:'Inteligencia artificial', copyAria:'Copiar número de WhatsApp', nav:'Principal'},
+    en:{title:'OKfly Studio · Website subscriptions', placeholder:'e.g. Casa Mar', tabs:'Type of business', unit:'USD / mo', unitAnnual:'USD / mo · billed annually', popular:'Most popular', start:'Start with ', example:'Design example', copied:'Copied ', ai:'AI', copyAria:'Copy WhatsApp number', nav:'Main'}
+  };
+  var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-t]'));
+  i18nEls.forEach(function(el){ el._es = el.innerHTML; });
+  function tr(){ i18nEls.forEach(function(el){ var k = el.getAttribute('data-t') || el._es; el.innerHTML = (LANG === 'en' && EN[k] != null) ? EN[k] : el._es; }); }
+  function M(){ return MSGS[LANG]; }
+  function U(){ return UI[LANG]; }
+
+  /* ---------- Demo websites ----------
+     PHOTOS: put each industry's photo file here (e.g. 'demos/restaurante.jpg').
+     Empty = a drawn illustration is shown instead. */
+  var PHOTOS = {
+    restaurante: 'demos/casamar-hero.jpg',
+    dentista: 'demos/dentista.jpg',
+    barberia: 'demos/royce-badge.jpg',
+    gimnasio: 'demos/altura-m.jpg',
+    inmobiliaria: 'demos/ip-1.jpg',
+    tours: '',
+    veterinaria: 'demos/zootropolis-logo.jpg'
+  };
+  var ICONS = {
+    tooth:'M7 3c-2.2 0-4 1.8-4 4.4 0 3 1.4 4.6 2 7.6.5 2.6 1 6 2.6 6 1.4 0 1.4-4.5 2.4-6 .4-.6.8-1 2-1s1.6.4 2 1c1 1.5 1 6 2.4 6 1.6 0 2.1-3.4 2.6-6 .6-3 2-4.6 2-7.6C21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z',
+    implant:'M8 3h8v4H8zM9 7l1 3h4l1-3M10 10l-1 3h6l-1-3M9 13l1 3h4l1-3M11 16l1 5 1-5',
+    braces:'M3 9h18v6H3zM8 9v6M12 9v6M16 9v6',
+    sparkle:'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z',
+    shield:'M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5',
+    pin:'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21zM12 7a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5',
+    cal:'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',
+    arrow:'M5 12h14M13 6l6 6-6 6',
+    fork:'M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-1.7 0-3 2.2-3 5s1.3 4 3 4v9',
+    fish:'M2 12c3-4.5 8-6.5 12.5-4.5L19 4v16l-4.5-3.5C10 18.5 5 16.5 2 12zM8 11.5h.01',
+    wine:'M8 3h8c0 4.5-1.5 7-4 7s-4-2.5-4-7zM12 10v8M8 21h8',
+    sun:'M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5',
+    scissors:'M6 3a3 3 0 1 1 0 6a3 3 0 1 1 0-6M6 15a3 3 0 1 1 0 6a3 3 0 1 1 0-6M8.6 7.6L20 19M8.6 16.4L20 5',
+    razor:'M4 15l10-10 5 5-10 10H4zM9 10l5 5',
+    user:'M12 4a4 4 0 1 0 0 8a4 4 0 1 0 0-8M5 21c0-4 3-6 7-6s7 2 7 6',
+    coffee:'M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M8 3v2M11 3v2',
+    dumbbell:'M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12',
+    bolt:'M13 3L5 13h6l-1 8 8-10h-6z',
+    bike:'M6 14a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7M18 14a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7M6 17.5l4-7h6l2 7M9 6h3l2 4.5',
+    heart:'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10zM7 12h3l1-2 2 4 1-2h3',
+    home:'M4 11l8-7 8 7v9H4zM10 20v-5h4v5',
+    key:'M8 11a4 4 0 1 1 0 8a4 4 0 1 1 0-8M11 13l9-9M17 7l2 2M15 9l2 2',
+    chart:'M4 20V10M10 20V4M16 20v-7M2 20h20',
+    wave:'M2 10c2.5-3 5-3 7.5 0s5 3 7.5 0 3.5-2 5 0M2 16c2.5-3 5-3 7.5 0s5 3 7.5 0 3.5-2 5 0',
+    compass:'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M15.5 8.5l-2 5-5 2 2-5z',
+    camera:'M4 8h4l2-3h4l2 3h4v11H4zM12 10a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7',
+    leaf:'M5 19C5 11 11 5 20 5c0 9-6 15-14 15M5 19l7-7',
+    menu:'M4 7h16M4 12h16M4 17h16',
+    steth:'M6 3v6a4 4 0 0 0 8 0V3M10 13v2a5 5 0 0 0 10 0v-3M20 9a2 2 0 1 0 0 .01',
+    bird:'M5 18c4 0 7-3 8-7l2-4 3 1 1 3-3 1c0 4-3 7-7 7zM16 6h.01M8 18l-3 3',
+    bone:'M7 4a2.5 2.5 0 0 0-1.7 4.3A2.5 2.5 0 0 0 8.7 11.7l3.6 3.6a2.5 2.5 0 0 0 3.4 3.4 2.5 2.5 0 0 0 4.3-1.7 2.5 2.5 0 0 0-3.4-3.4l-3.6-3.6A2.5 2.5 0 0 0 7 4z',
+    grid:'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
+    bldg:'M6 3h12v18H6zM9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3',
+    door:'M5 21V5l8-2v18M13 6h4v15M10 12v1M3 21h18',
+    lot:'M12 3a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5M12 8v7M5 18c0-1.5 3-2.5 7-2.5s7 1 7 2.5-3 2.5-7 2.5-7-1-7-2.5z',
+    login:'M10 17l5-5-5-5M15 12H3M14 4h5v16h-5',
+    search:'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M20 20l-4-4',
+    sliders:'M6 4v16M12 4v16M18 4v16M4 9h4M10 15h4M16 7h4',
+    paw:'M12 13c-3 0-5.5 3-5.5 5 0 1.5 1.5 2 2.5 2s2-.6 3-.6 2 .6 3 .6 2.5-.5 2.5-2c0-2-2.5-5-5.5-5zM6 10a1.8 2.2 0 1 0 0 .01M18 10a1.8 2.2 0 1 0 0 .01M9.5 6.5a1.8 2.2 0 1 0 0 .01M14.5 6.5a1.8 2.2 0 1 0 0 .01'
+  };
+  function ic(k, cls){ return '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + ICONS[k] + '"/></svg>'; }
+
+  var IND = {
+    restaurante:{label:'Restaurante', name:'Casa Mar', logo:'fork', bg:'#F6EFE6', ink:'#1F130D', prim:'#8E2F1E', acc:'#C2552F', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#EFE4D6', a1:'#D9885A',
+      nav:['Inicio','Menú','Reservas','Nosotros','Contacto'], chip:'Restaurante en Playa del Carmen', h:'Cocina al carbón frente al', acc_w:'mar.', p:'Mariscos frescos, cocteles de autor y atardeceres frente al Caribe.', cta:'Reservar mesa', cta2:'Ver el menú',
+      svc:[['fish','Mariscos frescos'],['fork','Cocina al carbón'],['wine','Coctelería'],['sun','Terraza con vista'],['cal','Eventos privados']], sec:['NUESTRA COCINA','Fuego, mar y producto local','Cada plato nace del carbón y de la pesca del día.'],
+      art:'<i class="art" style="left:16%;top:16%;width:26%;aspect-ratio:1;border-radius:50%;background:#F6CF8E"></i><i class="art" style="left:0;right:0;bottom:0;height:40%;background:#9A3A23"></i><i class="art" style="left:0;right:0;bottom:40%;height:4%;background:#C7643F"></i><i class="art" style="left:60%;bottom:40%;width:5%;height:34%;background:#3B2116;border-radius:2px"></i><i class="art" style="left:52%;bottom:68%;width:22%;height:9%;background:#3B2116;border-radius:50%"></i>'},
+    dentista:{label:'Dentista', name:'Sonrisa Dental', logo:'tooth', bg:'#F4F7FB', ink:'#0B1B33', prim:'#0E3D86', acc:'#2F7FC1', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#2B5C9E',
+      nav:['Inicio','Servicios','Nosotros','Testimonios','Contacto'], chip:'Clínica dental en Playa del Carmen', h:'Tu sonrisa, en manos', acc_w:'expertas.', p:'Cuidamos tu salud bucal con tecnología avanzada y atención personalizada.', cta:'Agendar cita', cta2:'Conoce nuestros servicios',
+      svc:[['tooth','Odontología general'],['implant','Implantes dentales'],['braces','Ortodoncia'],['sparkle','Estética dental'],['shield','Urgencias dentales']], sec:['NUESTRA CLÍNICA','Tecnología y cuidado en un solo lugar','Un equipo de especialistas para brindarte la mejor experiencia.'],
+      art:'<i class="art" style="left:50%;top:50%;width:62%;aspect-ratio:1;border-radius:50%;background:#EEF3F8;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:36%;aspect-ratio:1;border-radius:50%;background:#9DB9DF;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:50%;width:14%;aspect-ratio:1;border-radius:50%;background:#2B5C9E;transform:translate(-50%,-50%)"></i>'},
+    barberia:{label:'Barbería', name:'Barber Royce', logo:'scissors', bg:'#121110', ink:'#EFE7DA', prim:'#C79A55', acc:'#D9B276', btn:'#121110', chipbg:'#1F1D1B', strip:'#1A1816', a1:'#2A2420',
+      nav:['Inicio','Servicios','Barberos','Galería','Reservar'], chip:'Barbería en Cancún', h:'Cortes clásicos, estilo', acc_w:'moderno.', p:'Reserva tu silla en segundos y llega sin esperar.', cta:'Reservar corte', cta2:'Ver servicios',
+      svc:[['scissors','Cortes'],['razor','Afeitado clásico'],['user','Barba y perfilado'],['coffee','Café de cortesía'],['cal','Reserva en línea']], sec:['NUESTRO ESPACIO','Tradición de barbería, hecha a tu estilo','Barberos expertos, buena música y cero filas.'],
+      art:'<i class="art" style="left:50%;top:10%;width:16%;height:80%;border-radius:99px;transform:translateX(-50%);background:repeating-linear-gradient(135deg,#C79A55 0 12%,#EFE7DA 12% 24%,#7A2E22 24% 36%)"></i><i class="art" style="left:50%;top:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i><i class="art" style="left:50%;bottom:6%;width:22%;height:8%;border-radius:99px;transform:translateX(-50%);background:#EFE7DA"></i>'},
+    gimnasio:{label:'Gimnasio', name:'Altura', logo:'dumbbell', bg:'#0E0E0E', ink:'#F2F2F0', prim:'#E5552B', acc:'#FF7A4D', btn:'#FFFFFF', chipbg:'#1C1C1C', strip:'#161616', a1:'#1E1E1E',
+      nav:['Inicio','Clases','Horarios','Planes','Contacto'], chip:'Gimnasio en Playa del Carmen', h:'Entrena con un plan hecho', acc_w:'para ti.', p:'Coaches certificados, clases todo el día y equipo de primera.', cta:'Clase gratis', cta2:'Ver horarios',
+      svc:[['dumbbell','Pesas libres'],['bolt','Funcional'],['bike','Spinning'],['heart','Cardio'],['user','Coach personal']], sec:['NUESTRO GYM','Todo lo que necesitas para entrenar','Clases todos los días, de 6 a 23 h.'],
+      art:'<i class="art" style="left:14%;right:14%;top:47%;height:6%;background:#8A8A86;border-radius:99px"></i><i class="art" style="left:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="left:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i><i class="art" style="right:18%;top:28%;width:9%;height:44%;background:#E5552B;border-radius:8px"></i><i class="art" style="right:28%;top:34%;width:6%;height:32%;background:#F2F2F0;border-radius:6px"></i>'},
+    inmobiliaria:{label:'Inmobiliaria', name:'iproperty', logo:'home', bg:'#F2F5F3', ink:'#0F1F1C', prim:'#1E5C55', acc:'#2E8A7E', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#1E5C55',
+      nav:['Inicio','Propiedades','Zonas','Nosotros','Contacto'], chip:'Inmobiliaria en Tulum', h:'Vive a minutos del', acc_w:'Caribe.', p:'Departamentos y lotes en preventa en la Riviera Maya.', cta:'Ver propiedades', cta2:'Agendar visita',
+      svc:[['home','Departamentos'],['key','Entrega inmediata'],['chart','Inversión'],['pin','Mejores zonas'],['shield','Asesoría legal']], sec:['NUESTRO DESARROLLO','Diseño, ubicación y plusvalía','Te acompañamos desde la visita hasta la escritura.'],
+      art:'<i class="art" style="left:12%;bottom:14%;width:20%;height:46%;background:#E6EEEA"></i><i class="art" style="left:36%;bottom:14%;width:24%;height:70%;background:#BFD5CD"></i><i class="art" style="left:64%;bottom:14%;width:20%;height:56%;background:#E6EEEA"></i><i class="art" style="left:0;right:0;bottom:0;height:14%;background:#13403B"></i><i class="art" style="left:72%;top:12%;width:12%;aspect-ratio:1;border-radius:50%;background:#F4D58D"></i>'},
+    veterinaria:{label:'Veterinaria', name:'Zootropolis', logo:'paw', bg:'#EAF6FB', ink:'#1F2A44', prim:'#EB6B2A', acc:'#2E4BB1', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#5AA9C9', nav:[], chip:'', h:'', acc_w:'', p:'', cta:'', cta2:'', svc:[], sec:['','',''], art:''},
+    tours:{label:'Tours', name:'Cenote Azul Tours', logo:'wave', bg:'#F1F8F7', ink:'#0B2424', prim:'#0E7C7B', acc:'#14A3A0', btn:'#FFFFFF', chipbg:'#FFFFFF', strip:'#FFFFFF', a1:'#0B3D2E',
+      nav:['Inicio','Tours','Galería','Opiniones','Reservar'], chip:'Tours desde Tulum', h:'Nada en cenotes', acc_w:'escondidos.', p:'Tours en grupos pequeños con guías locales.', cta:'Reservar tour', cta2:'Ver tours',
+      svc:[['wave','Cenotes'],['compass','Guías locales'],['bike','Ruta en bici'],['camera','Fotos incluidas'],['leaf','Eco-amigable']], sec:['LA EXPERIENCIA','La Riviera Maya que no sale en las guías','Rutas pensadas para grupos pequeños.'],
+      art:'<i class="art" style="left:50%;top:58%;width:84%;height:70%;border-radius:50%;background:#0E7C7B;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:56%;height:46%;border-radius:50%;background:#58C3BA;transform:translate(-50%,-50%)"></i><i class="art" style="left:50%;top:58%;width:24%;height:20%;border-radius:50%;background:#B9ECE4;transform:translate(-50%,-50%)"></i><i class="art" style="left:0;right:0;top:0;height:16%;background:#16543F"></i>'}
+  };
+  var ORDER = ['restaurante','dentista','barberia','gimnasio','inmobiliaria','veterinaria'];
+  var IND_EN = {
+    restaurante:{label:'Restaurant', nav:['Home','Menu','Book','About','Contact'], chip:'Restaurant in Playa del Carmen', h:'Wood-fired cooking by the', acc_w:'sea.', p:'Fresh seafood, signature cocktails and Caribbean sunsets.', cta:'Book a table', cta2:'See the menu',
+      svc:['Fresh seafood','Wood-fired grill','Cocktails','Ocean-view terrace','Private events'], sec:['OUR KITCHEN','Fire, sea and local produce','Every dish starts on the grill with the catch of the day.']},
+    dentista:{label:'Dentist', nav:['Home','Services','About','Reviews','Contact'], chip:'Dental clinic in Playa del Carmen', h:'Your smile, in expert', acc_w:'hands.', p:'We care for your oral health with advanced technology and personal attention.', cta:'Book a visit', cta2:'See our services',
+      svc:['General dentistry','Dental implants','Orthodontics','Cosmetic dentistry','Dental emergencies'], sec:['OUR CLINIC','Technology and care in one place','A team of specialists for the best possible experience.']},
+    barberia:{label:'Barbershop', nav:['Home','Services','Barbers','Gallery','Book'], chip:'Barbershop in Cancún', h:'Classic cuts, modern', acc_w:'style.', p:'Book your chair in seconds and skip the wait.', cta:'Book a cut', cta2:'See services',
+      svc:['Haircuts','Hot-towel shave','Beard trims','Free coffee','Online booking'], sec:['OUR SPACE','Barbershop tradition, your style','Expert barbers, good music and no lines.']},
+    gimnasio:{label:'Gym', nav:['Home','Classes','Schedule','Plans','Contact'], chip:'Gym in Playa del Carmen', h:'Train with a plan made', acc_w:'for you.', p:'Certified coaches, classes all day and top equipment.', cta:'Free class', cta2:'See schedule',
+      svc:['Free weights','Functional','Spinning','Cardio','Personal coach'], sec:['OUR GYM','Everything you need to train','Classes every day, 6 am to 11 pm.']},
+    inmobiliaria:{label:'Real estate', nav:['Home','Listings','Areas','About','Contact'], chip:'Real estate in Tulum', h:'Live minutes from the', acc_w:'Caribbean.', p:'Pre-sale condos and lots in the Riviera Maya.', cta:'View listings', cta2:'Book a tour',
+      svc:['Condos','Move-in ready','Investment','Prime locations','Legal advice'], sec:['OUR DEVELOPMENT','Design, location and appreciation','We guide you from the first visit to closing.']},
+    veterinaria:{label:'Veterinary', svc:[]},
+    tours:{label:'Tours', nav:['Home','Tours','Gallery','Reviews','Book'], chip:'Tours from Tulum', h:'Swim in hidden', acc_w:'cenotes.', p:'Small-group tours with local guides.', cta:'Book a tour', cta2:'See tours',
+      svc:['Cenotes','Local guides','Bike route','Photos included','Eco-friendly'], sec:['THE EXPERIENCE','The Riviera Maya the guidebooks miss','Routes designed for small groups.']}
+  };
+  function D(key){
+    var b = IND[key], o = {}, k; for (k in b) o[k] = b[k];
+    if (LANG === 'en'){ var e = IND_EN[key]; for (k in e) o[k] = e[k]; o.svc = b.svc.map(function(s, i){ return [s[0], e.svc[i]]; }); }
+    return o;
+  }
+
+  var LUX = {
+    es:{tag:'COCINA · MAR · EXPERIENCIAS', nav:['Inicio','Menú','Nosotros','Contacto'], cta:'Reservar mesa', eye:'UNA EXPERIENCIA JUNTO AL MAR', h:'Sabores que cuentan', em:'historias.', p:'Ingredientes frescos, cocina de autor y momentos inolvidables en el corazón del Caribe.', play:'Explorar menú', sec:'NUESTRA COCINA', sech:'Platos que inspiran', cards:['Ceviches frescos','Cocina de autor','Postres únicos']},
+    en:{tag:'KITCHEN · SEA · EXPERIENCES', nav:['Home','Menu','About','Contact'], cta:'Book a table', eye:'A SEASIDE EXPERIENCE', h:'Flavors that tell', em:'stories.', p:'Fresh ingredients, signature cuisine and unforgettable moments in the heart of the Caribbean.', play:'Explore menu', sec:'OUR KITCHEN', sech:'Dishes that inspire', cards:['Fresh ceviches','Signature cuisine','Unique desserts']}
+  };
+  var waveLogo = '<svg viewBox="0 0 32 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M2 5c3-3 6-3 9 0s6 3 9 0 6-3 9 0M2 11c3-3 6-3 9 0s6 3 9 0 6-3 9 0"/></svg>';
+  function luxHTML(name, mobile){
+    var t = LUX[LANG], n = esc(name || 'Casa Mar');
+    var photo = mobile ? 'demos/casamar-hero-m.jpg' : 'demos/casamar-hero.jpg';
+    var arrow = ic('arrow'), play = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>';
+    return '<div class="site lux' + (mobile ? ' m' : '') + '">' +
+      '<div class="lux-hero"><div class="lux-photo" style="background-image:url(' + photo + ')"></div>' +
+        '<div class="lux-nav"><span class="lux-logo">' + waveLogo + '<b>' + n.toUpperCase() + '.</b><small>' + t.tag + '</small></span>' +
+        '<span class="lux-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + ic('menu') + '</span>' +
+        '<span class="lux-btn">' + ic('cal') + t.cta + '</span></div>' +
+        '<div class="lux-copy"><span class="lux-eye">' + t.eye + '</span><h5 class="lux-h serif">' + t.h + ' <em>' + t.em + '</em></h5><p class="lux-p">' + t.p + '</p>' +
+        '<div class="lux-ctas"><span class="lux-btn">' + ic('cal') + t.cta + arrow + '</span><span class="lux-play"><i>' + play + '</i>' + t.play + '</span></div></div></div>' +
+      '<div class="lux-sec"><span class="lux-eye">' + t.sec + '</span><h6 class="serif">' + t.sech + '</h6><div class="lux-cards">' +
+        t.cards.map(function(c, i){ return '<span class="lux-card" style="background-image:url(demos/casamar-' + (i+1) + '.jpg)"><span>' + c + '</span><i>' + arrow + '</i></span>'; }).join('') +
+      '</div></div></div>';
+  }
+
+  var VET = {
+    es:{nav:['Servicios','Peluquería','Promos','Nutrición','Contacto'], cta:'Agendar cita', chip:'Abierto hoy · Cierra a las 8 p.m.', h:'Veterinaria', script:'¡Clínica veterinaria, ortopedia y fauna silvestre!', p:'Más de 25 años cuidando a perros, gatos, mascotas no convencionales y fauna silvestre en Cancún.', b1:'Agenda por WhatsApp', b2:'Ver servicios', stats:[['25','+ años de experiencia'],['4','tipos de pacientes'],['10','+ servicios']], tags:['Consultas médicas','Fauna silvestre','Ortopedia y Rayos X']},
+    en:{nav:['Services','Grooming','Deals','Nutrition','Contact'], cta:'Book a visit', chip:'Open today · Closes at 8 p.m.', h:'Veterinary', script:'Vet clinic, orthopedics and wildlife care!', p:'Over 25 years caring for dogs, cats, exotic pets and wildlife in Cancún.', b1:'Book on WhatsApp', b2:'See services', stats:[['25','+ years of experience'],['4','patient types'],['10','+ services']], tags:['Medical visits','Wildlife','Orthopedics & X-rays']}
+  };
+  function vetHTML(name, mobile){
+    var t = VET[LANG], n = esc(name || 'Zootropolis'), logo = PHOTOS.veterinaria;
+    return '<div class="site vet' + (mobile ? ' m' : '') + '">' +
+      '<div class="vet-nav"><span class="vet-logo fun"><span style="background-image:url(' + logo + ')"></span>' + n + '</span><span class="vet-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="vet-btn fun">' + t.cta + '</span>' + ic('menu','vet-menu') + '</div>' +
+      '<div class="vet-hero"><div class="vet-copy"><span class="vet-chip fun"><i></i>' + t.chip + '</span><h5 class="vet-h fun">' + t.h + '<em>' + n + '</em></h5><span class="vet-script">' + t.script + '</span><p class="vet-p">' + t.p + '</p>' +
+        '<div class="vet-ctas"><span class="vet-btn fun">' + ic('paw') + t.b1 + '</span><span class="vet-btn w fun">' + t.b2 + '</span></div>' +
+        '<div class="vet-stats">' + t.stats.map(function(x){ return '<span><b class="fun">' + x[0] + '</b>' + x[1] + '</span>'; }).join('') + '</div></div>' +
+        '<div class="vet-art"><div class="vet-globe"></div><div class="vet-card" style="background-image:url(' + logo + ')">' +
+          '<span class="vet-tag t1 fun"><i>' + ic('steth') + '</i>' + t.tags[0] + '</span><span class="vet-tag t2 fun"><i>' + ic('bird') + '</i>' + t.tags[1] + '</span><span class="vet-tag t3 fun"><i>' + ic('bone') + '</i>' + t.tags[2] + '</span>' +
+        '</div></div></div></div>';
+  }
+
+  var IPT = {
+    es:{nav:['Comprar','Rentar','Servicios','Contacto'], login:'Iniciar sesión', cta:'Ver Propiedades', filters:'Mostrar Filtros', map:'Mostrar Mapa', cats:['Todos','Casas','Departamentos','Estudios','Terrenos','Villas']},
+    en:{nav:['Buy','Rent','Services','Contact'], login:'Log in', cta:'View listings', filters:'Show filters', map:'Show map', cats:['All','Houses','Condos','Studios','Lots','Villas']}
+  };
+  var pinLogo = '<svg viewBox="0 0 20 24" aria-hidden="true"><path d="M10 1a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8z" fill="#33B6E5"/><circle cx="10" cy="9" r="3.2" fill="#fff"/></svg>';
+  function ipHTML(name, mobile){
+    var t = IPT[LANG], n = esc(name || 'iproperty'), icons = ['grid','home','bldg','door','lot','home'];
+    return '<div class="site ip' + (mobile ? ' m' : '') + '">' +
+      '<div class="ip-nav"><span class="ip-logo">' + pinLogo + n + '</span><span class="ip-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span>' +
+        '<span class="ip-right"><span class="ip-ghost">' + ic('login') + '<span>' + t.login + '</span></span><span class="ip-dark">' + ic('search') + t.cta + '</span>' + (mobile ? '<span class="ip-ghost">' + ic('menu') + '</span>' : '') + '</span></div>' +
+      '<div class="ip-body"><div class="ip-list"><div class="ip-bar"><span class="ip-filter"><i>' + ic('sliders') + '</i><span>' + t.filters + '</span></span>' +
+        '<span class="ip-cats">' + t.cats.map(function(c, i){ return '<span>' + ic(icons[i]) + c + '</span>'; }).join('') + '</span></div>' +
+        '<div class="ip-cards">' + [1,2,3,4].map(function(i){ return '<span class="ip-card" style="background-image:url(demos/ip-' + i + '.jpg)"></span>'; }).join('') + '</div></div>' +
+        '<div class="ip-map" style="background-image:url(demos/ip-map.jpg)"><span class="ip-pill">' + t.map + '</span><small>Leaflet | © Mapbox © OpenStreetMap</small></div></div></div>';
+  }
+
+  var ROY = {
+    es:{nav:['Servicios','Experiencia','Reservar','Ubicación'], cta:'Reservar cita', eye:'CERRADO AHORA · RESERVA PARA TU PRÓXIMA VISITA', l1:'Corte', l2:'de', em:'rey,', l3:'Estilo', p:'Fades precisos, barbas esculpidas y afeitado clásico con toalla caliente. Reserva en segundos y llega directo a la silla.', b1:'Reservar mi cita', b2:'Ver servicios', rib:['FADE','BARBA','AFEITADO CLÁSICO']},
+    en:{nav:['Services','Experience','Book','Location'], cta:'Book now', eye:'CLOSED NOW · BOOK YOUR NEXT VISIT', l1:'Cuts', l2:'for a', em:'king,', l3:'Style', p:'Precise fades, sculpted beards and classic hot-towel shaves. Book in seconds and go straight to the chair.', b1:'Book my visit', b2:'See services', rib:['FADE','BEARD','CLASSIC SHAVE']}
+  };
+  function royHTML(name, mobile){
+    var t = ROY[LANG], n = esc(name || 'Barber Royce'), last = n.split(' ').pop();
+    return '<div class="site roy' + (mobile ? ' m' : '') + '">' +
+      '<div class="roy-nav"><span class="roy-logo cond"><span style="background-image:url(demos/royce-logo.jpg)"></span>' + n.toUpperCase() + '</span><span class="roy-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="roy-btn">' + t.cta + '</span><span class="roy-menu">' + ic('menu') + '</span></div>' +
+      '<div class="roy-hero"><div class="roy-copy"><span class="roy-eye"><i></i>' + t.eye + '</span>' +
+        '<h5 class="roy-h cond">' + t.l1 + '<br>' + t.l2 + ' <em>' + t.em + '</em><br>' + t.l3 + '<br class="d"> ' + last + '</h5>' +
+        '<p class="roy-p">' + t.p + '</p><div class="roy-ctas"><span class="roy-btn">' + t.b1 + ic('arrow') + '</span><span class="roy-btn o">' + t.b2 + '</span></div></div>' +
+        '<div class="roy-badge" style="background-image:url(' + PHOTOS.barberia + ')"></div></div>' +
+      '<div class="roy-ribbon cond">' + t.rib.map(function(r){ return '<i>✦</i><span>' + r + '</span>'; }).join('') + '<i>✦</i></div></div>';
+  }
+
+  var ALT = {
+    es:{nav:['El piso','Clases','Precios','Visítanos'], cta:'Prueba gratis', h:'Entrena en lo más alto.', p:'Un piso entero de fuerza, cardio y funcional bañado de luz natural. Sin inscripción y abierto todos los días.', b1:'Agenda tu día gratis', b2:'Ver precios'},
+    en:{nav:['The floor','Classes','Pricing','Visit us'], cta:'Free trial', h:'Train at the top.', p:'A full floor of strength, cardio and functional training bathed in natural light. No sign-up fee, open every day.', b1:'Book your free day', b2:'See pricing'}
+  };
+  function altHTML(name, mobile){
+    var t = ALT[LANG], n = esc(name || 'Altura');
+    return '<div class="site alt' + (mobile ? ' m' : '') + '" style="background-image:url(' + PHOTOS.gimnasio + ')">' +
+      '<div class="alt-nav"><span class="alt-logo wide">' + n.toUpperCase() + '</span><span class="alt-links">' + t.nav.map(function(x){ return '<span>' + x + '</span>'; }).join('') + '</span><span class="alt-btn">' + t.cta + '</span></div>' +
+      '<div class="alt-hero"><h5 class="alt-h wide">' + t.h + '</h5><div class="alt-row"><p class="alt-p">' + t.p + '</p><div class="alt-ctas"><span class="alt-btn">' + t.b1 + ic('arrow') + '</span><span class="alt-link">' + t.b2 + '</span></div></div></div>' +
+      '<div class="alt-bar"></div></div>';
+  }
+
+  function siteHTML(key, name, mobile){
+    if (key === 'restaurante') return luxHTML(name, mobile);
+    if (key === 'gimnasio') return altHTML(name, mobile);
+    if (key === 'barberia') return royHTML(name, mobile);
+    if (key === 'inmobiliaria') return ipHTML(name, mobile);
+    if (key === 'veterinaria') return vetHTML(name, mobile);
+    var d = D(key), n = esc(name || d.name), photo = PHOTOS[key];
+    var vars = '--sbg:' + d.bg + ';--sink:' + d.ink + ';--sprim:' + d.prim + ';--sacc:' + d.acc + ';--sbtn:' + d.btn + ';--schipbg:' + d.chipbg + ';--sstrip:' + d.strip + ';--a1:' + d.a1;
+    var ph = photo ? '<div class="s-photo" style="background-image:url(' + photo + ')"></div>' : '<div class="s-photo art">' + d.art + '</div>';
+    return '<div class="site' + (mobile ? ' m' : '') + '" style="' + vars + '">' +
+      '<div class="s-nav"><span class="s-logo">' + ic(d.logo) + n + '</span><span class="s-links">' + d.nav.map(function(x){ return '<span>' + esc(x) + '</span>'; }).join('') + '</span><span class="s-btn">' + ic('cal') + esc(d.cta) + '</span>' + ic('menu','s-menu') + '</div>' +
+      '<div class="s-hero">' + ph + '<div class="s-copy"><span class="s-chip">' + ic('pin') + esc(d.chip) + '</span><h5 class="s-h">' + esc(d.h) + ' <em>' + esc(d.acc_w) + '</em></h5><p class="s-p">' + esc(d.p) + '</p>' +
+        '<div class="s-ctas"><span class="s-btn">' + ic('cal') + esc(d.cta) + '</span><span class="s-btn o">' + esc(d.cta2) + ic('arrow') + '</span></div></div></div>' +
+      '<div class="s-strip">' + d.svc.map(function(s){ return '<span>' + ic(s[0]) + esc(s[1]) + '</span>'; }).join('') + '</div>' +
+      '<div class="s-sec"><div class="s-card">' + d.art + '</div><div><small>' + esc(d.sec[0]) + '</small><b>' + esc(d.sec[1]) + '</b><p>' + esc(d.sec[2]) + '</p></div></div>' +
+      '</div>';
+  }
+  var DOMAINS = { inmobiliaria: 'iproperty.mx', gimnasio: 'alturagym.mx' };
+  function domainFor(k, nm){ return nm ? slug(nm) : (DOMAINS[k] || slug(IND[k].name)); }
+  function slug(s){ var t = String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/&/g,'y').replace(/[^a-z0-9]+/g,''); return (t || 'tunegocio') + '.com'; }
+
+  /* Fill every drawn site on the page */
+  function paintSites(){ document.querySelectorAll('[data-site]').forEach(function(el){ el.innerHTML = siteHTML(el.dataset.site, '', el.dataset.mobile === '1'); }); }
+
+  /* ---------- WhatsApp links ---------- */
+  function setWA(){ document.querySelectorAll('.js-wa').forEach(function(a){
+    if (a.id === 'demoCta') return;
+    var k = a.dataset.msg; a.href = wa(k && M()[k] ? M()[k] : M().base);
+  }); }
+
+  /* ---------- Tech marquee ---------- */
+  var TECH = [
+    ['HTML5','<path d="M4.5 3l1.4 16L12 21l6.1-2 1.4-16z"/><path d="M15.5 7.5h-7l.4 4h6.2l-.5 4.5-2.6.9-2.6-.9-.2-2"/>'],
+    ['Stripe','<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/>'],
+    ['WhatsApp','<path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/>'],
+    ['Google','<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>'],
+    ['Supabase','<path d="M13 3L5 13.5h7L11 21l8-10.5h-7z"/>'],
+    ['Meta','<path d="M7 8c-2.5 0-4 2-4 4s1.5 4 4 4c3.5 0 6.5-8 10-8 2.5 0 4 2 4 4s-1.5 4-4 4c-3.5 0-6.5-8-10-8z"/>'],
+    ['Vercel','<path d="M12 5l8.5 14h-17z"/>'],
+    ['GitHub','<path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>']
+  ];
+  function paintTech(){
+    var techHTML = TECH.map(function(t){ return '<span class="tech-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + t[1] + '</svg>' + (t[0] === 'AI' ? U().ai : t[0]) + '</span>'; }).join('');
+    document.getElementById('techTrack').innerHTML = techHTML + techHTML;
+  }
+
+  /* ---------- Plans ---------- */
+  var check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var plansEl = document.getElementById('plans');
+  /* Links de suscripción mensual de Mercado Pago (Básico, Pro, Premium). Se muestran solo en español, en pago mensual, después del botón principal. */
+  var WEB_PAY = ['https://mpago.la/2v6j8uS', 'https://mpago.la/1Ts8rT4', 'https://mpago.la/1BHAZyv'];
+  /* Links de pago anual (un solo cargo por el año, -30%). Se muestran solo en español. */
+  var WEB_PAY_ANNUAL = ['https://mpago.la/32SNMR5', 'https://mpago.la/2j8KbB5', 'https://mpago.la/2upM8At'];
+  var BILLING = 'annual';
+  function extraAnnualFeatures(p, annual){
+    var out = [];
+    var isPremium = p.name === 'Premium';
+    if (annual && !isPremium){
+      out.push(LANG === 'es' ? 'Agente IA: horarios, reservas, FAQ y agenda leads' : 'AI Agent: hours, bookings, FAQs and lead scheduling');
+    }
+    if (annual && isPremium){
+      out.push(LANG === 'es' ? 'Autofly: creación de contenido automático' : 'Autofly: automatic content creation');
+    }
+    return out;
+  }
+  function paintPlans(){
+    var cards = plansEl.children;
+    if (!cards.length){
+      plansEl.innerHTML = PLANS_BY_LANG.es.map(function(p){ return '<article class="plan' + (p.featured ? ' featured' : '') + '" data-rv data-tilt3></article>'; }).join('');
+      cards = plansEl.children;
+    }
+    var annual = BILLING === 'annual';
+    PLANS_BY_LANG[LANG].forEach(function(p, i){
+      var am = annualMonthly(p.base);
+      var shownAmount = annual
+        ? '<s class="was">' + esc(p.price) + '</s><b>' + esc(fmtMoney(am)) + '</b>'
+        : '<b>' + esc(p.price) + '</b>';
+      var annualTotalLine = annual ? '<p class="annual-total">' + fmtMoney(am * 12) + (LANG === 'es' ? ' MXN al año' : ' USD / year') + '</p>' : '';
+      var savings = p.base * 12 - am * 12;
+      var saveBadge = annual ? '<b class="btn-save">-30% · ' + (LANG === 'es' ? 'Ahorra ' + fmtMoney(savings) : 'Save ' + fmtMoney(savings)) + '</b>' : '';
+      var ctaHref, ctaLabel, belowLink;
+      if (annual && LANG === 'es' && WEB_PAY_ANNUAL[i]){
+        ctaHref = WEB_PAY_ANNUAL[i];
+        ctaLabel = U().start + esc(p.name) + saveBadge;
+        belowLink = '<a class="paylink" href="' + wa(M().annual.replace('{plan}', p.name)) + '" target="_blank" rel="noopener">¿Prefieres platicar primero? <b>Escríbenos →</b></a>';
+      } else if (annual){
+        ctaHref = wa(M().annual.replace('{plan}', p.name));
+        ctaLabel = (LANG === 'es' ? 'Pagar el año · ' : 'Pay the year · ') + esc(p.name) + saveBadge;
+        belowLink = '';
+      } else {
+        ctaHref = wa(M().plan.replace('{plan}', p.name));
+        ctaLabel = U().start + esc(p.name);
+        belowLink = (LANG === 'es' && WEB_PAY[i]) ? '<a class="paylink" href="' + WEB_PAY[i] + '" target="_blank" rel="noopener">¿Ya aprobaste tu vista previa? <b>Paga aquí →</b></a>' : '';
+      }
+      cards[i].innerHTML = (p.featured ? '<span class="plan-tag">' + U().popular + '</span>' : '') +
+        '<h3>' + esc(p.name) + '</h3><p class="pdesc">' + esc(p.desc) + '</p>' +
+        '<div class="amount">' + shownAmount + '<span>' + (annual ? U().unitAnnual : U().unit) + '</span></div>' +
+        annualTotalLine +
+        '<ul>' + p.features.map(function(f){ var hl = f.charAt(0) === '*'; var txt = hl ? f.slice(1) : f; return '<li' + (hl ? ' class="hl"' : '') + '>' + check + '<span>' + esc(txt) + '</span></li>'; }).join('') +
+        extraAnnualFeatures(p, annual).map(function(f){ return '<li class="hl">' + check + '<span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' +
+        '<a class="btn' + (p.featured ? '' : ' btn--ghost') + '" href="' + ctaHref + '" target="_blank" rel="noopener">' + ctaLabel + '</a>' +
+        belowLink;
+    });
+  }
+  paintPlans();
+  var billingToggle = document.getElementById('billingToggle');
+  if (billingToggle){
+    billingToggle.querySelectorAll('.bt-btn').forEach(function(b){
+      var on = b.getAttribute('data-billing') === BILLING;
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    billingToggle.addEventListener('click', function(e){
+      var btn = e.target.closest('.bt-btn');
+      if (!btn) return;
+      BILLING = btn.getAttribute('data-billing');
+      Array.prototype.forEach.call(billingToggle.querySelectorAll('.bt-btn'), function(b){
+        var on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      var pm = document.getElementById('priceNoteMonthly'), pa = document.getElementById('priceNoteAnnual');
+      if (pm && pa){ pm.style.display = BILLING === 'annual' ? 'none' : ''; pa.style.display = BILLING === 'annual' ? '' : 'none'; }
+      paintPlans();
+    });
+  }
+  var pnm0 = document.getElementById('priceNoteMonthly'), pna0 = document.getElementById('priceNoteAnnual');
+  if (pnm0 && pna0){ pnm0.style.display = BILLING === 'annual' ? 'none' : ''; pna0.style.display = BILLING === 'annual' ? '' : 'none'; }
+
+  /* ---------- Design catalog (live demos) ----------
+     Real sites shown inside the frames. Add more: {url, es:[title, sub], en:[title, sub], name}. */
+  var DEMOS = [
+    {url:'https://hydra-clean-playa.okfly.here.now/', name:'Hydra Clean', es:['Limpieza a domicilio','Hydra Clean · Playa del Carmen'], en:['Home cleaning','Hydra Clean · Playa del Carmen']},
+    {url:'https://zensi-spa-cozumel.okfly.here.now/', name:'Zensi Spa', es:['Spa y belleza','Zensi Spa · Cozumel'], en:['Spa & beauty','Zensi Spa · Cozumel']},
+    {url:'https://index.okfly.here.now/', name:'', es:['Taller mecánico','Playa del Carmen'], en:['Auto repair shop','Playa del Carmen']},
+    {url:'https://barberiaroyce.okflystudio.workers.dev/', name:'Barber Royce', es:['Barbería','Barber Royce · Cancún'], en:['Barbershop','Barber Royce · Cancún']},
+    {url:'https://zootropolis.okflystudio.workers.dev/', name:'Zootropolis', es:['Veterinaria','Zootropolis · Cancún'], en:['Veterinary clinic','Zootropolis · Cancún']},
+    {url:'https://www.xsales.cc/es', name:'Xsales', es:['Agencia de marketing','Xsales · México'], en:['Marketing agency','Xsales · Mexico']}
+  ];
+  var demo = {i:0}, demoOn = false;
+  var cat = document.getElementById('cat');
+  var dDesk = document.getElementById('demoDesk'), dMob = document.getElementById('demoMob'), dUrl = document.getElementById('demoUrl'), dCta = document.getElementById('demoCta'), liveTag = document.getElementById('liveTag');
+  function DT(d){ return d[LANG] || d.es; }
+  function demoLabel(d){ return d.name || DT(d)[0]; }
+  cat.innerHTML = DEMOS.map(function(d, i){ return '<button type="button" class="cat-card" data-i="' + i + '" aria-pressed="' + (i === 0) + '"><small>' + String(i + 1).padStart(2, '0') + '</small><b></b><span></span><em></em></button>'; }).join('');
+  function paintTabs(){
+    cat.querySelectorAll('.cat-card').forEach(function(c){ var d = DEMOS[+c.dataset.i]; c.querySelector('b').textContent = DT(d)[0]; c.querySelector('span').textContent = DT(d)[1]; c.querySelector('em').textContent = LANG === 'en' ? 'View demo' : 'Ver demo'; });
+    cat.setAttribute('aria-label', LANG === 'en' ? 'Designs' : 'Diseños');
+  }
+  function paintGallery(){}
+  function sizeFrame(lv){
+    var f = lv.querySelector('iframe'), vw = +lv.dataset.vw, w = lv.clientWidth, h = lv.clientHeight;
+    if (!f || !w) return;
+    var sc = w / vw;
+    f.style.width = vw + 'px'; f.style.height = Math.ceil(h / sc) + 'px'; f.style.transform = 'scale(' + sc + ')';
+  }
+  function loadingHTML(){ return '<div class="ld"><i></i><span>' + (LANG === 'en' ? 'Loading demo…' : 'Cargando demo…') + '</span></div>'; }
+  function setFrame(host, mobile){
+    var d = DEMOS[demo.i], lv = host.querySelector('.lv');
+    if (lv && lv.dataset.src === d.url) return;
+    host.innerHTML = loadingHTML();
+    if (!mobile && innerWidth < 900) return;
+    lv = document.createElement('div'); lv.className = 'lv'; lv.dataset.src = d.url; lv.dataset.vw = mobile ? 390 : 1440;
+    var f = document.createElement('iframe');
+    f.src = d.url; f.title = (LANG === 'en' ? 'Live demo: ' : 'Demo en vivo: ') + demoLabel(d);
+    f.setAttribute('referrerpolicy', 'no-referrer');
+    f.addEventListener('load', function(){ lv.classList.add('on'); });
+    lv.appendChild(f); host.appendChild(lv); sizeFrame(lv);
+  }
+  window.addEventListener('resize', function(){ document.querySelectorAll('.lv').forEach(sizeFrame); if (demoOn && innerWidth >= 900 && !dDesk.querySelector('.lv')) setFrame(dDesk, false); });
+  function paintDemo(){
+    var d = DEMOS[demo.i];
+    dUrl.textContent = demoLabel(d);
+    liveTag.textContent = LANG === 'en' ? 'Live' : 'En vivo';
+    if (demoOn){ setFrame(dDesk, false); setFrame(dMob, true); }
+    var t = DT(d)[0].toLowerCase();
+    dCta.href = wa(LANG === 'en' ? 'Hi! I saw the ' + (d.name || t) + ' design on your site and I want a website like that.' : '¡Hola! Vi el diseño de ' + (d.name || t) + ' en su sitio y quiero una página así.');
+    document.getElementById('demoBig').setAttribute('aria-label', (LANG === 'en' ? 'Open full screen: ' : 'Ver en pantalla completa: ') + demoLabel(d));
+  }
+  function swap(fn){
+    if (reduce || !Element.prototype.animate){ fn(); return; }
+    var els = [dDesk, dMob];
+    var outs = els.map(function(e){ return e.animate([{opacity:1,filter:'blur(0px)',transform:'scale(1)'},{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'}],{duration:140,easing:'ease-out',fill:'forwards'}); });
+    outs[0].onfinish = function(){ fn(); els.forEach(function(e){ e.animate([{opacity:0.35,filter:'blur(6px)',transform:'scale(0.985)'},{opacity:1,filter:'blur(0px)',transform:'scale(1)'}],{duration:280,easing:'cubic-bezier(0.23,1,0.32,1)',fill:'forwards'}); }); };
+  }
+  cat.addEventListener('click', function(e){
+    var b = e.target.closest('.cat-card'); if (!b) return;
+    var i = +b.dataset.i;
+    if (i !== demo.i){
+      demo.i = i;
+      cat.querySelectorAll('.cat-card').forEach(function(c){ c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
+      swap(paintDemo);
+    }
+    if (innerWidth < 900){ var st = document.querySelector('#disenos .demo-stage'); if (st) st.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'}); }
+  });
+  /* load the live sites only when the section gets close */
+  (function(){
+    var sec = document.getElementById('disenos');
+    function start(){ if (demoOn) return; demoOn = true; paintDemo(); }
+    if ('IntersectionObserver' in window){ var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ start(); io.disconnect(); } }, {rootMargin:'600px 0px'}); io.observe(sec); }
+    else start();
+  })();
+  dDesk.innerHTML = loadingHTML(); dMob.innerHTML = loadingHTML();
+  /* full-screen viewer */
+  var dv = document.getElementById('dv'), dvFrame = document.getElementById('dvFrame'), dvName = document.getElementById('dvName'), dvLast = null;
+  function dvDev(dev){ dvFrame.classList.toggle('mob', dev === 'mob'); dv.querySelectorAll('.dv-dev button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.d === dev ? 'true' : 'false'); }); }
+  function dvOpen(){
+    var d = DEMOS[demo.i]; dvLast = document.activeElement;
+    dvName.textContent = demoLabel(d) + ' · ' + DT(d)[0];
+    dvFrame.innerHTML = loadingHTML() + '<iframe title="' + esc(demoLabel(d)) + '" referrerpolicy="no-referrer" src="' + esc(d.url) + '"></iframe>';
+    dvDev(innerWidth < 900 ? 'mob' : 'desk');
+    dv.hidden = false; document.documentElement.style.overflow = 'hidden';
+    document.getElementById('dvClose').focus();
+  }
+  function dvShut(){ dv.hidden = true; dvFrame.innerHTML = ''; document.documentElement.style.overflow = ''; if (dvLast) dvLast.focus(); }
+  document.getElementById('demoBig').addEventListener('click', dvOpen);
+  document.getElementById('dvClose').addEventListener('click', dvShut);
+  dv.querySelectorAll('.dv-dev button').forEach(function(b){ b.addEventListener('click', function(){ dvDev(b.dataset.d); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !dv.hidden) dvShut(); });
+
+  /* ---------- Domain typing in the bento ---------- */
+  var doms = ['casamar.com','sonrisadental.mx','barberroyce.com','alturagym.mx','iproperty.mx','tunegocio.com'], di = 0, domEl = document.getElementById('domText');
+  if (!reduce) setInterval(function(){
+    if (document.hidden) return;
+    domEl.classList.add('hide');
+    setTimeout(function(){ di = (di+1) % doms.length; domEl.textContent = doms[di]; domEl.classList.remove('hide'); }, 620);
+  }, 2800);
+
+  /* ---------- Copy number ---------- */
+  var copyBtn = document.getElementById('copyNum');
+  copyBtn.addEventListener('click', function(){
+    var label = copyBtn.firstChild;
+    function done(t){ label.textContent = t; setTimeout(function(){ label.textContent = '+52 55 2887 9621'; }, 1600); }
+    try { navigator.clipboard.writeText('+52 55 2887 9621').then(function(){ done(U().copied); }, function(){ selectNum(); }); } catch(e){ selectNum(); }
+    function selectNum(){ var r = document.createRange(); r.selectNodeContents(label); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+
+  /* ---------- Language switch ---------- */
+  var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+  function setLang(lang, save){
+    LANG = lang === 'en' ? 'en' : 'es';
+    document.documentElement.lang = LANG;
+    document.title = U().title;
+    tr(); paintSites(); paintTech(); paintGallery(); paintPlans(); paintTabs(); paintDemo(); setWA();
+    copyBtn.setAttribute('aria-label', U().copyAria);
+    langBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === LANG ? 'true' : 'false'); });
+    if (typeof resetStory === 'function') resetStory();
+    if (save){ try { localStorage.setItem('okfly-lang', LANG); } catch(e){} }
+  }
+  langBtns.forEach(function(b){ b.addEventListener('click', function(){ if (b.dataset.lang !== LANG) setLang(b.dataset.lang, true); }); });
+  var startLang = 'es';
+  try { var saved = localStorage.getItem('okfly-lang'); if (saved === 'en' || saved === 'es') startLang = saved; else if (/^en/i.test(navigator.language || '')) startLang = 'en'; }
+  catch(e){ if (/^en/i.test(navigator.language || '')) startLang = 'en'; }
+  if (location.hash === '#en') startLang = 'en'; else if (location.hash === '#es') startLang = 'es';
+  setLang(startLang, false);
+  /* Idioma por país: México (y quien navega en español desde Latinoamérica o España) ve español; el resto, inglés. Solo si la persona no eligió idioma antes. */
+  function geoLang(cb){
+    try { var c = sessionStorage.getItem('okfly-geo'); if (c === 'es' || c === 'en'){ cb(c); return; } } catch(e){}
+    if (!window.fetch) return;
+    fetch('/cdn-cgi/trace', {cache:'no-store'}).then(function(r){ return r.ok ? r.text() : ''; }).then(function(t){
+      var m = /(?:^|\n)loc=([A-Z]{2})/.exec(t || ''); if (!m) return;
+      var cc = m[1], ES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','NI','PA','PY','PE','PR','ES','UY','VE'];
+      var l = cc === 'MX' ? 'es' : (ES.indexOf(cc) >= 0 && /^es/i.test(navigator.language || '') ? 'es' : 'en');
+      try { sessionStorage.setItem('okfly-geo', l); } catch(e){}
+      cb(l);
+    }).catch(function(){});
+  }
+  (function(){ var saved = null; try { saved = localStorage.getItem('okfly-lang'); } catch(e){}
+    if (saved === 'en' || saved === 'es' || location.hash === '#en' || location.hash === '#es') return;
+    geoLang(function(l){ if (l !== LANG) setLang(l, false); }); })();
+
+  /* ---------- Spring helper for pointer-driven 3D ---------- */
+  function Spring(k,d){ this.x=0; this.v=0; this.t=0; this.k=k||0.06; this.d=d||0.8; }
+  Spring.prototype.step = function(){ this.v += (this.t - this.x) * this.k; this.v *= this.d; this.x += this.v; return Math.abs(this.v) > 0.0001 || Math.abs(this.t - this.x) > 0.0001; };
+
+  /* ---------- Hero rig ---------- */
+  var heroRig = document.getElementById('heroRig'), heroEl = document.querySelector('.hero');
+  var hx = new Spring(0.05,0.82), hy = new Spring(0.05,0.82), heroScroll = 0;
+  function heroFrame(){
+    var moving = hx.step() | hy.step();
+    heroRig.style.transform = 'rotateX(' + (10 + hy.x*-5 + heroScroll*-8).toFixed(2) + 'deg) rotateY(' + (hx.x*8).toFixed(2) + 'deg) translateY(' + (heroScroll*-40).toFixed(1) + 'px)';
+    if (moving) requestAnimationFrame(heroFrame); else heroRaf = null;
+  }
+  var heroRaf = null;
+  function kickHero(){ if (!heroRaf) heroRaf = requestAnimationFrame(heroFrame); }
+  if (!reduce){
+    heroRig.style.transform = 'rotateX(10deg)';
+    if (fine) window.addEventListener('pointermove', function(e){ hx.t = (e.clientX/innerWidth - 0.5)*2; hy.t = (e.clientY/innerHeight - 0.5)*2; kickHero(); }, {passive:true});
+  } else heroRig.style.transform = 'rotateX(8deg)';
+
+  /* ---------- Demo rig + plan tilt ---------- */
+  function tiltOn(el, max, z){
+    if (reduce || !fine) return;
+    var sx = new Spring(0.08,0.78), sy = new Spring(0.08,0.78), raf = null, base = el.classList.contains('featured') ? 'translateY(-12px) ' : '';
+    function f(){ var m = sx.step() | sy.step(); el.style.transform = base + 'rotateX(' + sy.x.toFixed(2) + 'deg) rotateY(' + sx.x.toFixed(2) + 'deg)' + (z ? ' translateZ(' + z + 'px)' : ''); if (m) raf = requestAnimationFrame(f); else raf = null; }
+    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); sx.t = ((e.clientX-r.left)/r.width - 0.5)*max; sy.t = -((e.clientY-r.top)/r.height - 0.5)*max; if(!raf) raf = requestAnimationFrame(f); });
+    el.addEventListener('pointerleave', function(){ sx.t = 0; sy.t = 0; if(!raf) raf = requestAnimationFrame(f); });
+  }
+  var demoRig = document.getElementById('demoRig');
+  if (!reduce) demoRig.style.transform = 'rotateX(6deg) rotateY(-6deg)';
+  (function(){
+    if (reduce || !fine) return;
+    var sx = new Spring(0.05,0.82), sy = new Spring(0.05,0.82), raf=null; sx.x = sx.t = -6; sy.x = sy.t = 6;
+    function f(){ var m = sx.step() | sy.step(); demoRig.style.transform = 'rotateX(' + sy.x.toFixed(2) + 'deg) rotateY(' + sx.x.toFixed(2) + 'deg)'; if (m) raf = requestAnimationFrame(f); else raf = null; }
+    var stage = demoRig.parentNode;
+    stage.addEventListener('pointermove', function(e){ var r = stage.getBoundingClientRect(); sx.t = ((e.clientX-r.left)/r.width - 0.5)*14; sy.t = -((e.clientY-r.top)/r.height - 0.5)*10; if(!raf) raf = requestAnimationFrame(f); });
+    stage.addEventListener('pointerleave', function(){ sx.t = -6; sy.t = 6; if(!raf) raf = requestAnimationFrame(f); });
+  })();
+  document.querySelectorAll('[data-tilt3]').forEach(function(el){ tiltOn(el, 8); });
+
+  /* ---------- Story: WhatsApp conversation becomes the website ---------- */
+  var story = document.querySelector('.story');
+  var pin = story.querySelector('.story-pin');
+  var sticky = story.querySelector('.story-sticky');
+  var phoneEl = document.getElementById('storyPhone');
+  var browserEl = document.getElementById('storyBrowser');
+  var doneEl = document.getElementById('storyDone');
+  var copyEl = document.getElementById('storyCopy');
+  var feed = document.getElementById('waFeed'), body = document.getElementById('waBody');
+  var items = Array.prototype.slice.call(feed.children);
+  var phases = Array.prototype.slice.call(story.querySelectorAll('.phase'));
+  var live = !reduce && !!window.requestAnimationFrame;
+  var geo = null, lastP = -1, lastShown = -1;
+
+  if (live){
+    story.classList.add('is-live');
+    items.forEach(function(el){ if (el.classList.contains('msg')) el.classList.add('pending'); });
+  } else {
+    items.forEach(function(el){ if (!el.classList.contains('typing')) el.classList.add('on'); });
+  }
+  function measure(){
+    if (!live) return;
+    var sr = sticky.getBoundingClientRect();
+    var pr = phoneEl.getBoundingClientRect();
+    var bwW = browserEl.offsetWidth, bwH = browserEl.offsetHeight;
+    var mobile = innerWidth <= 900;
+    geo = {
+      cx: sr.width/2, cy: sr.height/2,
+      px: pr.left - sr.left + pr.width/2, py: pr.top - sr.top + pr.height/2,
+      pw: pr.width, ph: pr.height, bw: bwW, bh: bwH, mobile: mobile, sw: sr.width
+    };
+  }
+  function storyFrame(){
+    if (!live) return;
+    var r = pin.getBoundingClientRect();
+    var total = r.height - innerHeight;
+    var p = clamp(-r.top / Math.max(1,total), 0, 1);
+    if (Math.abs(p - lastP) < 0.0004) return;
+    lastP = p;
+    if (!geo) measure();
+
+    /* messages */
+    var shown = -1;
+    items.forEach(function(el, i){
+      var at = parseFloat(el.dataset.at || 0), until = el.dataset.until ? parseFloat(el.dataset.until) : 9;
+      var on = p >= at && p < until;
+      if (el.classList.contains('typing')) el.classList.toggle('on', on);
+      else { el.classList.toggle('pending', !on); el.classList.toggle('on', on); }
+      if (on) shown = i;
+    });
+    if (shown !== lastShown){
+      lastShown = shown;
+      var last = shown >= 0 ? items[shown] : null;
+      var off = last ? Math.max(0, last.offsetTop + last.offsetHeight - body.clientHeight + 14) : 0;
+      feed.style.transform = 'translateY(' + (-off) + 'px)';
+    }
+
+    /* phases */
+    var ph = p < 0.29 ? 0 : p < 0.48 ? 1 : p < 0.86 ? 2 : 3;
+    phases.forEach(function(el,i){ el.classList.toggle('on', i===ph); });
+
+    /* morph: preview bubble -> fullscreen browser -> settled beside the phone */
+    var m = ss(0.54, 0.72, p), s = ss(0.76, 0.88, p);
+    var g = geo;
+    var fitScale = Math.min(1, (innerHeight*0.86) / g.bh);
+    var startScale = (g.pw*0.78) / g.bw;
+    var sx0 = g.px - g.cx, sy0 = g.py - g.cy + g.ph*0.12;
+    var endX, endY, endScale, endRY, phoneEndX, phoneEndY, phoneEndScale;
+    if (g.mobile){ endX = 0; endY = -g.ph*0.18; endScale = 0.92*fitScale; endRY = -8; phoneEndX = g.sw*0.28 - (g.px - g.cx); phoneEndY = g.ph*0.2; phoneEndScale = 0.5; }
+    else { var endW = Math.min(g.sw*0.46, 700), ecx = g.sw - Math.max(32, (g.sw - 1360)/2 + 24) - endW/2; endScale = endW/g.bw; endX = ecx - g.cx; endY = -g.ph*0.04; endRY = -14; phoneEndX = (ecx - endW/2 + g.pw*0.08) - g.px; phoneEndY = g.ph*0.06; phoneEndScale = 0.84; }
+    var bx = lerp(lerp(sx0, 0, m), endX, s), by = lerp(lerp(sy0, 0, m), endY, s);
+    var bsc = lerp(lerp(startScale, fitScale, m), endScale, s);
+    var bry = lerp(lerp(8, 0, m), endRY, s), brx = lerp(lerp(10, 0, m), 6, s);
+    var bop = clamp(m*4, 0, 1);
+    browserEl.style.opacity = bop.toFixed(3);
+    browserEl.style.transform = 'translate(-50%,-50%) translate3d(' + bx.toFixed(1) + 'px,' + by.toFixed(1) + 'px,0) perspective(1600px) rotateY(' + bry.toFixed(2) + 'deg) rotateX(' + brx.toFixed(2) + 'deg) scale(' + bsc.toFixed(4) + ')';
+
+    var pOp = clamp(1 - m*1.6 + s*1.6, 0, 1);
+    var pScale = lerp(lerp(1, 0.9, m), phoneEndScale, s);
+    var pX = lerp(0, phoneEndX, s), pY = lerp(0, phoneEndY, s);
+    phoneEl.style.opacity = pOp.toFixed(3);
+    phoneEl.style.transform = 'translate3d(' + pX.toFixed(1) + 'px,' + pY.toFixed(1) + 'px,0) rotateY(' + lerp(0, g.mobile ? -10 : 12, s).toFixed(2) + 'deg) scale(' + pScale.toFixed(4) + ')';
+    phoneEl.style.position = 'relative'; phoneEl.style.zIndex = s > 0.5 ? 8 : 1;
+
+    copyEl.style.opacity = clamp(1 - m*1.4 + s*1.4, 0, 1).toFixed(3);
+    doneEl.style.opacity = (m > 0.6 && s < 0.4) ? 1 : 0;
+  }
+  var sTick = false;
+  function onScroll(){
+    if (!sTick){ sTick = true; requestAnimationFrame(function(){ sTick = false;
+      storyFrame();
+      var hr = heroEl.getBoundingClientRect();
+      var hs = clamp(-hr.top / Math.max(1, hr.height), 0, 1);
+      if (!reduce && Math.abs(hs - heroScroll) > 0.001){ heroScroll = hs; kickHero(); }
+      fab.classList.toggle('show', hr.bottom < innerHeight*0.4);
+    }); }
+  }
+  var fab = document.getElementById('fab');
+  window.addEventListener('scroll', onScroll, {passive:true});
+  function resetStory(){ geo = null; lastP = -1; lastShown = -1; if (live) storyFrame(); }
+  window.addEventListener('resize', function(){ geo = null; lastP = -1; lastShown = -1; measure(); onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ geo = null; lastP = -1; lastShown = -1; onScroll(); });
+
+  /* ---------- Staggered reveal for content below the first screen ---------- */
+  if ('IntersectionObserver' in window && !reduce){
+    var vh0 = innerHeight;
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-rv]')).filter(function(el){ return el.getBoundingClientRect().top > vh0*0.95; });
+    els.forEach(function(el){ el.classList.add('pre'); });
+    requestAnimationFrame(function(){ els.forEach(function(el){ el.classList.add('rv'); }); });
+    var io = new IntersectionObserver(function(entries){
+      entries.filter(function(e){ return e.isIntersecting; }).forEach(function(e,i){
+        setTimeout(function(){ e.target.classList.remove('pre'); setTimeout(function(){ e.target.classList.remove('rv'); }, 800); }, i*80);
+        io.unobserve(e.target);
+      });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  onScroll();
+})();
+</script>

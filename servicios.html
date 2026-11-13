@@ -70,6 +70,8 @@ section{padding-block:clamp(96px,11vw,170px)}
 .brand span{font-size:13px;font-weight:500;letter-spacing:0.32em}
 .nav ul{display:flex;gap:32px;font-size:16px;font-weight:500}
 .nav ul a{text-decoration:none;color:var(--ink-2);transition:color 160ms ease}
+.nav ul a.nav-new{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.nav ul a.nav-new::after{content:'Nuevo';display:inline-flex;align-items:center;height:20px;padding:0 9px;border-radius:999px;background:var(--wa-green);color:#052E16;font:800 11px/1 var(--font);letter-spacing:0.02em}
 @media (hover:hover){.nav ul a:hover{color:var(--ink)}}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 @media (max-width:900px){.nav ul{display:none}}
@@ -896,6 +898,7 @@ html{scrollbar-color:#CFCDC6 var(--bg)}
       <li><a href="./#disenos"><span data-es="Diseños" data-en="Designs">Diseños</span></a></li>
       <li><a href="./#planes"><span data-es="Planes" data-en="Plans">Planes</span></a></li>
       <li><a href="servicios" aria-current="page"><span data-es="Servicios" data-en="Services">Servicios</span></a></li>
+      <li><a href="autofly" class="nav-new">Autofly</a></li>
     </ul>
     <div class="nav-end">
       <div class="lang" role="group" aria-label="Idioma / Language">
