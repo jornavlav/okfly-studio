@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convenio · Administración de Anuncios · OKfly Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --negro:#050505;
+  --hueso:#F4F3EF;
+  --blanco:#FFFFFF;
+  --grafito:#1B1B19;
+  --gris:#6B6A64;
+  --linea:#E4E2DA;
+  --verde:#25D366;
+  --verde-prof:#052E16;
+  --font:'Outfit',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scrollbar-color:#cfcdc4 var(--blanco)}
+body{margin:0;background:var(--blanco);color:var(--negro);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page{max-width:860px;margin:0 auto;padding:0 28px 100px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.02em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* header / wordmark */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:40px 0 32px;border-bottom:2px solid var(--negro)}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.brand b{font-size:26px;font-weight:800;letter-spacing:-0.04em;color:var(--negro)}
+.brand span{font-size:11px;font-weight:500;letter-spacing:0.35em;color:var(--gris)}
+.topbar .meta{text-align:right;font-size:13px;color:var(--gris);font-weight:500}
+
+/* cover block */
+.cover{padding:52px 0 44px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:var(--verde);color:var(--verde-prof);font-size:13px;font-weight:700}
+.cover h1{font-size:clamp(30px,4.2vw,44px);margin-top:18px;max-width:18em}
+.cover .sub{color:var(--gris);font-size:17px;margin-top:14px;max-width:34em;font-weight:500}
+
+/* parties fill-in */
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--linea);border-radius:20px;overflow:hidden;margin-top:36px}
+.party{padding:26px 28px}
+.party+.party{border-left:1.5px solid var(--linea)}
+.party .k{font-size:12px;font-weight:700;letter-spacing:0.08em;color:var(--gris);text-transform:uppercase}
+.party .v{font-size:16px;font-weight:700;margin-top:8px}
+.party .line{margin-top:14px;font-size:14px;color:var(--gris)}
+.party .fill{display:inline-block;border-bottom:1.3px solid var(--negro);min-width:200px;padding-bottom:2px;color:var(--negro);font-weight:600}
+
+/* clauses */
+.clause{padding:40px 0;border-top:1.5px solid var(--linea)}
+.clause-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.clause-num{font-size:14px;font-weight:800;color:var(--verde-prof);background:#E8FBEF;border-radius:999px;padding:4px 12px;flex-shrink:0}
+.clause h2{font-size:21px}
+.clause p{color:#2B2A27;font-size:15.5px;margin-top:10px;max-width:60ch}
+.clause p+p{margin-top:12px}
+
+/* include / exclude grid */
+.inex{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.inex .col{border-radius:18px;padding:22px 24px}
+.inex .col.yes{background:#F3FCF6;border:1.5px solid #CFEFDA}
+.inex .col.no{background:#FAF9F7;border:1.5px solid var(--linea)}
+.inex .col h3{font-size:14px;font-weight:700;letter-spacing:0.03em}
+.inex .col.yes h3{color:var(--verde-prof)}
+.inex .col.no h3{color:var(--gris)}
+.inex li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;margin-top:12px;color:#2B2A27}
+.inex li:first-of-type{margin-top:16px}
+.inex li svg{flex-shrink:0;margin-top:2px}
+
+/* pricing table */
+.price-wrap{margin-top:20px;border:1.5px solid var(--linea);border-radius:20px;overflow:hidden}
+.price-row{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;border-top:1.5px solid var(--linea)}
+.price-row:first-child{border-top:0;background:var(--negro);color:var(--blanco)}
+.price-row .label{font-size:15px;font-weight:600}
+.price-row:first-child .label{color:var(--hueso)}
+.price-row .amt{font-size:22px;font-weight:800;letter-spacing:-0.02em}
+.price-row:first-child .amt{color:var(--verde)}
+.price-row .note{font-size:12.5px;color:var(--gris);margin-top:3px;font-weight:500}
+.price-row:first-child .note{color:#8C8A82}
+
+/* fill blank underline for body text */
+.fillblank{display:inline-block;border-bottom:1.3px solid var(--negro);min-width:70px}
+
+/* signatures */
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
+.sign .box{padding-top:70px;border-top:1.5px solid var(--negro)}
+.sign .box b{font-size:15px;display:block}
+.sign .box span{font-size:13px;color:var(--gris)}
+
+footer.ft{margin-top:60px;padding-top:24px;border-top:1.5px solid var(--linea);display:flex;justify-content:space-between;font-size:12.5px;color:var(--gris)}
+
+@media print{
+  body{font-size:13.5px}
+  .page{max-width:none;padding:0 6mm}
+  .topbar{padding-top:0}
+  .clause{padding:22px 0;break-inside:avoid}
+  .sign{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+@media (max-width:640px){
+  .parties,.inex,.sign{grid-template-columns:1fr}
+  .party+.party{border-left:0;border-top:1.5px solid var(--linea)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <a class="brand" href="https://okflystudio.com"><b>OKfly</b><span>STUDIO</span></a>
+    <div class="meta">okflystudio.com<br>Riviera Maya, México</div>
+  </div>
+
+  <div class="cover">
+    <span class="pill">CONVENIO DE SERVICIO</span>
+    <h1>Administración de Anuncios en Facebook e Instagram.</h1>
+    <p class="sub">Convenio entre OKfly Studio y el cliente para la gestión mensual de campañas publicitarias en Meta (Facebook e Instagram) dirigidas a generar mensajes de WhatsApp.</p>
+  </div>
+
+  <div class="parties">
+    <div class="party">
+      <div class="k">Prestador del servicio</div>
+      <div class="v">Jorge Alberto Nava Lavin</div>
+      <div class="line">Operando bajo el nombre comercial <b>OKfly Studio</b><br>WhatsApp: +52 55 2887 9621</div>
+    </div>
+    <div class="party">
+      <div class="k">Cliente</div>
+      <div class="v"><span class="fill">&nbsp;</span></div>
+      <div class="line">Negocio: <span class="fill">&nbsp;</span><br>WhatsApp / correo: <span class="fill">&nbsp;</span></div>
+    </div>
+  </div>
+  <p style="margin-top:14px;font-size:13px;color:var(--gris)">Fecha de firma: <span class="fillblank">&nbsp;</span> de <span class="fillblank">&nbsp;</span> de 20<span class="fillblank">&nbsp;</span> · Vigencia a partir de esa fecha.</p>
+
+  <!-- 1 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">1</span><h2>Objeto del convenio</h2></div>
+    <p>OKfly Studio administra las cuentas de publicidad del cliente en Facebook e Instagram (Meta Ads): crea, publica y optimiza campañas pensadas para que las personas interesadas le escriban al WhatsApp del cliente. OKfly Studio no vende el espacio publicitario; actúa como administrador de las campañas por cuenta del cliente.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">2</span><h2>Qué incluye y qué no incluye</h2></div>
+    <p>Este convenio cubre únicamente el paquete de <b>Administración de Anuncios</b>. No incluye página web, redes sociales (publicaciones orgánicas) ni otros servicios de OKfly Studio salvo que se contraten por separado.</p>
+    <div class="inex">
+      <div class="col yes">
+        <h3>SÍ INCLUYE</h3>
+        <ul>
+          <li>{check}<span>Estrategia y segmentación de audiencia</span></li>
+          <li>{check}<span>Diseño de anuncios (imagen, carrusel y reels)</span></li>
+          <li>{check}<span>Configuración de campañas a WhatsApp</span></li>
+          <li>{check}<span>Optimización de campañas cada semana</span></li>
+          <li>{check}<span>Reporte mensual: mensajes recibidos y costo por mensaje</span></li>
+          <li>{check}<span>Acceso del equipo de OKfly como colaborador en Meta Business Suite</span></li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>NO INCLUYE</h3>
+        <ul>
+          <li>{cross}<span>El presupuesto que se paga a Meta por mostrar los anuncios</span></li>
+          <li>{cross}<span>Página web ni hosting</span></li>
+          <li>{cross}<span>Publicaciones orgánicas en redes (paquete de Redes aparte)</span></li>
+          <li>{cross}<span>Atención directa a los mensajes que lleguen al WhatsApp del cliente</span></li>
+          <li>{cross}<span>Garantía de ventas, citas o un número fijo de mensajes</span></li>
+          <li>{cross}<span>Contraseñas de las cuentas del cliente (ver cláusula 9)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">3</span><h2>Precio y forma de pago</h2></div>
+    <p>La mensualidad se paga en dos partes iguales: la primera al inicio del mes (día 1 a 3) y la segunda a mediados del mes (día 15 a 17), por transferencia o liga de pago. No hay cuota de arranque.</p>
+    <div class="price-wrap">
+      <div class="price-row">
+        <div><div class="label">Administración de Anuncios</div><div class="note">Sin factura · $1,000 + $1,000</div></div>
+        <div style="text-align:right"><div class="amt">$2,000 MXN</div><div class="note">por mes</div></div>
+      </div>
+      <div class="price-row">
+        <div><div class="label">Con factura (persona física/moral)</div><div class="note">$2,000 + IVA 16% · $1,160 + $1,160</div></div>
+        <div style="text-align:right"><div class="amt" style="color:var(--negro)">$2,320 MXN</div><div class="note">por mes</div></div>
+      </div>
+    </div>
+    <p style="margin-top:16px">Primer pago de $1,000 MXN al inicio del mes, segundo pago de $1,000 MXN a mediados del mes; si el cliente requiere factura, cada pago sube a $1,160 MXN. El cliente debe avisar si requiere factura antes del primer pago y enviar su constancia de situación fiscal; el precio con IVA aplica desde ese mes.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">4</span><h2>Presupuesto publicitario</h2></div>
+    <p>El presupuesto que Meta cobra por mostrar los anuncios lo paga el cliente directo a Meta, con su propia tarjeta, separado de la mensualidad de OKfly Studio. Presupuesto recomendado: desde $3,000 MXN al mes. OKfly Studio sugiere el monto según los resultados, pero la decisión final y el pago son del cliente.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">5</span><h2>Vigencia y renovación</h2></div>
+    <p>Este convenio tiene una vigencia mínima de <b>3 meses</b> a partir de la fecha de firma, porque las campañas necesitan ese tiempo para dar resultados medibles. Al cumplirse los 3 meses, el convenio continúa mes a mes de forma automática hasta que alguna de las partes lo cancele conforme a la cláusula 8.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">6</span><h2>Aprobación de contenido</h2></div>
+    <p>Antes de publicar cualquier anuncio, OKfly Studio lo envía al cliente por WhatsApp. El cliente tiene hasta 2 días hábiles para pedir ajustes; si no responde en ese plazo, OKfly Studio puede publicarlo tal como fue enviado para no atrasar la campaña.</p>
+  </section>
+
+  <!-- 7 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">7</span><h2>Acceso a las cuentas</h2></div>
+    <p>El cliente agrega a OKfly Studio como colaborador en su Meta Business Suite (Administrador de Negocios). OKfly Studio nunca pide ni guarda la contraseña personal del cliente. El cliente puede quitar ese acceso cuando quiera; si lo hace antes de terminar el convenio, OKfly Studio no puede seguir administrando las campañas hasta que se restablezca el acceso.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">8</span><h2>Cancelación</h2></div>
+    <p>Pasado el mínimo de 3 meses, cualquiera de las partes puede cancelar avisando con al menos 10 días de anticipación al siguiente cobro, por escrito en WhatsApp. No hay penalización por cancelar. Las mensualidades ya pagadas no son reembolsables; cubren el trabajo del mes en curso.</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">9</span><h2>Resultados</h2></div>
+    <p>OKfly Studio administra la estrategia, el diseño y la optimización de las campañas, pero no garantiza un número de ventas, citas o seguidores: estos dependen también de la atención del cliente a los mensajes, su precio y su producto. Cada mes el cliente recibe un reporte claro de cuántos mensajes llegaron y qué costó cada uno, para decidir con datos reales.</p>
+  </section>
+
+  <!-- 10 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">10</span><h2>Confidencialidad y propiedad</h2></div>
+    <p>OKfly Studio no comparte la información del negocio del cliente (precios, estrategia, resultados) con terceros. Los diseños y textos creados para las campañas son del cliente una vez pagada la mensualidad correspondiente; OKfly Studio puede usarlos como muestra de trabajo salvo que el cliente pida lo contrario por escrito.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">11</span><h2>Modificaciones</h2></div>
+    <p>Cualquier cambio a este convenio (precio, alcance o condiciones) se acuerda por escrito entre ambas partes, por WhatsApp o correo, y queda como anexo a este documento.</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">12</span><h2>Jurisdicción</h2></div>
+    <p>Para cualquier controversia derivada de este convenio, las partes se someten a las leyes y tribunales competentes del Estado de Quintana Roo, México, renunciando a cualquier otro fuero que pudiera corresponderles.</p>
+  </section>
+
+  <section class="clause" style="padding-top:48px">
+    <p style="color:var(--gris);font-size:14px;margin-bottom:30px">Al firmar, ambas partes aceptan los términos de este convenio.</p>
+    <div class="sign">
+      <div class="box"><b>Jorge Alberto Nava Lavin</b><span>OKfly Studio · Prestador del servicio</span></div>
+      <div class="box"><b>&nbsp;</b><span>Cliente</span></div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <span>OKfly Studio · okflystudio.com</span>
+    <span>Convenio de Administración de Anuncios · 2026</span>
+  </footer>
+
+</div>
+<script>
+var check='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1DBF5C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var cross='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B9B7B0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+document.querySelectorAll('.inex .yes li').forEach(function(el){el.innerHTML=el.innerHTML.replace('{check}',check);});
+document.querySelectorAll('.inex .no li').forEach(function(el){el.innerHTML=el.innerHTML.replace('{cross}',cross);});
+</script>
+</body>
+</html>
