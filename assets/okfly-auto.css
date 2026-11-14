@@ -143,3 +143,42 @@ body.auto{background:#FCFCFD}
 .home .tph{display:block;width:100%;height:auto;border-radius:14px;margin-bottom:12px}
 .home .tmeta{color:#6B6A7B;font-size:13px}
 .home .lv .btn{white-space:nowrap;padding-left:14px;padding-right:14px;font-size:15px}
+.reelrow{align-items:start}.reelrow>div{display:flex;justify-content:center}
+.reelrow .ejc{width:auto;max-width:100%;height:auto;max-height:430px;object-fit:contain}
+.reelrow,.reelrow.three{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:22px;max-width:none;grid-template-columns:none}
+.reelrow>div{display:block;flex:none;min-width:0}
+.reelrow .ejc{height:420px;width:auto;max-width:100%;max-height:none;object-fit:initial}
+@media(max-width:700px){.reelrow{gap:14px}.reelrow .ejc{height:250px}}
+.reelrow+.capn2{margin-top:36px}
+.reelrow.carr .ejc{height:auto;width:100%;max-width:340px}.reelrow.carr>div{flex:1 1 280px;max-width:340px}@media(max-width:700px){.reelrow.carr .ejc{height:auto}}
+.rvid{position:relative;width:236px;max-width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#15141F;box-shadow:0 30px 60px -34px rgba(20,14,60,.55)}
+.rvid video{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.rvid{width:150px}}
+.nvc{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -34px rgba(20,14,60,.55);border:1px solid #ECEAF3;width:100%}
+.nvc img{display:block;width:100%;height:auto}
+.nvv{position:relative;aspect-ratio:.66;overflow:hidden;background:linear-gradient(180deg,#E3EEFB,#EDF3FC)}
+.nvt{display:flex;width:400%;height:100%;animation:nvs 12s cubic-bezier(.65,0,.35,1) infinite;animation-delay:var(--dl,0s)}
+.nvt img{width:25%;height:100%;object-fit:contain;flex:none}
+@keyframes nvs{0%,20%{transform:translateX(0)}25%,45%{transform:translateX(-25%)}50%,70%{transform:translateX(-50%)}75%,95%{transform:translateX(-75%)}100%{transform:translateX(0)}}
+.nvi{position:relative;display:flex;align-items:center;justify-content:space-between;padding:10px 14px 4px}
+.nvk{display:flex;gap:14px}
+.nvd{position:absolute;left:50%;top:50%;transform:translate(-50%,-30%);display:flex;gap:6px}
+.nvd i{width:7px;height:7px;border-radius:50%;background:#C9CCD6;animation:nvdot 12s infinite;animation-delay:var(--dl,0s)}
+.nvd .d1{animation-name:nvdot1}.nvd .d2{animation-name:nvdot2}.nvd .d3{animation-name:nvdot3}
+@keyframes nvdot{0%,22%{background:#2563EB}25%,100%{background:#C9CCD6}}
+@keyframes nvdot1{0%,22%{background:#C9CCD6}25%,47%{background:#2563EB}50%,100%{background:#C9CCD6}}
+@keyframes nvdot2{0%,47%{background:#C9CCD6}50%,72%{background:#2563EB}75%,100%{background:#C9CCD6}}
+@keyframes nvdot3{0%,72%{background:#C9CCD6}75%,97%{background:#2563EB}100%{background:#C9CCD6}}
+.reelrow.carr>div{flex:1 1 280px;max-width:330px}
+@media(prefers-reduced-motion:reduce){.nvt,.nvd i{animation:none}}
+.webf .wshot{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 40px 80px -40px rgba(40,30,120,.55)}
+.strip3{--cw:170px;--R:290px;position:relative;height:430px;display:flex;align-items:center;justify-content:center;perspective:1100px;overflow:hidden;margin:0 -8px}
+.s3in{position:relative;width:var(--cw);height:380px;transform-style:preserve-3d;transform:translateZ(calc(var(--R) * -1))}
+.s3ring{position:absolute;inset:0;transform-style:preserve-3d;animation:s3spin 42s linear infinite}
+@keyframes s3spin{from{transform:rotateY(0)}to{transform:rotateY(-360deg)}}
+.s3c{position:absolute;left:0;top:50%;width:var(--cw);transform:translateY(-50%) rotateY(var(--a)) translateZ(var(--R));backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 40px -22px rgba(20,14,60,.55)}
+.s3c img{display:block;width:100%;height:auto}
+.s3c.v{aspect-ratio:9/16}.s3c.v video{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.strip3{--cw:116px;--R:200px;height:330px}.s3in{height:300px}}
+@media(prefers-reduced-motion:reduce){.s3ring{animation:none}}
+.strip3{width:100%;min-width:300px}

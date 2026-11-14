@@ -85,3 +85,8 @@
     document.addEventListener('okfly:lang',paint); paint();
   }
 })();
+(function(){var v=document.querySelectorAll('video[data-auto]');if(!v.length)return;
+v.forEach(function(x){x.muted=true;x.defaultMuted=true;});
+if(!('IntersectionObserver' in window)){v.forEach(function(x){x.play&&x.play().catch(function(){});});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){var p=x.play();if(p&&p.catch)p.catch(function(){});}else{x.pause();}});},{threshold:.25});
+v.forEach(function(x){io.observe(x);});})();
