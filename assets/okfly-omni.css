@@ -53,3 +53,5 @@ body.omni{background:#000;color:#F2F2F5}
 .omni .plans.duo .plan.feat{background:radial-gradient(600px 360px at 0 0,rgba(109,92,255,.38),transparent 70%),radial-gradient(500px 360px at 100% 100%,rgba(255,122,89,.18),transparent 70%),#08080A;border-color:#4B43B8;box-shadow:none}
 .omni .plans.duo .plan .pt{background:#fff;color:#000}.omni .plans.duo .plan .btn{white-space:normal;text-align:center;justify-content:center}
 .omni .plans.duo .plan .tot{display:block;font-size:13.5px;color:#8A8A99;margin-top:-10px}
+.omni .toggle{background:#151518}.omni .toggle button{color:#8A8A99;min-height:46px}.omni .toggle button[aria-pressed="true"]{background:#2A2A30;color:#fff;box-shadow:none}.omni .toggle em{background:#B9B0FF;color:#000}
+.omni .plans.duo .amount s{color:#6E6E7C;font-size:17px;font-weight:500}

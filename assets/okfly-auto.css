@@ -125,3 +125,21 @@ body.auto{background:#FCFCFD}
 .lvm{font-size:13.5px;color:#6B6A80;text-align:center;text-decoration:underline;text-underline-offset:3px}.lv.dark .lvm{color:#B9B7D6}
 .plans.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:0 auto;scroll-margin-top:110px}@media(max-width:760px){.plans.duo{grid-template-columns:minmax(0,1fr)}}
 .plans.duo .plan .btn{white-space:normal;text-align:center;justify-content:center}
+/* ejemplos reales y pago anual */
+.ejc{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 30px 60px -34px rgba(20,14,60,.55)}
+.oc.pic{padding:0;aspect-ratio:auto;width:150px}.oc.pic img{display:block;width:100%;height:auto;border-radius:18px}.oc.pic.c3,.oc.pic.c6{width:128px}
+@media(max-width:800px){.oc.pic{width:104px}}
+.marq .ejm{flex:none;height:320px;width:auto;border-radius:20px;margin-right:18px}
+.lv .lvp s,.plan .amount s{font-size:17px;color:#9A98B0;font-weight:500;margin-right:2px}.plan.feat .amount s{color:#C9C3F5}.lv.dark .lvp s{color:#8F8DB0}
+.lv .tot{font-size:13px;color:#6B6A80;display:block;margin-top:-6px}.lv.dark .tot{color:#B9B7D6}
+.home .toggle em,.auto .toggle em{background:#FF7A59;color:#fff}
+
+.home .tcols{columns:3 300px;column-gap:18px;margin-top:8px}
+.home .tcard{break-inside:avoid;margin:0 0 18px;background:#fff;border:1px solid #ECEAF3;border-radius:22px;padding:20px 20px 16px;box-shadow:0 10px 30px -18px rgba(21,20,31,.25)}
+.home .tcard figcaption{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.home .tcard figcaption b{display:block;font-size:16px;color:#15141F}.home .tcard figcaption small{color:#6B6A7B;font-size:13px}
+.home .tav{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#15141F;flex:none}
+.home .tcard blockquote{margin:0 0 14px;font-size:16px;line-height:1.5;color:#15141F}
+.home .tph{display:block;width:100%;height:auto;border-radius:14px;margin-bottom:12px}
+.home .tmeta{color:#6B6A7B;font-size:13px}
+.home .lv .btn{white-space:nowrap;padding-left:14px;padding-right:14px;font-size:15px}
