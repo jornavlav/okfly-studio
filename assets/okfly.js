@@ -90,3 +90,10 @@ v.forEach(function(x){x.muted=true;x.defaultMuted=true;});
 if(!('IntersectionObserver' in window)){v.forEach(function(x){x.play&&x.play().catch(function(){});});return;}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){var p=x.play();if(p&&p.catch)p.catch(function(){});}else{x.pause();}});},{threshold:.25});
 v.forEach(function(x){io.observe(x);});})();
+
+(function(){var t=document.getElementById('tcols');if(!t||!window.matchMedia)return;var mq=window.matchMedia('(max-width:760px)');var idle=false,i=0,tm;
+function go(){if(!mq.matches||idle)return;var c=t.children;if(!c.length)return;i=(i+1)%c.length;t.scrollTo({left:c[i].offsetLeft-(t.clientWidth-c[i].clientWidth)/2,behavior:'smooth'});}
+function arm(){clearInterval(tm);tm=setInterval(go,4200);}
+['touchstart','pointerdown'].forEach(function(e){t.addEventListener(e,function(){idle=true;clearInterval(tm);},{passive:true});});
+['touchend','pointerup'].forEach(function(e){t.addEventListener(e,function(){setTimeout(function(){idle=false;var w=t.clientWidth,c=t.children;for(var k=0;k<c.length;k++){if(c[k].offsetLeft+c[k].clientWidth/2>t.scrollLeft+w/2){i=k;break;}}arm();},1500);},{passive:true});});
+arm();})();
