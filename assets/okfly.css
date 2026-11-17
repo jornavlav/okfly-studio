@@ -370,6 +370,8 @@ footer.ft{margin-top:96px;border-top:1px solid var(--line);position:relative;ove
 @media(max-width:1180px){.nav-links a{padding:9px 10px;font-size:14.5px}.nav{gap:8px}}
 @media(max-width:1040px){.nav-links{display:none}.mnav{display:block}.nav .btn{display:none}}
 
+.legal-doc .resp{margin:0 0 28px;padding:14px 18px;border-radius:14px;background:var(--surface);font-size:15px;color:#3b3a4c}
+
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-12px) rotate(var(--r,0deg))}}
 
 .plain{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:15px}.plain li{display:flex;gap:8px}.plan .pd{margin-top:6px}
